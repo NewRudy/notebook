@@ -21,7 +21,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
                 
             
                 
@@ -38,10 +38,6 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
                 
             
                 
@@ -923,33 +919,17 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#git"><b></b>Git</a></li><ul><li><span class="title-icon "></span><a href="#&#x8D77;&#x6B65;"><b></b>&#x8D77;&#x6B65;</a></li><ul><li><span class="title-icon "></span><a href="#&#x672C;&#x5730;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;"><b></b>&#x672C;&#x5730;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;</a></li></ul></ul><li><span class="title-icon "></span><a href="#git_1"><b></b>Git</a></li><ul><li><span class="title-icon "></span><a href="#introduction-to-git-commitsbranching-merging-rebasing-etc"><b></b>Introduction to Git Commits(branching, merging, rebasing, etc)</a></li><li><span class="title-icon "></span><a href="#git-remotes"><b></b>Git Remotes</a></li></ul></ul></div><a href="#git" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
-<li> 
-<ul>
-<li><div><a href="#&#x8D77;&#x6B65;">&#x8D77;&#x6B65;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
-<ul>
-<li><div><a href="#&#x672C;&#x5730;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;">&#x672C;&#x5730;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;</a><i></i></div></li>
-</ul></li>
-</ul></li>
-<li><div><a href="#git">Git</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
-<ul>
-<li><div><a href="#introduction-to-git-commitsbranching-merging-rebasing-etc">Introduction to Git Commits(branching, merging, rebasing, etc)</a><i></i></div></li>
-<li><div><a href="#git-remotes">Git Remotes</a><i></i></div></li>
-</ul></li>
-</ul>
-</div>
-
-<h1 id="git"><a name="git" class="anchor-navigation-ex-anchor" href="#git"><i class="fa fa-link" aria-hidden="true"></i></a>Git</h1>
+                                <h1 id="git">Git</h1>
 <p><a href="https://git-scm.com/book/zh/v2" target="_blank">ProGit</a></p>
-<h2 id="&#x8D77;&#x6B65;"><a name="&#x8D77;&#x6B65;" class="anchor-navigation-ex-anchor" href="#&#x8D77;&#x6B65;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8D77;&#x6B65;</h2>
+<h2 id="&#x8D77;&#x6B65;">&#x8D77;&#x6B65;</h2>
 <p>&#x7248;&#x672C;&#x63A7;&#x5236;&#x662F;&#x4E00;&#x79CD;&#x8BB0;&#x5F55;&#x4E00;&#x4E2A;&#x6216;&#x82E5;&#x5E72;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x53D8;&#x5316;&#xFF0C;&#x4EE5;&#x4FBF;&#x5C06;&#x6765;&#x67E5;&#x9605;&#x7279;&#x5B9A;&#x7248;&#x672C;&#x4FEE;&#x8BA2;&#x60C5;&#x51B5;&#x7684;&#x7CFB;&#x7EDF;&#xFF08;&#x53EF;&#x4EE5;&#x5BF9;&#x4EFB;&#x4F55;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x7248;&#x672C;&#x63A7;&#x5236;&#xFF09;</p>
-<h3 id="&#x672C;&#x5730;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;"><a name="&#x672C;&#x5730;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;" class="anchor-navigation-ex-anchor" href="#&#x672C;&#x5730;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x672C;&#x5730;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;</h3>
+<h3 id="&#x672C;&#x5730;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;">&#x672C;&#x5730;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;</h3>
 <p>&#x8BB8;&#x591A;&#x4EBA;&#x4E60;&#x60EF;&#x7528;&#x590D;&#x5236;&#x6574;&#x4E2A;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x4FDD;&#x5B58;&#x4E0D;&#x540C;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x6216;&#x8BB8;&#x8FD8;&#x4F1A;&#x6539;&#x540D;&#x52A0;&#x4E0A;&#x5907;&#x4EFD;&#x65F6;&#x95F4;&#x4EE5;&#x793A;&#x533A;&#x522B;&#x3002; &#x8FD9;&#x4E48;&#x505A;&#x552F;&#x4E00;&#x7684;&#x597D;&#x5904;&#x5C31;&#x662F;&#x7B80;&#x5355;&#xFF0C;&#x4F46;&#x662F;&#x7279;&#x522B;&#x5BB9;&#x6613;&#x72AF;&#x9519;&#x3002; &#x6709;&#x65F6;&#x5019;&#x4F1A;&#x6DF7;&#x6DC6;&#x6240;&#x5728;&#x7684;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF0C;&#x4E00;&#x4E0D;&#x5C0F;&#x5FC3;&#x4F1A;&#x5199;&#x9519;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x8986;&#x76D6;&#x610F;&#x60F3;&#x5916;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
 <p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x4EBA;&#x4EEC;&#x5F88;&#x4E45;&#x4EE5;&#x524D;&#x5C31;&#x5F00;&#x53D1;&#x4E86;&#x8BB8;&#x591A;&#x79CD;&#x672C;&#x5730;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;&#xFF0C;&#x5927;&#x591A;&#x90FD;&#x662F;&#x91C7;&#x7528;&#x67D0;&#x79CD;&#x7B80;&#x5355;&#x7684;&#x6570;&#x636E;&#x5E93;&#x6765;&#x8BB0;&#x5F55;&#x6587;&#x4EF6;&#x7684;&#x5386;&#x6B21;&#x66F4;&#x65B0;&#x5DEE;&#x5F02;&#x3002;</p>
 <p><img src="https://git-scm.com/book/en/v2/images/local.png" alt="&#x672C;&#x5730;&#x7248;&#x672C;&#x63A7;&#x5236;&#x56FE;&#x89E3;"></p>
-<h1 id="git_1"><a name="git_1" class="anchor-navigation-ex-anchor" href="#git_1"><i class="fa fa-link" aria-hidden="true"></i></a>Git</h1>
+<h1 id="git">Git</h1>
 <p><a href="https://learngitbranching.js.org/" target="_blank">learn Git Branching</a></p>
-<h2 id="introduction-to-git-commitsbranching-merging-rebasing-etc"><a name="introduction-to-git-commitsbranching-merging-rebasing-etc" class="anchor-navigation-ex-anchor" href="#introduction-to-git-commitsbranching-merging-rebasing-etc"><i class="fa fa-link" aria-hidden="true"></i></a>Introduction to Git Commits(branching, merging, rebasing, etc)</h2>
+<h2 id="introduction-to-git-commitsbranching-merging-rebasing-etc">Introduction to Git Commits(branching, merging, rebasing, etc)</h2>
 <p>commit: records a snapshot of all files(even better)</p>
 <p>branch early, and branch often(branches are pointers to a specific commit)</p>
 <p>Git rebase: second way of combining work</p>
@@ -959,7 +939,7 @@
 <p>git cherry-pick</p>
 <p>git rebase -i </p>
 <p>juggling commits</p>
-<h2 id="git-remotes"><a name="git-remotes" class="anchor-navigation-ex-anchor" href="#git-remotes"><i class="fa fa-link" aria-hidden="true"></i></a>Git Remotes</h2>
+<h2 id="git-remotes">Git Remotes</h2>
 <p>You can typically talk to this other computer through the Internet, which allows you to transfer commits back and forth.</p>
 <p>git pull  $\rightleftarrows$ git fetch; git merge o/main</p>
 <p>The difficulty comes in when the history of the repository diverges.</p>
@@ -1008,7 +988,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Git","level":"1.8.2","depth":2,"next":{"title":"Linux","level":"1.8.3","depth":2,"path":"skills/Linux.md","ref":"./skills/Linux.md","articles":[]},"previous":{"title":"Docker","level":"1.8.1","depth":2,"path":"skills/Docker.md","ref":"./skills/Docker.md","articles":[]},"dir":"ltr"},"config":{"plugins":["pageview-count","page-treeview","expandable-chapters","advanced-emoji","-lunr","-search","search-plus","-sharing","splitter","ancre-navigation","hide-element","insert-logo","code"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"splitter":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"pageview-count":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: rgb(193, 230, 198); max-height: 120px; min-height: 120px","url":"http://221.226.60.2:8082/data/11e9208d-2063-4c34-ba06-58f689266b3b"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"wutian","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notebook|blog","language":"zh-hans","gitbook":"*","description":"很菜的一个博客，或则说是笔记本，为了自己方便弄的"},"file":{"path":"skills/Git.md","mtime":"2022-01-06T07:13:33.610Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-06T07:47:04.154Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Git","level":"1.8.2","depth":2,"next":{"title":"Linux","level":"1.8.3","depth":2,"path":"skills/Linux.md","ref":"./skills/Linux.md","articles":[]},"previous":{"title":"Docker","level":"1.8.1","depth":2,"path":"skills/Docker.md","ref":"./skills/Docker.md","articles":[]},"dir":"ltr"},"config":{"plugins":["pageview-count","intopic-toc","expandable-chapters","advanced-emoji","-lunr","-search","search-plus","-sharing","splitter","hide-element","insert-logo","code","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"livereload":{},"splitter":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"pageview-count":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"max-height: 120px; min-height: 120px","url":"../image/wutian2.png"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"wutian","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notebook|blog","language":"zh-hans","gitbook":"*","description":"很菜的一个博客，或则说是笔记本，为了自己方便弄的"},"file":{"path":"skills/Git.md","mtime":"2022-01-06T07:13:33.610Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-06T08:38:33.715Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1019,6 +999,18 @@
     
         
         <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
         
     
         
@@ -1047,6 +1039,10 @@
     
         
         <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

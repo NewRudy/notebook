@@ -5,7 +5,7 @@
 	"language" : "zh-hans",
     "plugins": [
     	"pageview-count",
-    	"page-treeview",
+    	"intopic-toc",
         "expandable-chapters",
         "advanced-emoji",
         "-lunr",
@@ -13,7 +13,6 @@
         "search-plus",
         "-sharing",
         "splitter",
-        "ancre-navigation",
         "hide-element",
         "insert-logo",
         "code"
@@ -23,8 +22,8 @@
             "elements": [".gitbook-link"]
         },
         "insert-logo": {
-            "url": "http://221.226.60.2:8082/data/11e9208d-2063-4c34-ba06-58f689266b3b",
-            "style": "background: rgb(193, 230, 198); max-height: 120px; min-height: 120px"
+            "url": "../image/wutian2.png",
+            "style": "max-height: 120px; min-height: 120px"
         }
     }
 }

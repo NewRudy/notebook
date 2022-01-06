@@ -21,7 +21,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
                 
             
                 
@@ -38,10 +38,6 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
                 
             
                 
@@ -921,27 +917,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#react"><b></b>React</a></li><ul><li><span class="title-icon "></span><a href="#introducing-jsx"><b></b>Introducing JSX</a></li><li><span class="title-icon "></span><a href="#rendering-elements"><b></b>Rendering Elements</a></li><li><span class="title-icon "></span><a href="#conponents-and-props"><b></b>Conponents and Props</a></li><li><span class="title-icon "></span><a href="#state-and-lifecycle"><b></b>State and LifeCycle</a></li><li><span class="title-icon "></span><a href="#handling-events"><b></b>Handling Events</a></li><li><span class="title-icon "></span><a href="#conditional-rendering"><b></b>Conditional rendering</a></li><li><span class="title-icon "></span><a href="#lists-and-keys"><b></b>Lists and keys</a></li><li><span class="title-icon "></span><a href="#forms"><b></b>Forms</a></li><li><span class="title-icon "></span><a href="#lifting-state-up"><b></b>Lifting state up</a></li></ul></ul></div><a href="#react" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
-<li><div><a href="#introducing-jsx">Introducing JSX</a><i></i></div></li>
-<li><div><a href="#rendering-elements">Rendering Elements</a><i></i></div></li>
-<li><div><a href="#conponents-and-props">Conponents and Props</a><i></i></div></li>
-<li><div><a href="#state-and-lifecycle">State and LifeCycle</a><i></i></div></li>
-<li><div><a href="#handling-events">Handling Events</a><i></i></div></li>
-<li><div><a href="#conditional-rendering">Conditional rendering</a><i></i></div></li>
-<li><div><a href="#lists-and-keys">Lists and keys</a><i></i></div></li>
-<li><div><a href="#forms">Forms</a><i></i></div></li>
-<li><div><a href="#lifting-state-up">Lifting state up</a><i></i></div></li>
-</ul>
-</div>
-
-<h1 id="react"><a name="react" class="anchor-navigation-ex-anchor" href="#react"><i class="fa fa-link" aria-hidden="true"></i></a>React</h1>
+                                <h1 id="react">React</h1>
 <p><a href="https://reactjs.org/docs/hello-world.html" target="_blank">consept</a></p>
 <p>[toc]</p>
-<h2 id="introducing-jsx"><a name="introducing-jsx" class="anchor-navigation-ex-anchor" href="#introducing-jsx"><i class="fa fa-link" aria-hidden="true"></i></a>Introducing JSX</h2>
+<h2 id="introducing-jsx">Introducing JSX</h2>
 <p>A syntax extension to JavaScript.</p>
-<h2 id="rendering-elements"><a name="rendering-elements" class="anchor-navigation-ex-anchor" href="#rendering-elements"><i class="fa fa-link" aria-hidden="true"></i></a>Rendering Elements</h2>
+<h2 id="rendering-elements">Rendering Elements</h2>
 <p>An element describes what you want to see on the screen.</p>
-<h2 id="conponents-and-props"><a name="conponents-and-props" class="anchor-navigation-ex-anchor" href="#conponents-and-props"><i class="fa fa-link" aria-hidden="true"></i></a>Conponents and Props</h2>
+<h2 id="conponents-and-props">Conponents and Props</h2>
 <p>function components</p>
 <pre><code class="lang-reac">function Welcome(props) {
   return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
@@ -956,7 +939,7 @@
 </code></pre>
 <p>Always start component names with a capital letter.</p>
 <p>All React components must act like pure functions with respect to their props.</p>
-<h2 id="state-and-lifecycle"><a name="state-and-lifecycle" class="anchor-navigation-ex-anchor" href="#state-and-lifecycle"><i class="fa fa-link" aria-hidden="true"></i></a>State and LifeCycle</h2>
+<h2 id="state-and-lifecycle">State and LifeCycle</h2>
 <p>State is similar to props, but it is private and fully controlled by the component.</p>
 <p>convert a function component:</p>
 <ol>
@@ -987,7 +970,7 @@ this.setState((state, props) =&gt; {
 <pre><code class="lang-react">&lt;FormatteDate data={this.state.data} /&gt;
 </code></pre>
 <p>If you imagine a component tree as a water fall of props, each component&apos;s state is like an additional water source that joins it at an arbitrary point but also flows down.</p>
-<h2 id="handling-events"><a name="handling-events" class="anchor-navigation-ex-anchor" href="#handling-events"><i class="fa fa-link" aria-hidden="true"></i></a>Handling Events</h2>
+<h2 id="handling-events">Handling Events</h2>
 <ul>
 <li>React events are named using camelCase, rather than lowercase</li>
 <li>With JSX you pass a function as the event handler, rather than a string</li>
@@ -997,10 +980,10 @@ this.setState((state, props) =&gt; {
 <pre><code class="lang-react">&lt;button onClick={(e) =&gt; this.deleteRow(id, e)}&gt;Delete Row&lt;/button&gt;
 &lt;button onClick={this.deleteRow.bind(this, id)}&gt;Delete Row&lt;/button&gt;
 </code></pre>
-<h2 id="conditional-rendering"><a name="conditional-rendering" class="anchor-navigation-ex-anchor" href="#conditional-rendering"><i class="fa fa-link" aria-hidden="true"></i></a>Conditional rendering</h2>
+<h2 id="conditional-rendering">Conditional rendering</h2>
 <p>function (if) \ Element variables  \  logical &amp;&amp; operator</p>
 <p>whenever conditions become too complex, it might be a good time to extrct a component.</p>
-<h2 id="lists-and-keys"><a name="lists-and-keys" class="anchor-navigation-ex-anchor" href="#lists-and-keys"><i class="fa fa-link" aria-hidden="true"></i></a>Lists and keys</h2>
+<h2 id="lists-and-keys">Lists and keys</h2>
 <p>A component that accepts an array of numbers and outputs a list of elements.</p>
 <pre><code class="lang-react">function NumberList(props) {
   const numbers = props.numbers;
@@ -1023,10 +1006,10 @@ ReactDOM.render(
 <p>Keys help React identify which items have changed, are added, or are removed.</p>
 <p>If you choose not to assign an explicit key to list items then React will default to using indexes as keys, however the order of items may change.</p>
 <p>Keys only make sense in the context of the surrounding array.</p>
-<h2 id="forms"><a name="forms" class="anchor-navigation-ex-anchor" href="#forms"><i class="fa fa-link" aria-hidden="true"></i></a>Forms</h2>
+<h2 id="forms">Forms</h2>
 <p>Form elements naturally keep some internal state.</p>
 <p>An input form element whose value is controlled by React in this way is called a &quot;controlled component&quot;.</p>
-<h2 id="lifting-state-up"><a name="lifting-state-up" class="anchor-navigation-ex-anchor" href="#lifting-state-up"><i class="fa fa-link" aria-hidden="true"></i></a>Lifting state up</h2>
+<h2 id="lifting-state-up">Lifting state up</h2>
 <p>oftern, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor.</p>
 
                                 
@@ -1067,7 +1050,7 @@ ReactDOM.render(
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"React","level":"1.5.1","depth":2,"next":{"title":"Vue","level":"1.5.2","depth":2,"path":"font/Vue.md","ref":"./font/Vue.md","articles":[]},"previous":{"title":"font","level":"1.5","depth":1,"ref":"","articles":[{"title":"React","level":"1.5.1","depth":2,"path":"font/React.md","ref":"./font/React.md","articles":[]},{"title":"Vue","level":"1.5.2","depth":2,"path":"font/Vue.md","ref":"./font/Vue.md","articles":[]},{"title":"WebSocket","level":"1.5.3","depth":2,"path":"font/WebSocket.md","ref":"./font/WebSocket.md","articles":[]},{"title":"被删的前端游乐园","level":"1.5.4","depth":2,"path":"font/被删的前端游乐园.md","ref":"./font/被删的前端游乐园.md","articles":[]},{"title":"浏览器","level":"1.5.5","depth":2,"path":"font/浏览器.md","ref":"./font/浏览器.md","articles":[]},{"title":"图解HTTP","level":"1.5.6","depth":2,"path":"font/图解HTTP.md","ref":"./font/图解HTTP.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["pageview-count","page-treeview","expandable-chapters","advanced-emoji","-lunr","-search","search-plus","-sharing","splitter","ancre-navigation","hide-element","insert-logo","code"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"splitter":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"pageview-count":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: rgb(193, 230, 198); max-height: 120px; min-height: 120px","url":"http://221.226.60.2:8082/data/11e9208d-2063-4c34-ba06-58f689266b3b"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"wutian","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notebook|blog","language":"zh-hans","gitbook":"*","description":"很菜的一个博客，或则说是笔记本，为了自己方便弄的"},"file":{"path":"font/React.md","mtime":"2022-01-06T07:13:33.599Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-06T07:47:04.154Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"React","level":"1.5.1","depth":2,"next":{"title":"Vue","level":"1.5.2","depth":2,"path":"font/Vue.md","ref":"./font/Vue.md","articles":[]},"previous":{"title":"font","level":"1.5","depth":1,"ref":"","articles":[{"title":"React","level":"1.5.1","depth":2,"path":"font/React.md","ref":"./font/React.md","articles":[]},{"title":"Vue","level":"1.5.2","depth":2,"path":"font/Vue.md","ref":"./font/Vue.md","articles":[]},{"title":"WebSocket","level":"1.5.3","depth":2,"path":"font/WebSocket.md","ref":"./font/WebSocket.md","articles":[]},{"title":"被删的前端游乐园","level":"1.5.4","depth":2,"path":"font/被删的前端游乐园.md","ref":"./font/被删的前端游乐园.md","articles":[]},{"title":"浏览器","level":"1.5.5","depth":2,"path":"font/浏览器.md","ref":"./font/浏览器.md","articles":[]},{"title":"图解HTTP","level":"1.5.6","depth":2,"path":"font/图解HTTP.md","ref":"./font/图解HTTP.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["pageview-count","intopic-toc","expandable-chapters","advanced-emoji","-lunr","-search","search-plus","-sharing","splitter","hide-element","insert-logo","code","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"livereload":{},"splitter":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"pageview-count":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"max-height: 120px; min-height: 120px","url":"../image/wutian2.png"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"wutian","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notebook|blog","language":"zh-hans","gitbook":"*","description":"很菜的一个博客，或则说是笔记本，为了自己方便弄的"},"file":{"path":"font/React.md","mtime":"2022-01-06T07:13:33.599Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-06T08:38:33.715Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1078,6 +1061,18 @@ ReactDOM.render(
     
         
         <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
         
     
         
@@ -1106,6 +1101,10 @@ ReactDOM.render(
     
         
         <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
