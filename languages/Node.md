@@ -34,7 +34,7 @@
 
 ![img](https://github.com/nswbmw/N-blog/raw/master/book/img/4.2.2.png)
 
-![image-20210331150754310](http://111.229.14.128:9001/wutian/image-20210331150754310.png)
+![image-20210331150754310](../image/image-20210331150754310.png)
 
 restful 是一种 api 设计风格，提出了一组api 的设计原则和约束条件
 
@@ -64,7 +64,7 @@ DELETE /posts/:postId
 
 ## 组件的概念
 
-![image-20210331155646998](http://111.229.14.128:9001/wutian/image-20210331155646998.png)
+![image-20210331155646998](../image/image-20210331155646998.png)
 
 
 
@@ -351,7 +351,7 @@ let promise = new Promise(function(resolve, reject) {
 - `state` — 最初是 `"pending"`，然后在 `resolve` 被调用时变为 `"fulfilled"`，或者在 `reject` 被调用时变为 `"rejected"`。
 - `result` — 最初是 `undefined`，然后在 `resolve(value)` 被调用时变为 `value`，或者在 `reject(error)` 被调用时变为 `error`。
 
-![image-20210415152949482](http://111.229.14.128:9001/wutian/image-20210415152949482.png)
+![image-20210415152949482](../image/image-20210415152949482.png)
 
 promise 只能有一个结果或者一个error
 

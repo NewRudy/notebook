@@ -75,13 +75,13 @@ pojo包中读数据库中的表   dao包中提供接口   service包中根据接
 
 ![技术架构图](https://img-blog.csdnimg.cn/20200524211507112.JPG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L05ldWZfU29sZWls,size_16,color_FFFFFF,t_70#pic_center)
 
-![image-20201102101702795](http://111.229.14.128:9001/wutian/image-20201102101702795.png)
+![image-20201102101702795](../image/image-20201102101702795.png)
 
-![image-20201102101717716](http://111.229.14.128:9001/wutian/image-20201102101717716.png)
+![image-20201102101717716](../image/image-20201102101717716.png)
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20191209211442519.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9sZWFybmVyLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70)
 
-![image-20201102101749120](http://111.229.14.128:9001/wutian/image-20201102101749120.png)
+![image-20201102101749120](../image/image-20201102101749120.png)
 
 ### 安装Vue Cli
 

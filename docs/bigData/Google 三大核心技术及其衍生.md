@@ -34,11 +34,11 @@ BigTable  （HBase）  ---> F1/Spanner
 
 
 
-![img](http://111.229.14.128:9001/wutian/d99386adc2ea03796ec59dd83231aceb.webp)
+![img](../image/d99386adc2ea03796ec59dd83231aceb.webp)
 
 <div align='center'>大数据技术脉络</div>
 
-![Google 技术 (1)](http://111.229.14.128:9001/wutian/Google%20%E6%8A%80%E6%9C%AF%20(1).jpg)
+![Google 技术 (1)](../image/Google%20%E6%8A%80%E6%9C%AF%20(1).jpg)
 
 <div align='center'>大数据技术脉络</div>
 
@@ -54,7 +54,7 @@ Google File System（GFS、GoogleFS），一种专有的分布式文件系统，
 
 个人理解：分布式的初衷是利用数百台计算机的资源来同时完成大量工作，获取巨大的性能加成（high performance），所以数据需要分片（sharding）存储在这些机器上。然后服务器会宕机，通信也会出现故障，不可能通过人工来修复错误，我们需要一个自动化的容错系统（fault tolerance）。实现容错的最有用的方法就是复制（replication），其中一个出错了，我们就立刻替上它的副本。但是数据在动态的变化，副本之间的复制不能同步的进行更新，一不小心两个数据的副本会不一致（inconsistency），这时候用户请求的数据取决于用户向哪个副本请求数据。显然我们要避免不一致的问题，为了达到一致性，不同的服务器之间需要通过网络进行额外的交互（Network interaction），这种交互会降低性能（low performance）。
 
-![分布式难点](http://111.229.14.128:9001/wutian/%E5%88%86%E5%B8%83%E5%BC%8F%E9%9A%BE%E7%82%B9.jpg)
+![分布式难点](../image/%E5%88%86%E5%B8%83%E5%BC%8F%E9%9A%BE%E7%82%B9.jpg)
 
 <div align='center'>分布式难点</div>
 
@@ -72,9 +72,9 @@ Eric Brewer 说，这三个指标不可能同时做到。这个结论就叫做 C
 
 为什么只能选择一个，举例：
 
-![img](http://111.229.14.128:9001/wutian/bg2018071602.png)
+![img](../image/bg2018071602.png)
 
-![img](http://111.229.14.128:9001/wutian/bg2018071603.png)
+![img](../image/bg2018071603.png)
 
 如果保证 G2 的一致性，那么 G1 必须在写操作时，锁定 G2 的读操作和写操作。只有数据同步后，才能重新开放读写。锁定期间，G2 不能读写，可用性不成立。
 
@@ -131,7 +131,7 @@ Eric Brewer 说，这三个指标不可能同时做到。这个结论就叫做 C
 
 以往的分布式系统，是没有中心节点的，但是在 GFS 中，我们将 Metadata（元数据，可以理解为控制信息）保存在 Master节点中，将用户需要的数据保存在 Chuck Sever 中， 这样我们可以方便的从 Master 中得知各个 Chuck Sever 的运行情况，同时 Master 不会成为制约这个系统的瓶颈，而且我们可以使用廉价的普通硬件作为 Chuck Sever 一举多得。
 
-![GFS system architecture](http://111.229.14.128:9001/wutian/gfs_sys_arch.png)
+![GFS system architecture](../image/gfs_sys_arch.png)
 
 <div align='center'>系统架构</div>
 
@@ -178,13 +178,13 @@ GFS的宽松一致性模型支持我们的高度分布式的应用，`GFS`并没
 
 文件命名空间突变（比如，文件创建）是原子的。它们只被master处理：命名空间锁保证原子性和正确性（4.1节）；master的操作日志定义全局操作顺序。
 
-![img](http://111.229.14.128:9001/wutian/gfs-consistance.JPG)
+![img](../image/gfs-consistance.JPG)
 
 <div align='center'>突变后文件区域状态</div>
 
 #### 3. 系统交互
 
-![img](http://111.229.14.128:9001/wutian/gfs-write.JPG)
+![img](../image/gfs-write.JPG)
 
 <div align='center'>写入控制与数据流</div>
 
@@ -249,7 +249,7 @@ Colossus 的一些背景知识：
 - 其设计增强了存储可扩展性并提高了可用性，以应对数量不断增长的应用程序的大量数据需求。 
 - Colossus 引入了分布式元数据模型，该模型提供了更具可扩展性和高可用性的元数据子系统。 
 
-![巨像控制平面.jpg](http://111.229.14.128:9001/wutian/Colossus_control_plane.max-2000x2000.jpg)
+![巨像控制平面.jpg](../image/Colossus_control_plane.max-2000x2000.jpg)
 
 <div align='center'>Colossus 架构图</div>
 
@@ -340,7 +340,7 @@ MapReduce  模型有多种实现方式，如何正确选择取决于具体的环
 - 大型 NUMA 架构的多处理器的主机
 - 大型的网络连接集群
 
-![image-20211201094605739](http://111.229.14.128:9001/wutian/image-20211201094605739.png)
+![image-20211201094605739](../image/image-20211201094605739.png)
 
 <div align='center'>执行概况</div>
 
@@ -429,7 +429,7 @@ Bigtable 是一个稀疏的、分布式的、持久化存储的多维度排序Ma
 (row:string,column:string,time:int64)->string
 ```
 
-![Bigtable-DataModel-Row-Column-Timestamp-Value](http://111.229.14.128:9001/wutian/2017-08-12-Bigtable-DataModel-Row-Column-Timestamp-Value.jpg-1000width)
+![Bigtable-DataModel-Row-Column-Timestamp-Value](../image/2017-08-12-Bigtable-DataModel-Row-Column-Timestamp-Value.jpg-1000width)
 
 这里最重要的就是 `row` 的值，它的长度最大可以为 64KB，对于同一 `row` 下数据的读写都可以看做是原子的；因为 Bigtable 是按照 `row` 的值使用字典顺序进行排序的，每一段 `row` 的范围都会被 Bigtable 进行分区，并交给一个 tablet 进行处理。
 
@@ -467,11 +467,11 @@ Master服务器主要负责以下工作：为Tablet服务器分配Tablets、检�
 
 ##### Tablet 的位置信息
 
-![image-20211202100615428](http://111.229.14.128:9001/wutian/image-20211202100615428.png)
+![image-20211202100615428](../image/image-20211202100615428.png)
 
 <div align='center'>Tablet 的层次结构</div>
 
-![Tablet-Location-Hierarchy](http://111.229.14.128:9001/wutian/2017-08-12-Tablet-Location-Hierarchy.jpg-1000width)
+![Tablet-Location-Hierarchy](../image/2017-08-12-Tablet-Location-Hierarchy.jpg-1000width)
 
 第一层是一个存储在Chubby中的文件，它包含了Root Tablet的位置信息。Root Tablet包含了一个特殊的METADATA表里所有的Tablet的位置信息。METADATA表的每个Tablet包含了一个用户Tablet的集合。RootTablet实际上是METADATA表的第一个Tablet，只不过对它的处理比较特殊 — Root Tablet永远不会被分割 — 这就保证了Tablet的位置信息存储结构不会超过三层。
 
@@ -481,7 +481,7 @@ Master服务器主要负责以下工作：为Tablet服务器分配Tablets、检�
 
 既然在整个 Bigtable 中有着海量的 tablet 服务器以及数据的分片 tablet，那么 Bigtable 是如何管理海量的数据呢？Bigtable 与很多的分布式系统一样，使用一个主服务器将 tablet 分派给不同的服务器节点。
 
-![Master-Manage-Tablet-Servers-And-Tablets](http://111.229.14.128:9001/wutian/2017-08-12-Master-Manage-Tablet-Servers-And-Tablets.jpg-1000width)
+![Master-Manage-Tablet-Servers-And-Tablets](../image/2017-08-12-Master-Manage-Tablet-Servers-And-Tablets.jpg-1000width)
 
 为了减轻主服务器的负载，所有的客户端仅仅通过 Master 获取 tablet 服务器的位置信息，它并不会在每次读写时都请求 Master 节点，而是直接与 tablet 服务器相连，同时客户端本身也会保存一份 tablet 服务器位置的缓存以减少与 Master 通信的次数和频率。
 
@@ -489,7 +489,7 @@ Master服务器主要负责以下工作：为Tablet服务器分配Tablets、检�
 
 从读写请求的处理，我们其实可以看出整个 Bigtable 中的各个部分是如何协作的，包括日志、memtable 以及 SSTable 文件。
 
-![Tablet-Serving](http://111.229.14.128:9001/wutian/2017-08-12-Tablet-Serving.jpg-1000width)
+![Tablet-Serving](../image/2017-08-12-Tablet-Serving.jpg-1000width)
 
 当有客户端向 tablet 服务器发送写操作时，它会先向 tablet 服务器中的日志追加一条记录，在日志成功追加之后再向 memtable 中插入该条记录；这与现在大多的数据库的实现完全相同，通过顺序写向日志追加记录，然后再向数据库随机写，因为随机写的耗时远远大于追加内容，如果直接进行随机写，由于随机写执行时间较长，在写操作执行期间发生设备故障造成数据丢失的可能性相对比较高。
 
@@ -499,11 +499,11 @@ Master服务器主要负责以下工作：为Tablet服务器分配Tablets、检�
 
 随着写操作的进行，memtable 会随着事件的推移逐渐增大，当 memtable 的大小超过一定的阈值时，就会将当前的 memtable 冻结，并且创建一个新的 memtable，被冻结的 memtable 会被转换为一个 SSTable 并且写入到 GFS 系统中，这种压缩方式也被称作 *Minor Compaction*。
 
-![Minor-Compaction](http://111.229.14.128:9001/wutian/2017-08-12-Minor-Compaction.jpg-1000width)
+![Minor-Compaction](../image/2017-08-12-Minor-Compaction.jpg-1000width)
 
 每一个 Minor Compaction 都能够创建一个新的 SSTable，它能够有效地降低内存的占用并且降低服务进程异常退出后，过大的日志导致的过长的恢复时间。既然有用于压缩 memtable 中数据的 Minor Compaction，那么就一定有一个对应的 Major Compaction 操作。
 
-![Major-Compaction](http://111.229.14.128:9001/wutian/2017-08-12-Major-Compaction.jpg-1000width)
+![Major-Compaction](../image/2017-08-12-Major-Compaction.jpg-1000width)
 
 Bigtable 会在**后台周期性**地进行 *Major Compaction*，将 memtable 中的数据和一部分的 SSTable 作为输入，将其中的键值进行归并排序，生成新的 SSTable 并移除原有的 memtable 和 SSTable，新生成的 SSTable 中包含前两者的全部数据和信息，并且将其中一部分标记为删除的信息彻底清除。
 
@@ -654,7 +654,7 @@ BigTable—->HBase(2008)
 需要多维分析的可能需要 ClickHouse，Kylin，Greenplum：提供现在分析能力
 
 实时性要求高的需要用到 Redis
-![img](http://111.229.14.128:9001/wutian/20200828111450122.jpg)
+![img](../image/20200828111450122.jpg)
 
 <div align='center'>网易数据中台</div>
 

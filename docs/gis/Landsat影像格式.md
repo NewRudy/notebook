@@ -4,13 +4,13 @@
 
 ## Landsat8
 
-![image-20201105191258884](C:\Users\wutian\AppData\Roaming\Typora\typora-user-images\image-20201105191258884.png)
+![image-20201105191258884](../image/image-20201105191258884.png)
 
 ## 文件名称含义
 
 #### 文件名
 
-![image-20201105192927708](C:\Users\wutian\AppData\Roaming\Typora\typora-user-images\image-20201105192927708.png)
+![image-20201105192927708](../image/image-20201105192927708.png)
 
 #### 卫星数据类型
 

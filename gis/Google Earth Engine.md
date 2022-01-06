@@ -280,7 +280,7 @@ GEE最经典的论文
 
 产品演化路径必然离不开产品的历史，但是设计GEE的历史技术没有找到相关了网络资源
 
-![Hitorty line](http://111.229.14.128:9001/wutian/Hitorty%20line.jpg)
+![image-20220106154027037](../image/image-20220106154027037.png)
 
 <div align='center'>历史发展</div>
 

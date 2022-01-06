@@ -45,9 +45,9 @@ labelName
 
 自动分号插入，有些时候它并不自动插入，代码块之后不需要分号
 
-![image-20201223225900084](http://111.229.14.128:9001/wutian/image-20201223225900084.png)
+![image-20201223225900084](../image/image-20201223225900084.png)
 
-![image-20201223230334914](http://111.229.14.128:9001/wutian/image-20201223230334914.png)
+![image-20201223230334914](../image/image-20201223230334914.png)
 
 自描述型代码
 
@@ -1449,7 +1449,7 @@ Promise 对象具有以下内部属性：
 - state：最初是 pending，然后再 resolve 被调用的时候变成 fulfilled，或者在 reject 被调用时变成 rejected
 - result：最初是 undefined，然后在 resolve 被调用的时候变为 value，或者在 reject 被调用的时候变成 error
 
-![image-20211213150924510](http://111.229.14.128:9001/wutian//image-20211213150924510.png)
+![image-20211213150924510](../image//image-20211213150924510.png)
 
 <div align='center'>promise 状态变化</div>
 
@@ -1545,7 +1545,7 @@ new Promise((resolve, reject) => {
 
 它的理念是将 result 通过 .then 处理程序（handler）链进行传递
 
-![image-20211215145805750](http://111.229.14.128:9001/wutian/1639551486_image-20211215145805750.png)
+![image-20211215145805750](../image/1639551486_image-20211215145805750.png)
 
 <div align='center'>Promise 链</div>
 
@@ -1572,7 +1572,7 @@ promise.then(function(result) {
 });
 ```
 
-![image-20211215150003300](http://111.229.14.128:9001/wutian/1639551603_image-20211215150003300.png)
+![image-20211215150003300](../image/1639551603_image-20211215150003300.png)
 
 <div align='center'>Promise 多处理程序情况</div>
 
@@ -1636,7 +1636,7 @@ loadJson('/user.json')
 
 如果 .then （或 catch/finally 都可以）处理程序（handler）返回一个promise，那么链的其余部分将会等待，知道它的状态变为 settled。当它被 settled 后，其 result（或 error）将被进一步传递下去
 
-![image-20211215160634310](http://111.229.14.128:9001/wutian/1639555594_image-20211215160634310.png)
+![image-20211215160634310](../image/1639555594_image-20211215160634310.png)
 
 <div align='center'> Promise chain flow chart</div>
 
@@ -1875,7 +1875,7 @@ try{
 }
 ```
 
-![image-20211118105217837](http://111.229.14.128:9001/wutian/image-20211118105217837.png)
+![image-20211118105217837](../image/image-20211118105217837.png)
 
 这是ok的，但是如果try中出现了异步的代码呢
 
@@ -1889,7 +1889,7 @@ try{
 }
 ```
 
-![image-20211118105226403](http://111.229.14.128:9001/wutian/image-20211118105226403.png)
+![image-20211118105226403](../image/image-20211118105226403.png)
 
 try-catch 是同步的，setTimeout 是在异步任务队列中的，同步任务执行完再从任务队列中的回调函数拿来执行就出错了
 
@@ -1968,7 +1968,7 @@ async function test2() {
 test2()
 ```
 
-![image-20211118111932371](http://111.229.14.128:9001/wutian/image-20211118111932371.png)
+![image-20211118111932371](../image/image-20211118111932371.png)
 
 #### 解决async/await 的promise 返回错误 reject 的问题及错误捕获
 
@@ -2100,7 +2100,7 @@ console.log('+1,3,5,,,,'.match(/\d/g).join(''));		// 135
 
 正则表达式可能同时包含常规符号和字符类，匹配项（每个正则表达式字符类都有对应的结果字符）
 
-![image-20211119222056851](http://111.229.14.128:9001/wutian/image-20211119222056851.png)
+![image-20211119222056851](../image/image-20211119222056851.png)
 
 对于每个字符类，都有一个反向类，用相同的字符表示，但是要大写，反向代表它与所有其它字符匹配
 

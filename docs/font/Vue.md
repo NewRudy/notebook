@@ -12,7 +12,7 @@
 
 有MVVM模式的影响
 
-![MVVMPattern.png](http://111.229.14.128:9001/wutian/CMVVMPattern.png)
+![MVVMPattern.png](../image/CMVVMPattern.png)
 
 Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进 DOM 的系统，数据和DOM建立关联，所有的东西都是响应式的
 
@@ -38,7 +38,7 @@ v-for	可以绑定数组的数据来渲染一个项目列表
 
 组件系统是 Vue 的另一个重要概念，因为它是一种抽象，允许我们使用小型、独立和通常可复用的组件构建大型应用。
 
-![Component Tree](http://111.229.14.128:9001/wutian/Ccomponents.png)
+![Component Tree](../image/Ccomponents.png)
 
 在 Vue 中，组件本质上是一个具有预定义选项的实例。在 Vue 中注册组件很简单：如对 `App` 对象所做的那样创建一个组件对象，并将其定义在父级组件的 `components` 选项中
 
@@ -83,7 +83,7 @@ Vue 还通过组件实例暴露了一些内置 property，如 `$attrs` 和 `$emi
 
 #### 生命周期
 
-![实例的生命周期](http://111.229.14.128:9001/wutian/Clifecycle.svg)
+![实例的生命周期](../image/Clifecycle.svg)
 
 ### 模板语法
 
@@ -281,7 +281,7 @@ vue 自动为 methods 绑定了 this，以便于它始终指向组件实例，�
 
 函数节流：限制一个函数在一定时间内只能执行一次
 
-![img](C:/Users/wutian/Desktop/%E7%AC%94%E8%AE%B0/picture/1674837-7266ac1abc4950f3.png)
+![img](../image//1674837-7266ac1abc4950f3.png)
 
 函数防抖的应用场景：
 

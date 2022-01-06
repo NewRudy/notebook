@@ -8,13 +8,13 @@
 
 Nginx（engine x）是一款轻量级的web服务器、反向代理服务器及电子邮件（IMAP/POP3）代理服务器
 
-![img](http://111.229.14.128:9001/wutian/nginx.jpg)
+![img](../image/nginx.jpg)
 
 ### 反向代理
 
 反向代理（Reverse Proxy）方式是指以代理服务器来接受Internet上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回internet上请求连接的额客户端，此时代理服务器对外就表现为一个反向代理服务器
 
-![img](http://111.229.14.128:9001/wutian/reverse-proxy.png)
+![img](../image/reverse-proxy.png)
 
 ## Nginx入门
 
@@ -207,7 +207,7 @@ http {
 
 前面的例子中，代理仅仅指向一个服务器，但是网站在实际运营中，大部分是以集群的方式运行，这时需要使用负载均衡来分流，nginx也可以实现简单的负载均衡能力
 
-![img](http://111.229.14.128:9001/wutian/nginx-load-balance.png)
+![img](../image/nginx-load-balance.png)
 
 假设这样一个应用场景：将应用部署在 192.168.1.11:80、192.168.1.12:80、192.168.1.13:80 三台 linux 环境的服务器上。网站域名叫 [www.helloworld.com，公网](http://www.helloworld.xn--com%2C-tt8fy44v/) IP 为 192.168.1.11。在公网 IP 所在的服务器上部署 nginx，对所有请求做负载均衡处理（下面例子中使用的是加权轮询策略）。
 

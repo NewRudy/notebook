@@ -69,7 +69,7 @@ version  输出版本信息
 
 [利用Minio搭建私有图床](https://www.naeco.top/2020/08/11/private-oss-for-image/) ，博主写的很好，但是没有用 nginx，好多工具感觉有坑，得慢慢踩，但是现在自己得好好学一些东西了
 
-![image-20211214210550418](http://111.229.14.128:9001/test/1639487150_image-20211214210550418.png)
+![image-20220106152719731](../image/image-20220106152719731.png)
 
 部署完 minIO 之后需要创建一个自己的桶（bulket），然后设置为 public 下面的代码选择一个放到 typora 即可，建议 python 代码，这个好配置一点
 
