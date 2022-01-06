@@ -1,0 +1,30 @@
+{
+	"title": "notebook|blog",
+	"author": "wutian",
+	"description" : "很菜的一个博客，或则说是笔记本，为了自己方便弄的",
+	"language" : "zh-hans",
+    "plugins": [
+    	"pageview-count",
+    	"page-treeview",
+        "expandable-chapters",
+        "advanced-emoji",
+        "-lunr",
+        "-search",
+        "search-plus",
+        "-sharing",
+        "splitter",
+        "ancre-navigation",
+        "hide-element",
+        "insert-logo",
+        "code"
+    ],
+    "pluginsConfig": {
+        "hide-element": {
+            "elements": [".gitbook-link"]
+        },
+        "insert-logo": {
+            "url": "http://221.226.60.2:8082/data/11e9208d-2063-4c34-ba06-58f689266b3b",
+            "style": "background: rgb(193, 230, 198); max-height: 120px; min-height: 120px"
+        }
+    }
+}

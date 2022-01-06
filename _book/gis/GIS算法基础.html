@@ -1,0 +1,1045 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>GIS算法基础 · notebook|blog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wutian">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Google Earth Engine.html" />
+    
+    
+    <link rel="prev" href="GIS标准.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    bigData
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../bigData/BigData-Notes.html">
+            
+                <a href="../bigData/BigData-Notes.html">
+            
+                    
+                    BigData-Notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../bigData/Flink.html">
+            
+                <a href="../bigData/Flink.html">
+            
+                    
+                    Flink.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../bigData/Google 三大核心技术及其衍生.html">
+            
+                <a href="../bigData/Google 三大核心技术及其衍生.html">
+            
+                    
+                    Google 三大核心技术及其衍生.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../bigData/Hadoop.html">
+            
+                <a href="../bigData/Hadoop.html">
+            
+                    
+                    Hadoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../bigData/MinIO.html">
+            
+                <a href="../bigData/MinIO.html">
+            
+                    
+                    MinIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../bigData/MongoDB.html">
+            
+                <a href="../bigData/MongoDB.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../bigData/Nginx.html">
+            
+                <a href="../bigData/Nginx.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../bigData/Spark.html">
+            
+                <a href="../bigData/Spark.html">
+            
+                    
+                    Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../bigData/大数据.html">
+            
+                <a href="../bigData/大数据.html">
+            
+                    
+                    大数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    course
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../course/Hands-On Data Visualization.html">
+            
+                <a href="../course/Hands-On Data Visualization.html">
+            
+                    
+                    Hands-On Data Visualization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../course/深入理解计算机系统.html">
+            
+                <a href="../course/深入理解计算机系统.html">
+            
+                    
+                    深入理解计算机系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../course/图说设计模式.html">
+            
+                <a href="../course/图说设计模式.html">
+            
+                    
+                    图说设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    dataStructure
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    font
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../font/React.html">
+            
+                <a href="../font/React.html">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../font/Vue.html">
+            
+                <a href="../font/Vue.html">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../font/WebSocket.html">
+            
+                <a href="../font/WebSocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../font/被删的前端游乐园.html">
+            
+                <a href="../font/被删的前端游乐园.html">
+            
+                    
+                    被删的前端游乐园
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../font/浏览器.html">
+            
+                <a href="../font/浏览器.html">
+            
+                    
+                    浏览器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../font/图解HTTP.html">
+            
+                <a href="../font/图解HTTP.html">
+            
+                    
+                    图解HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    gis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="GDAL.html">
+            
+                <a href="GDAL.html">
+            
+                    
+                    GDAL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="Geomorphology-Based Hydrological Model.html">
+            
+                <a href="Geomorphology-Based Hydrological Model.html">
+            
+                    
+                    Geomorphology-Based Hydrological Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="GeoserverModel.md">
+            
+                <span>
+            
+                    
+                    Geoserver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="GIS标准.html">
+            
+                <a href="GIS标准.html">
+            
+                    
+                    GIS标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.5" data-path="GIS算法基础.html">
+            
+                <a href="GIS算法基础.html">
+            
+                    
+                    GIS算法基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="Google Earth Engine.html">
+            
+                <a href="Google Earth Engine.html">
+            
+                    
+                    Google Earth Engine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="Landsat影像格式.html">
+            
+                <a href="Landsat影像格式.html">
+            
+                    
+                    Landsat影像格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="NetCDF.html">
+            
+                <a href="NetCDF.html">
+            
+                    
+                    NetCDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="OSMnx.html">
+            
+                <a href="OSMnx.html">
+            
+                    
+                    OSMnx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="城市规划中人性、人文和人本的关系.html">
+            
+                <a href="城市规划中人性、人文和人本的关系.html">
+            
+                    
+                    城市规划中人性、人文和人本的关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="地理大数据探索.html">
+            
+                <a href="地理大数据探索.html">
+            
+                    
+                    地理大数据探索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="地理大数据可视化.md">
+            
+                <span>
+            
+                    
+                    地理大数据可视化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="地理信息安全技术与进展心得体会.html">
+            
+                <a href="地理信息安全技术与进展心得体会.html">
+            
+                    
+                    地理信息安全技术与进展心得体会
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="面向地理共享与集成的数据适配方法研究.html">
+            
+                <a href="面向地理共享与集成的数据适配方法研究.html">
+            
+                    
+                    面向地理共享与集成的数据适配方法研究
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="遥感技术解决地理问题.html">
+            
+                <a href="遥感技术解决地理问题.html">
+            
+                    
+                    遥感技术解决地理问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="最小二乘法.html">
+            
+                <a href="最小二乘法.html">
+            
+                    
+                    最小二乘法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    languages
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../languages/Go.html">
+            
+                <a href="../languages/Go.html">
+            
+                    
+                    Go
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../languages/Java.html">
+            
+                <a href="../languages/Java.html">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../languages/JavaScript.html">
+            
+                <a href="../languages/JavaScript.html">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../languages/Node.html">
+            
+                <a href="../languages/Node.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../languages/Python.html">
+            
+                <a href="../languages/Python.html">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../languages/TypeScript.html">
+            
+                <a href="../languages/TypeScript.html">
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    skills
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../skills/Docker.html">
+            
+                <a href="../skills/Docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../skills/Git.html">
+            
+                <a href="../skills/Git.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../skills/Linux.html">
+            
+                <a href="../skills/Linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../skills/画图.html">
+            
+                <a href="../skills/画图.html">
+            
+                    
+                    画图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    temp
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../temp/TestForS.html">
+            
+                <a href="../temp/TestForS.html">
+            
+                    
+                    TestForS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../temp/文件系统的设计原理.html">
+            
+                <a href="../temp/文件系统的设计原理.html">
+            
+                    
+                    文件系统的设计原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >GIS算法基础</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#clustering-by-fast-search-and-find-of-density-peaks">Clustering by fast search and find of density peaks</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x5C40;&#x90E8;&#x5BC6;&#x5EA6;">&#x5C40;&#x90E8;&#x5BC6;&#x5EA6;</a><i></i></div></li>
+</ul></li>
+</ul>
+</div>
+
+<h2 id="&#x805A;&#x7C7B;&#x7B97;&#x6CD5;"><a name="&#x805A;&#x7C7B;&#x7B97;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x805A;&#x7C7B;&#x7B97;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x805A;&#x7C7B;&#x7B97;&#x6CD5;</h2>
+<p><a href="https://zh.wikipedia.org/wiki/%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90" target="_blank">wiki</a></p>
+<p><img src="C:\Users\wutian\AppData\Roaming\Typora\typora-user-images\image-20210322165042975.png" alt="image-20210322165042975"></p>
+<p><img src="C:\Users\wutian\AppData\Roaming\Typora\typora-user-images\image-20210322165057385.png" alt="image-20210322165057385"></p>
+<p>&#x8DDD;&#x79BB; <img align="absmiddle" alt=":arrow_right:" class="emoji" src="../gitbook/gitbook-plugin-advanced-emoji/emojis/arrow_right.png" title=":arrow_right:"> &#x5143;&#x7D20;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x8D77;&#x6765;</p>
+<p><img src="C:\Users\wutian\AppData\Roaming\Typora\typora-user-images\image-20210322165426363.png" alt="image-20210322165426363"></p>
+<p><img src="C:\Users\wutian\AppData\Roaming\Typora\typora-user-images\image-20210322165617596.png" alt="image-20210322165617596"></p>
+<h3 id="clustering-by-fast-search-and-find-of-density-peaks"><a name="clustering-by-fast-search-and-find-of-density-peaks" class="anchor-navigation-ex-anchor" href="#clustering-by-fast-search-and-find-of-density-peaks"><i class="fa fa-link" aria-hidden="true"></i></a>Clustering by fast search and find of density peaks</h3>
+<h4 id="&#x5C40;&#x90E8;&#x5BC6;&#x5EA6;"><a name="&#x5C40;&#x90E8;&#x5BC6;&#x5EA6;" class="anchor-navigation-ex-anchor" href="#&#x5C40;&#x90E8;&#x5BC6;&#x5EA6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C40;&#x90E8;&#x5BC6;&#x5EA6;</h4>
+<ul>
+<li>&#x622A;&#x65AD;&#x8DDD;&#x79BB;</li>
+</ul>
+<p><img src="C:\Users\wutian\AppData\Roaming\Typora\typora-user-images\image-20210322165855246.png" alt="image-20210322165855246"></p>
+<p><img src="C:\Users\wutian\AppData\Roaming\Typora\typora-user-images\image-20210322165930323.png" alt="image-20210322165930323"></p>
+<p>&#x4E00;&#x4E2A;&#x4E3A;&#x79BB;&#x6563;&#x503C;&#xFF0C;&#x4E00;&#x4E2A;&#x4E3A;&#x8FDE;&#x7EED;&#x503C;</p>
+<p><img src="C:\Users\wutian\AppData\Roaming\Typora\typora-user-images\image-20210322170346080.png" alt="image-20210322170346080"></p>
+<p><img src="C:\Users\wutian\AppData\Roaming\Typora\typora-user-images\image-20210322170318891.png" alt="image-20210322170318891"></p>
+<p>&#x5982;&#x679C;&#x51B3;&#x7B56;&#x56FE;&#x4E0D;&#x597D;&#x7684;&#x60C5;&#x51B5;</p>
+<p><img src="C:\Users\wutian\AppData\Roaming\Typora\typora-user-images\image-20210322170638093.png" alt="image-20210322170638093"></p>
+<p>&#x8BE5;&#x7B97;&#x6CD5;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x5176;&#x5B83;&#x7B97;&#x6CD5;&#x7684;&#x9884;&#x5904;&#x7406;&#xFF08;&#x786E;&#x5B9A;&#x805A;&#x7C7B;&#x4E2D;&#x5FC3;&#x7684;&#x4E2A;&#x6570;&#x53CA;&#x521D;&#x59CB;&#x7684;&#x805A;&#x7C7B;&#x4E2D;&#x5FC3;&#xFF09;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="GIS标准.html" class="navigation navigation-prev " aria-label="Previous page: GIS标准">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Google Earth Engine.html" class="navigation navigation-next " aria-label="Next page: Google Earth Engine">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"GIS算法基础","level":"1.6.5","depth":2,"next":{"title":"Google Earth Engine","level":"1.6.6","depth":2,"path":"gis/Google Earth Engine.md","ref":"./gis/Google Earth Engine.md","articles":[]},"previous":{"title":"GIS标准","level":"1.6.4","depth":2,"path":"gis/GIS标准.md","ref":"./gis/GIS标准.md","articles":[]},"dir":"ltr"},"config":{"plugins":["pageview-count","page-treeview","expandable-chapters","advanced-emoji","-lunr","-search","search-plus","-sharing","splitter","ancre-navigation","hide-element","insert-logo","code"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"splitter":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"pageview-count":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: rgb(193, 230, 198); max-height: 120px; min-height: 120px","url":"http://221.226.60.2:8082/data/11e9208d-2063-4c34-ba06-58f689266b3b"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"wutian","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notebook|blog","language":"zh-hans","gitbook":"*","description":"很菜的一个博客，或则说是笔记本，为了自己方便弄的"},"file":{"path":"gis/GIS算法基础.md","mtime":"2021-03-30T12:46:15.712Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-06T03:06:54.959Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
