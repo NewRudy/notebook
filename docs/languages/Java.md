@@ -109,3 +109,14 @@ swagger 很出名的一个插件，用以快速进行接口调试，但是单纯
 
 - japi
 - ApiPost 工具
+
+
+
+## Java 版本
+
+- [JDK的版本号解惑](https://www.modb.pro/db/85249)
+
+- Java  与 jdk 的区别： 在用户眼中，Java 是 Java 应用，在程序员眼中，jdk 是Java 开发工具，所以 jdk 等价于 Java
+- jdk 8 与 jdk 1.8 的区别和联系：jdk 8 或者 jdk 1.8 是由于自从 jdk1.5/jdk5 命名方式改变后遗留的新旧命名方式问题，所以 jdk 8 或者 jdk 1.8 也是同一个东西
+
+![img](../image/modb_20210720_af060f1a-e8f0-11eb-a482-38f9d3cd240d.png)

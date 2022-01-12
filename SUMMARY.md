@@ -16,6 +16,15 @@
   - [深入理解计算机系统](./course/深入理解计算机系统.md)
   - [图说设计模式](./course/图说设计模式.md)
 * dataStructure
+  - simple
+    - [文件操作](./dataStructure/simple/文件操作.md)
+    - [栈和队列](./dataStructure/simple/栈和队列.md)
+    - [链表](./dataStructure/simple/链表.md)
+    - [字符串](./dataStructure/simple/字符串.md)
+    - [排序](./dataStructure/simple/排序.md)
+    - [树](./dataStructure/simple/树.md)
+    - [图](./dataStructure/simple/图.md)
+    - [递归](./dataStructure/simple/递归.md)
 * font
   - [React](./font/React.md)
   - [Vue](./font/Vue.md)
@@ -38,6 +47,8 @@
   - [地理大数据可视化](./gis/地理大数据可视化.md)
   - [地理信息安全技术与进展心得体会](./gis/地理信息安全技术与进展心得体会.md)
   - [面向地理共享与集成的数据适配方法研究](./gis/面向地理共享与集成的数据适配方法研究.md)
+  - [太阳辐射模型的回顾](./gis/太阳辐射模型的回顾.md)
+  - [太阳能模型筛选系统](./gis/太阳能模型筛选系统.md)
   - [遥感技术解决地理问题](./gis/遥感技术解决地理问题.md)
   - [最小二乘法](./gis/最小二乘法.md)
 * languages

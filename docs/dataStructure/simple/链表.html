@@ -1,0 +1,1764 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>链表 · notebook|blog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wutian">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="字符串.html" />
+    
+    
+    <link rel="prev" href="栈和队列.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    bigData
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../bigData/BigData-Notes.html">
+            
+                <a href="../../bigData/BigData-Notes.html">
+            
+                    
+                    BigData-Notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../bigData/Flink.html">
+            
+                <a href="../../bigData/Flink.html">
+            
+                    
+                    Flink.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../bigData/Google 三大核心技术及其衍生.html">
+            
+                <a href="../../bigData/Google 三大核心技术及其衍生.html">
+            
+                    
+                    Google 三大核心技术及其衍生.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../bigData/Hadoop.html">
+            
+                <a href="../../bigData/Hadoop.html">
+            
+                    
+                    Hadoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../bigData/MinIO.html">
+            
+                <a href="../../bigData/MinIO.html">
+            
+                    
+                    MinIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../bigData/MongoDB.html">
+            
+                <a href="../../bigData/MongoDB.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../bigData/Nginx.html">
+            
+                <a href="../../bigData/Nginx.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../bigData/Spark.html">
+            
+                <a href="../../bigData/Spark.html">
+            
+                    
+                    Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../../bigData/大数据.html">
+            
+                <a href="../../bigData/大数据.html">
+            
+                    
+                    大数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    course
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../course/Hands-On Data Visualization.html">
+            
+                <a href="../../course/Hands-On Data Visualization.html">
+            
+                    
+                    Hands-On Data Visualization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../course/深入理解计算机系统.html">
+            
+                <a href="../../course/深入理解计算机系统.html">
+            
+                    
+                    深入理解计算机系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../course/图说设计模式.html">
+            
+                <a href="../../course/图说设计模式.html">
+            
+                    
+                    图说设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    dataStructure
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" >
+            
+                <span>
+            
+                    
+                    simple
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="文件操作.html">
+            
+                <a href="文件操作.html">
+            
+                    
+                    文件操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="栈和队列.html">
+            
+                <a href="栈和队列.html">
+            
+                    
+                    栈和队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.1.3" data-path="链表.html">
+            
+                <a href="链表.html">
+            
+                    
+                    链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.4" data-path="字符串.html">
+            
+                <a href="字符串.html">
+            
+                    
+                    字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.5" data-path="排序.html">
+            
+                <a href="排序.html">
+            
+                    
+                    排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.6" data-path="树.html">
+            
+                <a href="树.html">
+            
+                    
+                    树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.7" data-path="图.html">
+            
+                <a href="图.html">
+            
+                    
+                    图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.8" data-path="递归.html">
+            
+                <a href="递归.html">
+            
+                    
+                    递归
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    font
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../font/React.html">
+            
+                <a href="../../font/React.html">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../font/Vue.html">
+            
+                <a href="../../font/Vue.html">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../font/WebSocket.html">
+            
+                <a href="../../font/WebSocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../font/被删的前端游乐园.html">
+            
+                <a href="../../font/被删的前端游乐园.html">
+            
+                    
+                    被删的前端游乐园
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../font/浏览器.html">
+            
+                <a href="../../font/浏览器.html">
+            
+                    
+                    浏览器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../font/图解HTTP.html">
+            
+                <a href="../../font/图解HTTP.html">
+            
+                    
+                    图解HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    gis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../gis/GDAL.html">
+            
+                <a href="../../gis/GDAL.html">
+            
+                    
+                    GDAL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../gis/Geomorphology-Based Hydrological Model.html">
+            
+                <a href="../../gis/Geomorphology-Based Hydrological Model.html">
+            
+                    
+                    Geomorphology-Based Hydrological Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../gis/GeoserverModel.md">
+            
+                <span>
+            
+                    
+                    Geoserver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../gis/GIS标准.html">
+            
+                <a href="../../gis/GIS标准.html">
+            
+                    
+                    GIS标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../gis/GIS算法基础.html">
+            
+                <a href="../../gis/GIS算法基础.html">
+            
+                    
+                    GIS算法基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../gis/Google Earth Engine.html">
+            
+                <a href="../../gis/Google Earth Engine.html">
+            
+                    
+                    Google Earth Engine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../../gis/Landsat影像格式.html">
+            
+                <a href="../../gis/Landsat影像格式.html">
+            
+                    
+                    Landsat影像格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../../gis/NetCDF.html">
+            
+                <a href="../../gis/NetCDF.html">
+            
+                    
+                    NetCDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../../gis/OSMnx.html">
+            
+                <a href="../../gis/OSMnx.html">
+            
+                    
+                    OSMnx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../../gis/城市规划中人性、人文和人本的关系.html">
+            
+                <a href="../../gis/城市规划中人性、人文和人本的关系.html">
+            
+                    
+                    城市规划中人性、人文和人本的关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../../gis/地理大数据探索.html">
+            
+                <a href="../../gis/地理大数据探索.html">
+            
+                    
+                    地理大数据探索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../../gis/地理大数据可视化.md">
+            
+                <span>
+            
+                    
+                    地理大数据可视化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../../gis/地理信息安全技术与进展心得体会.html">
+            
+                <a href="../../gis/地理信息安全技术与进展心得体会.html">
+            
+                    
+                    地理信息安全技术与进展心得体会
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../../gis/面向地理共享与集成的数据适配方法研究.html">
+            
+                <a href="../../gis/面向地理共享与集成的数据适配方法研究.html">
+            
+                    
+                    面向地理共享与集成的数据适配方法研究
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="../../gis/太阳辐射模型的回顾.html">
+            
+                <a href="../../gis/太阳辐射模型的回顾.html">
+            
+                    
+                    太阳辐射模型的回顾
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="../../gis/太阳能模型筛选系统.html">
+            
+                <a href="../../gis/太阳能模型筛选系统.html">
+            
+                    
+                    太阳能模型筛选系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.17" data-path="../../gis/遥感技术解决地理问题.html">
+            
+                <a href="../../gis/遥感技术解决地理问题.html">
+            
+                    
+                    遥感技术解决地理问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.18" data-path="../../gis/最小二乘法.html">
+            
+                <a href="../../gis/最小二乘法.html">
+            
+                    
+                    最小二乘法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    languages
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../languages/Go.html">
+            
+                <a href="../../languages/Go.html">
+            
+                    
+                    Go
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../languages/Java.html">
+            
+                <a href="../../languages/Java.html">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../languages/JavaScript.html">
+            
+                <a href="../../languages/JavaScript.html">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../../languages/Node.html">
+            
+                <a href="../../languages/Node.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../../languages/Python.html">
+            
+                <a href="../../languages/Python.html">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../../languages/TypeScript.html">
+            
+                <a href="../../languages/TypeScript.html">
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    skills
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../skills/Docker.html">
+            
+                <a href="../../skills/Docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../skills/Git.html">
+            
+                <a href="../../skills/Git.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../skills/Linux.html">
+            
+                <a href="../../skills/Linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../../skills/画图.html">
+            
+                <a href="../../skills/画图.html">
+            
+                    
+                    画图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    temp
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../temp/TestForS.html">
+            
+                <a href="../../temp/TestForS.html">
+            
+                    
+                    TestForS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../temp/文件系统的设计原理.html">
+            
+                <a href="../../temp/文件系统的设计原理.html">
+            
+                    
+                    文件系统的设计原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >链表</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x94FE;&#x8868;">&#x94FE;&#x8868;</h1>
+<p>[toc]</p>
+<p>&#x7EBF;&#x6027;&#x8868;&#xFF1A; &#x6570;&#x7EC4;&#xFF0C; &#x94FE;&#x8868;&#xFF08;&#x6307;&#x9488;&#xFF09;  &#x6570;&#x636E;&#x7ED3;&#x6784;</p>
+<h2 id="&#x57FA;&#x672C;&#x6982;&#x5FF5;">&#x57FA;&#x672C;&#x6982;&#x5FF5;</h2>
+<p>&#x94FE;&#x8868;&#x548C;&#x6570;&#x7EC4;&#x90FD;&#x53EF;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x6570;&#x636E;&#xFF0C;&#x5176;&#x4E2D;&#x94FE;&#x8868;&#x901A;&#x8FC7;&#x6307;&#x9488;&#x6765;&#x8FDE;&#x63A5;&#x5143;&#x7D20;&#xFF0C;&#x800C;&#x6570;&#x7EC4;&#x5219;&#x662F;&#x628A;&#x6240;&#x6709;&#x5143;&#x7D20;&#x6309;&#x6B21;&#x5E8F;&#x4F9D;&#x6B21;&#x5B58;&#x50A8;&#x3002;</p>
+<p>&#x4E0D;&#x540C;&#x7684;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#x4EE4;&#x4ED6;&#x4EEC;&#x6709;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x4F18;&#x52BF;&#xFF1A;</p>
+<p>&#x94FE;&#x8868;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x5730;&#x5220;&#x9664;&#x3001;&#x63D2;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x64CD;&#x4F5C;&#x6B21;&#x6570;&#x662F; O(1) &#x3002;&#x4F46;&#x4E5F;&#x56E0;&#x4E3A;&#x8FD9;&#x6837;&#x5BFB;&#x627E;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7684;&#x6548;&#x7387;&#x4E0D;&#x5982;&#x6570;&#x7EC4;&#x9AD8;&#xFF0C;&#x5728;&#x968F;&#x673A;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x4E2D;&#x7684;&#x64CD;&#x4F5C;&#x6B21;&#x6570;&#x662F; O(n) &#x3002;</p>
+<p>&#x6570;&#x7EC4;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x7684;&#x5BFB;&#x627E;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x968F;&#x673A;&#x8BBF;&#x95EE;&#x4E2D;&#x64CD;&#x4F5C;&#x6B21;&#x6570;&#x662F;  O(1) &#x3002;&#x4F46;&#x5220;&#x9664;&#x3001;&#x63D2;&#x5165;&#x7684;&#x64CD;&#x4F5C;&#x6B21;&#x6570;&#x5374;&#x662F;&#x5374;&#x662F; O(n) &#x6B21;</p>
+<p>&#x987A;&#x5E8F;&#x8868;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> a[<span class="hljs-number">10</span>];    <span class="hljs-comment">// a   a[1] = 2;   *(a + 1) = 2; * &amp;</span>
+<span class="hljs-comment">//</span>
+</code></pre>
+<h3 id="&#x6307;&#x9488;">&#x6307;&#x9488;</h3>
+<p>&#x4EC0;&#x4E48;&#x662F;&#x6307;&#x9488;&#xFF0C;&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x90FD;&#x8BF4;   &#x201C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x5730;&#x5740;&#x201D;&#xFF0C;&#x201C;&#x5B58;&#x50A8;&#x7684;&#x662F;&#x53D8;&#x91CF;&#x7684;&#x5730;&#x5740;&#x201D;&#xFF0C;&#x201C;&#x6307;&#x5411;&#x4E86;&#x4E00;&#x4E2A;&#x503C;&#x201D;</p>
+<p>&#x6307;&#x9488;&#x662F;&#x4EC0;&#x4E48;&#xFF1A;</p>
+<ol>
+<li><p>&#x6307;&#x9488;&#x662F;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;&#x53D8;&#x91CF;&#xFF1B;</p>
+</li>
+<li><p>&#x65E2;&#x7136;&#x6307;&#x9488;&#x662F;&#x53D8;&#x91CF;&#xFF0C;&#x90A3;&#x4E48;&#x80AF;&#x5B9A;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x7C7B;&#x578B;&#xFF1B;</p>
+</li>
+<li><p>&#x65E2;&#x7136;&#x6307;&#x9488;&#x662F;&#x53D8;&#x91CF;&#xFF0C;&#x90A3;&#x4E48;&#x80AF;&#x5B9A;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x503C;&#xFF1B;</p>
+</li>
+<li><p>&#x53EA;&#x4E0D;&#x8FC7;&#x6307;&#x9488;&#x7684;&#x503C;&#x8DDF;&#x4E00;&#x822C;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x4E0D;&#x592A;&#x4E00;&#x6837;&#xFF0C;&#x6307;&#x9488;&#x7684;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x201C;&#x5730;&#x5740;&#x201D;&#x3002;</p>
+</li>
+<li><p>&#x6307;&#x9488;&#x6307;&#x5411;&#x7684;&#x6570;&#x636E;</p>
+</li>
+</ol>
+<p>&#x603B;&#x7ED3;&#x5C31;&#x662F;&#xFF1A;&#x6307;&#x9488;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x7C7B;&#x578B;&#x548C;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x7279;&#x6B8A;&#x7684;&#x5730;&#x65B9;&#x5728;&#x4E8E;&#x5B83;&#x7684;&#x503C;&#x548C;&#x5176;&#x5B83;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x5B83;&#x7684;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x957F;&#x7684;16&#x8FDB;&#x5236;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x5373;&#x5730;&#x5740;&#x3002;</p>
+<p>&#x56E0;&#x4E3A;&#x6307;&#x9488;&#x53EF;&#x4EE5;&#x4FDD;&#x5B58;&#x5730;&#x5740;&#xFF0C;&#x8BA1;&#x7B97;&#x673A;&#x5C31;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x6307;&#x9488;&#x4FDD;&#x5B58;&#x4EFB;&#x610F;&#x5927;&#x5C0F;&#x7684;&#x7A7A;&#x95F4;&#x7684;&#x9996;&#x5730;&#x5740;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x6539;&#x53D8;&#x6307;&#x9488;&#x91CC;&#x9762;&#x7684;&#x5730;&#x5740;&#x7684;&#x503C;         *&#x53EF;&#x4EE5;&#x53D6;&#x6307;&#x9488;&#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9;        &amp;&#x53EF;&#x4EE5;&#x53D6;&#x53D8;&#x91CF;&#x91CC;&#x9762;&#x7684;&#x5730;&#x5740;</p>
+<h2 id="&#x6784;&#x5EFA;&#x94FE;&#x8868;">&#x6784;&#x5EFA;&#x94FE;&#x8868;</h2>
+<p>&#x4E00;&#x4E2A;&#x53C8;&#x4E00;&#x4E2A;&#x7684;&#x7ED3;&#x70B9;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> Node{
+    <span class="hljs-keyword">int</span> data;        <span class="hljs-comment">// double float  &#x4F46;&#x662F;&#x5B83;&#x53EF;&#x4EE5;&#x4E0D;&#x662F;&#x57FA;&#x672C;&#x53D8;&#x91CF;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x662F;&#x4E2A;&#x5F88;&#x590D;&#x6742;&#x7684;&#x4E1C;&#x897F;</span>
+    <span class="hljs-keyword">struct</span> Node* next;    <span class="hljs-comment">// &#x8FD9;&#x4E00;&#x884C;&#x4E00;&#x822C;&#x4E0D;&#x4F1A;&#x53D8;</span>
+}Node;
+
+Node* N1 = (Node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Node));    <span class="hljs-comment">// &#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x4EEC;&#x8FD9;&#x4E48;&#x521B;&#x5EFA;</span>
+Node N2;
+<span class="hljs-comment">// -&gt; .</span>
+<span class="hljs-comment">// N1 &#x662F;&#x4E2A; Node &#x7684;&#x6307;&#x9488;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5411;&#x4EFB;&#x610F;&#x7684;&#x7ED3;&#x70B9; &#x53EF;&#x4EE5;&#x6362;</span>
+</code></pre>
+<p>&#x6784;&#x5EFA;&#x94FE;&#x8868;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x6784;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;</p>
+<p>&#x4E00;&#x822C;&#x6211;&#x4EEC;&#x63CF;&#x8FF0;&#x7684;&#x94FE;&#x8868;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</p>
+<ol>
+<li>&#x4E00;&#x4E2A;node&#x578B;&#x7684;&#x6307;&#x9488;            // &#x5934;&#x6307;&#x9488;</li>
+<li>&#x5E26;&#x7A7A;&#x95F4;&#x7684;node&#x578B;&#x7684;&#x6307;&#x9488;       // &#x5E26;&#x5934;&#x8282;&#x70B9;&#x7684;&#x7684;&#x5934;&#x6307;&#x9488;</li>
+</ol>
+<p>&#x5173;&#x4E8E;&#x94FE;&#x8868;&#x7684;&#x6784;&#x5EFA;&#x4F7F;&#x7528;&#x5230;&#x6307;&#x9488;&#x7684;&#x90E8;&#x5206;&#x6BD4;&#x8F83;&#x62BD;&#x8C61;&#xFF0C;&#x5149;&#x9760;&#x6587;&#x5B57;&#x63CF;&#x8FF0;&#x548C;&#x4EE3;&#x7801;&#x53EF;&#x80FD;&#x96BE;&#x4EE5;&#x7406;&#x89E3;&#xFF0C;&#x5EFA;&#x8BAE;&#x914D;&#x5408;&#x4F5C;&#x56FE;&#x6765;&#x7406;&#x89E3;&#x3002;</p>
+<p>&#x600E;&#x4E48;&#x6784;&#x5EFA;&#x94FE;&#x8868;&#xFF1A;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x7684;&#x5C06;&#x7ED3;&#x70B9;&#x63D2;&#x5165;&#x94FE;&#x8868;&#x4E2D;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#x63D2;&#x5165;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;&#x5934;&#x63D2;&#x6CD5;&#x548C;&#x5C3E;&#x63D2;&#x6CD5;&#xFF0C;&#x4E00;&#x822C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x5C3E;&#x63D2;&#x6CD5;</p>
+<ol>
+<li>&#x5934;&#x8282;&#x70B9;&#xFF0C;&#x5934;&#x6307;&#x9488;</li>
+<li><p>&#x5934;&#x63D2;&#x6CD5;&#xFF0C;&#x5C3E;&#x63D2;&#x6CD5;</p>
+</li>
+<li><p>&#x5934;&#x63D2;&#x6CD5;       //  &#x63D2;&#x5165;&#x7684;&#x65F6;&#x5019;&#x7ED3;&#x70B9;&#x63D2;&#x5165;&#x5934;&#x8282;&#x70B9;&#x548C;&#x7B2C;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#xFF0C;&#x5934;&#x6307;&#x9488;&#x6307;&#x5411;&#x5B83;&#xFF0C;&#x5B83;&#x518D;&#x6307;&#x5411;&#x7B2C;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;</p>
+</li>
+<li>&#x5C3E;&#x63D2;&#x6CD5;&#x5462;    //node* tail;         tail-&gt;next = temp;  tail = temp;</li>
+</ol>
+<h3 id="&#x5355;&#x5411;&#x94FE;&#x8868;">&#x5355;&#x5411;&#x94FE;&#x8868;</h3>
+<p>&#x5355;&#x5411;&#x94FE;&#x8868;&#x4E2D;&#x5305;&#x542B;&#x6570;&#x636E;&#x57DF;&#x548C;&#x6307;&#x9488;&#x57DF;&#xFF0C;&#x5176;&#x4E2D;&#x6570;&#x636E;&#x57DF;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x6570;&#x636E;&#xFF0C;&#x6307;&#x9488;&#x57DF;&#x7528;&#x6765;&#x8FDE;&#x63A5;&#x5F53;&#x524D;&#x7ED3;&#x70B9;&#x548C;&#x4E0B;&#x4E00;&#x8282;&#x70B9;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> Node {        <span class="hljs-comment">//&#x7ED3;&#x70B9;&#x5B58;&#x50A8;&#x7ED3;&#x6784;</span>
+  <span class="hljs-keyword">int</span> value;        <span class="hljs-comment">//&#x6570;&#x636E;&#x57DF;</span>
+  <span class="hljs-keyword">struct</span> Node *next;        <span class="hljs-comment">//&#x6307;&#x9488;&#x57DF;</span>
+}Node;
+</code></pre>
+<h3 id="&#x53CC;&#x5411;&#x94FE;&#x8868;">&#x53CC;&#x5411;&#x94FE;&#x8868;</h3>
+<p>&#x53CC;&#x5411;&#x94FE;&#x8868;&#x4E2D;&#x540C;&#x6837;&#x6709;&#x6570;&#x636E;&#x57DF;&#x548C;&#x6307;&#x9488;&#x57DF;&#xFF0C;&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x6307;&#x9488;&#x57DF;&#x6709;&#x5DE6;&#x53F3;&#xFF08;&#x6216;&#x4E0A;&#x4E00;&#x4E2A;&#x3001;&#x4E0B;&#x4E00;&#x4E2A;&#xFF09;&#x4E4B;&#x5206;&#xFF0C;&#x7528;&#x6765;&#x8FDE;&#x63A5;&#x4E0A;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x3001;&#x5F53;&#x524D;&#x7ED3;&#x70B9;&#x3001;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> Node {
+  <span class="hljs-keyword">int</span> value;
+  Node *left,*right;        <span class="hljs-comment">// int a,* b, c;</span>
+}Node;
+</code></pre>
+<h2 id="&#x5411;&#x94FE;&#x8868;&#x4E2D;&#x63D2;&#x5165;&#xFF08;&#x5199;&#x5165;&#xFF09;&#x6570;&#x636E;">&#x5411;&#x94FE;&#x8868;&#x4E2D;&#x63D2;&#x5165;&#xFF08;&#x5199;&#x5165;&#xFF09;&#x6570;&#x636E;</h2>
+<p>&#x5355;&#x5411;&#x94FE;&#x8868;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, Node *p)</span> </span>{
+  Node* node = (Node *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Node));        <span class="hljs-comment">//new&#x548C;malloc</span>
+    <span class="hljs-comment">// malloc</span>
+    <span class="hljs-comment">// int b;   int* a; a = &amp;b; *a = 1; &lt;=&gt; b = 1</span>
+    <span class="hljs-comment">// int* a = (int*)malloc(sizeof(int)*10)</span>
+    <span class="hljs-comment">// .  -&gt;  // .    -&gt;</span>
+    <span class="hljs-comment">// Node node   node.value</span>
+    <span class="hljs-comment">// </span>
+  node-&gt;value = i;
+  node-&gt;next = p-&gt;next;        <span class="hljs-comment">//&#x5934;&#x63D2;&#x6CD5;</span>
+  p-&gt;next = node;
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4ECB;&#x7ECD;&#x4E86;&#x7B80;&#x5355;&#x7684;&#x5355;&#x5411;&#x94FE;&#x8868;&#x7684;&#x63D2;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x6709;&#x65F6;&#x6211;&#x4EEC;&#x4F1A;&#x5C06;&#x94FE;&#x8868;&#x7684;&#x5934;&#x5C3E;&#x8FDE;&#x63A5;&#x8D77;&#x6765;&#x5C06;&#x94FE;&#x8868;&#x53D8;&#x4E3A;&#x5FAA;&#x73AF;&#x94FE;&#x8868;&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, Node *p)</span> </span>{
+  Node *node = (Node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Node));        <span class="hljs-comment">//&#x52A8;&#x6001;&#x5206;&#x914D;&#x7A7A;&#x95F4;</span>
+  node-&gt;value = i;
+  node-&gt;next = <span class="hljs-literal">NULL</span>;
+  <span class="hljs-keyword">if</span> (p == <span class="hljs-literal">NULL</span>) {        <span class="hljs-comment">//  &#x5FAA;&#x73AF;&#x94FE;&#x8868;&#x7684;&#x7279;&#x6B8A;&#x70B9;</span>
+    p = node;
+    node-&gt;next = node;
+  } <span class="hljs-keyword">else</span> {
+    node-&gt;next = p-&gt;next;        <span class="hljs-comment">//&#x5934;&#x63D2;&#x6CD5;</span>
+    p-&gt;next = node;
+  }
+}
+</code></pre>
+<p>&#x7531;&#x4E8E;&#x662F;&#x5FAA;&#x73AF;&#x7684;&#x94FE;&#x8868;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x63D2;&#x5165;&#x6570;&#x636E;&#x65F6;&#x9700;&#x8981;&#x5224;&#x65AD;&#x539F;&#x94FE;&#x8868;&#x662F;&#x5426;&#x4E3A;&#x7A7A;&#xFF0C;&#x4E3A;&#x7A7A;&#x5219;&#x81EA;&#x8EAB;&#x5FAA;&#x73AF;&#xFF0C;&#x4E0D;&#x4E3A;&#x7A7A;&#x5219;&#x6B63;&#x5E38;&#x63D2;&#x5165;&#x6570;&#x636E;&#x5FAA;&#x73AF;&#x3002;&#x5177;&#x4F53;&#x8FC7;&#x7A0B;&#x53EF;&#x53C2;&#x8003;&#x4E0B;&#x9762;&#x8FD9;&#x5F20;&#x56FE;&#x3002;</p>
+<p><img src="https://oi-wiki.org/ds/images/linked-list2.png" alt="img"></p>
+<p>&#x53CC;&#x5411;&#x5FAA;&#x73AF;&#x94FE;&#x8868;&#x7684;&#x63D2;&#x5165;&#x5199;&#x6CD5;&#xFF1A;0  =  0  = 0       1=</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, Node *p)</span> </span>{
+  Node *node = (Node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Node));
+  node-&gt;value = i;
+  node-&gt;next = <span class="hljs-literal">NULL</span>;        <span class="hljs-comment">//. &#x548C; -&gt;</span>
+  <span class="hljs-keyword">if</span> (p == <span class="hljs-literal">NULL</span>) {        <span class="hljs-comment">//&#x6CA1;&#x6709;&#x7ED3;&#x70B9;&#x7684;&#x60C5;&#x51B5;</span>
+    p = node;
+    node-&gt;left = node;
+    node-&gt;right = node;
+  } <span class="hljs-keyword">else</span> {        <span class="hljs-comment">//&#x94FE;&#x8868;&#x6709;&#x7ED3;&#x70B9;&#x7684;&#x60C5;&#x51B5;</span>
+    node-&gt;left = p;
+    node-&gt;right = p-&gt;right;
+    p-&gt;right-&gt;left = node;
+    p-&gt;right = node;
+  }
+}
+</code></pre>
+<h2 id="&#x4ECE;&#x94FE;&#x8868;&#x4E2D;&#x5220;&#x9664;&#x6570;&#x636E;">&#x4ECE;&#x94FE;&#x8868;&#x4E2D;&#x5220;&#x9664;&#x6570;&#x636E;</h2>
+<h3 id="&#x5355;&#x5411;&#xFF08;&#x5FAA;&#x73AF;&#xFF09;&#x94FE;&#x8868;">&#x5355;&#x5411;&#xFF08;&#x5FAA;&#x73AF;&#xFF09;&#x94FE;&#x8868;</h3>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">deleteNode</span><span class="hljs-params">(Node *p)</span> </span>{
+  p-&gt;value = p-&gt;next-&gt;value;
+  Node *t = p-&gt;next;
+  p-&gt;next = p-&gt;next-&gt;next;
+  t-&gt;next = <span class="hljs-number">0</span>;
+  <span class="hljs-built_in">free</span>(t);
+}
+</code></pre>
+<p>&#x4ECE;&#x94FE;&#x8868;&#x4E2D;&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x7ED3;&#x70B9;&#x65F6;&#xFF0C;&#x5C06; p &#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9; (p-&gt;next) &#x7684;&#x503C;&#x8986;&#x76D6;&#x7ED9; p &#x5373;&#x53EF;&#xFF0C;&#x4E0E;&#x6B64;&#x540C;&#x65F6;&#x66F4;&#x65B0; p &#x7684;&#x4E0B;&#x4E0B;&#x4E2A;&#x7ED3;&#x70B9;&#x3002;</p>
+<h3 id="&#x53CC;&#x5411;&#x94FE;&#x8868;&#xB6;">&#x53CC;&#x5411;&#x94FE;&#x8868;<a href="https://oi-wiki.org/ds/linked-list/#_11" target="_blank">&#xB6;</a></h3>
+<pre><code class="lang-c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">deleteNode</span><span class="hljs-params">(Node* p)</span> </span>{        <span class="hljs-comment">//&#x5220;&#x9664;p&#x7ED3;&#x70B9;</span>
+  p-&gt;left-&gt;right = p-&gt;right;
+  p-&gt;right-&gt;left = p-&gt;left;
+  p-&gt;left = <span class="hljs-number">0</span>; <span class="hljs-comment">// &#x8003;&#x8BD5;&#x7684;&#x65F6;&#x5019; 0 &#x6362;&#x6210; null</span>
+  p-&gt;right = <span class="hljs-number">0</span>;
+  <span class="hljs-built_in">free</span>(p);
+}
+</code></pre>
+<h3 id="&#x904D;&#x5386;&#x94FE;&#x8868;--------&#x6539;">&#x904D;&#x5386;&#x94FE;&#x8868;      / / &#x6539;</h3>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">output</span><span class="hljs-params">(node* p)</span></span>{        <span class="hljs-comment">//&#x904D;&#x5386;&#x94FE;&#x8868;(&#x6709;&#x5934;&#x8282;&#x70B9;)</span>
+    <span class="hljs-keyword">if</span>(!p)
+        <span class="hljs-keyword">return</span>;
+    p = p-&gt;next;
+    <span class="hljs-keyword">while</span>(p){
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\t&quot;</span>,p-&gt;value);  <span class="hljs-comment">// &#x53EF;&#x4EE5;&#x6362;&#x6210;&#x5F88;&#x591A;&#x64CD;&#x4F5C;</span>
+        p = p-&gt;next;
+    }
+}  <span class="hljs-comment">// &#x51FD;&#x6570;&#x7684;&#x5199;&#x6CD5;</span>
+</code></pre>
+<h3 id="&#x7FFB;&#x8F6C;&#x94FE;&#x8868;">&#x7FFB;&#x8F6C;&#x94FE;&#x8868;</h3>
+<p>p 1 -&gt; 2-&gt; 3 -&gt; 4 -&gt; 5</p>
+<p>p -&gt; 2 -&gt; 3 -&gt; 4 -&gt;5         temp -&gt; 1 </p>
+<p>p -&gt; 1 -&gt;2 -&gt;3 -&gt; 4 -&gt;5    temp -&gt;2</p>
+<p>p   2  -&gt; 1 -&gt; 3 -&gt; 4 -&gt; 5</p>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span>{
+    <span class="hljs-keyword">int</span> data;
+    <span class="hljs-keyword">struct</span> node* next;
+}node;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">reverse</span><span class="hljs-params">(node* a)</span> </span>{
+    <span class="hljs-comment">// . -&gt;       node a    .   a.next</span>
+    <span class="hljs-comment">// node* a  a-&gt;next   int b   int* b</span>
+    <span class="hljs-comment">// node* a;       int* b;    // &#x6211;&#x4EEC;&#x521D;&#x59CB;&#x5316;&#x4E24;&#x4E2A;&#x503C;  a null  b 0</span>
+    <span class="hljs-comment">// node* a = (node*)malloc(sizeof(node));  123456   123455</span>
+    <span class="hljs-comment">// a-&gt;data = 1;</span>
+    <span class="hljs-comment">// node a;        int* b;</span>
+    <span class="hljs-comment">// a.data = 1;</span>
+    <span class="hljs-comment">// 1. . -&gt;</span>
+    <span class="hljs-comment">// 2. &#x6307;&#x9488;&#x80FD;&#x6539;&#x53D8;&#x5730;&#x5740;</span>
+    <span class="hljs-keyword">if</span>(!a || a-&gt;next == null){
+        <span class="hljs-keyword">return</span>;
+    }
+    node* p = a-&gt;next;
+    <span class="hljs-keyword">while</span>(p) {
+        node* temp = p-&gt;next;
+        node* first = a-&gt;next;
+        <span class="hljs-keyword">if</span>(p != first) {    <span class="hljs-comment">// &#x9632;&#x6B62; 1 &#x6307;&#x5411;&#x81EA;&#x5DF1;&#x4E86;</span>
+            p-&gt;next = first;
+            a-&gt;next = p;
+        }
+        p = temp;
+    }
+}
+</code></pre>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">reverse</span><span class="hljs-params">(node* p)</span></span>{      <span class="hljs-comment">//&#x7FFB;&#x8F6C;&#x94FE;&#x8868;&#xFF0C;&#x5934;&#x63D2;&#x6CD5;  &#x6CA1;&#x6709;&#x6D88;&#x8017;&#x5176;&#x4ED6;&#x7684;&#x7A7A;&#x95F4;</span>
+    <span class="hljs-keyword">if</span>(!p||!p-&gt;next)        <span class="hljs-comment">//&#x94FE;&#x8868;&#x4E0D;&#x5B58;&#x5728;&#x6216;&#x8005;&#x6CA1;&#x6709;&#x7ED3;&#x70B9;&#x7684;&#x60C5;&#x51B5;</span>
+        <span class="hljs-keyword">return</span>;
+    node* first = p-&gt;next,*temp = p-&gt;next-&gt;next;
+    <span class="hljs-keyword">while</span>(temp){       <span class="hljs-comment">//&#x904D;&#x5386;&#x94FE;&#x8868;</span>
+        first-&gt;next = temp-&gt;next;       <span class="hljs-comment">//&#x5C06;temp&#x63D0;&#x51FA;&#x6765;</span>
+        temp-&gt;next = p-&gt;next;      <span class="hljs-comment">//&#x5934;&#x63D2;&#x6CD5;</span>
+        p-&gt;next = temp;
+        temp = first-&gt;next;
+    }
+}
+</code></pre>
+<h2 id="&#x4EFB;&#x52A1;">&#x4EFB;&#x52A1;</h2>
+<ul>
+<li>&#x5C1D;&#x8BD5;&#x5199;&#x4E00;&#x4E0B;&#x5FAA;&#x73AF;&#x94FE;&#x8868;&#x7684;&#x6784;&#x5EFA;&#x3001;&#x63D2;&#x5165;&#x3001;&#x5220;&#x9664;&#x548C;&#x641C;&#x7D22;&#x7684;&#x4EE3;&#x7801;</li>
+</ul>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> LNode{        <span class="hljs-comment">//&#x7ED3;&#x70B9;&#x5B58;&#x50A8;&#x7ED3;&#x6784;</span>
+    <span class="hljs-keyword">int</span> data;
+    <span class="hljs-keyword">struct</span> LNode* next;
+}LNode;
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">insertLNode</span><span class="hljs-params">(LNode*p,<span class="hljs-keyword">int</span> i)</span></span>{    <span class="hljs-comment">//&#x5934;&#x63D2;&#x6CD5;&#x63D2;&#x5165;i&#x8FDB;&#x94FE;&#x8868;</span>
+     <span class="hljs-keyword">if</span>(!p)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    LNode* temp = (LNode*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(LNode));
+    temp-&gt;data = i;
+    temp-&gt;next = p-&gt;next;        <span class="hljs-comment">//&#x5934;&#x63D2;&#x6CD5;</span>
+    p-&gt;next = temp;
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">deteleLNode</span><span class="hljs-params">(LNode* p)</span></span>{        <span class="hljs-comment">//&#x5220;&#x9664;p&#x540E;&#x4E00;&#x7ED3;&#x70B9;</span>
+    <span class="hljs-keyword">if</span>(!p||p-&gt;next==p)        <span class="hljs-comment">//p&#x4E0D;&#x5B58;&#x5728;&#x6216;&#x8005;&#x6CA1;&#x6709;&#x7ED3;&#x70B9;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    LNode* temp = p-&gt;next;
+    p-&gt;next = temp-&gt;next;
+    temp-&gt;next = <span class="hljs-literal">NULL</span>;
+    <span class="hljs-built_in">free</span>(temp);        <span class="hljs-comment">//&#x91CA;&#x653E;temp&#x7ED3;&#x70B9;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">search</span><span class="hljs-params">(LNode* p,<span class="hljs-keyword">int</span> i)</span></span>{        <span class="hljs-comment">//&#x641C;&#x7D22;&#x94FE;&#x8868;p&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;&#x503C;&#x4E3A;i&#x7684;&#x7ED3;&#x70B9;</span>
+    <span class="hljs-keyword">if</span>(!p||p-&gt;next==p)        <span class="hljs-comment">//p&#x4E0D;&#x5B58;&#x5728;&#x6216;&#x8005;&#x6CA1;&#x6709;&#x7ED3;&#x70B9;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    LNode* temp = p-&gt;next;        <span class="hljs-comment">//temp&#x73B0;&#x5728;&#x6307;&#x5411;&#x7B2C;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;</span>
+    <span class="hljs-keyword">while</span>(temp-&gt;next!=p){        <span class="hljs-comment">//&#x904D;&#x5386;&#x94FE;&#x8868;</span>
+        <span class="hljs-keyword">if</span>(temp-&gt;data==i)
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        temp = temp-&gt;next;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+</code></pre>
+<ul>
+<li>&#x5C1D;&#x8BD5;&#x5199;&#x4E00;&#x4E0B;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x7684;&#x6784;&#x5EFA;&#x3001;&#x63D2;&#x5165;&#x3001;&#x5220;&#x9664;&#x548C;&#x641C;&#x7D22;&#x7684;&#x4EE3;&#x7801;</li>
+</ul>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> DNode{        <span class="hljs-comment">//&#x53CC;&#x94FE;&#x8868;&#x7ED3;&#x6784;</span>
+    <span class="hljs-keyword">int</span> data;
+    <span class="hljs-keyword">struct</span> DNode* prior,* next;
+}DNode;
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">insertDNode</span><span class="hljs-params">(DNode* p,DNode* s)</span></span>{    <span class="hljs-comment">//&#x5C06;s&#x63D2;&#x5165;&#x5230;p&#x4E4B;&#x540E;</span>
+    <span class="hljs-keyword">if</span>(!p)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    s-&gt;next = p-&gt;next;
+    p-&gt;next-&gt;prior = s;
+    s-&gt;prior = p;
+    p-&gt;next = s;
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">deleteDNode</span><span class="hljs-params">(DNode* p)</span></span>{        <span class="hljs-comment">//&#x5220;&#x9664;p&#x7684;&#x540E;&#x9762;&#x4E2A;&#x7ED3;&#x70B9;</span>
+    <span class="hljs-keyword">if</span>(!p)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    DNode* q = p-&gt;next;
+    <span class="hljs-keyword">if</span>(!q)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    p-&gt;next = q-&gt;next;        <span class="hljs-comment">//&#x5220;&#x9664;&#x7ED3;&#x70B9;&#x64CD;&#x4F5C;</span>
+    <span class="hljs-keyword">if</span>(q-&gt;next != <span class="hljs-literal">NULL</span>)
+        q-&gt;next-&gt;prior = p;
+    q-&gt;next = <span class="hljs-literal">NULL</span>;
+    <span class="hljs-built_in">free</span>(q);        <span class="hljs-comment">//&#x5C06;q&#x7684;&#x7A7A;&#x95F4;&#x91CA;&#x653E;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+<span class="hljs-function">DNode* <span class="hljs-title">search</span><span class="hljs-params">(DNode* p,<span class="hljs-keyword">int</span> target)</span></span>{        <span class="hljs-comment">//&#x641C;&#x7D22;&#x7B49;&#x4E8E;target&#x7684;&#x7ED3;&#x70B9;</span>
+    <span class="hljs-keyword">if</span>(!p)
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    p = p-&gt;next;
+    <span class="hljs-keyword">while</span>(p){        <span class="hljs-comment">//&#x904D;&#x5386;&#x94FE;&#x8868;&#x5BFB;&#x627E;&#x76EE;&#x6807;&#x7ED3;&#x70B9; 0 false null </span>
+        <span class="hljs-keyword">if</span>(p-&gt;data == target)
+            <span class="hljs-keyword">return</span> p;
+        p = p-&gt;next;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h2 id="&#x7EC3;&#x624B;&#x9898;">&#x7EC3;&#x624B;&#x9898;</h2>
+<ol>
+<li>&#x82E5;&#x7EBF;&#x6027;&#x8868;&#x7528;&#x5355;&#x94FE;&#x8868;&#xFF08;&#x5E26;&#x5934;&#x7ED3;&#x70B9;&#xFF09;&#x4F5C;&#x4E3A;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#xFF0C;&#x5199;&#x51FA;&#x5176;&#x5C31;&#x5730;&#x9006;&#x7F6E;&#x7B97;&#x6CD5;</li>
+</ol>
+<pre><code class="lang-c"><span class="hljs-comment">// &#x7B97;&#x6CD5;&#x601D;&#x60F3;&#xFF1A; &#x904D;&#x5386;&#x5355;&#x94FE;&#x8868;&#xFF0C;&#x4ECE;&#x7B2C;&#x4E00;&#x4E2A;&#x5F00;&#x59CB;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x91CD;&#x65B0;&#x63D2;&#x5165;&#x5230;&#x4E86;&#x65B0;&#x7684;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;, &#x5373;&#x5934;&#x63D2;&#x6CD5;&#xFF0C;&#x6700;&#x7EC8;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5355;&#x94FE;&#x8868;&#x7684;&#x5C31;&#x5730;&#x9006;&#x7F6E;</span>
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> Node{
+    <span class="hljs-keyword">int</span> data;
+    <span class="hljs-keyword">struct</span> Node* next;
+}Node;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">reverse</span><span class="hljs-params">(Node* p)</span> </span>{    <span class="hljs-comment">// &#x6CA1;&#x6709;&#x91CD;&#x65B0;&#x6539;&#x53D8;&#x5934;&#x8282;&#x70B9;&#x7684;&#x5730;&#x5740;</span>
+    <span class="hljs-keyword">if</span>(!p)    <span class="hljs-comment">// &#x6307;&#x9488;&#x4E0D;&#x5B58;&#x5728;</span>
+        <span class="hljs-keyword">return</span>;
+    Node* first = p-&gt;next;
+    Node* q = first-&gt;next;
+    <span class="hljs-keyword">while</span>(q) {        <span class="hljs-comment">// &#x904D;&#x5386;&#x7ED3;&#x70B9;&#xFF0C;&#x9010;&#x4E2A;&#x63D2;&#x5165;</span>
+        Node* temp = second-&gt;next;    <span class="hljs-comment">// &#x4FDD;&#x5B58;&#x7B2C;&#x4E09;&#x4E2A;&#x7ED3;&#x70B9;&#x7684;&#x5730;&#x5740;</span>
+        q-&gt;next = first;        <span class="hljs-comment">// &#x5934;&#x63D2;&#x6CD5;</span>
+        first-&gt;next = temp;            <span class="hljs-comment">// &#x63A5;&#x4E0A;&#x7B2C;&#x4E09;&#x4E2A;&#x7ED3;&#x70B9;</span>
+        first = q;            <span class="hljs-comment">// first &#x6539;&#x53D8;&#x4E86;</span>
+        q = temp;
+    }
+}
+</code></pre>
+<pre><code class="lang-c"><span class="hljs-function">Node* <span class="hljs-title">reverse2</span><span class="hljs-params">(Node* p)</span> </span>{
+    <span class="hljs-keyword">if</span>(!p){        <span class="hljs-comment">// &#x5224;&#x65AD;&#x94FE;&#x8868;&#x662F;&#x5426;&#x5B58;&#x5728;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    }
+    Node* res = (Node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Node));
+    Node* temp = p-&gt;next;
+    <span class="hljs-keyword">while</span>(temp) {    <span class="hljs-comment">// &#x904D;&#x5386;&#x94FE;&#x8868;&#xFF0C;&#x9010;&#x4E2A;&#x5934;&#x63D2;&#x6CD5;</span>
+        Node* temp2  = temp-&gt;next;
+
+        temp-&gt;next = res-&gt;next;        <span class="hljs-comment">// &#x5934;&#x63D2;&#x6CD5;</span>
+        res-&gt;net = temp;
+
+        temp = temp2;
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+</code></pre>
+<pre><code class="lang-c"><span class="hljs-comment">// &#x7B97;&#x6CD5;&#x601D;&#x60F3;&#xFF1A; &#x5148;&#x5224;&#x65AD;&#x94FE;&#x8868;&#xFF0C;&#x5982;&#x679C;&#x94FE;&#x8868;&#x7ED3;&#x70B9;&#x4E3A;0&#x6216;&#x8005;1 &#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#xFF0C;&#x5426;&#x5219;&#x4ECE;&#x7B2C;&#x4E8C;&#x4E2A;&#x7ED3;&#x70B9;&#x5F00;&#x59CB;&#x9010;&#x4E2A;&#x5C06;&#x5176;&#x7528;&#x5934;&#x63D2;&#x6CD5;&#x7684;&#x65B9;&#x6CD5;&#x91CD;&#x65B0;&#x63D2;&#x5165;&#x4E00;&#x904D;</span>
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> Node{
+    <span class="hljs-keyword">int</span> value;
+    <span class="hljs-keyword">struct</span> Node* next;
+}Node;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">reverse</span><span class="hljs-params">(Node* temp)</span> </span>{    <span class="hljs-comment">// &#x94FE;&#x8868;&#x5E26;&#x5934;&#x8282;&#x70B9;&#xFF0C; &#x5C06;&#x5176;&#x9006;&#x7F6E;</span>
+    <span class="hljs-keyword">if</span>(!temp || temp-&gt;next) {        <span class="hljs-comment">// ,,,</span>
+        <span class="hljs-keyword">return</span>;
+    }
+    Node* first = temp-&gt;next, * second = temp-&gt;next-&gt;next;
+    <span class="hljs-keyword">while</span>(second) {
+        Node* p = second;
+        p-&gt;next = first;    <span class="hljs-comment">// &#x5934;&#x63D2;&#x6CD5;</span>
+        temp-&gt; = p;
+        first = p;
+        second = second-&gt;next;
+    }
+}
+</code></pre>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> node{        <span class="hljs-comment">//&#x5B58;&#x50A8;&#x7ED3;&#x6784;</span>
+    <span class="hljs-keyword">int</span> data;
+    <span class="hljs-keyword">struct</span> node* next;
+}node:
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">reverse</span><span class="hljs-params">(node* linklist)</span></span>{
+    <span class="hljs-keyword">if</span>(!linklist||p-&gt;next)        <span class="hljs-comment">//&#x94FE;&#x8868;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x60C5;&#x51B5;</span>
+        <span class="hljs-keyword">return</span>;
+    node* first = linklist-&gt;next,*temp = linklist-&gt;next-&gt;next;
+       <span class="hljs-keyword">while</span>(temp){
+        first-&gt;next = temp-&gt;text;        <span class="hljs-comment">//&#x53D6;&#x51FA;temp</span>
+        temp-&gt;next = linklist-&gt;next;    <span class="hljs-comment">//&#x5934;&#x63D2;&#x6CD5;</span>
+        linklixt-&gt;next = temp;
+        temp = first-&gt;next;        <span class="hljs-comment">//&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;</span>
+    }
+}
+</code></pre>
+<ol>
+<li>&#x8BBE;&#x5355;&#x94FE;&#x8868;&#x4E2D;&#x5B58;&#x653E; n &#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x8BD5;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x7B97;&#x6CD5;&#xFF0C;&#x4F7F;&#x7528;&#x6808;&#x5224;&#x65AD;&#x8BE5;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x4E2D;&#x5FC3;&#x5BF9;&#x79F0;</li>
+</ol>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> node{        <span class="hljs-comment">//&#x94FE;&#x8868;&#x7ED3;&#x70B9;&#x7684;&#x5B58;&#x50A8;&#x7ED3;&#x6784;</span>
+    <span class="hljs-keyword">char</span> data;
+    <span class="hljs-keyword">struct</span> node* next;
+}node;
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">function</span><span class="hljs-params">(node* linklist)</span></span>{        <span class="hljs-comment">//&#x5E26;&#x5934;&#x7ED3;&#x70B9;&#x7684;&#x94FE;&#x8868;</span>
+    <span class="hljs-keyword">if</span>(!linklist)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">char</span> <span class="hljs-built_in">stack</span>[<span class="hljs-number">100</span>];        <span class="hljs-comment">//&#x5047;&#x8BBE;&#x5B57;&#x7B26;&#x4E32;&#x4E0D;&#x8D85;&#x8FC7;100&#x4E2A;&#x5B57;&#x7B26;,&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x6808;</span>
+    <span class="hljs-keyword">int</span> top = <span class="hljs-number">-1</span>;        <span class="hljs-comment">// &#x6808;&#x7684;&#x5199;&#x6CD5;</span>
+    node* p = linklist-&gt;next;        <span class="hljs-comment">//p&#x6307;&#x5411;&#x7B2C;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;</span>
+    <span class="hljs-keyword">while</span>(p){        <span class="hljs-comment">//&#x904D;&#x5386;&#x94FE;&#x8868;</span>
+        <span class="hljs-keyword">if</span>(top==<span class="hljs-number">-1</span>||<span class="hljs-built_in">stack</span>[top]!=p-&gt;data)    <span class="hljs-comment">//&#x5165;&#x6808;&#x7684;&#x60C5;&#x51B5;</span>
+            <span class="hljs-built_in">stack</span>[++top] = p-&gt;data;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-built_in">stack</span>[top]==p-&gt;data)        <span class="hljs-comment">//&#x51FA;&#x6808;&#x7684;&#x60C5;&#x51B5;</span>
+            top--;
+        p = p-&gt;next;
+    }
+    <span class="hljs-keyword">if</span>(top==<span class="hljs-number">-1</span>)        <span class="hljs-comment">//&#x5224;&#x65AD;&#x6808;&#x662F;&#x5426;&#x4E3A;&#x7A7A;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+}
+</code></pre>
+<ol>
+<li>&#x7F16;&#x5199;&#x4E00;&#x7B97;&#x6CD5;&#xFF0C;&#x4EE5;&#x5B8C;&#x6210;&#x5728;&#x5E26;&#x5934;&#x8282;&#x70B9;&#x5355;&#x94FE;&#x8868; M &#x4E2D;&#x7B2C; n &#x4E2A;&#x4F4D;&#x7F6E;&#x524D;&#x63D2;&#x5165;&#x5143;&#x7D20; X &#x7684;&#x64CD;&#x4F5C;</li>
+</ol>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> node{        <span class="hljs-comment">//&#x5B58;&#x50A8;&#x7ED3;&#x70B9;</span>
+    <span class="hljs-keyword">int</span> data;
+    <span class="hljs-keyword">struct</span> node* next;
+}node;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(node* M,<span class="hljs-keyword">int</span> X,<span class="hljs-keyword">int</span> n)</span></span>{        <span class="hljs-comment">//&#x94FE;&#x8868;&#x7684;&#x7ED3;&#x70B9;&#x6570;&#x5927;&#x4E8E;n</span>
+    <span class="hljs-keyword">if</span>(!M||n&lt;=<span class="hljs-number">0</span>)        <span class="hljs-comment">//&#x94FE;&#x8868;&#x4E0D;&#x5B58;&#x5728;&#x6216;&#x8005;n&#x4E0D;&#x5408;&#x7406;</span>
+        <span class="hljs-keyword">return</span>;
+    node* temp = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));        <span class="hljs-comment">//&#x521D;&#x59CB;&#x5316;&#x7ED3;&#x70B9;</span>
+    temp-&gt;data = X;
+    temp-&gt;next = <span class="hljs-literal">NULL</span>;
+    node* p = M-&gt;next;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n<span class="hljs-number">-1</span>;++i)        <span class="hljs-comment">//&#x627E;&#x5230;n-1&#x7684;&#x4F4D;&#x7F6E;</span>
+        p = p-&gt;next;
+    temp-&gt;next = p-&gt;next;        <span class="hljs-comment">//&#x63D2;&#x5165;temp</span>
+    p-&gt;next = temp;
+}
+</code></pre>
+<ol>
+<li>&#x5DF2;&#x77E5;&#x975E;&#x7A7A;&#x7EBF;&#x6027;&#x94FE;&#x8868;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7531; list &#x6307;&#x51FA;&#xFF0C;&#x8BF7;&#x5199;&#x4E00;&#x4E2A;&#x7B97;&#x6CD5;&#x4EA4;&#x6362; p&#xFF08;&#x4E0D;&#x662F;&#x94FE;&#x8868;&#x6700;&#x540E;&#x90A3;&#x4E2A;&#x8282;&#x70B9;&#xFF09; &#x6240;&#x6307;&#x7684;&#x8282;&#x70B9;&#x4E0E;&#x5176;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5728;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;</li>
+</ol>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> ndoe{        <span class="hljs-comment">//&#x8282;&#x70B9;&#x5B58;&#x50A8;&#x7ED3;&#x6784;</span>
+    <span class="hljs-keyword">int</span> data;
+    <span class="hljs-keyword">struct</span> node* next;
+}node;
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">swap</span><span class="hljs-params">(node* p,node* <span class="hljs-built_in">list</span>)</span></span>{        <span class="hljs-comment">//&#x4EA4;&#x6362;p&#x548C;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x987A;&#x5E8F;</span>
+    <span class="hljs-keyword">if</span>(!p||!<span class="hljs-built_in">list</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">if</span>(p==<span class="hljs-built_in">list</span>){        <span class="hljs-comment">//p&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x60C5;&#x51B5;</span>
+        <span class="hljs-built_in">list</span> = p-&gt;next;
+        p-&gt;next = <span class="hljs-built_in">list</span>-&gt;next;
+        <span class="hljs-built_in">list</span>-&gt;next = p;
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+    node* temp = <span class="hljs-built_in">list</span>;
+    <span class="hljs-keyword">while</span>(temp-&gt;next!=p)        <span class="hljs-comment">//&#x627E;&#x5230;p&#x7684;&#x524D;&#x4E00;&#x4E2A;&#x8282;&#x70B9;</span>
+        temp = temp-&gt;next;
+    temp-&gt;next = p-&gt;next;        <span class="hljs-comment">//&#x4EA4;&#x6362;p&#x548C;&#x540E;&#x4E00;&#x8282;&#x70B9;</span>
+    p-&gt;next = temp-&gt;next-&gt;next;
+    temp-&gt;next-&gt;next = p;
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+</code></pre>
+<ol>
+<li>&#x8BF7;&#x7528;&#x94FE;&#x8868;&#x7F16;&#x7A0B;&#x5B9E;&#x73B0;&#xFF1A;&#x4ECE;&#x952E;&#x76D8;&#x8BFB;&#x6570;&#xFF0C;&#x5E76;&#x6309;&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#x7684;&#x987A;&#x5E8F;&#x8F93;&#x51FA;&#x8F93;&#x5165;&#x6574;&#x6570;&#x4E2D;&#x4E92;&#x4E0D;&#x76F8;&#x7B49;&#x7684;&#x90A3;&#x4E9B;&#x6574;&#x6570;</li>
+</ol>
+<p>&#x7B97;&#x6CD5;&#x601D;&#x60F3;&#xFF1A;&#x6BCF;&#x6B21;&#x8BFB;&#x5165;&#x6574;&#x6570;i&#xFF0C;&#x5C06;&#x6574;&#x6570; i &#x627E;&#x5230;&#x5728;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x67D0;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;&#x8BE5;&#x4F4D;&#x7F6E;&#x6EE1;&#x8DB3;&#x524D;&#x9762;&#x7684;&#x6570;&#x90FD;&#x6BD4; i  &#x5C0F;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x6570;&#x90FD;&#x6BD4; i  &#x5927;&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x548C; i &#x76F8;&#x7B49;&#x7684;&#x6570;&#x5C31;&#x4E0D;&#x63D2;&#x5165;&#xFF0C;&#x5426;&#x5219;&#x5C31;&#x5728;&#x8BE5;&#x4F4D;&#x7F6E;&#x63D2;&#x5165;&#x503C;&#x4E3A; i  &#x7684;&#x7ED3;&#x70B9;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x90FD;&#x8FD9;&#x4E48;&#x63D2;&#x8FDB;&#x94FE;&#x8868;&#x4E2D;&#xFF0C;&#x6700;&#x540E;&#x5C31;&#x80FD;&#x5F97;&#x5230;&#x4ECE;&#x5C0F;&#x5230;&#x8FBE;&#x4E92;&#x4E0D;&#x76F8;&#x7B49;&#x7684;&#x6574;&#x6570;&#x7684;&#x94FE;&#x8868;&#xFF0C;&#x7136;&#x540E;&#x8F93;&#x51FA;&#x5373;&#x53EF;&#x3002;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> node{        <span class="hljs-comment">//&#x8282;&#x70B9;&#x5B58;&#x50A8;&#x7ED3;&#x6784;</span>
+    <span class="hljs-keyword">int</span> data;
+    <span class="hljs-keyword">struct</span> node* next;
+}node;
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">insert</span><span class="hljs-params">(node* p,<span class="hljs-keyword">int</span> i)</span></span>{    <span class="hljs-comment">//&#x5728;&#x94FE;&#x8868;p&#x4E2D;&#x6309;&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#x7684;&#x987A;&#x5E8F;&#x63D2;&#x5165;&#x4E0D;&#x76F8;&#x7B49;&#x7684;&#x6574;&#x6570;</span>
+    <span class="hljs-keyword">if</span>(!p)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    node* temp1=p,*temp2=p-&gt;next;
+    <span class="hljs-keyword">while</span>(temp2&amp;&amp;i&gt;temp2-&gt;data){        <span class="hljs-comment">//&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;temp1&#x524D;&#x9762;&#x7684;&#x6570;&#x90FD;&#x6BD4;i&#x5C0F;&#xFF0C;temp2&#x7684;&#x6570;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;i</span>
+        temp1 = temp1-&gt;next;
+        temp2 = temp2-&gt;next;
+    }
+    <span class="hljs-keyword">if</span>(temp2&amp;&amp;i==temp2-&gt;data)        <span class="hljs-comment">//&#x76F8;&#x7B49;&#x7684;&#x5C31;&#x4E0D;&#x63D2;&#x5165;&#x4E86;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    node* temp = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));    <span class="hljs-comment">//&#x521D;&#x59CB;&#x5316;i</span>
+    temp-&gt;data = i;
+    temp-&gt;next = <span class="hljs-literal">NULL</span>;
+    <span class="hljs-keyword">if</span>(!temp2)    <span class="hljs-comment">//&#x5E94;&#x8BE5;&#x63D2;&#x5165;&#x6700;&#x540E;&#x4E2A;&#x8282;&#x70B9;</span>
+        temp1-&gt;next = temp;
+    <span class="hljs-keyword">else</span>{        <span class="hljs-comment">//&#x4E2D;&#x95F4;&#x63D2;&#x5165;&#x7684;&#x60C5;&#x51B5;</span>
+        temp-&gt;next = temp2;
+        temp1-&gt;next = temp;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">output</span><span class="hljs-params">(node* p)</span></span>{        <span class="hljs-comment">//&#x8F93;&#x51FA;&#x94FE;&#x8868;</span>
+    <span class="hljs-keyword">if</span>(!p)
+        <span class="hljs-keyword">return</span>;
+    p = p-&gt;next;
+    <span class="hljs-keyword">while</span>(p){
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\t&quot;</span>,p-&gt;data);
+        p = p-&gt;next;
+    }
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>);
+}
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    node* p = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));        <span class="hljs-comment">//&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x94FE;&#x8868;</span>
+    p-&gt;next = <span class="hljs-literal">NULL</span>;
+    <span class="hljs-keyword">int</span> i;
+    <span class="hljs-keyword">while</span>(i){        <span class="hljs-comment">//&#x4ECE;&#x952E;&#x76D8;&#x4E2D;&#x8BFB;&#x6570;&#xFF0C;&#x4E3A;0&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x9000;&#x51FA;</span>
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Enter i:\n&quot;</span>);
+        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;i);
+        insert(p,i);
+    }
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;list:\n&quot;</span>);
+    output(p);
+}
+</code></pre>
+<ol>
+<li>&#x5047;&#x8BBE;&#x6709;&#x4E24;&#x4E2A;&#x6309;&#x5143;&#x7D20;&#x503C;&#x9012;&#x589E;&#x6709;&#x5E8F;&#x6392;&#x5217;&#x7684;&#x7EBF;&#x6027;&#x8868; A &#x548C; B&#xFF0C;&#x5747;&#x4EE5;&#x5355;&#x94FE;&#x8868;&#x4F5C;&#x4E3A;&#x5B58;&#x50A8;&#x673A;&#x6784;&#xFF0C;&#x8BF7;&#x7F16;&#x5199;&#x7B97;&#x6CD5;&#x5C06;&#x8868; A &#x548C;&#x8868; B &#x5F52;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#x6309;&#x5143;&#x7D20;&#x503C;&#x975E;&#x9012;&#x589E;&#x6709;&#x5E8F;&#x6392;&#x5217;&#x7684;&#x7EBF;&#x6027;&#x8868; C</li>
+</ol>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> node{
+    <span class="hljs-keyword">int</span> data;
+    <span class="hljs-keyword">struct</span> node* next;
+}node;
+<span class="hljs-function">node* <span class="hljs-title">merge</span><span class="hljs-params">(node* A,node* B)</span></span>{        <span class="hljs-comment">//&#x6709;&#x5E8F;&#x878D;&#x5408;A,B</span>
+    node* c=A,*pa=A-&gt;next,*pb=B-&gt;next; <span class="hljs-comment">//A&#x4F5C;&#x4E3A;c&#x8868;&#x8868;&#x5934;</span>
+    <span class="hljs-keyword">while</span>(pa&amp;&amp;pb){        <span class="hljs-comment">//A,B&#x90FD;&#x8FD8;&#x6709;&#x8282;&#x70B9;&#x7684;&#x60C5;&#x51B5;</span>
+        <span class="hljs-keyword">if</span>(pa-&gt;data&lt;=pb-&gt;data){        <span class="hljs-comment">//&#x63D2;&#x5165;pa</span>
+            c-&gt;next = pa;
+            c = pa;
+            pa = pa-&gt;next;
+        }
+        <span class="hljs-keyword">else</span>{        <span class="hljs-comment">//&#x63D2;&#x5165;pb</span>
+            c-&gt;next = pb;
+            c = pb;
+            pb = pb-&gt;next;
+        }
+    }
+    <span class="hljs-keyword">if</span>(pa)        <span class="hljs-comment">//&#x5C06;A&#x6216;&#x8005;B&#x5269;&#x4F59;&#x7684;&#x8282;&#x70B9;&#x63D2;&#x5165;</span>
+        c-&gt;next = pa;
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(pb)
+        c-&gt;next = pb;
+    <span class="hljs-keyword">return</span> A;        <span class="hljs-comment">//&#x56E0;&#x4E3A;&#x5C06;A&#x4F5C;&#x4E3A;&#x4E86;C&#x8868;&#x7684;&#x8868;&#x5934;</span>
+}
+</code></pre>
+<ol>
+<li>&#x4E00;&#x76F4;&#x7EBF;&#x6027;&#x8868;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x4EE5;&#x503C;&#x9012;&#x589E;&#x6709;&#x5E8F;&#x6392;&#x5217;&#xFF0C;&#x5E76;&#x4EE5;&#x5355;&#x94FE;&#x8868;&#x4F5C;&#x4E3A;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#xFF0C;&#x7F16;&#x5199;&#x7A0B;&#x5E8F;&#xFF0C;&#x5220;&#x9664;&#x8868;&#x4E2D;&#x6240;&#x6709;&#x503C;&#x5927;&#x4E8E; mink &#x4E14;&#x5C0F;&#x4E8E; maxk &#x7684;&#x5143;&#x7D20;</li>
+</ol>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> node{
+    <span class="hljs-keyword">int</span> data;
+    <span class="hljs-keyword">struct</span> node* next;
+}node;
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">delete</span><span class="hljs-params">(node* l,<span class="hljs-keyword">int</span> mink,<span class="hljs-keyword">int</span> maxk)</span></span>{        <span class="hljs-comment">//</span>
+</code></pre>
+<pre><code>if(!l)
+    return false;
+if(l-&gt;data&lt;=maxk)        //&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5C31;&#x4E0D;&#x6EE1;&#x8DB3;&#x7684;&#x60C5;&#x51B5;
+    return true;
+node* temp;
+while(l&amp;&amp;l-&gt;data&lt;=mink)        //&#x627E;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x8282;&#x70B9;
+    l = l-&gt;next;
+while(l&amp;&amp;l-&gt;data&lt;maxk){
+    temp = l;        //&#x63D0;&#x51FA;temp
+    l = l-&gt;next;
+    temp-&gt;next = NULL;
+    free(temp);        //&#x91CA;&#x653E;temp&#x7A7A;&#x95F4;
+}
+return true;
+</code></pre><p>}</p>
+<pre><code>
+
+
+
+
+8. a &#x548C; b &#x662F;&#x4E24;&#x53CC;&#x5411;&#x94FE;&#x8868;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5B58;&#x653E;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x3002;&#x7F16;&#x5199;&#x51FD;&#x6570;&#x5C06;&#x94FE;&#x8868; b &#x548C; a &#x5408;&#x5E76;&#xFF0C;&#x5E76;&#x53BB;&#x9664;&#x76F8;&#x540C;&#x7684;&#x503C;
+
+``` c
+typedef struct node{        //&#x53CC;&#x94FE;&#x8868;&#x7ED3;&#x6784;
+    int data;
+    struct DNode* prior,* next;
+}node;
+void insert(node* c,node* temp){    //&#x5C06;temp&#x6709;&#x5E8F;&#x63D2;&#x5165;c
+    if(!c||!temp)
+        return;
+    node* p = c-&gt;next;
+    while(p&amp;&amp;p-&gt;data&lt;temp-&gt;data){        //&#x627E;&#x5230;&#x63D2;&#x5165;&#x7684;&#x4F4D;&#x7F6E;
+        p = p-&gt;next;
+        c = c-&gt;next;
+    }
+    if(p-&gt;data==temp-&gt;data)        //&#x6392;&#x9664;&#x76F8;&#x7B49;&#x7684;&#x6574;&#x6570;&#x7ED3;&#x70B9;
+        return;
+    if(&#xFF01;p)        //&#x5C3E;&#x63D2;&#x6CD5;
+        c-&gt;next = temp;
+    else{
+        temp-&gt;next = c-&gt;next;
+        c-&gt;next = temp;
+    }
+}
+node* merge(node* A,node* B){        //&#x6709;&#x5E8F;&#x878D;&#x5408;A,B&#xFF0C;&#x5E76;&#x53BB;&#x9664;&#x5176;&#x4E2D;&#x6574;&#x6570;&#x503C;&#x76F8;&#x540C;&#x7684;&#x7ED3;&#x70B9;
+    node* temp,*pa=A-&gt;next,*pb=B-&gt;next;
+    node* c = (node*)malloc(sizeof(node));
+    c-&gt;next = NULL;
+    while(pa){        //&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x5C06;a&#x8868;&#x7684;&#x7ED3;&#x70B9;&#x63D2;&#x5165;c
+        temp = pa;
+        pa = pa-&gt;next;
+        temp-&gt;next = 0;
+        insert(c,temp);
+    }
+    while(pb){
+        temp = pb;
+        pb = pb-&gt;next;
+        temp-&gt;next = 0;
+        insert(c,temp);
+    }
+    return c;
+}
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="栈和队列.html" class="navigation navigation-prev " aria-label="Previous page: 栈和队列">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="字符串.html" class="navigation navigation-next " aria-label="Next page: 字符串">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"链表","level":"1.4.1.3","depth":3,"next":{"title":"字符串","level":"1.4.1.4","depth":3,"path":"dataStructure/simple/字符串.md","ref":"./dataStructure/simple/字符串.md","articles":[]},"previous":{"title":"栈和队列","level":"1.4.1.2","depth":3,"path":"dataStructure/simple/栈和队列.md","ref":"./dataStructure/simple/栈和队列.md","articles":[]},"dir":"ltr"},"config":{"plugins":["pageview-count","intopic-toc","expandable-chapters","advanced-emoji","-lunr","-search","search-plus","-sharing","splitter","hide-element","insert-logo","code","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"livereload":{},"splitter":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"pageview-count":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"max-height: 120px; min-height: 120px","url":"../image/wutian2.png"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"wutian","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notebook|blog","language":"zh-hans","gitbook":"*","description":"很菜的一个博客，或则说是笔记本，为了自己方便弄的"},"file":{"path":"dataStructure/simple/链表.md","mtime":"2022-01-12T13:31:32.200Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-12T14:18:59.607Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
