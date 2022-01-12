@@ -22,7 +22,7 @@
             "elements": [".gitbook-link"]
         },
         "insert-logo": {
-            "url": "../image/wutian2.png",
+            "url": "https://ting-xin.github.io/notebook/image/wutian2.png",
             "style": "max-height: 120px; min-height: 120px"
         }
     }
