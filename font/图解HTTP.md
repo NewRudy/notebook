@@ -637,7 +637,539 @@ HTTP 首部字段将定义成缓存代理和非缓存代理，分成两种类型
 - Transfer-Encoding
 - Upgrade
 
+### 6.3  HTTP/1.1 通用首部字段
 
+通用首部字段指请求和响应双方都会使用到的首部
+
+#### 6.3.1 Cache-Control
+
+通过 cache-control 首部字段的指令，就能操作缓存的工作机制
+
+指令参数是可选的，多个指令之间通过“，”分隔
+
+```http
+HTTP/1.1 200 OK
+Cache-Control: private, max-age=0, no-cache
+```
+
+<div align='left'>表6-5：缓存请求指令</div>
+
+| 指令             | 参数   | 说明                         |
+| ---------------- | ------ | ---------------------------- |
+| no-cache         | 无     | 强制向源服务器再次验证       |
+| no-store         | 无     | 不缓存请求或响应的任何内容   |
+| max-age=[秒]     | 必须   | 响应的最大Age值              |
+| (max-stale=[秒]) | 可省略 | 接收已过期的响应             |
+| min-fresh=[秒]   | 必须   | 期望在指定时间内的响应仍有效 |
+| no-transform     | 无     | 代理不可更改媒体类型         |
+| only-if-cached   | 无     | 从缓存获取资源               |
+| cache-extension  | -      | 新指令标记（token）          |
+
+<div align='left'>表6-6：缓存响应指令</div>
+
+| 指令             | 参数   | 说明                                   |
+| ---------------- | ------ | -------------------------------------- |
+| public           | 无     | 可向任意方提供响应的缓存               |
+| private          | 可省略 | 仅向特定用户返回响应                   |
+| no-cache         | 可省略 | 缓存前必须向确认其有效性               |
+| no-store         | 无     | 不缓存请求或响应的任何内容             |
+| no-transform     | 无     | 代理不可更改媒体类型                   |
+| must-revalidate  | 无     | 可缓存但必须再向源服务器进行确认       |
+| proxy-revalidate | 无     | 需要中间缓存服务器对缓存有效性再次确认 |
+| max-age=[秒]     | 必须   | 响应的最大 Age 值                      |
+| s-maxage=[秒]    | 必须   | 公共缓存服务器响应的最大 Age 值        |
+| cache-extension  | -      | 新指令标记（token）                    |
+
+public 指令表示任何用户都可以使用该缓存
+
+private 指令表示特定用户可以使用该缓存
+
+no-cache 指令从客户端的角度来说就是不要缓存，从源服务器重新获取，从服务器的角度就是缓存服务器可以缓存，但是需要向源服务器确认，使用 no-cache 指令的目的是为了防止从缓存中返回过期的资源
+
+no-store 指令是暗示请求或响应中包含机密信息，该指令规定缓存不能在本地存储请求或响应的任一部分
+
+```tex
+Cache-Control: s-maxage=604800
+```
+
+s-maxage 指令的功能和 max-age 的功能差不多，但是 s-maxage 指令只适用于供多位用户使用的公共换从服务器，对于向同一用户重复返回响应的服务器来说，这个指令没有任何意义。另外，当使用 s-maxage 指令以后，则直接忽略对 Expires 首部字段和 max-age 指令的处理
+
+```tex
+Cache-Control: max-age=60480
+```
+
+当客户端发送的请求里面包含 max-age  指令时候，如果判定缓存服务器的时间数值比指定时间小，那么客户端就接收缓存的资源，当 max-age 的值为 0 时候，那么缓存服务器通常需要将请求转发给源服务器
+
+当服务器返回的响应中包含 max-age 指令时候，缓存服务器将不对资源的有效性再作确认，而max-age 的数值代表资源保存为缓存的最长时间
+
+```tex
+Cache-Control: min-fresh=60
+```
+
+min-fresh 指令要求缓存服务器返回至少还未过指定时间的缓存资源，当指定 min-fresh 为 60 秒后，在这 60 秒以内如果有超过有限期限的资源都无法作为响应返回
+
+```tex
+Cache-Control: max-style=3600
+```
+
+使用 max-stale 可指示缓存资源，即使过期也照常接收，如果未指定参数，无论经过多久也接受，如果指定参数，即使资源过期也照常接收
+
+```tex
+Cache-Control: only-if-cached
+```
+
+only-if-cached 指令表示客户端仅在缓存服务器本地缓存目标资源的情况下才会要求其返回
+
+must-revalidate 指令使用后，代理会向源服务器再次验证即将返回的缓存是否任然有效，若代理无法连通源服务器获取到有效资源的话，返回一条 504 的状态码，使用该指令的时候会忽略 max-stale 指令
+
+proxy-revalidate 指令要求所有缓存服务器在接收到客户端带有该指令的请求返回响应前，必须再次验证缓存的有效性
+
+no-transform 指令表示无论是在请求还是响应中，缓存都不能改变实体主体的媒体类型
+
+#### 6.3.2 Connection
+
+Connection 首部字段具有如下两个作用：
+
+- 控制不再转发给代理的首部字段
+- 管理持久连接
+
+```tex
+Connection: 不在转发的首部字段名
+```
+
+在客户端发送请求和服务器返回响应内，使用 Connection 首部字段，可控制不在转发给代理的首部字段
+
+```Tex
+Connection: close
+```
+
+HTTP/1.1 版本默认连接都是持久连接，为此，客户端会在持久连接上连续发送请求，当服务器想明确断开连接，则指定 Connection 首部字段的值为 close
+
+```http
+GET / HTTP/1.1
+Connection: Keep-Alive
+```
+
+```http
+HTTP/1.1 200 OK
+Keep-Alive: timeout=10, max=500
+Connection: Keep-Alive
+```
+
+HTTP/1.1 之前的版本默认连接都是非持久连接，为此，如果想要在旧版本的 HTTP 协议上维持持续连接，则需要指定 Connection  首部字段的值是 Keep-Alive
+
+#### 6.3.3 Date
+
+Date 首部字段表明 HTTP 报文创建的时间和日期，日期时间的格式有三种
+
+#### 6.3.4 Pragma
+
+```tex
+Pragma: no-cache
+```
+
+历史遗留字段，为了向后兼容而定义，该字段只用于请求，会要求所有中间服务器不返回缓存的资源
+
+如果所有中间服务器都能以 HTTP/1.1 为基准，那么直接采用 Cache-Control: no-cache 指定缓存的处理方式是最佳的，但是整体掌握所有服务器使用的 HTTP 版本是不现实的，所以我们一般使用两个字段
+
+```tex
+Cache-Control: no-cache
+Pragme: no-cache
+```
+
+#### 6.3.5 Trailer
+
+首部字段 Trailer 会事先说明在报文主体后记录了哪些首部字段，该首部字段可应用在 HTTP/1.1 版本分块传输编码时
+
+```http
+HTTP/1.1 200 OK
+Content-Type: text/html
+Trailer: Expires
+temp: ...(报文主体)···
+Expires： Tue···
+```
+
+#### 6.3.6 Transfer-Encoding
+
+```tex
+Transfer-Encoding: chunked
+```
+
+首部字段 Transfer-Encoding 规定了传输报文主体时采用的编码方式， HTTP/1.1 的传输编码方式仅对分块传输编码有效
+
+#### 6.3.7 Upgrade
+
+首部字段 Upgrade 用于检测 HTTP 协议及其他协议是否可使用更高的版本进行通信，其参数值可以用来指定一个完全不同的协议
+
+```http
+GET /index.htm HTTP/1.1
+Upgrade: TLS/1.0
+Connection: Upgrade
+```
+
+```http
+HTTP/1.1 101 Switching Protocols
+Upgrade: TLS/1.0 HTTP/1.1
+Connection: Upgrade
+```
+
+一般使用 Upgrade 也会使用 Connection，表示 Upgrade 仅作用于它与相邻的服务器
+
+#### 6.3.8 Via
+
+使用首部字段 Via 是为了追踪客户端与服务器之间的请求和响应报文的传输路径。报文在经过代理或网关时，会先在首部字段 Via 中附加该服务器的信息，然后再转发。Via 首部是为了追踪传输路径，所以经常会和 TRACE 方法一起使用，比如代理服务器接收到由 TRACE 方法发送过来的请求（其中 Max-Forwards: 0）时，代理服务器就不再转发请求了
+
+#### 6.3.9 Warning
+
+HTTP/1.1 的 Warning 首部是从 HTTP/1.0 的响应首部（Retry-After ）演变过来的，该首部通常会告知用户一些与缓存相关的问题的警告
+
+```tex
+Warning: 113 gw.hacker.jp:8080 "Heuristic expiration" Tue, 03 Jul 2012 05:09:44 GMT
+```
+
+Warning 首部格式如下，日期可以省略：
+
+```tex
+Warning: [警告码][警告主机:端口号]"[警告内容]"([日期时间])
+```
+
+HTTP/1.1 定义了 7 种警告，警告具有扩展性
+
+<div align='left'>表6-7：HTTP/1.1 7 种警告
+
+| 警告码 | 警告内容                         | 说明                                   |
+| ------ | -------------------------------- | -------------------------------------- |
+| 110    | Response is stale                | 代理返回已过期的资源                   |
+| 111    | Revailidation failed             | 代理再次验证资源有效性时失败           |
+| 112    | Disconnection operation          | 代理与互联网之间的连接被故意切断       |
+| 113    | Heuristic expiration             | 响应使用期超过 24 小时                 |
+| 199    | Miscellaneous warning            | 任意的警告内容                         |
+| 214    | Transformation applied           | 代理对内容编码或媒体类型执行了某些操作 |
+| 299    | Miscellaneous persistent warning | 任意的警告内容                         |
+
+### 6.4 HTTP/1.1  请求首部字段
+
+请求首部字段是从客户端往服务器发送请求报文中所使用的字段，用于补充请求的附加信息、客户端信息、对响应内容相关的优先级等内容
+
+#### 6.4.1 Accept
+
+```tex
+Accept: text/plain; q=0.3, text/html
+```
+
+Accept 首部字段可以通知服务器，用户代理能够处理的媒体类型及媒体类型的优先级。可使用 type/subtype 这种形式，一次指定多种媒体类型
+
+- 文本文件：text/html, text/plain, text/css··· application/xhtml+xml, application/xml···
+- 图片文件：image/jpeg, image/gif, image/png ···
+- 视频文件：video/mpeg, video/quicktime ···
+- 应用程序使用的二进制文件：application/octet-stream, application/zip···
+
+若想要给显示的媒体类型增加优先级，则使用 q= 来额外表示权重，类型用分号（；）分隔。权重的范围是0~1，如果不指定，默认是 1
+
+#### 6.4.2 Accept-Charset
+
+```tex
+Accept-Charset: iso-8859-5, unicode-1-1; q=0.8
+```
+
+Accept-Charset 首部字段可用于通知服务器用户代理支持的字符集及字符集的优先级
+
+#### 6.4.3 Accept-Encoding
+
+```tex
+Accept-Encoding: gzip, deflate
+```
+
+Accept-Encoding 首部字段用来告知服务器用户代理支持的用户编码及用户编码的优先级顺序，可一次性指定多种编码
+
+- gzip：由文件压缩程序 gzip(GNU zip) 生成的编码格式（RFC1952）
+- compress：由 UNIX 文件压缩程序 compress 生成的编码格式
+- deflate：组合使用 zlib 格式及由 deflate 压缩算法生成的编码格式
+- identity：不执行压缩或不会变化的默认编码格式
+
+#### 6.4.4 Accept-Language
+
+```tex
+Accept-Language: zh-cn, zh; q=0.7, en-us,en; q=0.3
+```
+
+Accept-Language 首部字段用来告知服务器用户代理能够处理的自然语言集及其优先级
+
+#### 6.4.5 Authorization
+
+```http
+GET /index.htm HTTP/1.1
+Authorization: Basic ···
+```
+
+首部字段 Authorization 用来告知服务器，用户代理的认证信息（证书值）
+
+#### 6.4.6 Expect
+
+```tex
+Expect: 100-continue
+```
+
+Expect 首部字段用来告知服务器，期望出现的某种特定行为
+
+#### 6.4.7 From
+
+From 首部字段告知服务器用户代理的用户使用的电子邮件地址
+
+#### 6.4.8 Host
+
+```tex
+Host: www.hacker.jp
+```
+
+虚拟主机运行在同一 IP 上，因此使用首部字段 Host 加以区分
+
+#### 6.4.9 If-Match
+
+```tex
+If-Match: 123456
+```
+
+形如 If-xxx 这种形式的请求首部字段，都可以称为条件请求。服务器在接收到条件请求的时候，只有判断条件为真时，才会执行请求
+
+If-Match 首部字段会告知服务器匹配资源所用的实体标记（ETag）值，服务器会比对 If-Match 的首部字段值和资源的 ETag 值，仅当两者一致的时候才执行请求
+
+#### 6.4.10 If-Modified-Since
+
+```http
+GET /index.htm HTTP/1.1
+If-Modiefied-Since: Thu, 15 Apr 2004 00:00:00 GMT
+```
+
+如果在 If-Modeified-Since 指定的日期之后资源发生了更新，服务器才会接收请求
+
+#### 6.4.11  If-None-Match
+
+```http
+PUT /index.htm HTTP/1.1
+If-None-Match: *
+```
+
+只有在 If-None-Match 的字段值与 ETag 值不一致时，可处理该请求。与 If-Match 首部字段的作用相反
+
+#### 6.4.12 If-Range
+
+If-Range 字段值若是跟 ETag 值或更新的日期时间匹配一致，那么就作为范围请求处理
+
+#### 6.4.13  If-Unmodified-Since
+
+首部字段 If-Unmodified-Since 与 If-Modified-Since 作用相反，它的作用是告知服务器，指定的请求资源只有在字段值指定的时间之后未发生更新的情况下，才能处理请求
+
+#### 6.4.14 Max-Forwards
+
+通过 TRACE 方法或 OPTIONS 方法，发送包含首部字段 Max-Forwards 的请求时，该字段以十进制整数形式指定可经过的服务器的最大数目
+
+#### 6.4.15 Proxy-Authorization
+
+接收到从代理服务器发来的认证质询时，客户端会使用这个首部字段指定认证信息
+
+#### 6.4.16 Range
+
+对于只需要获取部分资源的请求，包含首部字段 Range 即可告知服务器资源的指定范围
+
+#### 6.4.17 Referer
+
+告知源服务器请求的的原始资源的URI
+
+#### 6.4.18  TE
+
+TE 告知服务器客户端能够处理响应的传输编码以及相对优先级
+
+#### 6.4.19  User-Agent
+
+首部字段 User-Agent 会将创建请求的浏览器和用户代理名称等信息传达给服务器。
+
+### 6.5  响应首部字段 
+
+响应首部字段是由服务器端向客户端返回响应报文中所使用的字段，用于补充响应的附加信息、服务器信息，以及对客户端的附加要求等
+
+#### 6.5.1 Accept-Ranges
+
+```tex
+Accept-Ranges: bytes
+```
+
+首部字段 Accept-Ranges 是用来告知客户端服务器是否能处理范围请求，以指定获取服务器端某个部分的资源。可指定的字段值有两种，可处理的范围请求是其值为 bytes，反之为 none。当不能处理范围请求时，Accept-Ranges: none
+
+#### 6.5.2 Age
+
+首部字段 Age 能告知客户端，源服务器在多久前创建了响应，单位是秒。若创建该响应的是缓存服务器， Age 值是指缓存后的值再次发起认证到认证结束的时间
+
+#### 6.5.3 ETag
+
+首部字段 ETag 能告知客户端实体标记。它是一种可将资源以字符串形式做唯一性标识的方式。服务器会为每份资源分配对应的 ETag 值。另外，当资源更新时，ETag 值也需要更新。生成 ETag 值时，并没有统一的算法准则，仅仅由服务器来分配
+
+资源的 URI 并没有变，但是资源更新后，ETag 值会随之改变。资源被缓存时，就会被分配唯一性标识。比如中英文的资源的 URI 是相同的，所以仅凭 URI 指定缓存的资源是相当困难的。若在下载过程中出现中断、再连接的情况，都会依照 ETag 值来指定资源
+
+ETag 值有强弱之分。强 ETag 值无论实体有多么细微的变化都会改变其值。弱 ETag 值只用于提示资源是否相同。只有资源发生了根本性改变，产生差异时才会改变 ETag值
+
+#### 6.5.4 Location
+
+使用首部字段 Location 可以将响应接收方引导至某个与请求 URI 位置不同的资源。基本上，该字段会配合 3xx：Redirection 的响应，提供重定向的 URI。几乎所有浏览器在接收到包含首部字段 Location 的响应后，都会强制性地尝试对已提示的重定向资源的访问
+
+#### 6.5.5 Proxy-Authenticate
+
+首部字段 Proxy-Authenticate 会把由代理服务器所要求的认证信息发送给客户端。它与客户端和服务器之间的 HTTP 的访问认证的行为相似，不同之处在于其认证行为是在客户端与代理之间进行的
+
+#### 6.5.6 Retry-After
+
+首部字段 Retry-After 告知客户端应该在多久之后再次发送请求。主要配合状态码 503 Service Unavailable 响应，或 3xx Redirect 响应一起使用
+
+#### 6.5.7 Server
+
+首部字段 Server 告知客户端当前服务器上安装的 HTTP 服务器应用程序的信息
+
+#### 6.5.8 Vary
+
+首部字段 Vary 可对缓存进行控制。源服务器会向代理服务器传达关于本地缓存使用方法的命令。从代理服务器接收到源服务器返回 Vary 指定项的响应之后，若要再次进行缓存，仅对请求中包含相同 Vary 指定首部字段的请求返回缓存。
+
+#### 6.5.9 WWW-Authenticate
+
+首部字段 WWW-Authenticate 用于 HTTP 访问认证。它会告诉客户端适用于访问请求 URI 所指定资源的认证方案（Basic 或是 Digest）和带参数提示的质询（challenge）
+
+### 6.6 实体首部字段
+
+实体首部字段是包含在请求报文和响应报文中的实体部分所使用的首部，用于补充内容的更新时间等与实体相关的信息
+
+#### 6.6.1 Allow
+
+首部字段 Allow 用于通知客户端能够支持 Request-URI 指定资源的所有 HTTP 方法。当服务器接收到不支持的 HTTP 方法时，会以状态码 405 Method Not Allowed 作为响应返回，与此同时，还会把所有能支持的 HTTP 方法写入首部字段  Allow 返回
+
+#### 6.6.2 Content-Encoding
+
+```tex
+Content-Encoding: gzip
+```
+
+首部字段 Content-Encoding 会告知客户端服务器对实体的主体部分选用的编码方式。内容编码是指在不丢失实体信息的前提下所进行的压缩
+
+主要采用四种方式进行压缩：gzip, compress, deflate, identity，参考 6.4.3
+
+#### 6.6.3 Content-Language
+
+实体使用的自然语言
+
+#### 6.6.4 Content-Length
+
+表明实体主体部分的大小（单位是 byte），对实体内容使用内容编码进行传输时，不能再使用 Content-Length 首部字段
+
+#### 6.6.5 Content-Location
+
+首部字段 Conent-Location 给出与报文主体部分相对应的 URI
+
+#### 6.6.6 Content-MD5
+
+客户端会对接收的报文主体执行相同的 MD5 算法，然后与首部字段 Content-MD5 的值进行比较
+
+首部字段 Content-MD5 是一串由 MD5 算法生成的值，其目的在于检查报文主体在传输过程中是否保持完整，以及确认传输是否到达
+
+对报文主体执行 MD5 算法获得 128 位二进制数，在通过 Base64 编码后将结构写入 Content-MD5 字段值。由于 HTTP 首部无法记录二进制值，所以要通过 Base 64 编码处理。
+
+#### 6.6.7 Conent-Range
+
+针对范围请求时，返回响应时使用首部字段 Conent-Range，能告知客户端作为响应返回的实体的哪个部分符合范围请求
+
+#### 6.6.8 Content-Type
+
+```tex
+Content-Type: text/html, charset=UTF-8
+```
+
+首部字段 Content-Type 说明了实体主体内对象的媒体类型。和首部字段 Accept 一样，字段值用 type/subtype 形式赋值
+
+#### 6.6.9 Expires
+
+首部字段 Expires 会将资源失效的日期告知客户端
+
+#### 6.6.10 Last-Modified
+
+指明资源最终修改时间
+
+### 6.7 为 Cookie 服务的首部字段
+
+管理客户端与服务端之间的 Cookie 虽然没有被编入标准化，但在 web 网站方面得到了广泛的应用
+
+Cookie 的工作机制就是用户识别和状态管理。Web 网站为了管理用户的状态，会通过 Web 浏览器，把一些数据临时写入用户的计算机内。接着当用户访问该 Web 网站时，可通过通信的方式取回之前存放的 Cookie
+
+为Cookie服务的由两个字段
+
+- Set-Cookie：开始状态管理所使用的 Cookie 信息，响应首部字段
+- Cookie：服务器接收到的 Cookie 信息，请求首部字段
+
+#### 6.7.1 Set-Cookie
+
+当服务端准备开始管理客户端的状态信息时，会事先告知各种信息
+
+<div align='left'>Set-Cookie 字段的属性</div>
+
+| 属性               | 说明                                              |
+| ------------------ | ------------------------------------------------- |
+| NAME=VALUE（必需） | 赋予Cookie的名称和值                              |
+| expires=DATE       | Cookie 的有效期（若不明确指定就默认到浏览器关闭） |
+| path=PATH          | 将服务器上的文件目录作为 Cookie 的适用对象        |
+| domain=域名        | 作为 Cookie 适用对象的域名                        |
+| Secure             | 仅在 HTTPS 安全通信时才会发送 Cookie              |
+| HttpOnly           | 加以限制，使 Cookie 不能被 JS 脚本访问            |
+
+#### 6.7.2 Cookie
+
+```tex
+Cookie: status=enable
+```
+
+首部字段 Cookie 会告知服务器，当客户端想要获得 HTTP 状态管理支持时，就会在请求中包含从服务器接收到的 Cookie
+
+### 6.8 其他首部字段
+
+HTTP 首部字段是可以自行扩展的，会出现各种非标准字段
+
+#### 6.8.1 X-Frame-Options
+
+```tex
+X-Frame-Options: DENY
+```
+
+该字段属于 HTTP 响应首部，用于控制网站内容在其他 Web 网站的 Frame 标签内的显示问题。其主要目的是为了防止点击劫持（clickjacking）攻击
+
+它有两个可指定的字段值
+
+- DENY：拒绝
+- SAMEORIGIN：仅同源域名下的页面匹配时许可
+
+#### 6.8.2 X-XSS-Protection
+
+```tex
+X-XSS-Protection: 1
+```
+
+首部字段 X-XSS-Protection 属于 HTTP响应首部，它是针对跨站脚本攻击（XSS）的一种对策，用户控制浏览器 XSS 防护机制的开关
+
+可选字段值有两个：
+
+- 0：将 XSS 过滤设置为无效状态
+- 1：将 XSS 过滤设置为有效状态
+
+#### 6.8.3 DNT
+
+```tex
+DNT: 1
+```
+
+首部字段 DNT 属于请求首部，其中 DNT 是 Do Not Track 的简称，意为拒绝个人信息被收集，是表示拒绝被精准广告追踪的一种方法
+
+字段值有两个：
+
+- 0：同意被追踪
+- 1：拒绝被追踪
+
+## 7.确保 Web 安全的 HTTPS
+
+在 HTTP 协议中可能存在信息窃听或身份伪装等安全问题。使用 HTTPS 通信机制可以有效的防止这些问题
 
 # 其它
 
