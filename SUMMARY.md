@@ -16,7 +16,8 @@
   - [深入理解计算机系统](./course/深入理解计算机系统.md)
   - [图说设计模式](./course/图说设计模式.md)
 * dataStructure
-  - simple
+  
+  - simple and young
     - [文件操作](./dataStructure/simple/文件操作.md)
     - [栈和队列](./dataStructure/simple/栈和队列.md)
     - [链表](./dataStructure/simple/链表.md)
@@ -25,6 +26,8 @@
     - [树](./dataStructure/simple/树.md)
     - [图](./dataStructure/simple/图.md)
     - [递归](./dataStructure/simple/递归.md)
+  - try again
+    - [leetcode 算法教程](./dataStructure/leetcode算法教程.md)
 * font
   - [前端面试题](./font/前端面试题.md)
   - [React](./font/React.md)
