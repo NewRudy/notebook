@@ -1,12 +1,14 @@
 # LeetCode 算法教程
 
-## 算法入门
+## 1 算法入门
 
 [20 天算法刷题计划](https://leetcode-cn.com/study-plan/algorithms/?progress=w8l6fp6)
 
-### 第一天
+### 1.1  二分查找
 
-#### 二分查找
+#### 例题
+
+- 简单的二分查找
 
 考虑数组的奇偶数，应该向下取整，平时用 c 做应该就是向下取整了，使用 JavaScript  的时候没有类型，应该使用  Math.floor 或者 Math.ceil 向下或者向上取整
 
@@ -55,7 +57,7 @@ var search = function(nums, target) {
 
 递归的写法和循环的写法用时差不多，但是循环的内存好像要少一点。比较两者而言，我还是喜欢递归的写法
 
-#### 第一个错误的版本
+- 第一个错误的版本
 
 顺序的版本，找到第一个错误的版本，最直观的就是循环，算法就是二分
 
@@ -108,7 +110,7 @@ var solution = function(isBadVersion) {
 
 用时都差不多，但是看到题解里面有说用移位 >>1 代替除以 2 的，>>1 相当于除以2并向下取整了，防止溢出
 
-#### 搜索插入位置
+- 搜索插入位置
 
 这个题的判断条件有出入，可能是最后一个位置加一，所以多用了一个变量 ans = nums.length
 
@@ -154,7 +156,7 @@ var searchInsert = function(nums, target) {
 };
 ```
 
-#### 相关简单题
+#### 二分查找  简单题
 
 - [x的平方根](https://leetcode-cn.com/problems/sqrtx/)
 
@@ -451,6 +453,262 @@ var findTheDistanceValue = function(arr1, arr2, d) {
         }
     }
     return sum
+};
+```
+
+- #### [第 k 个缺失的正整数](https://leetcode-cn.com/problems/kth-missing-positive-number/)
+
+```js
+/**
+ * @param {number[]} arr
+ * @param {number} k
+ * @return {number}
+ */
+var findKthPositive = function(arr, k) {
+    // 找规律，先找范围，范围是 x_n - n, n 是下标值，结果是 k + n
+    let left = 0, right = arr.length - 1
+    while(left <= right) {
+        let mid = left + ((right - left) >> 1)
+        let temp = arr[mid] - mid - 1
+        if(temp > k) {
+            right = mid - 1
+        } else if(temp < k) {
+            left = mid + 1
+        } else {
+            while(arr[mid] - arr[mid-1] == 1) mid = mid -1      // 找到最小的下标
+            left = mid
+            break
+        }
+    }
+    return k + left
+};
+```
+
+- #### [特殊数组的特征值](https://leetcode-cn.com/problems/special-array-with-x-elements-greater-than-or-equal-x/)
+
+这题的规律不好找啊，溜了溜了，就做了前三页的简单题
+
+### 1.2  双指针
+
+#### 例题
+
+- 有序数组的平方
+
+为什么没有用 JavaScript 内置的方法，反而时间和空间的消耗更大了呢
+
+```js
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var sortedSquares = function(nums) {
+    // 1. 先用暴力法
+    // nums.forEach((value, index) => nums[index] = value * value)
+    // return nums.sort((a, b) => a - b)
+
+    // 2. 应该用一种简单的方法，平方之后前面是降序，后面是升序，归并一下即可
+    nums.forEach((value, index) => nums[index] = value * value)
+    let res = []
+    for(let i = 0, j = nums.length - 1; i <= j;) {
+        if(nums[i] <= nums[j]) {
+            res.unshift(nums[j])
+            --j;
+        } else {
+            res.unshift(nums[i])
+            ++i;
+        }
+    }
+    return res
+};
+```
+
+- 轮转数组
+
+三种方法，感觉还不如用 JavaScript 自带的内置函数，这样速度还要快一点
+
+```js
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var reverse = function(arr, i, j) {
+    for(;i < j;++i, --j) {
+        let temp = arr[i]
+        arr[i] = arr[j]
+        arr[j] = temp
+    }
+}
+
+var rotate = function(nums, k) {
+    // 1. 利用 splice
+    // k = k % nums.length
+    // let temp = nums.splice(0, nums.length - k)
+    // for(let i of temp) nums.push(i)
+
+
+    // 2. 就是快排的基础, 环状的替换, 感觉有点不好找规律，，，
+    // k = k % nums.length
+    // let m = 0, n = nums.length - k, temp
+    // for(let i = 0; i < k; ++i) {
+    //     [nums[m], nums[n]] = [nums[n], nums[m]]
+    //     ++m 
+    //     ++n
+    // }
+    // while(m < nums.length - k) 
+
+    // 3. 使用翻转的方法
+    k = k % nums.length
+    nums.reverse()
+    reverse(nums, 0, k - 1)
+    reverse(nums, k, nums.length - 1)
+};
+```
+
+- 移动零
+
+```js
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var moveZeroes = function(nums) {
+    // 两个指针，一个 firstZero，一个指针用来遍历数组
+    let firstZero = -1, temp
+    for(let i = 0; i < nums.length; ++i) {
+        if(nums[i] == 0) {
+            if(firstZero == -1) firstZero = i
+        } else {
+            if(firstZero != -1) {
+                temp = nums[i]
+                nums[i] = nums[firstZero]
+                nums[firstZero] = temp
+                if(firstZero + 1 < nums.length && nums[firstZero + 1] == 0) firstZero++
+                else firstZero = i
+            }
+        }
+    }
+};
+```
+
+- 两数之和
+
+```js
+/**
+ * @param {number[]} numbers
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(numbers, target) {
+    // 双指针了
+    let i = 0, j = numbers.length - 1
+    while(i < j && numbers[i] + numbers[j] != target) {
+        if(numbers[i] + numbers[j] > target) {
+            --j 
+        } else {
+            ++i 
+        }
+    }
+    return [i + 1, j + 1]
+};
+```
+
+- 反转字符串
+
+```js
+/**
+ * @param {character[]} s
+ * @return {void} Do not return anything, modify s in-place instead.
+ */
+var reverseString = function(s) {
+    // 1. 直接使用内置的方法
+    // s.reverse()
+
+    // 2. 使用双指针
+    let temp
+    for(let i = 0, j = s.length - 1; i < j; ++i, --j) {
+        temp = s[i]
+        s[i] = s[j]
+        s[j] = temp
+    }
+};
+```
+
+- 反转字符串中的单词
+
+```js
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var reverseWords = function(s) {
+    // 双指针
+    let firstSpace = 0, secondSpace = 0, temp
+    s = s.split('')
+    while(s[secondSpace] != ' ' && secondSpace < s.length) ++secondSpace
+    while(secondSpace <= s.length) {
+        for(let i = firstSpace, j = secondSpace - 1; i < j; ++i, --j) {
+            temp = s[i]
+            s[i] = s[j]
+            s[j] = temp
+        }
+        secondSpace++
+        firstSpace = secondSpace
+        while(s[secondSpace] != ' ' && secondSpace < s.length) ++secondSpace
+    }
+    return s.join('')
+};
+```
+
+- 链表的中间结点
+
+```js
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var middleNode = function(head) {
+    let firstNode = head, secondNode = head
+    while(secondNode && secondNode.next) {
+        if(secondNode.next) secondNode = secondNode.next.next
+        firstNode = firstNode.next
+    }
+    return firstNode
+};
+```
+
+- 删除链表的倒数第 N 个结点
+
+```js
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} n
+ * @return {ListNode}
+ */
+var removeNthFromEnd = function(head, n) {
+    let first = head, second = head
+    for(let i = 0; i < n && second; ++i) second = second.next
+    if(!second) return head.next    // 处理长度一致的尴尬
+    while(second && second.next) {
+        first = first.next
+        second = second.next
+    }
+    first.next = first.next.next
+    return head
 };
 ```
 
