@@ -324,7 +324,7 @@ const _.throttle = (func, wait) => {
 
 vue没有内置防抖和节流，可以使用 Lodash  等库实现
 
-### 就算属性和侦听器
+### 计算属性和侦听器
 
 #### 计算属性 computed
 
@@ -839,12 +839,278 @@ app.component('blog-post', {
 ```html
 <custom-input
    :model-value='searchText'
-   @update:model-value='search=$event'></custom-input>
+   @update:model-value='searchText=$event'></custom-input>
 ```
 
+为了让它正常工作，这个组件内的 input 必须：
+
+- 将其 value attribute 绑定到一个名为 modelValue 的 prop 上
+- 在其 input 事件被触发时，将新的值通过自定义的 update:modelvalue 事件抛出
+
+代码如下：
+
+```js
+app.component('custom-input', {
+  props: ['modelValue'],
+  emits: ['update:modelValue'],
+  template: `
+  	<input
+  		:value="modelValue"
+  		@input="$emit(('update:modelValue'), $event.target.value)"
+  `
+})
+```
+
+现在 v-model 就可以在这个组件上完美的工作起来了
+
+```js
+<custom-input v-model='searchText'></custom-input>
+```
+
+#### 通过插槽分发内容
+
+和 HTML 元素一样，我们经常需要向一个组件传递内容：
+
+```html
+<alert-box>something bad happened</alert-box>
+```
+
+这可以通过使用 Vue 的自定义 <slot> 元素来实现
+
+```js
+app.component('alert-box', {
+  template:`
+  	<div class='demo-alert-box'>
+  	<strong>Error!</strong>
+  	<slot></slot>
+  	</div>
+  `
+})
+```
+
+我们使用 <slot> 作为我们想要插入内容的占位符
+
+#### 动态组件
+
+在不同组件之间进行动态切换是非常有用的，这可以通过  Vue 的 <component> 元素加一个特殊的 is attribute 来实现：
+
+```html
+<component :is='currentTabComponent'></component>
+```
+
+#### 解析 DOM 模板时的注意事项
+
+如果想在 DOM直接书写 Vue 模板，Vue 将不得不从 DOM 中获取字符串。这会因为浏览器的原生 HTML 解析行为而导致一些小问题
+
+- 元素位置受限：有些 HTML 元素，诸如 `<ul>`、`<ol>`、`<table>` 和 `<select>`，对于哪些元素可以出现在其内部是有严格限制的
+- 大小写不敏感：HTML attribute 名不区分大小写，这时候应该使用 - 来命名
 
 
 
+## 深入组件
+
+### 组件注册
+
+组件名：在注册一个组件的时候，我们始终需要给它一个名字，它就是 app.component 的第一个参数，建议组件名全部小写，如果有多个单词则用连字符符号连接
+
+```js
+Vue.component('my-component-name', {...})
+```
+
+组件名大小写，在定义组件名的方式有两种，一种是连字符（kebab-case），一种是驼峰法（PascalCase），当使用 PascalCase定义一个组件时，你在引用这个自定义元素时两种命名法都可以使用。也就是 <my-component-name> 和 <MycomponentName> 都可接受。但是在 DOM 中使用时只有 kebab-case 有效
+
+#### 全局注册和局部注册
+
+到目前为止，我们只用过 app.component 来创建组件：
+
+```js
+Vue.createApp({...}).component('my-component-name', {...})
+```
+
+这些组件是全局注册的，也就是说它们注册之后可以用在任何新创建的组件实例的模板中
+
+全局注册往往是不够理想的。比如你使用一个像 webpack 这样的构建系统，全局注册所有的组件意味着即便你已经不再使用其中一个组件了，它仍然会被包含在最终的构建结果中，造成代码的无谓增加
+
+在这些情况下，你可以通过一个普通的 JavaScript 对象来定义组件：
+
+```js
+const app = Vue.createApp({
+  components: {
+    'component-a': ComponentA,
+    'component-b': ComponentB
+  }
+})
+```
+
+注意局部注册的组件在其子组件中不可用
+
+#### 模块系统
+
+如果你使用了诸如 Babel 和 webpack 的模块系统，在这些情况下，我们推荐创建一个 components 目录，并将每个组件放置在各自的文件中：
+
+```js
+import ComponentA from './ComponentA'
+import ComponentB from './ComponentB'
+
+export default{
+  components: {
+    ComponentA,
+    ComponentB
+  }
+  // ...
+}
+```
+
+### Props
+
+#### Prop 类型
+
+目前为止，我们只看到了以字符串数组形式列出的 prop，但是通常希望每个 prop 都有指定的值类型，这时候你可以对象的形式列出 prop：
+
+```js
+props: {
+  title: String,
+  likes: Number,
+  isPublished: Boolean,
+  commentIds: Array,
+  author: Object,
+  callback: Function,
+  contactsPromise: Promise // 或任何其他构造函数
+}
+```
+
+#### 传递静态或动态的 Prop
+
+传入静态的值：
+
+```html
+<blog-post title='My journey with Vue'></blog-post>
+```
+
+传入动态的值：
+
+```html
+<blog-post :title='post.title'></blog-post>
+```
+
+传入要给数字，即使数字是静态的，但我们仍需要告诉 Vue 这是一个 JS 表达式，而不是一个字符串：
+
+```html
+<blog-post :likes="42"></blog-post>
+```
+
+传入一个布尔值，同数字：
+
+```html
+<blog-post :is-published='false'></blog-post>
+```
+
+传入一个数组，对象，同数字
+
+如果想要将一个对象的所有 property 都作为 prop 传入，可以使用不带参数的 v-bind：
+
+```js
+post: {
+  id: 1,
+  title: ',,,'
+}
+```
+
+```html
+<blog-post v-bind="post"></blog-post>
+```
+
+等价于：
+
+```html
+<blog-post v-bind:id="post.id" v-bind:title='post.title'></blog-post>
+```
+
+#### 单向数据流
+
+所有的 prop 都使得其父子 prop 之间形成了一个单向下行绑定：父级 prop 的更新会向下流动到子组件中，但是反过来则不行。这样会防止从子组件以外变更父级组件的状态，从而导致你的应用的数据流动难以理解。
+
+常见的试图变更一个 prop 的情况：
+
+- 这个 prop 用来传递一个初始值，这个子组件接下来希望将其作为一个本地的 prop 数据来使用，在这种情况下，最好定义一个本地 data property 并将这个 prop 作为其初始值
+- 这个 prop 以一种原始的值传入且需要进行转换。在这种情况下，最好使用这个 prop 的值来计算一个计算属性
+
+#### prop 验证
+
+我们可以为组件的 prop 只当验证要求：
+
+```js
+app.component('my-component', {
+  props: {
+    // 基础的类型检查（`null` 和 `undefined` 会通过任何类型的验证
+    propA: Number,
+    porpB: [String, Number],
+    // 必填的字符串
+    propC: {
+      type: String,
+      required: true
+    },
+    // 带有默认值的对象
+    propE: {
+      type: Object,
+      // 对象和数组的默认值必须从要给工厂函数返回
+      default() {
+        retrun {message: 'hello'}
+      }
+    },
+    // 自定义验证函数
+    propF: {
+      validator(value) {
+        // 这个值必须与下列字符串中的其中一个相匹配
+        return ['success', 'warning', 'danger'].includes(value)
+      }
+  	},
+    // 具有默认值的函数
+    propG: {
+      type: Function,
+      default() {
+        return 'Default function'
+      }
+    }
+})
+```
+
+### 非 Prop 的 Attribute
+
+一个非 prop 的 attribute 是指向一个组件，但是该组件并没有相应 props 或 emits 定义 attribute。常见的示例包括 class、style 和 id  attribute。可以通过 $property 访问那些 attribute
+
+#### Attribute 继承
+
+当组件返回单个根节点时，非 prop 的 attribute 将自动添加到根节点的 attribute 中。例如，在 date-picker 组件的实例中：
+
+```js
+app.component('date-picker', {
+  template `
+  	<div class='date-picker'>
+  		<input type='datetime-local' />
+  	</div>
+  `
+})
+```
+
+如果我们需要通过 data-status attribute 定义 <data-picker> 组件的状态，它将应用于根节点
+
+```html
+<!-- 具有非 prop 的 attribute 的 data-picker 组件 -->
+<date-picker data-status='activated'></date-picker>
+<!-- 渲染后的 date-picker 组件 -->
+<div class='date-picker' data-status='activated'>
+  <input type='datetime-local' />
+</div>
+```
+
+同样的规则也适用于事件监听器
+
+如果你不希望组件的根元素继承 attribute，可以在组件的选项中设置 inheritAttrs: false。禁用 attribute 继承的常见场景是需要将 attribute 应用于根节点之外的其他元素
+
+与单个根节点组件不同，具有多个根节点的组件不具有自动 attribute 行为。如果未显示绑定 $attr，将发出运行时警告
+
+### 自定义事件
 
 
 

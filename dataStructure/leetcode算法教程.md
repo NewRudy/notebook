@@ -712,3 +712,90 @@ var removeNthFromEnd = function(head, n) {
 };
 ```
 
+#### 双指针 简单题
+
+- #### [验证回文串](https://leetcode-cn.com/problems/valid-palindrome/)
+
+```js
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function(s) {
+    const str = s.toLocaleLowerCase().replace(/[\W_]/ig, '')
+    for(let i = 0, j = str.length - 1; i < j; ++i, --j) {
+        if(str[i].toLocaleLowerCase() != str[j].toLocaleLowerCase()) return false
+    }
+    return true
+};
+```
+
+- #### [快乐数](https://leetcode-cn.com/problems/happy-number/)
+
+```js
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isHappy = function(n) {
+    let slow = n, fast = sumSquare(n) 
+    while(fast!=1 && fast!=slow) {
+        fast = sumSquare(sumSquare(fast))
+        slow = sumSquare(slow)
+    }
+    return fast === 1
+};
+
+var sumSquare = (num) => {
+    return num.toString().split('').map(i => i ** 2).reduce((a, b) => a + b)
+}
+```
+
+- #### [反转字符串中的元音字母](https://leetcode-cn.com/problems/reverse-vowels-of-a-string/)
+
+```js
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var reverseVowels = function(s) {
+    let temp = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+    const str = s.split('')
+    for(let i = 0, j = str.length - 1; i < j; ++i, --j) {
+        while(!temp.includes(str[i]) && i < j) ++i;
+        while(!temp.includes(str[j]) && j > i) --j;
+        if(i < j) [str[i], str[j]] = [str[j], str[i]]
+    }
+    return str.join('')
+};
+```
+
+- #### [反转字符串 II](https://leetcode-cn.com/problems/reverse-string-ii/)
+
+快慢指针是两倍的情况，可以思考是否还需要两个指针
+
+```js
+/**
+ * @param {string} s
+ * @param {number} k
+ * @return {string}
+ */
+var reverseStr = function(s, k) {
+    const str = s.split('')
+    for(let i = 0; i <= str.length; i += 2 * k) {
+        swap(str, i, Math.min(i + k, str.length) - 1)
+    } 
+    return str.join('')
+};
+
+var swap = (str, i, j) => {
+    while(i < j) {
+        [str[i], str[j]] = [str[j], str[i]]
+        ++i 
+        --j
+    }
+}
+```
+
+- #### [两数之和 IV - 输入 BST](https://leetcode-cn.com/problems/two-sum-iv-input-is-a-bst/)
+
