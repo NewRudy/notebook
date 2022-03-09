@@ -16,7 +16,7 @@
 
 Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进 DOM 的系统，数据和DOM建立关联，所有的东西都是响应式的
 
-`{{message}}`	绑定 DOM 文本
+`{{message}`	绑定 DOM 文本
 
 v-bind:title		绑定元素的 atribute
 
@@ -47,7 +47,7 @@ v-for	可以绑定数组的数据来渲染一个项目列表
 ```js
 app.component('todo-item', {
   props: ['todo'],
-  template: `<li>{{ todo.text }}</li>`
+  template: `<li>{{ todo.text</li>`
 })
 ```
 
@@ -61,7 +61,7 @@ Vue 组件与**自定义元素**非常类似——它是 [Web Components 规范]
 
 看官方文档的时候，多次提及字符串模板和 dom 模板，对这个模板比较模糊
 
-- 字符串模板：字符串模板就是卸载 vue 中的 template 中定义的模板，如 .vue 的单文件组件模板和定义组件时 template 属性值的模板。字符串模板不会再页面初始化参与页面的渲染，会被 vue 进行解析编译之后再被浏览器渲染，所以不受限于 html 结构和标签的命名
+- 字符串模板：字符串模板就是写在 vue 中的 template 中定义的模板，如 .vue 的单文件组件模板和定义组件时 template 属性值的模板。字符串模板不会再页面初始化参与页面的渲染，会被 vue 进行解析编译之后再被浏览器渲染，所以不受限于 html 结构和标签的命名
 - dom 模板：也称 html 模板，dom 模板就是写在 html 文件中，一打开就会被浏览器进行解析渲染，所以要遵循 html 结构和标签的命名，否则浏览器不解析也就不能获取其内容了
 
 ### 应用&组件实例
@@ -102,7 +102,7 @@ Vue.js 使用了基于 HTML 的模板语法，允许开发者声明式地将 DOM
 
 #### 插值
 
-DOM文本使用 `{{}}` 进行查实，也可以通过使用 [v-once 指令](https://v3.cn.vuejs.org/api/directives.html#v-once)，你也能执行一次性地插值，当数据改变时，插值处的内容不会更新。但请留心这会影响到该节点上的其它数据绑定
+DOM文本使用 `` 进行查实，也可以通过使用 [v-once 指令](https://v3.cn.vuejs.org/api/directives.html#v-once)，你也能执行一次性地插值，当数据改变时，插值处的内容不会更新。但请留心这会影响到该节点上的其它数据绑定
 
 #### 原始HTML
 
@@ -341,14 +341,7 @@ vue没有内置防抖和节流，可以使用 Lodash  等库实现
 
 所以对于任何包含响应式数据的复杂逻辑，你都应该使用计算属性
 
-```html
-<div id='computed-basics'>
-    <p>
-        has hublished books: 
-    </p>
-    <span>{{publishedBookedMessage}}</span>
-</div>
-```
+
 
 ```js
 Vue.createApp({
@@ -399,7 +392,7 @@ computed: {
     }
   }
 }
-// ...
+
 ```
 
 #### 侦听器
