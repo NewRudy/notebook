@@ -108,7 +108,7 @@ var solution = function(isBadVersion) {
 };
 ```
 
-用时都差不多，但是看到题解里面有说用移位 >>1 代替除以 2 的，>>1 相当于除以2并向下取整了，防止溢出
+用时都差不多，但是看到题解里面有说用移位 >>1 代替除以 2 的，>>1 相当于除以2并向下取整了，减了再加就是防止溢出了
 
 - 搜索插入位置
 
@@ -212,7 +212,7 @@ var isPerfectSquare = function(num) {
 
 - [猜数字的大小](https://leetcode-cn.com/problems/guess-number-higher-or-lower/)
 
-题目描述的真实太 giao 了
+题目描述的真是太 giao 了
 
 ```js
 /**
@@ -797,5 +797,11 @@ var swap = (str, i, j) => {
 }
 ```
 
-- #### [两数之和 IV - 输入 BST](https://leetcode-cn.com/problems/two-sum-iv-input-is-a-bst/)
+### 1.3 滑动窗口
+
+- 无重复字符的最长子串
+
+
+
+### 
 
