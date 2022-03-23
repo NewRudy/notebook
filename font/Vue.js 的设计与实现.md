@@ -610,7 +610,149 @@ scheduler 调度器函数会在 getter 函数中所依赖的响应式数据变�
 但是这里还有一个缺陷，因为现在的计算属性是个懒执行，只能通过副作用函数重新执行拿到缓存，不能在相关联的数据更改之后，缓存就跟着改，所以需要改进。改进方法是当读取计算属性的值的时，手动调用 track 函数进行追踪；当计算属性依赖的响应式数据发生变化时，手动调用 trigger 函数触发响应
 
 ```js
+function computed(getter) {
+  let value
+  let drity = true
+  const effectFn = effect(getter, {
+    lazy: true,
+    scheduler() {
+      if(!dirty) {
+        dirty = true
+        trigger(obj, 'vlaue')		// 当计算属性依赖的响应式数据变化时，手动调用 trigger 函数触发响应
+      }
+    }
+  })
+  const obj = {
+    get value() {
+      if(dirty) {
+        value = effectFn()
+        dirty = false
+      }
+      track(obj, 'value')		// 当读取 value 时，手动调用 track 函数进行追踪
+      return value
+    }
+  }
+  return obj
+}
 ```
 
+### 2.1.6. watch 的实现原理
 
+watch 的本质就是观测一个响应式数据，当数据发生变化时通知并执行响应的回调函数。实际上 watch 的实现本质上就是利用了 effect 以及 options.scheduler 选项
+
+```js
+function watch(source, cd){		// watch 函数接收两个参数，source 是响应式数据，cb 是回调函数
+	effect(
+  	() => source.foo,		// 触发读取操作，从而建立联系
+    {
+      scheduler() {
+        cb() 		// 当数据发生变化, 调用回调函数
+      }
+    }
+  )
+}
+```
+
+现在能观测 source.foo 的变化了，为了让 watch 函数更具有通用性，需要封装一个通用的操作
+
+```js
+function watch(source, cb) {
+  effect(
+  	() => traverse(source),		// 调用 traverse 递归地读取
+    {
+      scheduler() {
+        cb()
+      }
+    }
+  )
+}
+function traverse(value, seen = new Set()) {
+  if(typeof value != 'object' || value == 'null' || seen.has(value)) return		// 如果读取的值是原始值、空、或则被读取过了，则什么都不做
+  seen.add(value)		// 将数据添加到 seen 中，代表遍历地读取过了，避免循环引用引起的死循环
+  for(const k in value) {		// 假设 value 是一个对象
+  	traverse(value[k], seen)
+  }
+  return value
+}
+```
+
+这样就能读取一个对象上的任意的属性，从而当任意属性发生变化时都能够触发回调函数执行，但是现在的实现还拿不到旧值和新值，这需要充分利用 effect 函数的 lazy 选项
+
+```js
+function watch(source, cb) {
+  let getter
+  if(typeof source === 'function') {
+    getter = source
+  } else {
+    getter = () => traverse(source)
+  }
+  let oldValue, newValue		// 定义旧值和新值
+  const effectFn = effect(
+  	() => getter(),
+    {
+      lazy: true,
+      scheduler() {
+        newValue = effectFn()
+        cb(newValue, oldValue)
+        oldValue = newValue		// 更新旧值，不然下一次会得到错误得旧值
+      }
+    }
+  )
+  oldValue = effectFn()		// 手动调用副作用函数，拿到的值就是旧值
+}
+```
+
+watch 的本质其实是对 effect 的二次封装，但是 watch 有两个特性：一个是立即执行的回调函数，另一个是回调函数执行的时机
+
+默认情况下，一个 watch 的回调只会在响应式数据发生变化时候才执行，在 Vue.js 中可以通过选项参数 immediate 来指定回调是否需要立即执行。实际上回调函数的立即执行和后续执行本质上没有任何差别，我们可以把 scheduler 调度函数封装为一个通用函数，分别在初始化和变更的时候调用它
+
+```js
+function watch(source, cb, options = {}) {
+  let getter
+  if(typeof source === 'function') {
+    getter = source
+  } else {
+    getter = () => traverse(source)
+  }
+  let oldValue, newValue
+  const job = () => {
+    newValue = effectFn()
+    cb(newValue, oldValue)
+    oldValue = newValue
+  }
+  const effectFn = effect(
+  	() => getter(),		// 执行 getter
+    {
+      lazy: true,
+      scheduler: () => {
+        if(options.flush === 'post'){		// 在调度函数中判断 flush 是否为 ‘post’， 如果是就放到微任务队列中执行
+        	const p = Promise.resolve()
+          p.then(job)
+        } else {
+          job()
+        }
+      }
+    }
+  )
+  if(options.immediate) {		// 实现立即执行功能
+    job()
+  } else {
+    oldvalue = effectFn()
+  }
+}
+```
+
+### 2.1.7. 过期的副作用
+
+竞态问题通常在多线程或多线程编程中被提及，前端很少提及，但在日常工作中可能早就遇到过相似的场景
+
+```js
+let finalData
+watch(obj, async() => {
+  const res = fetch('/test')
+  finalData = res
+})
+```
+
+看着没什么问题，但是如果连续修改 obj 的值，会发送两个请求，最终的结果是哪个值是不确定的，这时候就应先把第一次的设置为过期，避免竞态问题产生错误的结果。过期的作用通过接收一个回调函数，回调函数在当前副作用函数过期时候执行
 
