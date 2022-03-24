@@ -17,8 +17,6 @@
   - [图说设计模式](./course/图说设计模式.md)
 * dataStructure
 
-  - [leetcode算法基础](./dataStructure/leetcode算法教程.md)
-
   - simple and young
     - [文件操作](./dataStructure/simple/文件操作.md)
     - [栈和队列](./dataStructure/simple/栈和队列.md)
