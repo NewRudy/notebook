@@ -16,7 +16,7 @@
 
 Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进 DOM 的系统，数据和DOM建立关联，所有的东西都是响应式的
 
-`{{message}`	绑定 DOM 文本
+绑定 DOM 文本
 
 v-bind:title		绑定元素的 atribute
 
