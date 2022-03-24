@@ -1,0 +1,1798 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>太阳辐射模型的回顾 · notebook|blog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wutian">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="太阳能模型筛选系统.html" />
+    
+    
+    <link rel="prev" href="面向地理共享与集成的数据适配方法研究.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    bigData
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../bigData/BigData-Notes.html">
+            
+                <a href="../bigData/BigData-Notes.html">
+            
+                    
+                    BigData-Notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../bigData/Flink.html">
+            
+                <a href="../bigData/Flink.html">
+            
+                    
+                    Flink.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../bigData/Google 三大核心技术及其衍生.html">
+            
+                <a href="../bigData/Google 三大核心技术及其衍生.html">
+            
+                    
+                    Google 三大核心技术及其衍生.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../bigData/Hadoop.html">
+            
+                <a href="../bigData/Hadoop.html">
+            
+                    
+                    Hadoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../bigData/MinIO.html">
+            
+                <a href="../bigData/MinIO.html">
+            
+                    
+                    MinIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../bigData/MongoDB.html">
+            
+                <a href="../bigData/MongoDB.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../bigData/Nginx.html">
+            
+                <a href="../bigData/Nginx.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../bigData/Spark.html">
+            
+                <a href="../bigData/Spark.html">
+            
+                    
+                    Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../bigData/大数据.html">
+            
+                <a href="../bigData/大数据.html">
+            
+                    
+                    大数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    course
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../course/Hands-On Data Visualization.html">
+            
+                <a href="../course/Hands-On Data Visualization.html">
+            
+                    
+                    Hands-On Data Visualization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../course/深入理解计算机系统.html">
+            
+                <a href="../course/深入理解计算机系统.html">
+            
+                    
+                    深入理解计算机系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../course/图说设计模式.html">
+            
+                <a href="../course/图说设计模式.html">
+            
+                    
+                    图说设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../dataStructure/leetcode算法教程.html">
+            
+                <a href="../dataStructure/leetcode算法教程.html">
+            
+                    
+                    leetcode算法基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../dataStructure/leetcode算法教程.html">
+            
+                <a href="../dataStructure/leetcode算法教程.html">
+            
+                    
+                    leetcode算法基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <span>
+            
+                    
+                    simple and young
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../dataStructure/simple/文件操作.html">
+            
+                <a href="../dataStructure/simple/文件操作.html">
+            
+                    
+                    文件操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../dataStructure/simple/栈和队列.html">
+            
+                <a href="../dataStructure/simple/栈和队列.html">
+            
+                    
+                    栈和队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../dataStructure/simple/链表.html">
+            
+                <a href="../dataStructure/simple/链表.html">
+            
+                    
+                    链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="../dataStructure/simple/字符串.html">
+            
+                <a href="../dataStructure/simple/字符串.html">
+            
+                    
+                    字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.5" data-path="../dataStructure/simple/排序.html">
+            
+                <a href="../dataStructure/simple/排序.html">
+            
+                    
+                    排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.6" data-path="../dataStructure/simple/树.html">
+            
+                <a href="../dataStructure/simple/树.html">
+            
+                    
+                    树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7" data-path="../dataStructure/simple/图.html">
+            
+                <a href="../dataStructure/simple/图.html">
+            
+                    
+                    图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.8" data-path="../dataStructure/simple/递归.html">
+            
+                <a href="../dataStructure/simple/递归.html">
+            
+                    
+                    递归
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" >
+            
+                <span>
+            
+                    
+                    try again
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../dataStructure/leetcode算法教程.html">
+            
+                <a href="../dataStructure/leetcode算法教程.html">
+            
+                    
+                    leetcode 算法教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    font
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../font/React.html">
+            
+                <a href="../font/React.html">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../font/Vue.html">
+            
+                <a href="../font/Vue.html">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../font/WebSocket.html">
+            
+                <a href="../font/WebSocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../font/被删的前端游乐园.html">
+            
+                <a href="../font/被删的前端游乐园.html">
+            
+                    
+                    被删的前端游乐园
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../font/浏览器.html">
+            
+                <a href="../font/浏览器.html">
+            
+                    
+                    浏览器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../font/图解HTTP.html">
+            
+                <a href="../font/图解HTTP.html">
+            
+                    
+                    图解HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    gis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="GDAL.html">
+            
+                <a href="GDAL.html">
+            
+                    
+                    GDAL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="Geomorphology-Based Hydrological Model.html">
+            
+                <a href="Geomorphology-Based Hydrological Model.html">
+            
+                    
+                    Geomorphology-Based Hydrological Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="GeoserverModel.md">
+            
+                <span>
+            
+                    
+                    Geoserver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="GIS标准.html">
+            
+                <a href="GIS标准.html">
+            
+                    
+                    GIS标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="GIS算法基础.html">
+            
+                <a href="GIS算法基础.html">
+            
+                    
+                    GIS算法基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="Google Earth Engine.html">
+            
+                <a href="Google Earth Engine.html">
+            
+                    
+                    Google Earth Engine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="Landsat影像格式.html">
+            
+                <a href="Landsat影像格式.html">
+            
+                    
+                    Landsat影像格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="NetCDF.html">
+            
+                <a href="NetCDF.html">
+            
+                    
+                    NetCDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="OSMnx.html">
+            
+                <a href="OSMnx.html">
+            
+                    
+                    OSMnx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="城市规划中人性、人文和人本的关系.html">
+            
+                <a href="城市规划中人性、人文和人本的关系.html">
+            
+                    
+                    城市规划中人性、人文和人本的关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="地理大数据探索.html">
+            
+                <a href="地理大数据探索.html">
+            
+                    
+                    地理大数据探索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="地理大数据可视化.md">
+            
+                <span>
+            
+                    
+                    地理大数据可视化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="地理信息安全技术与进展心得体会.html">
+            
+                <a href="地理信息安全技术与进展心得体会.html">
+            
+                    
+                    地理信息安全技术与进展心得体会
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="面向地理共享与集成的数据适配方法研究.html">
+            
+                <a href="面向地理共享与集成的数据适配方法研究.html">
+            
+                    
+                    面向地理共享与集成的数据适配方法研究
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.15" data-path="太阳辐射模型的回顾.html">
+            
+                <a href="太阳辐射模型的回顾.html">
+            
+                    
+                    太阳辐射模型的回顾
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="太阳能模型筛选系统.html">
+            
+                <a href="太阳能模型筛选系统.html">
+            
+                    
+                    太阳能模型筛选系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.17" data-path="遥感技术解决地理问题.html">
+            
+                <a href="遥感技术解决地理问题.html">
+            
+                    
+                    遥感技术解决地理问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.18" data-path="最小二乘法.html">
+            
+                <a href="最小二乘法.html">
+            
+                    
+                    最小二乘法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    languages
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../languages/Go.html">
+            
+                <a href="../languages/Go.html">
+            
+                    
+                    Go
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../languages/Java.html">
+            
+                <a href="../languages/Java.html">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../languages/JavaScript.html">
+            
+                <a href="../languages/JavaScript.html">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../languages/Node.html">
+            
+                <a href="../languages/Node.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../languages/Python.html">
+            
+                <a href="../languages/Python.html">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../languages/TypeScript.html">
+            
+                <a href="../languages/TypeScript.html">
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    skills
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../skills/Docker.html">
+            
+                <a href="../skills/Docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../skills/Git.html">
+            
+                <a href="../skills/Git.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../skills/Linux.html">
+            
+                <a href="../skills/Linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../skills/画图.html">
+            
+                <a href="../skills/画图.html">
+            
+                    
+                    画图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    temp
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../temp/TestForS.html">
+            
+                <a href="../temp/TestForS.html">
+            
+                    
+                    TestForS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../temp/文件系统的设计原理.html">
+            
+                <a href="../temp/文件系统的设计原理.html">
+            
+                    
+                    文件系统的设计原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    interview
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../interview/前端_面试.html">
+            
+                <a href="../interview/前端_面试.html">
+            
+                    
+                    前端_面试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../interview/前端_笔试.html">
+            
+                <a href="../interview/前端_笔试.html">
+            
+                    
+                    前端_笔试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../interview/个人面经.html">
+            
+                <a href="../interview/个人面经.html">
+            
+                    
+                    个人面经
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >太阳辐射模型的回顾</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x592A;&#x9633;&#x8F90;&#x5C04;&#x6A21;&#x578B;&#x7EFC;&#x8FF0;">&#x592A;&#x9633;&#x8F90;&#x5C04;&#x6A21;&#x578B;&#x7EFC;&#x8FF0;</h1>
+<p>&#x53D1;&#x8868;&#x65F6;&#x95F4;&#xFF1A;2012.12.29</p>
+<p>&#x53D1;&#x8868;&#x8005;&#xFF1A;A. K. Katiyar&#xFF0C;C. K. Pandey</p>
+<h2 id="&#x57FA;&#x4E8E;angstrom&#x6A21;&#x578B;&#x4F30;&#x7B97;&#x592A;&#x9633;&#x8F90;&#x5C04;">&#x57FA;&#x4E8E;Angstrom&#x6A21;&#x578B;&#x4F30;&#x7B97;&#x592A;&#x9633;&#x8F90;&#x5C04;</h2>
+<h3 id="angstrom&#x6A21;&#x578B;">Angstrom&#x6A21;&#x578B;</h3>
+<p>&#x516C;&#x5F0F;&#xFF1A; <em>$H/H_0 = a + b(S/S_o)$</em></p>
+<p>$H$&#x662F;&#x6C34;&#x5E73;&#x9762;&#x4E0A;&#x7684;&#x6BCF;&#x5929;&#x6BCF;&#x5E73;&#x65B9;&#x7C73;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x91CF;</p>
+<p>$S$&#x662F;&#x6C34;&#x5E73;&#x9762;&#x4E0A;&#x7684;&#x6BCF;&#x5929;&#x7684;&#x65E5;&#x7167;&#x65F6;&#x957F;</p>
+<p>$H_0$&#x662F;&#x6C34;&#x5E73;&#x9762;&#x4E0A;&#x7684;&#x6BCF;&#x5929;&#x6BCF;&#x5E73;&#x65B9;&#x7C73;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x91CF;&#x7684;&#x7406;&#x8BBA;&#x6700;&#x5927;&#x503C;</p>
+<p>$S_0$&#x662F;&#x6C34;&#x5E73;&#x9762;&#x4E0A;&#x7684;&#x6BCF;&#x5929;&#x7684;&#x65E5;&#x7167;&#x65F6;&#x957F;&#x7684;&#x7406;&#x8BBA;&#x6700;&#x5927;&#x65F6;&#x957F;</p>
+<p>&#x8F93;&#x5165;&#x53C2;&#x6570;&#xFF1A;&#x7EF4;&#x5EA6;$L$ ,&#x4E00;&#x5E74;&#x4E2D;&#x7684;&#x7B2C;&#x51E0;&#x5929;$D_n$</p>
+<p>&#x6839;&#x636E;&#x4E00;&#x7CFB;&#x5217;&#x516C;&#x5F0F;&#x53EF;&#x8BA1;&#x7B97;&#x51FA; $H_0$&#xFF0C;$S_0$</p>
+<p>&#x6839;&#x636E;&#x89C2;&#x6D4B;&#x7AD9;&#x6570;&#x636E;&#x5F97;&#x51FA; $H$, $S$ &#xFF0C;&#x7136;&#x540E;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x53EF;&#x4EE5;&#x5230; $a , b$ &#x503C;&#xFF0C;&#x5982;&#x679C;&#x4EE5;&#x5929;&#x6587;&#x8F90;&#x5C04;&#x4E3A;&#x8D77;&#x59CB;&#x503C;&#xFF0C;$a,b$&#x7CFB;&#x6570;&#x53CD;&#x6620;&#x4E86;&#x5927;&#x6C14;&#x5BF9;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x7684;&#x524A;&#x5F31;&#x4F5C;&#x7528;&#xFF1B;&#x5982;&#x679C;&#x4EE5;&#x6674;&#x5929;&#x592A;&#x9633;&#x603B;&#x8F90;&#x5C04;&#x4E3A;&#x8D77;&#x59CB;&#x503C;&#xFF0C;$a,b$&#x7CFB;&#x6570;&#x53CD;&#x6620;&#x4E86;&#x4E91;&#x91CF;&#x906E;&#x853D;&#x5EA6;&#x7684;&#x5F71;&#x54CD;&#xFF08;&#x7A33;&#x5B9A;&#x6027;&#x8F83;&#x5DEE;&#xFF09;&#xFF1B;&#x5982;&#x679C;&#x4EE5;&#x7406;&#x60F3;&#x5927;&#x6C14;&#x603B;&#x8F90;&#x5C04;&#x4E3A;&#x8D77;&#x59CB;&#x503C;&#xFF0C;$a,b$&#x7CFB;&#x6570;&#x4E3B;&#x8981;&#x53CD;&#x6620;&#x4E86;&#x5927;&#x6C14;&#x4E2D;</p>
+<h4 id="1&#x4F4E;&#x9636;&#x6A21;&#x578B;">1.&#x4F4E;&#x9636;&#x6A21;&#x578B;</h4>
+<p>&#x7531;Angstrom&#x6A21;&#x578B;&#x884D;&#x751F;&#x51FA;&#x4E86;30&#x4E2A;&#x4F4E;&#x9636;&#x7684;&#x6A21;&#x578B;</p>
+<table>
+<thead>
+<tr>
+<th>model</th>
+<th>&#x5730;&#x70B9;</th>
+<th>&#x65F6;&#x95F4;</th>
+<th>&#x653E;&#x5F03;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&#x4E5F;&#x95E8;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&#x5370;&#x5EA6;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&#x610F;&#x5927;&#x5229;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>&#x7EA6;&#x65E6;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>&#x8D5E;&#x6BD4;&#x4E9A;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td></td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>10</td>
+<td>&#x5DF4;&#x57FA;&#x65AF;&#x5766;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>&#x610F;&#x5927;&#x5229;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>&#x5168;&#x7403;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>&#x7F8E;&#x56FD;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>$60N-70N$</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>15</td>
+<td>&#x5370;&#x5EA6;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td></td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>17</td>
+<td></td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>18</td>
+<td>&#x571F;&#x8033;&#x5176;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>19</td>
+<td>&#x963F;&#x5C14;&#x53CA;&#x5229;&#x4E9A;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>20</td>
+<td>&#x571F;&#x8033;&#x5176;</td>
+<td>&#x590F;&#x51AC;</td>
+<td></td>
+</tr>
+<tr>
+<td>21</td>
+<td>&#x571F;&#x8033;&#x5176;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>22</td>
+<td>&#x5DF4;&#x57FA;&#x65AF;&#x5766;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>23</td>
+<td>&#x4E2D;&#x56FD;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>24</td>
+<td>&#x57C3;&#x53CA;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>25</td>
+<td>&#x571F;&#x8033;&#x5176;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>26</td>
+<td>&#x4E2D;&#x56FD;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>27</td>
+<td>&#x5B5F;&#x4E70;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>28</td>
+<td></td>
+<td></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>29&#x6A21;&#x578B;&#x57FA;&#x4E8E;&#x5E73;&#x5747;&#x6C14;&#x6E29;&#x548C;&#x964D;&#x6C34;</p>
+<p>30&#x57FA;&#x4E8E;&#x592A;&#x9633;&#x78C1;&#x504F;&#x89D2;</p>
+<h4 id="2&#x9AD8;&#x9636;&#x6A21;&#x578B;">2.&#x9AD8;&#x9636;&#x6A21;&#x578B;</h4>
+<p>&#x7531;&#x4E8E;&#x57FA;&#x4E8E;&#x6C14;&#x5019;&#x7684;&#x7EBF;&#x6027;&#x6A21;&#x578B;&#x4E0D;&#x4E00;&#x5B9A;&#x9002;&#x5408;&#x6C42;&#x6781;&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x9AD8;&#x4F30;&#x4E86;&#x6CA1;&#x6709;&#x4E91;&#x7684;&#x65F6;&#x5019;&#x7684;&#x603B;&#x8F90;&#x5C04;</p>
+<table>
+<thead>
+<tr>
+<th>model</th>
+<th>&#x5730;&#x70B9;</th>
+<th>&#x65F6;&#x95F4;</th>
+<th>&#x653E;&#x5F03;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>31</td>
+<td></td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>32</td>
+<td>&#x5168;&#x7403;&#x7AD9;&#x70B9;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>33</td>
+<td>&#x571F;&#x8033;&#x5176;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>34</td>
+<td>&#x65AF;&#x91CC;&#x5170;&#x5361;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>35</td>
+<td>&#x571F;&#x8033;&#x5176;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>36</td>
+<td>&#x7F8E;&#x56FD;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>37</td>
+<td>&#x571F;&#x8033;&#x5176;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>38</td>
+<td>&#x571F;&#x8033;&#x5176;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>39</td>
+<td>&#x5229;&#x6BD4;&#x4E9A;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40</td>
+<td>&#x571F;&#x8033;&#x5176;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>41</td>
+<td>&#x571F;&#x8033;&#x5176;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>42</td>
+<td>&#x571F;&#x8033;&#x5176;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>43</td>
+<td>&#x571F;&#x8033;&#x5176;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>44</td>
+<td>&#x571F;&#x8033;&#x5176;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>45</td>
+<td>&#x5DF4;&#x57FA;&#x65AF;&#x5766;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>46</td>
+<td>&#x571F;&#x8033;&#x5176;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>47</td>
+<td>&#x571F;&#x8033;&#x5176;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>48</td>
+<td>&#x571F;&#x8033;&#x5176;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>49</td>
+<td>&#x5370;&#x5EA6;</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>50&#x6A21;&#x578B;&#x4F7F;&#x7528;&#x4E86;&#x76F8;&#x5BF9;&#x6E7F;&#x5EA6;</p>
+<p>51&#x6A21;&#x578B;&#x4F7F;&#x7528;&#x4E86;&#x76F8;&#x5BF9;&#x6E7F;&#x5EA6;&#xFF0C;&#x6700;&#x9AD8;&#x6E29;&#x5EA6;</p>
+<h4 id="3&#x57FA;&#x4E8E;&#x73AF;&#x5883;&#x6E29;&#x5EA6;&#x7684;&#x592A;&#x9633;&#x603B;&#x8F90;&#x5C04;&#x4F30;&#x7B97;">3.&#x57FA;&#x4E8E;&#x73AF;&#x5883;&#x6E29;&#x5EA6;&#x7684;&#x592A;&#x9633;&#x603B;&#x8F90;&#x5C04;&#x4F30;&#x7B97;</h4>
+<p>52&#x6A21;&#x578B;&#x4F7F;&#x7528;&#x4E86;&#x6E29;&#x5DEE;</p>
+<p>53&#x6A21;&#x578B;&#x4F7F;&#x7528;&#x6708;&#x6700;&#x9AD8;&#x6E29;&#x5EA6;&#x548C;&#x6708;&#x6700;&#x4F4E;&#x6E29;&#x5EA6;</p>
+<p>54&#x6A21;&#x578B;&#x4F7F;&#x7528;&#x4E86;&#x6700;&#x9AD8;&#x548C;&#x6700;&#x4F4E;&#x6C14;&#x6E29;</p>
+<h2 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h2>
+<h3 id="&#x4F5C;&#x8005;&#x603B;&#x7ED3;">&#x4F5C;&#x8005;&#x603B;&#x7ED3;</h3>
+<ol>
+<li>&#x4E3A;&#x4E86;&#x5F00;&#x53D1;&#x5408;&#x9002;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x6A21;&#x578B;&#xFF0C;&#x9700;&#x8981;&#x7ED9;&#x5B9A;&#x4F4D;&#x7F6E;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x4FE1;&#x606F;&#xFF0C;&#x4F46;&#x56E0;&#x4E3A;&#x7F3A;&#x4E4F;&#x53EF;&#x4FE1;&#x8D56;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x7ECF;&#x9A8C;&#x6A21;&#x578B;&#x6765;&#x9884;&#x6D4B;&#x548C;&#x4F30;&#x8BA1;&#x5168;&#x7403;&#x592A;&#x9633;&#x8F90;&#x5C04;</li>
+<li>&#x4ECE;Angstrom&#x6A21;&#x578B;&#x884D;&#x751F;&#x51FA;30&#x4E2A;&#x7EBF;&#x6027;&#x6A21;&#x578B;&#xFF0C;&#x7ECF;&#x9A8C;&#x7CFB;&#x6570;&#x7531;&#x7B2C;&#x4E00;&#x9636;&#x56DE;&#x5F52;&#x5206;&#x6790;&#x7ED3;&#x679C;&#x7684;&#x5230;&#xFF0C;&#x7531;&#x4E8E;&#x8BEF;&#x5DEE;&#x5B58;&#x5728;&#x4E86;&#x5BF9;&#x5168;&#x7403;&#x8F90;&#x5C04;&#x7684;&#x9AD8;&#x4F30;&#xFF0C;&#x4F46;&#x662F;&#x4E00;&#x9636;&#x8BA1;&#x7B97;&#x91CF;&#x5C11;&#xFF0C;&#x4E14;&#x76F8;&#x5173;&#x6027;&#x8D85;&#x8FC7;&#x7B2C;&#x4E8C;&#x548C;&#x7B2C;&#x4E09;&#x9636;&#x6570;&#xFF0C;&#x5E38;&#x5E38;&#x7528;&#x6765;&#x4F30;&#x8BA1;&#x6C34;&#x5E73;&#x8868;&#x9762;&#x4E0A;&#x7684;&#x5E73;&#x5747;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x91CF;</li>
+<li>Katiyar&#x548C;Pandey&#x6A21;&#x578B;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x6700;&#x7CBE;&#x786E;&#x7684;&#x6A21;&#x578B;&#xFF08;&#x5C31;&#x662F;&#x8BE5;&#x6587;&#x4F5C;&#x8005;:happy:&#xFF09;&#xFF0C;&#x57FA;&#x4E8E;&#x6E29;&#x5EA6;&#x7684;&#x6A21;&#x578B;&#x5177;&#x6709;&#x53D1;&#x5C55;&#x6F5C;&#x529B;&#xFF0C;&#x5B83;&#x53EF;&#x7528;&#x4E8E;&#x4F30;&#x8BA1;&#x65E0;&#x6CD5;&#x83B7;&#x5F97;&#x6301;&#x7EED;&#x65E5;&#x7167;&#x5730;&#x533A;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x91CF;</li>
+</ol>
+<h3 id="&#x672C;&#x4EBA;&#x603B;&#x7ED3;">&#x672C;&#x4EBA;&#x603B;&#x7ED3;</h3>
+<p>&#x7EDF;&#x8BA1;&#x4E86;54&#x4E2A;&#x6A21;&#x578B;&#xFF0C;7&#x4E2A;&#x6A21;&#x578B;&#x4F7F;&#x7528;&#x4E86;&#x6C14;&#x5019;&#x65B9;&#x9762;&#x7684;&#x53C2;&#x6570;&#xFF08;&#x5373;&#x5F88;&#x96BE;&#x65E0;&#x6CD5;&#x5B9E;&#x73B0;&#x7684;&#x6A21;&#x578B;&#xFF09;&#xFF0C;13&#x4E2A;&#x6A21;&#x578B;&#x6CA1;&#x6709;&#x8BF4;&#x660E;&#x9002;&#x7528;&#x4E8E;&#x54EA;&#x4E2A;&#x5730;&#x70B9;&#x6216;&#x8005;&#x76F4;&#x63A5;&#x5C31;&#x8BF4;&#x9002;&#x7528;&#x4E8E;&#x5168;&#x7403;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x4F30;&#x8BA1;&#xFF08;&#x5BF9;&#x4E8E;&#x8BE5;&#x70B9;&#x672C;&#x4EBA;&#x662F;&#x6301;&#x6000;&#x7591;&#x7684;&#x6001;&#x5EA6;&#xFF09;&#xFF0C;&#x5269;&#x4E0B;&#x7684;&#x6A21;&#x578B;&#x5730;&#x70B9;&#x91CD;&#x590D;&#x7387;&#x5F88;&#x9AD8;&#xFF08;&#x5982;&#x571F;&#x8033;&#x5176;&#x53EF;&#x80FD;&#x5C31;&#x5360;&#x4E86;&#x4E09;&#x5206;&#x4E4B;&#x4E00;&#x4EE5;&#x4E0A;&#xFF09;</p>
+<p>&#x6545;&#xFF0C;&#x5B9E;&#x73B0;&#x6548;&#x679C;&#x53EF;&#x5C31; emmm&#xFF0C;:cry:</p>
+<h2 id="&#x4E2D;&#x56FD;&#x76F8;&#x5173;&#x6587;&#x732E;&#x9605;&#x8BFB;">&#x4E2D;&#x56FD;&#x76F8;&#x5173;&#x6587;&#x732E;&#x9605;&#x8BFB;</h2>
+<p>&#x77E5;&#x7F51;&#x4E0A;&#x641C;&#x7D22;&#x4E86;&#x5927;&#x6982;&#x6709;&#x516B;&#x7BC7;&#x76F8;&#x5173;&#x7684;&#x8BBA;&#x6587;&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x4E00;&#x7BC7;&#x4E3A;&#x5916;&#x56FD;&#x8BBA;&#x6587;&#xFF0C;&#x6309;&#x65F6;&#x95F4;&#x987A;&#x5E8F;&#x9605;&#x8BFB;&#x7ED3;&#x679C;&#x5982;&#x4E0B;</p>
+<h3 id="1-&#x4E2D;&#x56FD;&#x5730;&#x533A;&#x592A;&#x9633;&#x603B;&#x8F90;&#x5C04;&#x7684;&#x7A7A;&#x95F4;&#x5206;&#x5E03;&#x7279;&#x5F81;">1. &#x4E2D;&#x56FD;&#x5730;&#x533A;&#x592A;&#x9633;&#x603B;&#x8F90;&#x5C04;&#x7684;&#x7A7A;&#x95F4;&#x5206;&#x5E03;&#x7279;&#x5F81;</h3>
+<p>&#x65F6;&#x95F4;&#xFF1A;1963</p>
+<p><img src="../image/image-20201014201905896.png" alt="image-20201014201905896"></p>
+<p>&#x56E0;&#x4E3A;&#x603B;&#x8F90;&#x5C04;&#x7684;&#x89C2;&#x6D4B;&#x7AD9;&#x5C11;&#xFF0C;&#x5F53;&#x65F6;&#x7684;&#x5B66;&#x8005;&#x5C31;&#x5DF2;&#x7ECF;&#x6709;&#x4E86;&#x5BFB;&#x6C42;&#x65E5;&#x7167;&#x6216;&#x8005;&#x4E91;&#x91CF;&#x4E0E;&#x603B;&#x8F90;&#x5C04;&#x7684;&#x7ECF;&#x9A8C;&#x5173;&#x7CFB;&#x3002;</p>
+<p>&#x4F5C;&#x8005;&#x6307;&#x51FA;&#xFF0C;&#x9752;&#x85CF;&#x9AD8;&#x539F;&#x5360;&#x5168;&#x56FD;&#x9762;&#x79EF;&#x56DB;&#x5206;&#x4E4B;&#x4E00;&#x4EE5;&#x4E0A;&#xFF0C;&#x4E14;&#x5E73;&#x5747;&#x6D77;&#x62D4;&#x7EA6;&#x4E3A;4000&#x7C73;&#xFF0C;&#x8F90;&#x5C04;&#x60C5;&#x51B5;&#x7279;&#x6B8A;&#xFF0C;&#x5B9C;&#x5C06;&#x4E2D;&#x56FD;&#x5206;&#x4E3A;&#x9752;&#x85CF;&#x9AD8;&#x539F;&#x533A;&#x548C;&#x5E73;&#x539F;&#x533A;&#x8FDB;&#x884C;&#x8BA8;&#x8BBA;&#xFF0C;&#x6700;&#x7EC8;&#x5F97;&#x5230;&#x4E86;&#x4E00;&#x526F;&#x4E2D;&#x56FD;&#x5E74;&#x603B;&#x8F90;&#x5C04;&#x7684;&#x5206;&#x5E03;&#x56FE;&#xFF0C;&#x5E76;&#x4ECE;&#x7A7A;&#x95F4;&#x5206;&#x5E03;&#x7279;&#x5F81;&#x7684;&#x89D2;&#x5EA6;&#x4E0A;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x4E86;&#x89E3;&#x91CA;&#x3002;</p>
+<p><img src="../image/image-20201014195733083.png" alt="image-20201014195733083"></p>
+<p>ps: &#x6309;&#x884C;&#x653F;&#x533A;&#x5212;&#x5206;&#x6765;&#x5BFB;&#x6C42;&#x6A21;&#x578B;&#x53C2;&#x6570;&#x53EF;&#x80FD;&#x5E76;&#x4E0D;&#x597D;&#xFF0C;&#x4F5C;&#x8005;&#x5728;&#x89E3;&#x91CA;&#x7684;&#x65F6;&#x5019;&#x591A;&#x6B21;&#x63D0;&#x5230;&#x4E86;&#x4E91;&#x91CF;&#x7684;&#x5F71;&#x54CD;&#xFF0C;Angstrom&#x516C;&#x5F0F;&#x5E76;&#x672A;&#x8003;&#x8651;&#x6C14;&#x5019;&#x65B9;&#x9762;&#x7684;&#x53C2;&#x6570;</p>
+<h3 id="2-angstrom&#x516C;&#x5F0F;&#x53C2;&#x6570;&#x5BF9;et0&#x7684;&#x5F71;&#x54CD;&#x53CA;fao&#x5EFA;&#x8BAE;&#x503C;&#x9002;&#x7528;&#x6027;&#x8BC4;&#x4EF7;">2. Angstrom&#x516C;&#x5F0F;&#x53C2;&#x6570;&#x5BF9;$ET_0$&#x7684;&#x5F71;&#x54CD;&#x53CA;$FAO$&#x5EFA;&#x8BAE;&#x503C;&#x9002;&#x7528;&#x6027;&#x8BC4;&#x4EF7;</h3>
+<p>&#x65F6;&#x95F4;&#xFF1A;2010</p>
+<p><img src="../image/image-20201014202212613.png" alt="image-20201014202212613"></p>
+<p>&#x8BE5;&#x6587;&#x8BA8;&#x8BBA;&#x4E86;Angstrom&#x516C;&#x5F0F;&#x53C2;&#x6570;&#x53D6;&#x503C;&#x5BF9;<a href="https://baike.baidu.com/item/%E5%8F%82%E7%85%A7%E4%BD%9C%E7%89%A9%E8%85%BE%E5%8F%91%E9%87%8F" target="_blank">&#x53C2;&#x7167;&#x817E;&#x53D1;&#x91CF;</a>&#xFF08;$ET_0$&#xFF09;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x516C;&#x5F0F;&#x53C2;&#x6570;$a,b$&#x7684;&#x5408;&#x7406;&#x6027;&#x53CA;&#x5176;&#x5730;&#x533A;&#x5206;&#x5E03;&#x89C4;&#x5F8B;&#xFF0C;&#x63D0;&#x51FA;&#x4E86;&#x5728;&#x65E0;&#x8F90;&#x5C04;&#x8D44;&#x6599;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;$a,b$&#x7684;&#x53D6;&#x503C;&#x65B9;&#x6CD5;,&#x5BF9;<a href="http://www.fao.org/home/zh/" target="_blank">FAO</a>&#x7684;&#x53C2;&#x6570;&#x5EFA;&#x8BAE;&#x4F5C;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x8BC4;&#x4EF7;</p>
+<p>&#x8BE5;&#x6587;&#x6839;&#x636E;&#x6C14;&#x5019;&#x7279;&#x5F81;&#x628A;&#x4EE5;&#x4E0B;&#x7684;104&#x4E2A;&#x6C14;&#x8C61;&#x7AD9;&#x5206;&#x4E3A;&#x4E86;7&#x7EC4;</p>
+<p><img src="../image/image-20201014203116523.png" alt="image-20201014203116523"></p>
+<p>Anogstrom&#x516C;&#x5F0F;&#x662F;&#x6709;Anogstrom&#x4E8E;1924&#x5E74;&#x63D0;&#x51FA;&#xFF0C;&#x540E;&#x6765;&#x6709;&#x4E00;&#x4E9B;&#x5B66;&#x8005;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x4E86;&#x6301;&#x7EED;&#x7684;&#x6539;&#x8FDB;&#xFF0C;&#x63D0;&#x51FA;&#x4E86;&#x5404;&#x79CD;&#x5F62;&#x5F0F;&#xFF0C;&#x4F46;&#x76EE;&#x524D;&#x4EFB;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x5176;&#x57FA;&#x672C;&#x7684;&#x7EBF;&#x6027;&#x5F62;&#x5F0F;&#x3002;&#xFF08;&#x5F15;&#x7528;&#x7684;&#x8BE5;&#x6587;&#xFF09;&#x5F0F;&#x5B50;&#x4E2D;&#x7684;&#x53C2;&#x6570;$a,b$&#x53CD;&#x6620;&#x4E86;&#x5916;&#x7A7A;&#x8F90;&#x5C04;&#x901A;&#x8FC7;&#x5927;&#x6C14;&#x5C42;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x8870;&#x51CF;&#x7279;&#x5F81;&#xFF0C;&#xFF08;&#x5F15;&#x7528;&#xFF09;&#x8BE5;&#x6587;&#x662F;&#x5728;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x5728;&#x690D;&#x7269;&#x817E;&#x53D1;&#x91CF;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;$a,b$&#x7684;&#x504F;&#x5DEE;&#x5F15;&#x8D77;&#x4E86;&#x592A;&#x9633;&#x8F90;&#x5C04;$R_s$&#x7684;&#x76F8;&#x5BF9;&#x53D8;&#x5316;&#xFF0C;&#x7ECF;$K$(&#x63A8;&#x5BFC;&#x51FA;&#x7684;&#x4E00;&#x4E2A;&#x7CFB;&#x6570;)&#x7F29;&#x653E;&#x5F15;&#x8D77;&#x4E86;$ET_0$&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x5173;&#x7CFB;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="../image/image-20201014214326161.png" alt="image-20201014214326161"></p>
+<p>104&#x4E2A;&#x7AD9;&#x70B9;&#x7684;$K$&#x503C;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF0C;&#x8FC7;&#x7A0B;&#x53CA;&#x539F;&#x7406;&#x4F5C;&#x8005;&#x672A;&#x8BF4;&#x660E;&#xFF1A;</p>
+<p><img src="../image/image-20201014214244470.png" alt="image-20201014214244470"></p>
+<p>&#x6839;&#x636E;$FAO$&#x5EFA;&#x8BAE;&#x503C;&#xFF0C;$a,b$&#x7684;&#x504F;&#x5DEE;&#x4E0E;$R_s$&#x7684;&#x76F8;&#x5BF9;&#x8BEF;&#x5DEE;&#x5173;&#x7CFB;&#x4E3A;&#xFF1A;</p>
+<p><img src="../image/image-20201014214724171.png" alt="image-20201014214724171"></p>
+<p>&#x8BA8;&#x8BBA;$\delta a,\delta b$&#x5404;&#x81EA;&#x5BF9;$R_s$&#x7684;&#x5F71;&#x54CD;&#x7A0B;&#x5EA6;&#xFF0C;&#x518D;&#x6BD4;&#x8F83;7&#x4E2A;&#x5206;&#x7EC4;&#x8BA1;&#x7B97;&#x51FA;&#x7684;$a, b$&#x53C2;&#x6570;&#xFF0C;&#x5C31;&#x53EF;&#x5BF9;$FAO$&#x5EFA;&#x8BAE;&#x503C;&#x9002;&#x7528;&#x6027;&#x8FDB;&#x884C;&#x5BA2;&#x89C2;&#x51C6;&#x786E;&#x7684;&#x8BC4;&#x4EF7;</p>
+<p><img src="../image/image-20201014215623895.png" alt="image-20201014215623895"></p>
+<p>&#x6700;&#x540E;&#x7684;&#x7ED3;&#x8BBA;&#x5927;&#x6982;&#x5C31;&#x662F;&#x5F71;&#x54CD;&#x8F83;&#x5927;&#xFF0C;&#x9002;&#x7528;&#x6027;&#x5728;&#x4E1C;&#x5317;&#x548C;&#x897F;&#x5317;&#x9002;&#x7528;&#xFF0C;&#x5728;&#x5176;&#x4F59;&#x5730;&#x65B9;&#x9002;&#x7528;&#x6027;&#x5E76;&#x4E0D;&#x9AD8;&#x3002;</p>
+<p>ps: &#x8FD9;&#x662F;Angstrom&#x516C;&#x5F0F;&#x7684;&#x5E94;&#x7528;&#xFF0C;$a,b$&#x663E;&#x7136;&#x8981;&#x8FDB;&#x884C;&#x5408;&#x7406;&#x7684;&#x5730;&#x533A;&#x7EFC;&#x5408;&#x53D6;&#x503C;&#xFF0C;&#x4F46;&#x662F;$FAO$&#x7684;$a,b$&#x5EFA;&#x8BAE;&#x503C;&#x8303;&#x56F4;&#x6269;&#x5927;&#x5230;&#x4E86;&#x6574;&#x4E2A;&#x4E2D;&#x56FD;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x660E;&#x663E;&#x6709;&#x95EE;&#x9898;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#xFF0C;&#x97A0;&#x6653;&#x6167;&#x3001;&#x7FC1;&#x7B03;&#x9E23;&#x7B49;&#x5B66;&#x8005;&#x505A;&#x51FA;&#x4E86;&#x4E00;&#x4E9B;&#x7814;&#x7A76;&#xFF0C;&#x5728;&#x8FD9;&#x4E9B;&#x7814;&#x7A76;&#x5DF2;&#x7ECF;&#x8BF4;&#x660E;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x672C;&#x6587;&#x4F5C;&#x8005;&#x5728;&#x5176;&#x57FA;&#x7840;&#x4E0A;&#x6269;&#x5C55;&#x5230;&#x4E86;&#x53C2;&#x7167;&#x817E;&#x53D1;&#x91CF;&#xFF0C;&#x56E0;&#x4E3A;$a,b$&#x9009;&#x53D6;&#x503C;&#x7684;&#x4E0D;&#x5408;&#x7406;&#x4EA7;&#x751F;&#x4E86;&#x591A;&#x5C11;&#x8BEF;&#x5DEE;&#xFF0C;&#x5C06;&#x4E2D;&#x56FD;&#x5212;&#x5206;&#x4E86;7&#x4E2A;&#x533A;&#x57DF;&#xFF0C;&#x54EA;&#x4E9B;&#x80FD;&#x9002;&#x7528;&#x4E0E;$FAQ$&#x7684;&#x5EFA;&#x8BAE;&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x6210;&#x529F;&#x7684;&#x5199;&#x4E86;&#x4E00;&#x7BC7;&#x8BBA;&#x6587;:happy: &#xFF0C;&#x601D;&#x8DEF;&#x5F88;&#x6E05;&#x6670;&#xFF0C;&#x5DE5;&#x4F5C;&#x91CF;&#x548C;&#x8BBA;&#x6587;&#x8D28;&#x91CF;&#x90FD;&#x5F88;&#x597D;&#xFF0C;&#x540E;&#x9762;&#x53EF;&#x4EE5;&#x8003;&#x8651;review&#x3002;</p>
+<p>&#x521A;&#x4E0D;&#x4E45;&#x548C;&#x4E50;&#x8001;&#x5E08;&#x3001;&#x660A;&#x51CC;&#x4E00;&#x8D77;&#x8BA8;&#x8BBA;&#x4E86;&#x4E00;&#x4E0B;&#x6211;&#x4EEC;&#x5168;&#x7403;&#x592A;&#x9633;&#x80FD;&#x8F90;&#x5C04;&#x91CF;&#x8BA1;&#x7B97;&#x9879;&#x76EE;&#x7684;&#x505A;&#x6CD5;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x60F3;mark&#x4E00;&#x4E0B;&#xFF1A;&#x9996;&#x5148;&#x6211;&#x5F97;&#x770B;&#x8BBA;&#x6587;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x5927;&#x6982;&#x7684;&#x601D;&#x8DEF;&#xFF1A;</p>
+<ol>
+<li>&#x5148;&#x770B;&#x8BBA;&#x6587;&#xFF1A;&#x5168;&#x7403;&#x603B;&#x5171;&#x6709;&#x591A;&#x5C11;&#x76F8;&#x5173;&#x6A21;&#x578B;&#xFF0C;&#x662F;&#x5426;&#x90FD;&#x662F;&#x7531;Angstrom&#x516C;&#x5F0F;&#x884D;&#x751F;&#x51FA;&#x6765;&#x7684;&#xFF0C;&#x54EA;&#x4E9B;&#x6A21;&#x578B;&#x66F4;&#x52A0;&#x597D;&#xFF1B;</li>
+<li>&#x6570;&#x636E;&#x65B9;&#x9762;&#x5F97;&#x627E;&#x5230;&#x5168;&#x7403;&#x8BB0;&#x5F55;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x7684;&#x7AD9;&#x70B9;&#xFF0C;&#x6A21;&#x578B;&#x4E0D;&#x5E94;&#x6839;&#x636E;&#x884C;&#x653F;&#x533A;&#x6765;&#x9009;&#x53D6;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x6839;&#x636E;&#x5730;&#x7406;&#x6C14;&#x5019;&#x7279;&#x5F81;&#x6765;&#x9009;&#x53D6;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x6839;&#x636E;&#x6C14;&#x8C61;&#x7AD9;&#x70B9;&#x8BB0;&#x5F55;&#x6570;&#x636E;&#x7684;&#x76F8;&#x4F3C;&#x6027;&#x548C;&#x7A7A;&#x95F4;&#x4E0A;&#x7684;&#x76F8;&#x8FD1;&#xFF08;&#x8FD9;&#x5176;&#x5B9E;&#x4E5F;&#x662F;&#x770B;&#x8BBA;&#x6587;&#xFF0C;&#x6216;&#x8005;&#x518D;&#x8BA8;&#x8BBA;&#x6765;&#x51B3;&#x5B9A;&#x7684;&#xFF09;</li>
+<li>&#x8BBA;&#x6587;&#x4E0E;&#x6570;&#x636E;&#x505A;&#x5B8C;&#xFF0C;&#x8BBE;&#x8BA1;&#x7CFB;&#x7EDF;&#x5E94;&#x8BE5;&#x5177;&#x5907;&#x54EA;&#x4E9B;&#x529F;&#x80FD;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x6211;&#x5E94;&#x8BE5;&#x53BB;&#x54A8;&#x8BE2;&#x5F20;&#x9534;&#x5E08;&#x5144;&#x5176;&#x4ED6;&#x4EBA;&#x600E;&#x4E48;&#x8BA1;&#x7B97;&#x51FA;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x7684;&#xFF08;&#x6216;&#x8005;&#x5C31;&#x8FD9;&#x51E0;&#x5929;&#x4E5F;&#x53EF;&#xFF1F;&#xFF09;</li>
+<li>cesium&#x505A;&#x524D;&#x7AEF;&#xFF08;&#x60F3;&#x52A0;&#x4E0A;vue&#xFF1F;&#xFF09;&#xFF0C;python&#x5904;&#x7406;&#x6570;&#x636E;&#xFF0C;&#x7EC4;&#x6210;&#x4E00;&#x4E2A;&#x7CFB;&#x7EDF;</li>
+</ol>
+<h3 id="3-&#x5173;&#x4E8E;&#x4E0D;&#x540C;&#x6D77;&#x62D4;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x8BA1;&#x7B97;">3. &#x5173;&#x4E8E;&#x4E0D;&#x540C;&#x6D77;&#x62D4;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x8BA1;&#x7B97;</h3>
+<p>&#x65F6;&#x95F4;:2015</p>
+<h4 id="&#x57FA;&#x7840;&#x77E5;&#x8BC6;">&#x57FA;&#x7840;&#x77E5;&#x8BC6;</h4>
+<p>&#x770B;&#x8FD9;&#x7BC7;&#x8BBA;&#x6587;&#x7684;&#x65F6;&#x5019;&#x53BB;&#x8865;&#x4E86;&#x4E00;&#x70B9;&#x57FA;&#x7840;&#x77E5;&#x8BC6;</p>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%A4%AA%E9%99%BD%E8%BC%BB%E5%B0%84" target="_blank">&#x592A;&#x9633;&#x8F90;&#x5C04;</a></p>
+<p>&#x5927;&#x6C14;&#x5C42;&#x5916;&#x592A;&#x9633;&#x9891;&#x8C31;&#xFF1A;</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Solar_irradiance_spectrum_1992.gif" alt="img"></p>
+<p>&#x5730;&#x7403;&#x8868;&#x9762;&#x592A;&#x9633;&#x9891;&#x8C31;&#xFF1A;</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Solar_Spectrum.png" alt="File:Solar Spectrum.png"></p>
+<p>&#x4E0D;&#x540C;&#x7EF4;&#x5EA6;&#x6240;&#x6709;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x5F3A;&#x5EA6;</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Oblique_rays_04_Pengo.svg/800px-Oblique_rays_04_Pengo.svg.png" alt="File:Oblique rays 04 Pengo.svg"></p>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%9C%B0%E7%90%83%E5%A4%A7%E6%B0%94%E5%B1%82" target="_blank">&#x5927;&#x6C14;&#x5C42;</a></p>
+<p><img src="../image/image-20201015153530168.png" alt="image-20201015153530168"></p>
+<p><a href="https://en.wikipedia.org/wiki/International_Standard_Atmosphere" target="_blank">&#x56FD;&#x9645;&#x6807;&#x51C6;&#x5927;&#x6C14;</a></p>
+<p><a href="https://zh.wikipedia.org/wiki/%E6%AF%94%E5%B0%94-%E6%9C%97%E4%BC%AF%E5%AE%9A%E5%BE%8B" target="_blank">&#x6BD4;&#x5C14;&#x5B9A;&#x5F8B;</a></p>
+<p><a href="https://xg1990.com/blog/en/archives/222" target="_blank">&#x514B;&#x91CC;&#x91D1;&#x63D2;&#x503C;</a> &#x8FD9;&#x7BC7;&#x535A;&#x5BA2;&#x8BB2;&#x7684;&#x5F88;&#x597D;</p>
+<p>&#x5730;&#x7406;&#x5B66;&#x7B2C;&#x4E00;&#x5B9A;&#x5F8B;&#xFF1A;All attribute values on a geographic surface are related to each other, but closer values are stronger related than are more distant ones.</p>
+<h3 id="&#x7EE7;&#x7EED;&#x8BBA;&#x6587;&#x9605;&#x8BFB;">&#x7EE7;&#x7EED;&#x8BBA;&#x6587;&#x9605;&#x8BFB;</h3>
+<p>&#x6539;&#x8BBA;&#x6587;&#x9996;&#x5148;&#x4E5F;&#x8BF4;&#x660E;&#x4E86;&#x7AD9;&#x70B9;&#x4E0D;&#x591F;&#x9700;&#x8981;&#x5EFA;&#x7ACB;&#x6A21;&#x578B;&#x6765;&#x8BA1;&#x7B97;&#x592A;&#x9633;&#x8F90;&#x5C04;&#xFF0C;&#x7136;&#x540E;&#x4ECB;&#x7ECD;&#x4E86;&#x7684;&#x662F;&#x4E00;&#x4E9B;&#x9002;&#x7528;&#x4E8E;&#x6D77;&#x5E73;&#x9762;&#x6216;&#x4F4E;&#x6D77;&#x62D4;&#x5730;&#x533A;&#x7684;&#x7406;&#x8BBA;&#x6A21;&#x578B;&#xFF08;&#x8FD9;&#x662F;&#x6211;&#x7B2C;&#x4E00;&#x6B21;&#x770B;&#x5230;&#xFF09;&#xFF0C;&#x4F5C;&#x8005;&#x63D0;&#x51FA;&#x8FD9;&#x4E9B;&#x6A21;&#x578B;&#x90FD;&#x662F;&#x57FA;&#x4E8E;&#x5747;&#x8D28;&#x5927;&#x6C14;&#xFF0C;&#x7136;&#x540E;&#x4F5C;&#x8005;&#x63D0;&#x51FA;&#x4E86;&#x975E;&#x5747;&#x8D28;&#x5927;&#x6C14;&#x6A21;&#x578B;&#x4E0B;&#x8BA1;&#x7B97;&#x4EFB;&#x610F;&#x6D77;&#x62D4;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#xFF0C;&#x7136;&#x540E;&#x4F5C;&#x8005;&#x53C8;&#x5C06;&#x975E;&#x5747;&#x8D28;&#x5927;&#x6C14;&#x6A21;&#x578B;&#x5206;&#x4E3A;&#x6807;&#x51C6;&#x5927;&#x6C14;&#x6A21;&#x578B;&#x548C;&#x6982;&#x7387;&#x7EDF;&#x8BA1;&#x5927;&#x6C14;&#x6A21;&#x578B;&#x8FDB;&#x884C;&#x4E86;&#x63A8;&#x5BFC;&#x3002;</p>
+<p>&#x5355;&#x6CE2;&#x957F;&#x592A;&#x9633;&#x8F90;&#x5C04;&#xFF1A;&#x5355;&#x4F4D;&#x9762;&#x79EF;&#x5355;&#x4F4D;&#x65F6;&#x95F4;&#x5355;&#x6CE2;&#x957F;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x80FD;&#x91CF;</p>
+<p>&#x5168;&#x6CE2;&#x957F;&#x592A;&#x9633;&#x8F90;&#x5C04;&#xFF1A;&#x5355;&#x6CE2;&#x957F;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x5BF9;&#x5168;&#x6CE2;&#x957F;&#x7684;&#x79EF;&#x5206;</p>
+<p>&#x592A;&#x9633;&#x8F90;&#x7167;&#x5EA6;&#xFF1A;&#x592A;&#x9633;&#x5149;&#x7ECF;&#x8FC7;&#x5927;&#x6C14;&#x5C42;&#x7684;&#x5438;&#x6536;&#x3001;&#x53CD;&#x5C04;&#x3001;&#x6563;&#x5C04;&#x7B49;&#x4F5C;&#x7528;&#x540E;&#x5230;&#x8FBE;&#x5730;&#x7403;&#x67D0;&#x8868;&#x9762;&#x7684;&#x5355;&#x4F4D;&#x9762;&#x79EF;&#x5355;&#x4F4D;&#x65F6;&#x95F4;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x80FD;&#x91CF;</p>
+<p>&#x592A;&#x9633;&#x8F90;&#x7167;&#x91CF;&#xFF1A;&#x592A;&#x9633;&#x5149;&#x7ECF;&#x8FC7;&#x5927;&#x6C14;&#x5C42;&#x7684;&#x5438;&#x6536;&#x3001;&#x53CD;&#x5C04;&#x3001;&#x6563;&#x5C04;&#x7B49;&#x4F5C;&#x7528;&#x540E;&#x5230;&#x8FBE;&#x5730;&#x7403;&#x67D0;&#x8868;&#x9762;&#x7684;&#x5355;&#x4F4D;&#x9762;&#x79EF;&#x67D0;&#x6BB5;&#x65F6;&#x95F4;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x80FD;&#x91CF;</p>
+<p>&#x592A;&#x9633;&#x5E38;&#x6570;&#xFF1A;$S_c = 1361 W/m^{-2}=4.92MJ/(m^2*h)$   </p>
+<p>&#x592A;&#x9633;&#x8F90;&#x5C04;&#x8BA1;&#x7B97;&#x4E2D;&#xFF0C;&#x4E3B;&#x8981;&#x8003;&#x8651;&#x5BF9;&#x6D41;&#x5C42;&#x548C;&#x5E73;&#x6D41;&#x5C42;&#x5BF9;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x7684;&#x6D88;&#x5F31;&#x4F5C;&#x7528;&#xFF08;&#x672A;&#x77E5;&#xFF09;</p>
+<p>&#x592A;&#x9633;&#x5149;&#x62B5;&#x8FBE;&#x5730;&#x8868;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x548C;&#x8DEF;&#x5F84;&#x603B;&#x957F;&#x5EA6;&#xFF08;&#x7ECF;&#x8FC7;&#x5927;&#x6C14;&#x5C42;&#x7684;&#x8DEF;&#x5F84;&#xFF09;&#x6210;&#x6B63;&#x6BD4;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x4E0E;&#x62B5;&#x8FBE;&#x5730;&#x8868;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x6240;&#x78B0;&#x649E;&#x7684;&#x7A7A;&#x6C14;&#x5206;&#x5B50;&#x7684;&#x603B;&#x6570;&#x76EE;&#x6210;&#x6B63;&#x6BD4;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x63D0;&#x51FA;&#x5747;&#x8D28;&#x5927;&#x6C14;&#x5C42;&#x7684;&#x6982;&#x5FF5;&#x3002;&#x5747;&#x8D28;&#x5927;&#x6C14;&#x5C42;&#x7684;&#x5408;&#x7406;&#x6027;&#xFF0C;&#x5728;&#x5F15;&#x6587;24&#x6709;&#x89E3;&#x91CA;</p>
+<p>&#x4E3A;&#x4E86;&#x8BA1;&#x7B97;&#x4E0D;&#x540C;&#x6D77;&#x62D4;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#xFF0C;&#x63D0;&#x51FA;&#x4E86;&#x6807;&#x51C6;&#x5927;&#x6C14;&#x6A21;&#x578B;&#x548C;&#x6982;&#x7387;&#x7EDF;&#x8BA1;&#x5927;&#x6C14;&#x6A21;&#x578B;&#x6765;&#x8BA1;&#x7B97;&#x4E0D;&#x540C;&#x7684;&#x6D77;&#x62D4;&#x4E0A;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x3002;&#x56E0;&#x4E3A;&#x5C06;&#x5927;&#x6C14;&#x770B;&#x6210;&#x662F;&#x6C34;&#x5E73;&#x7684;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x4FEE;&#x6B63;&#x7684;&#x8FC7;&#x7A0B;&#xFF08;&#x8FD9;&#x91CC;&#x9762;&#x6CA1;&#x6709;&#x7EC6;&#x770B;&#x4E86;&#xFF0C;&#x548C;&#x6211;&#x505A;&#x7684;&#x76F8;&#x5173;&#x6027;&#x5E76;&#x4E0D;&#x9AD8;&#xFF09;</p>
+<p>&#x7136;&#x540E;&#x4F5C;&#x8005;&#x5C45;&#x7136;&#x8BA8;&#x8BBA;&#x4E0D;&#x540C;&#x5B63;&#x8282;&#x3001;&#x7EF4;&#x5EA6;&#x548C;&#x65F6;&#x95F4;&#x5BF9;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x7684;&#x5F71;&#x54CD;&#xFF01;&#xFF01;&#xFF01;</p>
+<p>&#x4F5C;&#x8005;&#x8BA4;&#x4E3A;&#x8BA1;&#x7B97;&#x5929;&#x9876;&#x89D2;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x76F8;&#x540C;&#x5929;&#x6C14;&#x7684;&#x4EFB;&#x4F55;&#x5B63;&#x8282;&#x4EFB;&#x4F55;&#x65F6;&#x95F4;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x7684;&#x5149;&#x8C31;&#x8F90;&#x7167;&#x5BC6;&#x5EA6;&#xFF0C;&#x4ECE;&#x800C;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x4E0D;&#x540C;&#x65F6;&#x95F4;&#x3001;&#x7EF4;&#x5EA6;&#x3001;&#x5B63;&#x8282;&#x548C;&#x6D77;&#x62D4;&#x9AD8;&#x5EA6;&#x7684;&#x592A;&#x9633;&#x5206;&#x5E03;&#x56FE;&#xFF08;&#x8FD8;&#x662F;&#x5F97;&#x6839;&#x636E;&#x6C14;&#x5019;&#x5BF9;&#x5730;&#x7403;&#x8FDB;&#x884C;&#x5212;&#x5206;&#x554A;&#xFF0C;&#x6211;&#x89C9;&#x5F97;&#x6709;&#x5FC5;&#x8981;&#x9A8C;&#x8BC1;&#x4E00;&#x4E0B;&#x4F5C;&#x8005;&#x5F15;&#x7528;&#x7684;&#x90A3;&#x51E0;&#x4E2A;&#x6A21;&#x578B;&#x4E0E;Angstorm&#x516C;&#x5F0F;&#x7684;&#x6B63;&#x786E;&#x6027;&#x4E86;&#xFF09;</p>
+<p>&#x6700;&#x540E;&#x4F5C;&#x8005;&#x5BF9;&#x5927;&#x6C14;&#x6A21;&#x578B;&#x8FDB;&#x884C;&#x4E86;&#x4FEE;&#x6B63;&#x3002;&#x5747;&#x8D28;&#x5927;&#x6C14;&#x6A21;&#x578B;&#x8BEF;&#x5DEE;&#x56E0;&#x7D20;&#x6709;&#xFF1A;&#x66F2;&#x7387;&#xFF08;&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x5929;&#x9876;&#x89D2;&#x7684;&#x4FEE;&#x6B63;&#xFF09;&#xFF0C;&#x6DF7;&#x5408;&#x6C14;&#x4F53;&#xFF1B;&#x975E;&#x5747;&#x8D28;&#x5927;&#x6C14;&#x6A21;&#x578B;&#x7684;&#x8BEF;&#x5DEE;&#x56E0;&#x7D20;&#xFF1A;&#x66F2;&#x7387;&#xFF0C;&#x6709;&#x6548;&#x9AD8;&#x5EA6;&#x7684;&#x786E;&#x8BA4;&#xFF0C;&#x6DF7;&#x5408;&#x6C14;&#x4F53;&#xFF0C;&#x7136;&#x540E;&#x4FEE;&#x6B63;&#x8FC7;&#x7A0B;&#x4E5F;&#x6CA1;&#x6709;&#x7EC6;&#x770B;&#xFF08;&#x540E;&#x6094;&#x6570;&#x5B66;&#x6CA1;&#x5B66;&#x597D;&#x4E86;&#xFF09;&#xFF0C;&#x6700;&#x540E;&#x662F;&#x5BF9;&#x6BD4;&#x9A8C;&#x8BC1;&#xFF0C;&#x611F;&#x89C9;&#x9A8C;&#x8BC1;&#x7ED3;&#x679C;&#x4E0D;&#x662F;&#x90A3;&#x4E48;&#x597D;&#x3002;</p>
+<p>ps:&#x5728;&#x8BFB;&#x8FD9;&#x7BC7;&#x8BBA;&#x6587;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x8865;&#x5145;&#x4E86;&#x4E00;&#x4E9B;&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#xFF0C;&#x7136;&#x540E;&#x8FD9;&#x91CC;&#x9762;&#x63D0;&#x51FA;&#x4E86;&#x51E0;&#x4E2A;&#x7406;&#x8BBA;&#x6A21;&#x578B;&#xFF0C;&#x665A;&#x4E0A;&#x518D;&#x770B;&#x5427;&#xFF0C;&#x76EE;&#x524D;&#x5BF9;&#x592A;&#x9633;&#x5149;&#x4ECE;&#x5916;&#x592A;&#x7A7A;&#x62B5;&#x8FBE;&#x5730;&#x7403;&#x8868;&#x9762;&#x6709;&#x4E86;&#x4E00;&#x4E2A;&#x8BA4;&#x77E5;&#xFF0C;&#x7ED3;&#x5408;&#x6628;&#x665A;&#x6211;&#x770B;&#x7684;&#x8BA1;&#x7B97;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x7684;&#x7F51;&#x7AD9;&#xFF0C;&#x662F;&#x5426;&#x8003;&#x8651;&#x505A;&#x51FA;&#x4E00;&#x4E2A;3D&#x7684;&#xFF0C;&#x5177;&#x6709;&#x8F83;&#x4E3A;&#x771F;&#x5B9E;&#x7684;&#x5927;&#x6C14;&#x5C42;&#xFF08;&#x6BCF;&#x4E2A;&#x5927;&#x6C14;&#x5C42;&#x7684;&#x539A;&#x5EA6;&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#xFF09;&#x7684;&#x6A21;&#x62DF;&#x5462;&#xFF1F;&#x7136;&#x540E;&#x8BA1;&#x7B97;&#x5176;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x3002;&#x8FD9;&#x7BC7;&#x8BBA;&#x6587;&#x601D;&#x8DEF;&#x5F88;&#x597D;&#xFF0C;&#x5DF2;&#x7ECF;&#x6709;&#x4E86;&#x8BA1;&#x7B97;&#x6D77;&#x5E73;&#x9762;&#x7684;&#x5F88;&#x597D;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x6211;&#x600E;&#x4E48;&#x5E94;&#x7528;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x6D77;&#x62D4;&#x4E0A;&#x53BB;&#x5462;&#xFF0C;&#x9760;&#x7740;&#x8FD9;&#x4E2A;&#x601D;&#x8DEF;&#x8BE5;&#x6587;&#x4F5C;&#x8005;&#x505A;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x7814;&#x7A76;&#x3002;&#x73B0;&#x5728;&#x6211;&#x5C31;&#x662F;&#x5728;&#x5DF2;&#x7ECF;&#x6709;PVGIS&#x8FD9;&#x4E48;&#x4E00;&#x4E2A;&#x5E9E;&#x7136;&#x5927;&#x7269;&#xFF0C;&#x6211;&#x662F;&#x5426;&#x80FD;&#x5728;&#x5176;&#x57FA;&#x7840;&#x4E0A;&#x505A;&#x70B9;&#x4EC0;&#x4E48;&#x4E1C;&#x897F;&#x5462;&#xFF1F;</p>
+<p>&#x8BE5;&#x8BBA;&#x6587;&#x4E0D;&#x5408;&#x7406;&#xFF0C;&#x592A;&#x9633;&#x5149;&#x662F;&#x5F88;&#x591A;&#x7684;&#xFF0C;&#x5B83;&#x53EA;&#x8003;&#x8651;&#x4E86;&#x4E00;&#x675F;&#x592A;&#x9633;&#x5149;&#xFF0C;&#x96BE;&#x9053;&#x8981;&#x5728;&#x534A;&#x4E2A;&#x5730;&#x7403;&#x7684;&#x5927;&#x6C14;&#x5C42;&#x4E0A;&#x8FDB;&#x884C;&#x79EF;&#x5206;&#x5417;&#xFF1F;&#x5982;&#x679C;&#x8BE5;&#x79EF;&#x5206;&#x7684;&#x597D;&#x79EF;&#x5206;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x505A;&#x4E00;&#x505A;&#xFF0C;&#x800C;&#x4E14;&#x4E2D;&#x95F4;&#x8FC7;&#x7A0B;&#x5B9E;&#x5728;&#x592A;&#x590D;&#x6742;&#x4E86;&#xFF0C;&#x602A;&#x4E0D;&#x5F97;&#x90FD;&#x7528;&#x7ECF;&#x9A8C;&#x516C;&#x5F0F;&#x4E86;</p>
+<h3 id="4-&#x6DEE;&#x5317;&#x5E73;&#x539F;angstrom&#x516C;&#x5F0F;&#x53C2;&#x6570;&#x6821;&#x6B63;&#x53CA;&#x592A;&#x9633;&#x603B;&#x8F90;&#x5C04;&#x65F6;&#x7A7A;&#x7279;&#x5F81;&#x5206;&#x6790;">4. &#x6DEE;&#x5317;&#x5E73;&#x539F;Angstrom&#x516C;&#x5F0F;&#x53C2;&#x6570;&#x6821;&#x6B63;&#x53CA;&#x592A;&#x9633;&#x603B;&#x8F90;&#x5C04;&#x65F6;&#x7A7A;&#x7279;&#x5F81;&#x5206;&#x6790;</h3>
+<p>&#x65F6;&#x95F4;&#xFF1A;2018</p>
+<p><img src="../image/image-20201015194948240.png" alt="image-20201015194948240"></p>
+<p>&#x4F7F;&#x7528;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x548C;&#x9057;&#x4F20;&#x7B97;&#x6CD5;&#x5BF9;Angstorm&#x516C;&#x5F0F;&#x7684;$a,b$&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x4E86;&#x7387;&#x5B9A;&#xFF0C;&#x9057;&#x4F20;&#x7B97;&#x6CD5;&#x66F4;&#x4F18;&#xFF0C;&#x603B;&#x7ED3;&#x4E86;&#x6DEE;&#x5317;&#x5E73;&#x539F;&#x7684;$R_s$&#x7684;&#x8D8B;&#x52BF;&#x4E0E;&#x7279;&#x5F81;</p>
+<p><img src="../image/image-20201015195343248.png" alt="image-20201015195343248"></p>
+<p>&#x5F15;&#x6587;10&#x5230;14&#x627E;&#x673A;&#x4F1A;&#x770B;&#x4E00;&#x4E0B;&#xFF0C;&#x4E0A;&#x4E00;&#x7BC7;&#x4E00;&#x53E5;&#x8BDD;&#x6CA1;&#x6709;&#x63D0;&#x5230;Angstrom&#x516C;&#x5F0F;&#xFF0C;&#x662F;&#x5426;&#x4E0D;&#x592A;&#x5408;&#x7406;&#x3002;&#x63D0;&#x53CA;&#x4E86;&#x5DE6;&#x5927;&#x5EB7;&#x5C06;&#x8BE5;&#x516C;&#x5F0F;&#x5F15;&#x5165;&#x7684;&#x4E2D;&#x56FD;&#x3002;&#x53C2;&#x6570;&#x7387;&#x5B9A;&#x8BB2;&#x4E86;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x548C;&#x9057;&#x4F20;&#x7B97;&#x6CD5;</p>
+<p><img src="../image/image-20201015200900422.png" alt="image-20201015200900422"></p>
+<p>&#x8BC4;&#x4EF7;&#x6307;&#x6807;&#xFF1A;&#x5E73;&#x5747;&#x8BEF;&#x5DEE;&#x3001;&#x5E73;&#x5747;&#x7EDD;&#x5BF9;&#x8BEF;&#x5DEE;&#x3001;&#x5747;&#x65B9;&#x6839;&#x8BEF;&#x5DEE;&#x3001;&#x76F8;&#x5173;&#x7CFB;&#x6570;&#xFF08;&#x6211;&#x4E5F;&#x53EF;&#x4EE5;&#xFF09;</p>
+<p>&#x7ED3;&#x8BBA;&#x548C;&#x7B2C;&#x4E8C;&#x7BC7;&#x7C7B;&#x4F3C;&#xFF0C;$FAO$&#x5EFA;&#x8BAE;&#x503C;&#x5E76;&#x4E0D;&#x9002;&#x7528;&#x4E8E;&#x6DEE;&#x5317;&#x5E73;&#x539F;&#xFF0C;&#x4E14;&#x9057;&#x4F20;&#x7B97;&#x6CD5;&#x4F18;&#x4E8E;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#xFF0C;&#x5F97;&#x5230;&#x4E86;&#x6DEE;&#x5317;&#x5E73;&#x539F;$R_s$&#x7684;&#x65F6;&#x7A7A;&#x5206;&#x5E03;&#x7279;&#x5F81;</p>
+<p>ps: &#x770B;&#x5B8C;&#x7B2C;&#x4E8C;&#x7BC7;&#x518D;&#x770B;&#x8FD9;&#x4E00;&#x7BC7;&#x8BBA;&#x6587;&#xFF0C;&#x611F;&#x89C9;&#x6536;&#x83B7;&#x4E0D;&#x5927;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x7B2C;&#x4E8C;&#x7BC7;&#x5F88;&#x591A;&#x9875;&#xFF0C;&#x8FD9;&#x4E00;&#x7BC7;&#x8BBA;&#x6587;&#x9875;&#x6570;&#x5F88;&#x5C11;&#x7684;&#x539F;&#x56E0;&#x5427;&#x3002;</p>
+<h3 id="5-&#x57FA;&#x4E8E;angstrom-prescott&#x516C;&#x5F0F;&#x7684;&#x4E2D;&#x56FD;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x4E0E;&#x65E5;&#x7167;&#x65F6;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x7814;&#x7A76;">5. &#x57FA;&#x4E8E;Angstrom-Prescott&#x516C;&#x5F0F;&#x7684;&#x4E2D;&#x56FD;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x4E0E;&#x65E5;&#x7167;&#x65F6;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x7814;&#x7A76;</h3>
+<p>&#x65F6;&#x95F4;&#xFF1A;2019</p>
+<p><img src="../image/image-20201015201708214.png" alt="image-20201015201708214"></p>
+<p>&#x8FD9;&#x7BC7;&#x8BBA;&#x6587;&#x7684;&#x5199;&#x7684;&#x771F;&#x597D;&#x3002;&#x4E2D;&#x56FD;&#x76EE;&#x524D;&#x6709;739&#x4E2A;&#x5E38;&#x89C4;&#x6C14;&#x8C61;&#x89C2;&#x6D4B;&#x7AD9;&#xFF0C;&#x4F46;&#x4EC5;&#x6709;130&#x4E2A;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x89C2;&#x6D4B;&#x7AD9;&#xFF0C;&#x5176;&#x4E2D;&#x53EA;&#x6709;114&#x4E2A;&#x7AD9;&#x5177;&#x5907;&#x65E5;&#x7167;&#x89C2;&#x6D4B;&#x6570;&#x636E;&#xFF0C;&#x5404;&#x79CD;&#x7814;&#x7A76;&#x8FDB;&#x5C55;&#x5C31;&#x4E0D;&#x8D58;&#x8FF0;&#x4E86;&#xFF0C;&#x540E;&#x9762;&#x63D0;&#x7684;&#x51E0;&#x4E2A;&#x95EE;&#x9898;&#x4E5F;&#x662F;&#x6211;&#x5173;&#x5FC3;&#x7684;&#x91CD;&#x70B9;&#xFF1A;&#x65F6;&#x95F4;&#x4E0A;&#x8BE5;&#x516C;&#x5F0F;&#x662F;&#x5426;&#x80FD;&#x51C6;&#x786E;&#x9884;&#x6D4B;&#xFF0C;&#x7A7A;&#x95F4;&#x4E0A;&#x5DF2;&#x6709;&#x7AD9;&#x70B9;&#x662F;&#x5426;&#x80FD;&#x6269;&#x5C55;&#x5230;&#x5176;&#x4ED6;&#x7F3A;&#x8D44;&#x6599;&#x7684;&#x5730;&#x533A;&#xFF0C;&#x6309;&#x884C;&#x653F;&#x533A;&#x5212;&#x5206;&#x662F;&#x5426;&#x4E0D;&#x5408;&#x7406;&#x3002;</p>
+<p><img src="../image/image-20201015203835508.png" alt="image-20201015203835508"></p>
+<p><a href="http://data.cma.cn" target="_blank">&#x4E2D;&#x56FD;&#x6C14;&#x8C61;&#x7F51;</a>&#x63D0;&#x4F9B;114&#x4E2A;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x89C2;&#x6D4B;&#x7AD9;&#x6570;&#x636E;&#xFF0C;&#x5B58;&#x5728;&#x7F3A;&#x5931;&#x60C5;&#x51B5;&#xFF0C;&#x8FDB;&#x884C;&#x4E86;&#x4E00;&#x4E9B;&#x9884;&#x5904;&#x7406;&#xFF0C;&#x5206;&#x6790;&#x91C7;&#x7528;&#x65B9;&#x6CD5;&#x662F;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#xFF0C;&#x4EE5;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x4E86;&#x9A8C;&#x8BC1;&#xFF1A;1. &#x56DB;&#x5206;&#x4E4B;&#x4E09;&#x8BAD;&#x7EC3;&#x96C6;&#xFF0C;&#x56DB;&#x5206;&#x4E4B;&#x4E00;&#x6D4B;&#x8BD5;&#x96C6; 2. &#x7A7A;&#x95F4;&#x4E0A;&#x5BF9;&#x7AD9;&#x70B9;&#x8FDB;&#x884C;&#x4E86;&#x5206;&#x5272;&#xFF0C;&#x9009;&#x62E9;113&#x4E2A;&#x7AD9;&#x70B9;&#x4F5C;&#x4E3A;&#x8BAD;&#x7EC3;&#x96C6;&#x62DF;&#x5408;&#x516C;&#x5F0F;&#x5F97;&#x5230;&#x516C;&#x5F0F;&#x7CFB;&#x6570;&#xFF0C;&#x5BF9;113&#x4E2A;&#x7AD9;&#x70B9;&#x7684;&#x516C;&#x5F0F;&#x7CFB;&#x6570;&#x8FDB;&#x884C;&#x7A7A;&#x95F4;&#x63D2;&#x503C;&#xFF0C;&#x91C7;&#x7528;&#x4E86;&#x7ECF;&#x9A8C;&#x8D1D;&#x53F6;&#x65AF;&#x514B;&#x91CC;&#x91D1;&#x6CD5;&#x63D2;&#x503C;&#x5F97;&#x5230;&#x5269;&#x4F59;&#x7AD9;&#x70B9;&#x7684;&#x516C;&#x5F0F;&#x7CFB;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x7528;&#x5269;&#x4F59;&#x7AD9;&#x70B9;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF08;&#x662F;&#x5426;&#x5206;&#x914D;&#x4E0D;&#x5408;&#x7406;&#xFF0C;&#x5C31;&#x4E00;&#x4E2A;&#x7AD9;&#x70B9;&#x4F5C;&#x4E3A;&#x6D4B;&#x8BD5;&#x96C6;&#xFF09;&#xFF0C;&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x9884;&#x6D4B;&#x65F6;&#x95F4;&#xFF0C;&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x6CD5;&#x9884;&#x6D4B;&#x7A7A;&#x95F4;</p>
+<p>&#x8BC4;&#x4EF7;&#x6807;&#x51C6;&#xFF1A;&#x51B3;&#x5B9A;&#x7CFB;&#x6570;&#xFF08;$R^2$)&#xFF0C;&#x5E73;&#x5747;&#x7EDD;&#x5BF9;&#x8BEF;&#x5DEE;&#xFF08;$NAME$&#xFF09;&#xFF0C;&#x5747;&#x65B9;&#x6839;&#x8BEF;&#x5DEE;&#xFF08;$NRMSE$&#xFF09;</p>
+<p><img src="../image/image-20201015213434874.png" alt="image-20201015213434874"></p>
+<p>&#x8FD9;&#x5F15;&#x6587;16&#xFF0C;17&#x5F97;&#x770B;&#x3002;</p>
+<p><img src="../image/image-20201015213817004.png" alt="image-20201015213817004"></p>
+<p>ps&#xFF1A;&#x5199;&#x7684;&#x771F;&#x597D;&#xFF0C;&#x8D76;&#x65F6;&#x95F4;&#x770B;&#x5B8C;&#x7684;&#xFF0C;&#x4F1A;review&#x7684;</p>
+<h3 id="6-&#x57FA;&#x4E8E;anstrom-prescott&#x6A21;&#x578B;&#x548C;&#x7A7A;&#x95F4;&#x63D2;&#x503C;&#x7684;&#x5C71;&#x4E1C;&#x7701;&#x6708;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x518D;&#x4F30;&#x7B97;">6. &#x57FA;&#x4E8E;Anstrom-Prescott&#x6A21;&#x578B;&#x548C;&#x7A7A;&#x95F4;&#x63D2;&#x503C;&#x7684;&#x5C71;&#x4E1C;&#x7701;&#x6708;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x518D;&#x4F30;&#x7B97;</h3>
+<p>&#x65F6;&#x95F4;&#xFF1A;2020</p>
+<p><img src="../image/image-20201015214640082.png" alt="image-20201015214640082"></p>
+<p>&#x548C;&#x4E0A;&#x4E00;&#x7BC7;&#x4E00;&#x6837;&#xFF0C;&#x4ECB;&#x7ECD;&#x5386;&#x53F2;&#x4ECB;&#x7ECD;&#x7684;&#x66F4;&#x4E3A;&#x8BE6;&#x7EC6;&#x4E86;&#xFF0C;&#x62DF;&#x5408;&#x65B9;&#x6CD5;&#x4E5F;&#x662F;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#xFF0C;&#x53EA;&#x662F;&#x7A7A;&#x95F4;&#x63D2;&#x503C;&#x4E5F;&#x662F;&#x53D8;&#x4E3A;&#x4E09;&#x4E2A;&#x4E86;&#xFF0C;&#x800C;&#x4E14;&#x8303;&#x56F4;&#x53EA;&#x662F;&#x5C71;&#x4E1C;&#x7701;&#xFF0C;&#x611F;&#x89C9;&#x5C31;&#x662F;&#x4E0A;&#x4E00;&#x7BC7;&#x7684;&#x7FFB;&#x7248;&#xFF0C;&#x8981;&#x662F;&#x6CA1;&#x6709;&#x5B83;&#x7684;&#x5F15;&#x6587;&#x6211;&#x90FD;&#x4E0D;&#x4FE1;&#x3002;&#x7ED3;&#x8BBA;&#x662F;&#x6700;&#x5C0F;&#x66F2;&#x7387;&#x6CD5;&#x53EF;&#x80FD;&#x662F;&#x8F83;&#x4F18;&#x7684;&#x63D2;&#x503C;&#x6CD5;</p>
+<p>ps&#xFF1A;&#x8BE5;&#x4F5C;&#x8005;&#x662F;&#x7814;&#x7A76;&#x751F;&#xFF0C;&#x611F;&#x89C9;&#x6C34;&#x5E73;&#x4E0D;&#x5982;&#x4E0A;&#x4E00;&#x7BC7;&#x4E86;(&#x6211;&#x8FD9;&#x4E2A;&#x83DC;&#x9E21;&#x6709;&#x4EC0;&#x4E48;&#x8D44;&#x683C;&#x8BF4;&#x8FD9;&#x4E2A;&#xFF0C;&#xFF0C;)&#xFF0C;&#x770B;&#x61C2;&#x4E0A;&#x4E00;&#x7BC7;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x518D;&#x770B;&#x8FD9;&#x4E00;&#x7BC7;&#x4E86;</p>
+<h3 id="7-&#x57FA;&#x4E8E;&#x5E74;&#x5185;&#x5C3A;&#x5EA6;&#x7684;&#x4E2D;&#x56FD;&#x5927;&#x9646;&#x5730;&#x533A;angstrom&#x516C;&#x5F0F;&#x53C2;&#x6570;&#x6821;&#x6B63;&#x548C;&#x4F18;&#x9009;">7. &#x57FA;&#x4E8E;&#x5E74;&#x5185;&#x5C3A;&#x5EA6;&#x7684;&#x4E2D;&#x56FD;&#x5927;&#x9646;&#x5730;&#x533A;Angstrom&#x516C;&#x5F0F;&#x53C2;&#x6570;&#x6821;&#x6B63;&#x548C;&#x4F18;&#x9009;</h3>
+<p>&#x65F6;&#x95F4;&#xFF1A;2020</p>
+<p><img src="../image/image-20201015220612978.png" alt="image-20201015220612978"></p>
+<p>&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x9884;&#x5904;&#x7406;&#xFF0C;&#x6570;&#x636E;&#x4ECE;&#x4E2D;&#x56FD;&#x6C14;&#x8C61;&#x6570;&#x636E;&#x7F51;&#x4E0B;&#x8F7D;&#xFF0C;$R_a$&#x4F7F;&#x7528;&#x4E86;$FAO56$&#x5EFA;&#x8BAE;&#x7684;&#x8BA1;&#x7B97;&#x7A0B;&#x5E8F;&#xFF0C;&#x519C;&#x4E1A;&#x533A;&#x5212;&#x6765;&#x81EA;&#x56FD;&#x6807;&#x3002;</p>
+<p>&#x65B9;&#x6CD5;&#x4E5F;&#x662F;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#xFF0C;&#x8FC7;&#x7A0B;&#x5C31;&#x4E0D;&#x8BF4;&#x4E86;&#xFF0C;&#x7ED3;&#x679C;&#x662F;&#x4E2D;&#x56FD;&#x5927;&#x9646;&#x4E2A;&#x519C;&#x4E1A;&#x533A;Angstrom&#x516C;&#x5F0F;&#x53C2;&#x6570;&#x5E74;&#x5185;&#x7684;&#x63A8;&#x8350;&#x503C;&#x3002;</p>
+<p>ps&#xFF1A;&#x7AD9;&#x70B9;&#x66F4;&#x65B0;&#x4E3A;121&#x4E2A;&#x4E86;&#xFF0C;&#x8FD9;&#x7BC7;&#x8BBA;&#x6587;&#x4E5F;&#x662F;&#x8BA8;&#x8BBA;&#x4E86;$FAO$&#x5EFA;&#x8BAE;&#x503C;&#x662F;&#x5426;&#x9002;&#x7528;&#x4E86;&#xFF0C;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x5EFA;&#x8BAE;&#x503C;&#x4E0E;&#x5B9E;&#x9645;&#x62DF;&#x5408;&#x7684;&#x7CFB;&#x6570;&#x8FDB;&#x884C;&#x7ED3;&#x5408;&#x9002;&#x7528;&#x66F4;&#x597D;&#x3002;&#x4F46;&#x662F;&#x8BE5;&#x6587;&#x7684;&#x4EAE;&#x70B9;&#x5728;&#x4E8E;&#xFF0C;&#x7EDF;&#x4E00;&#x4E86;&#x519C;&#x4E1A;&#x533A;&#x5212;&#x5C3A;&#x5EA6;&#x4E0B;&#x7684;$a,b$&#x53D6;&#x503C;&#xFF0C;&#x5176;&#x5B9E;&#x6211;&#x8981;&#x505A;&#x7684;&#x5C31;&#x662F;&#x5168;&#x7403;&#x5C3A;&#x5EA6;&#x4E0B;&#xFF0C;&#x6309;&#x6C14;&#x5019;&#x5212;&#x5206;&#x7684;&#x5404;&#x533A;&#x57DF;&#x7684;$a,b$&#x53D6;&#x503C;&#xFF0C;&#x518D;&#x52A0;&#x4E00;&#x4E2A;&#x4EA4;&#x4E92;&#x597D;&#x770B;&#x7684;&#x7CFB;&#x7EDF;&#x51FA;&#x6765;&#xFF08;&#x597D;&#x96BE;&#x554A;&#xFF09;</p>
+<h3 id="8">8.</h3>
+<h2 id="&#x9700;&#x8981;review&#x7684;&#x8BBA;&#x6587;">&#x9700;&#x8981;review&#x7684;&#x8BBA;&#x6587;</h2>
+<p><img src="../image/image-20201015195505792.png" alt="image-20201015195505792"></p>
+<p><img src="../image/image-20201015195515840.png" alt="image-20201015195515840"></p>
+<p><img src="../image/image-20201015195524524.png" alt="image-20201015195524524"></p>
+<p><img src="../image/image-20201015195544103.png" alt="image-20201015195544103"></p>
+<p><img src="../image/image-20201015202040553.png" alt="image-20201015202040553"></p>
+<p><img src="../image/image-20201015213908328.png" alt="image-20201015213908328"></p>
+<h2 id="&#x5916;&#x56FD;&#x76F8;&#x5173;&#x8BBA;&#x6587;&#x9605;&#x8BFB;">&#x5916;&#x56FD;&#x76F8;&#x5173;&#x8BBA;&#x6587;&#x9605;&#x8BFB;</h2>
+<h3 id="1-a-comprehensive-review-of-empirical-models-for-estimating-global-solar-radiation-in-africa">1. A comprehensive review of empirical models for estimating global solar radiation in Africa</h3>
+<p>&#x4F5C;&#x8005;&#xFF1A;&#x5C3C;&#x65E5;&#x5229;&#x4E9A;&#x5361;&#x62C9;&#x5DF4;&#x5C14;&#x5927;&#x5B66;&#x7406;&#x5B66;&#x9662;&#x7269;&#x7406;&#x7CFB;  P.O. Box</p>
+<p>&#x53D1;&#x8868;&#x65F6;&#x95F4;&#xFF1A;2017</p>
+<p><img src="../image/image-20201019163203386.png" alt="image-20201019163203386"></p>
+<p>&#x5927;&#x610F;&#x662F;&#xFF1A;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x5E94;&#x7528;&#x65B9;&#x9762;&#x5F88;&#x591A;&#xFF0C;&#x4F46;&#x662F;&#x975E;&#x6D32;&#x5927;&#x90E8;&#x5206;&#x5730;&#x7403;&#x65E0;&#x6CD5;&#x83B7;&#x5F97;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x7684;&#x6D4B;&#x91CF;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x662F;&#x6709;&#x5F88;&#x591A;&#x7684;&#x7ECF;&#x9A8C;&#x6A21;&#x578B;&#xFF0C;&#x8BE5;&#x8BBA;&#x6587;&#x65E8;&#x5728;&#x5206;&#x7C7B;&#x548C;&#x5BA1;&#x67E5;&#x4F30;&#x7B97;&#x975E;&#x6D32;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x7684;&#x6A21;&#x578B;&#x3002;&#x76EE;&#x524D;&#x7684;&#x7ECF;&#x9A8C;&#x6A21;&#x578B;&#x7684;&#x8F93;&#x5165;&#x5206;&#x4E3A;&#x516D;&#x4E2A;&#x4E3B;&#x8981;&#x7C7B;&#x522B;&#xFF0C;&#x6587;&#x732E;&#x8BB0;&#x5F55;&#x4E86;732&#x4E2A;&#x6A21;&#x578B;&#x548C;65&#x4E2D;&#x529F;&#x80FD;&#x5F62;&#x5F0F;&#x3002;</p>
+<p>&#x592A;&#x9633;&#x8F90;&#x5C04;&#x662F;&#x6C14;&#x8C61;&#x53C2;&#x6570;&#x3001;&#x5730;&#x7406;&#x53C2;&#x6570;&#x3001;&#x5929;&#x6587;&#x5B66;&#x53C2;&#x6570;&#x3001;&#x7269;&#x7406;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x6C14;&#x8C61;&#x53C2;&#x6570;&#x6709;&#xFF1A;&#x84B8;&#x53D1;&#xFF0C;&#x4E91;&#x5C42;&#xFF0C;&#x76F8;&#x5BF9;&#x6E7F;&#x5EA6;&#xFF0C;&#x964D;&#x6C34;&#xFF0C;&#x6E29;&#x5EA6;&#xFF0C;&#x65E5;&#x7167;&#x65F6;&#x957F;&#xFF0C;&#x5730;&#x5916;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x548C;&#x4E00;&#x4E9B;&#x73AF;&#x5883;&#x7684;&#x53C2;&#x6570;&#xFF1B;&#x5730;&#x7406;&#x53C2;&#x6570;&#x6709;&#xFF1A;&#x7ECF;&#x7EAC;&#x5EA6;&#xFF0C;&#x6D77;&#x62D4;&#xFF0C;&#x65B9;&#x4F4D;&#x89D2;&#x7B49;&#xFF1B;&#x5929;&#x6587;&#x5B66;&#x53C2;&#x6570;&#xFF1A;&#x592A;&#x9633;&#x5E38;&#x6570;&#xFF0C;&#x65E5;&#x5730;&#x8DDD;&#x79BB;&#xFF0C;&#x592A;&#x9633;&#x504F;&#x89D2;&#x7B49;&#xFF1B; &#x7269;&#x7406;&#x53C2;&#x6570;&#xFF1A;&#x7A7A;&#x6C14;&#x5206;&#x5B50;&#x7684;&#x6563;&#x5C04;&#xFF0C;&#x6C34;&#x84B8;&#x6C14;&#x542B;&#x91CF;&#xFF0C;&#x7C89;&#x5C18;&#xFF0C;&#x5927;&#x6C14;&#x5206;&#x5B50;&#x7684;&#x6563;&#x5C04;</p>
+<p>Angstrom&#x7B2C;&#x4E00;&#x4E2A;&#x63D0;&#x51FA;&#x7ECF;&#x9A8C;&#x6A21;&#x578B;&#x6765;&#x6D4B;&#x91CF;&#x6674;&#x5929;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#xFF0C;Prescott&#x548C;Page&#x4F7F;&#x7528;&#x5730;&#x5916;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x4EE3;&#x66FF;&#x6674;&#x7A7A;&#x8F90;&#x5C04;&#xFF0C;&#x4F7F;&#x6A21;&#x578B;&#x5F0F;&#x5B50;&#x66F4;&#x52A0;&#x7B80;&#x4ECB;&#xFF0C;&#x524D;&#x5341;&#x5E74;&#xFF0C;&#x4E00;&#x4E9B;&#x5B66;&#x8005;&#x5728;&#x5176;&#x57FA;&#x7840;&#x4E0A;&#x53D1;&#x5C55;&#x4E86;&#x4E00;&#x4E9B;&#x65B0;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x4F7F;&#x7528;&#x4E86;&#x540C;&#x6837;&#x7684;&#x53C2;&#x6570;&#x3002;&#x8BE5;&#x6587;&#x662F;review&#x4E86;&#x4F30;&#x8BA1;&#x975E;&#x6D32;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x7684;&#x76F8;&#x5173;&#x6A21;&#x578B;&#xFF0C;&#xFF0C;&#xFF0C;&#xFF08;&#x6CA1;&#x5927;&#x770B;&#x61C2;&#x82F1;&#x6587;&#xFF09;</p>
+<p>&#x6839;&#x636E;&#x6C14;&#x8C61;&#x53C2;&#x6570;&#xFF0C;&#x6A21;&#x578B;&#x53EF;&#x5206;&#x4E3A;&#x4E00;&#x4E0B;&#x516D;&#x7C7B;&#xFF1A;</p>
+<ol>
+<li>&#x57FA;&#x4E8E;&#x65E5;&#x7167;&#x7684;&#x6A21;&#x578B;&#xFF08;&#x6211;&#x524D;&#x9762;&#x4E00;&#x76F4;&#x770B;&#x7684;&#x90FD;&#x662F;&#x8FD9;&#x4E2A;&#x6A21;&#x578B;&#xFF09;</li>
+<li>&#x57FA;&#x4E8E;&#x4E91;&#x7684;&#x6A21;&#x578B;</li>
+<li>&#x57FA;&#x4E8E;&#x6E29;&#x5EA6;&#x7684;&#x6A21;&#x578B;</li>
+<li>&#x57FA;&#x4E8E;&#x76F8;&#x5BF9;&#x6E7F;&#x5EA6;&#x7684;&#x6A21;&#x578B;</li>
+<li>&#x57FA;&#x4E8E;&#x964D;&#x6C34;&#x7684;&#x6A21;&#x578B;</li>
+<li>&#x57FA;&#x4E8E;&#x6DF7;&#x5408;&#x53C2;&#x6570;&#x7684;&#x6A21;&#x578B;</li>
+</ol>
+<p>&#x8BE5;&#x6587;&#x63D0;&#x51FA;&#x7684;&#x6A21;&#x578B;&#x90FD;&#x7ED9;&#x51FA;&#x4E86;&#x5177;&#x4F53;&#x7684;&#x5730;&#x70B9;&#xFF0C;&#x63D0;&#x51FA;&#x4E86;&#x5F88;&#x591A;&#x6A21;&#x578B;&#xFF0C;&#x5E94;&#x8BE5;&#x8986;&#x76D6;&#x4E86;&#x975E;&#x6D32;&#x7684;&#x5927;&#x90E8;&#x5206;&#x5730;&#x533A;</p>
+<p>&#x57FA;&#x4E8E;&#x9633;&#x5149;&#x7684;&#x6A21;&#x578B;&#x63D0;&#x51FA;&#x4E86;&#x5F88;&#x591A;&#x6A21;&#x578B;&#xFF0C;&#x5E94;&#x8BE5;&#x4E5F;&#x662F;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x662F;&#x7EBF;&#x6027;&#x7684;&#xFF0C;&#x4E5F;&#x6709;&#x4E8C;&#x9636;&#xFF0C;&#x4E09;&#x9636;&#xFF0C;&#x975E;&#x7EBF;&#x6027;&#x7B49;&#x5F62;&#x5F0F;&#xFF0C;&#x5206;&#x4E86;12&#x4E2A;&#x5B50;&#x7C7B;&#xFF0C;&#x6CA1;&#x6709;&#x8FDB;&#x884C;&#x8BC4;&#x4EF7;&#xFF0C;&#x4E5F;&#x53EA;&#x662F;&#x5217;&#x51FA;&#x6765;&#x6240;&#x6709;&#x6A21;&#x578B;</p>
+<p>&#x57FA;&#x4E8E;&#x6E29;&#x5EA6;&#x7684;&#x6A21;&#x578B;&#x9002;&#x7528;&#x4E8E;&#x6CA1;&#x6709;&#x65E5;&#x7167;&#x65F6;&#x95F4;&#x7684;&#x5730;&#x533A;&#xFF0C;&#x6839;&#x636E;&#x6BCF;&#x65E5;&#x7684;&#x6700;&#x9AD8;&#x6E29;&#x5EA6;&#x3001;&#x5E73;&#x5747;&#x6E29;&#x5EA6;&#x3001;&#x6700;&#x4F4E;&#x6E29;&#x5EA6;&#x7B49;&#x53EF;&#x4EE5;&#x5F97;&#x51FA;&#x5176;&#x592A;&#x9633;&#x8F90;&#x5C04;&#xFF0C;&#x5206;&#x4E86;18&#x4E2A;&#x5B50;&#x7C7B;</p>
+<p>&#x57FA;&#x4E8E;&#x76F8;&#x5BF9;&#x6E7F;&#x5EA6;&#x7684;&#x6A21;&#x578B;&#x662F;&#x56E0;&#x4E3A;&#x5927;&#x90E8;&#x5206;&#x6C14;&#x8C61;&#x7AD9;&#x90FD;&#x662F;&#x6D4B;&#x91CF;&#x7684;&#x6C14;&#x8C61;&#x53C2;&#x6570;&#xFF0C;&#x6CA1;&#x6709;&#x65E5;&#x7167;&#x65F6;&#x957F;&#x548C;&#x6E29;&#x5EA6;&#x7B49;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x6709;&#x4E86;&#x57FA;&#x4E8E;&#x76F8;&#x5BF9;&#x6E7F;&#x5EA6;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x6A21;&#x578B;&#x8F83;&#x5C11;&#xFF0C;&#x5C31;&#x5206;&#x4E86;&#x4E24;&#x4E2A;&#x5B50;&#x7C7B;</p>
+<p>&#x57FA;&#x4E8E;&#x4E91;&#x91CF;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x6A21;&#x578B;&#x8F83;&#x5C11;&#xFF0C;&#x5C31;&#x5206;&#x4E86;&#x4E24;&#x4E2A;&#x5B50;&#x7C7B;</p>
+<p>&#x57FA;&#x4E8E;&#x964D;&#x6C34;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x6A21;&#x578B;&#x5F88;&#x5C11;</p>
+<p>&#x57FA;&#x4E8E;&#x6DF7;&#x5408;&#x53C2;&#x6570;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x53C2;&#x6570;&#x5305;&#x62EC;&#x4F46;&#x4E0D;&#x9650;&#x4E8E;&#x5DF2;&#x7ECF;&#x63D0;&#x5230;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5206;&#x4E3A;14&#x4E2A;&#x5B50;&#x7C7B;&#xFF0C;&#x63D0;&#x51FA;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x4F46;&#x662F;&#x4E5F;&#x6CA1;&#x6709;&#x8FDB;&#x884C;&#x8BC4;&#x4EF7;</p>
+<p>&#x6700;&#x540E;&#x4F5C;&#x8005;&#x5728;&#x8BA8;&#x8BBA;&#x7684;&#x65F6;&#x5019;&#x8868;&#x660E;&#xFF0C;&#x6709;&#x7814;&#x7A76;&#x4EBA;&#x5458;&#x5C06;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x8BA1;&#x7B97;&#x6A21;&#x578B;&#x5206;&#x4E3A;&#x4E86;&#x57FA;&#x4E8E;&#x65E5;&#x7167;&#x3001;&#x4E91;&#x3001;&#x6E29;&#x5EA6;&#x548C;&#x6DF7;&#x5408;&#x53C2;&#x6570;&#x7B49;&#x56DB;&#x4E2A;&#x7C7B;&#x578B;&#xFF0C;&#x666E;&#x904D;&#x8BA4;&#x4E3A;&#x57FA;&#x4E8E;&#x65E5;&#x7167;&#x7684;&#x6A21;&#x578B;&#x4F7F;&#x7528;&#x7684;&#x6700;&#x591A;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x56E0;&#x4E3A;&#x5B83;&#x5728;&#x5927;&#x591A;&#x6570;&#x6C14;&#x8C61;&#x7AD9;&#x90FD;&#x4F7F;&#x7528;&#xFF0C;&#x57FA;&#x4E8E;&#x6E29;&#x5EA6;&#x6A21;&#x578B;&#x53EF;&#x4EE5;&#x7684;&#x8FDB;&#x884C;&#x6821;&#x51C6;&#xFF0C;&#x57FA;&#x4E8E;&#x4E91;&#x5C42;&#x7684;&#x6A21;&#x578B;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x66FF;&#x4EE3;&#x65B9;&#x6848;&#xFF0C;&#x57FA;&#x4E8E;&#x6DF7;&#x5408;&#x53C2;&#x6570;&#x7684;&#x6A21;&#x578B;&#x4E00;&#x822C;&#x7CBE;&#x5EA6;&#x5F88;&#x9AD8;&#xFF0C;&#x4F46;&#x662F;&#x5927;&#x591A;&#x6570;&#x53C2;&#x6570;&#x4E0D;&#x5BB9;&#x6613;&#x83B7;&#x5F97;&#x3002;&#x4F5C;&#x8005;&#x5728;&#x5B83;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x52A0;&#x4E86;&#x4E24;&#x4E2A;&#x7C7B;&#x522B;&#xFF1A;&#x57FA;&#x4E8E;&#x76F8;&#x5BF9;&#x6E7F;&#x5EA6;&#x548C;&#x964D;&#x6C34;&#xFF0C;&#x603B;&#x4F53;&#x800C;&#x8A00;&#xFF0C;&#x6709;732&#x4E2A;&#x7ECF;&#x9A8C;&#x6A21;&#x578B;&#xFF0C;&#x5404;&#x79CD;&#x7C7B;&#x578B;&#x5360;&#x6BD4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="../image/image-20201019195037231.png" alt="image-20201019195037231"></p>
+<p>&#x901A;&#x5E38;&#xFF0C;&#x4E0D;&#x53EF;&#x80FD;&#x7528;&#x4E00;&#x4E2A;&#xFF08;&#x6CA1;&#x5199;&#x5B8C;</p>
+<h3 id="2-estimation-of-hourly-daily-and-monthly-global-solar-radiation-on-inclined-surfaces-models-re-visited">2. Estimation of Hourly, Daily and Monthly Global Solar Radiation on Inclined Surfaces: Models Re-Visited</h3>
+<p>&#x4F5C;&#x8005;&#xFF1A;&#x9A6C;&#x6765;&#x897F;&#x4E9A;&#x5E03;&#x7279;&#x62C9;&#x5927;&#x5B66;&#x7535;&#x6C14;&#x4E0E;&#x7535;&#x5B50;&#x5DE5;&#x7A0B;&#x7CFB;  Seyed Abbas Mousavi Maleki</p>
+<p>&#x65F6;&#x95F4;&#xFF1A;2017</p>
+<p><img src="../image/image-20201019162911702.png" alt="image-20201019162911702"></p>
+<p>&#x6458;&#x8981;&#x5927;&#x610F;&#xFF1A;&#x503E;&#x659C;&#x8868;&#x9762;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x5927;&#x4E8E;&#x6C34;&#x5E73;&#x8868;&#x9762;&#x7684;&#xFF0C;&#x5404;&#x79CD;&#x9884;&#x6D4B;&#x503E;&#x659C;&#x8868;&#x9762;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x6A21;&#x578B;&#x6709;&#x5BF9;&#x5E94;&#x7684;&#x7279;&#x6B8A;&#x8981;&#x6C42;&#x3002;&#x8BE5;&#x6587;&#x63D0;&#x4F9B;&#x4E86;&#x5404;&#x4E2A;&#x56FD;&#x5BB6;/&#x5730;&#x533A;&#x7684;&#x6700;&#x4F73;&#x503E;&#x659C;&#x89D2;&#x5EA6;&#x3002;</p>
+<p>&#x80CC;&#x666F;&#xFF0C;&#x7F3A;&#x4E4F;&#x4E0D;&#x540C;&#x4F4D;&#x7F6E;&#x8BC6;&#x522B;&#x6700;&#x51C6;&#x786E;&#x6A21;&#x578B;&#x7684;&#x5BA1;&#x67E5;&#x7814;&#x7A76;&#xFF0C;&#x7136;&#x540E;&#x4F5C;&#x8005;&#x8BF4;&#xFF1A;&#x8BA9;&#x6211;&#x6765;&#x3002;&#x7136;&#x540E;&#x4F5C;&#x5219;&#x5BF9;&#x5404;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x77E5;&#x540D;&#x6A21;&#x578B;&#x8FDB;&#x884C;&#x4E86;&#x5168;&#x9762;&#x7EFC;&#x8FF0;&#xFF0C;&#x4E3A;&#x4E0D;&#x540C;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x63D0;&#x4F9B;&#x4ECB;&#x7ECD;&#x7CBE;&#x5EA6;&#x6700;&#x597D;&#x7684;&#x90A3;&#x51E0;&#x4E2A;&#x6A21;&#x578B;&#x3002;</p>
+<p>&#x7136;&#x540E;&#x4ECB;&#x7ECD;&#x4E86;&#x51E0;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x592A;&#x9633;&#x504F;&#x89D2;&#xFF0C;&#x65F6;&#x89D2;&#xFF0C;&#x592A;&#x9633;&#x65B9;&#x4F4D;&#x89D2;&#xFF0C;&#x7EF4;&#x5EA6;&#xFF0C;&#x6BCF;&#x5C0F;&#x65F6;&#x5730;&#x5916;&#x592A;&#x9633;&#x8F90;&#x5C04;&#xFF0C;&#x6C34;&#x5E73;&#x9762;&#x4E0A;&#x6BCF;&#x5C0F;&#x65F6;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x91CF;&#x3002;</p>
+<p>&#x5730;&#x8868;&#x63A5;&#x53D7;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x6709;&#xFF1A;&#x76F4;&#x63A5;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x548C;&#x6F2B;&#x5C04;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x3002;&#x5F53;&#x592A;&#x9633;&#x5149;&#x7A7F;&#x8FC7;&#x5927;&#x6C14;&#x5C42;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x4E00;&#x4E9B;&#x88AB;&#x79F0;&#x4E3A;&#x5149;&#x675F;&#x7684;&#x8F90;&#x5C04;&#x5230;&#x5730;&#x8868;&#xFF0C;&#x6709;&#x660E;&#x663E;&#x7684;&#x9634;&#x5F71;&#xFF0C;&#x8FD9;&#x79CD;&#x76F4;&#x63A5;&#x7684;&#x8F90;&#x5C04;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6E29;&#x5EA6;&#x8BA1;&#x6D4B;&#x91CF;&#x3002;&#x6F2B;&#x5C04;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x662F;&#x7A7F;&#x8FC7;&#x592A;&#x9633;&#x5149;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x88AB;&#x6C34;&#x84B8;&#x6C14;&#xFF0C;&#x9897;&#x7C92;&#x7269;&#x6D88;&#x8017;&#xFF0C;&#x5206;&#x6563;&#xFF0C;&#x53CD;&#x5C04;&#xFF0C;&#x8FD9;&#x79CD;&#x8F90;&#x5C04;&#x6CA1;&#x6709;&#x9634;&#x5F71;&#xFF0C;&#x65E0;&#x6CD5;&#x805A;&#x7126;&#xFF0C;&#x6B64;&#x7C7B;&#x8F90;&#x5C04;&#x7684;&#x6536;&#x96C6;&#x9700;&#x8981;&#x7CBE;&#x786E;&#x7684;&#x4EEA;&#x5668;&#xFF0C;&#x6F2B;&#x53CD;&#x5C04;&#x6A21;&#x578B;&#x53EF;&#x5206;&#x4E3A;&#x53C2;&#x6570;&#x6A21;&#x578B;&#x548C;&#x5206;&#x89E3;&#x6A21;&#x578B;&#x3002;</p>
+<p>&#x53C2;&#x6570;&#x6A21;&#x578B;&#xFF1A;</p>
+<p>ASHRAE &#x6A21;&#x578B;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x88AB;&#x5DE5;&#x7A0B;&#x5B66;&#x548C;&#x5EFA;&#x7B51;&#x793E;&#x533A;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;</p>
+<p>Machler and Iqbal &#x6A21;&#x578B;&#x4E13;&#x95E8;&#x7814;&#x7A76;&#x4E86;&#x6BCF;&#x5C0F;&#x65F6;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x4E2D;&#x7684;&#x6F2B;&#x53CD;&#x5C04;</p>
+<p>Parishwad &#x6A21;&#x578B; &#x4F7F;&#x7528;&#x4E86;&#x7EDF;&#x8BA1;&#x7684;&#x65B9;&#x6CD5;&#x4F30;&#x8BA1;ASHRAE&#x6A21;&#x578B;&#xFF0C;&#x5BF9;&#x5370;&#x5EA6;&#x4E0D;&#x540C;&#x5730;&#x70B9;&#x7684;&#x516D;&#x4E2A;&#x5730;&#x65B9;&#x8FDB;&#x884C;&#x4E86;&#x6307;&#x6807;&#x5206;&#x6790;</p>
+<p>Nijegorodov &#x6A21;&#x578B; &#x4F7F;&#x7528;&#x8BA1;&#x7B97;&#x673A;&#x9884;&#x6D4B;&#x4E86;ASHRAE&#x6A21;&#x578B;&#x7684;&#x5E38;&#x6570;</p>
+<p>&#x5206;&#x89E3;&#x6A21;&#x578B;&#xFF1A;</p>
+<p>&#x5206;&#x89E3;&#x6A21;&#x578B;&#x901A;&#x5E38;&#x4EC5;&#x4F7F;&#x7528;&#x4E0E;&#x5168;&#x7403;&#x8F90;&#x5C04;&#x6709;&#x5173;&#x7684;&#x6570;&#x636E;&#x6765;&#x4F30;&#x8BA1;&#x6269;&#x6563;&#x6765;&#x81EA;&#x5168;&#x7403;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x6570;&#x636E;&#x7684;&#x8F90;&#x5C04;&#xFF0C;&#x5206;&#x89E3;&#x6A21;&#x578B;&#x57FA;&#x4E8E;&#x5728;&#x6C34;&#x5E73;&#x9762;&#x4E0A;&#x7684;&#x6F2B;&#x5C04;&#x548C;&#x603B;&#x8F90;&#x5C04;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x4F5C;&#x8005;&#x5C31;&#x53C8;&#x4ECB;&#x7ECD;&#x4E86;&#x5F88;&#x591A;&#x4E2A;&#x5206;&#x89E3;&#x6A21;&#x578B;&#xFF0C;&#x57FA;&#x672C;&#x90FD;&#x662F;&#x9AD8;&#x9636;&#x7684;&#xFF0C;&#x53C2;&#x6570;&#x4E3A;&#x51C0;&#x5EA6;&#x7CFB;&#x6570;&#xFF08;$M_t$)&#xFF0C;&#x8BE5;&#x7CFB;&#x6570;&#x4E0E;&#x5F53;&#x5730;&#x7684;&#x6C14;&#x5019;&#x6709;&#x5173;</p>
+<p><img src="../image/image-20201019215339970.png" alt="image-20201019215339970"></p>
+<p>&#x540E;&#x9762;&#x5C31;&#x5F00;&#x59CB;&#x8BB2;&#x503E;&#x659C;&#x8868;&#x9762;&#x7684;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x4E86;&#xFF0C;&#x5C31;&#x6CA1;&#x4ED4;&#x7EC6;&#x770B;&#x4E86;&#xFF08;&#x5176;&#x5B9E;&#x4E00;&#x76F4;&#x6CA1;&#x6709;&#x4ED4;&#x7EC6;&#x770B;:cry:&#xFF09;</p>
+<p>&#x8DF3;&#x4E86;&#x5F88;&#x591A;&#xFF0C;&#x76F4;&#x63A5;&#x8DF3;&#x5230;&#x7ED3;&#x8BBA;&#x4E86;&#x3002;&#x6F2B;&#x5C04;&#x8F90;&#x5C04;&#x6A21;&#x578B;&#x53D7;&#x5230;&#x7EF4;&#x5EA6;&#x5F71;&#x54CD;&#x5F88;&#x5927;&#xFF0C;&#x5176;&#x4F59;&#x90FD;&#x662F;&#x8BB2;&#x503E;&#x659C;&#x8868;&#x9762;&#x4E86;&#x3002;</p>
+<p>ps&#xFF1A;&#x8BE5;&#x6587;&#x4F5C;&#x7528;&#x4E0D;&#x5927;&#xFF0C;&#x4E0D;&#x9002;&#x5408;&#x6211;&#xFF0C;&#x90FD;&#x662F;&#x8BB2;&#x503E;&#x659C;&#x8868;&#x9762;&#x7684;&#x4E86;&#xFF0C;&#x800C;&#x4E14;&#x6CA1;&#x6709;&#x4ECB;&#x7ECD;&#x4E00;&#x70B9;&#x5173;&#x4E8E;&#x7ECF;&#x9A8C;&#x6A21;&#x578B;&#x7684;&#x77E5;&#x8BC6;</p>
+<h2 id="&#x9700;&#x8981;review&#x7684;&#x6587;&#x7AE0;">&#x9700;&#x8981;review&#x7684;&#x6587;&#x7AE0;</h2>
+<p>1.2 <img src="../image/image-20201019195242062.png" alt="image-20201019195242062"></p>
+<h2 id="&#x7814;&#x7A76;&#x8FDB;&#x5C55;">&#x7814;&#x7A76;&#x8FDB;&#x5C55;</h2>
+<h3 id="&#x4E00;&#x4E2A;&#x4E3A;&#x671F;16&#x5E74;&#xFF08;2000-2015&#x5E74;&#xFF09;&#x7684;&#x9AD8;&#x5206;&#x8FA8;&#x7387;&#xFF08;3-h&#xFF0C;10-km&#xFF09;&#x5168;&#x7403;&#x5730;&#x9762;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x6570;&#x636E;&#x96C6;">&#x4E00;&#x4E2A;&#x4E3A;&#x671F;16&#x5E74;&#xFF08;2000-2015&#x5E74;&#xFF09;&#x7684;&#x9AD8;&#x5206;&#x8FA8;&#x7387;&#xFF08;3 h&#xFF0C;10 km&#xFF09;&#x5168;&#x7403;&#x5730;&#x9762;&#x592A;&#x9633;&#x8F90;&#x5C04;&#x6570;&#x636E;&#x96C6;</h3>
+<p>&#x4F5C;&#x8005;&#xFF1A;&#x5510;&#x6587;&#x541B;  &#x9752;&#x9AD8;&#x6240;</p>
+<p> &#x65F6;&#x95F4;&#xFF1A;2019</p>
+<p>&#x6700;&#x8FD1;&#x53D1;&#x5E03;&#x7684;&#x56FD;&#x9645;&#x536B;&#x661F;&#x4E91;&#x6C14;&#x5019;&#x9879;&#x76EE;&#xFF08;ISCCP&#xFF09;HXG&#x4E91;&#x4EA7;&#x54C1;&#x548C;&#x65B0;&#x7684;ERA5&#x518D;&#x5206;&#x6790;&#x6570;&#x636E;&#x4F7F;&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x751F;&#x6210;&#x5168;&#x7403;&#x5730;&#x8868;&#x592A;&#x9633;&#x8F90;&#x5C04;&#xFF08;SSR&#xFF09;&#x6570;&#x636E;&#x96C6;&#xFF1A;16&#x5E74;&#xFF08;2000&#x2013;2015&#xFF09;&#x7684;&#x9AD8;&#x5206;&#x8FA8;&#x7387;&#xFF08;3 h &#xFF0C;10 km&#xFF09;&#x7684;&#x5168;&#x7403;SSR&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x4F7F;&#x7528;&#x6539;&#x8FDB;&#x7684;&#x7269;&#x7406;&#x53C2;&#x6570;&#x5316;&#x65B9;&#x6848;&#x3002;</p>
+<p>&#x8F93;&#x5165;&#x6570;&#x636E;</p>
+<ul>
+<li>&#x4E91;&#x4EA7;&#x54C1; ISCCP-HXG</li>
+<li>ERA5&#x91CD;&#x65B0;&#x5206;&#x6790;&#x6570;&#x636E;&#xFF08;&#x8868;&#x9762;&#x538B;&#x529B;&#xFF0C;&#x6C34;&#x84B8;&#x6C14;&#x548C;&#x81ED;&#x6C27;&#xFF09;</li>
+<li>&#x6C14;&#x6EB6;&#x80F6;&#x548C;&#x53CD;&#x7167;&#x7387;&#xFF08;MODIS&#xFF09;</li>
+</ul>
+<h2 id="&#x7ECF;&#x9A8C;&#x6A21;&#x578B;&#x7ED3;&#x679C;&#x8BA8;&#x8BBA;">&#x7ECF;&#x9A8C;&#x6A21;&#x578B;&#x7ED3;&#x679C;&#x8BA8;&#x8BBA;</h2>
+<p>&#x4EE3;&#x7801;&#xFF1A;</p>
+<p>&#x6570;&#x636E;&#xFF1A;</p>
+<p><img src="../image/image-20210417132541538.png" alt="image-20210417132541538"></p>
+<p> lat:35.8043
+lon:-84.0260</p>
+<p><img src="../image/image-20210417141023655.png" alt="image-20210417141023655" style="zoom:100%;"></p>
+<p>&#x7ED3;&#x679C;&#xFF1A;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="面向地理共享与集成的数据适配方法研究.html" class="navigation navigation-prev " aria-label="Previous page: 面向地理共享与集成的数据适配方法研究">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="太阳能模型筛选系统.html" class="navigation navigation-next " aria-label="Next page: 太阳能模型筛选系统">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"太阳辐射模型的回顾","level":"1.6.15","depth":2,"next":{"title":"太阳能模型筛选系统","level":"1.6.16","depth":2,"path":"gis/太阳能模型筛选系统.md","ref":"./gis/太阳能模型筛选系统.md","articles":[]},"previous":{"title":"面向地理共享与集成的数据适配方法研究","level":"1.6.14","depth":2,"path":"gis/面向地理共享与集成的数据适配方法研究.md","ref":"./gis/面向地理共享与集成的数据适配方法研究.md","articles":[]},"dir":"ltr"},"config":{"plugins":["pageview-count","intopic-toc","expandable-chapters","advanced-emoji","-lunr","-search","search-plus","-sharing","splitter","hide-element","insert-logo","code","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"livereload":{},"splitter":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"pageview-count":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"max-height: 120px; min-height: 120px","url":"https://ting-xin.github.io/notebook/image/wutian2.png"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"wutian","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notebook|blog","language":"zh-hans","gitbook":"*","description":"很菜的一个博客，或则说是笔记本，为了自己方便弄的"},"file":{"path":"gis/太阳辐射模型的回顾.md","mtime":"2022-01-12T09:20:49.531Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-09T13:54:30.353Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

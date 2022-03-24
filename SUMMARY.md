@@ -31,13 +31,17 @@
   - try again
     - [leetcode 算法教程](./dataStructure/leetcode算法教程.md)
 * font
+  - [深入理解 ES6](./font/深入理解 ES6.md)
   - [React](./font/React.md)
   - [Vue](./font/Vue.md)
+  - [Vue.js 的设计与实现](./font/Vue.js 的设计与实现.md)
+  - [webpack](./font/webpack.md)
   - [WebSocket](./font/WebSocket.md)
   - [被删的前端游乐园](./font/被删的前端游乐园.md)
   - [浏览器](./font/浏览器.md)
   - [图解HTTP](./font/图解HTTP.md)
 * gis
+  - [mapshaper]()(./gis/mapshaper.md)
   - [GDAL](./gis/GDAL.md)
   - [Geomorphology-Based Hydrological Model](./gis/Geomorphology-Based Hydrological Model.md)
   - [Geoserver](./gis/GeoserverModel.md)
@@ -56,6 +60,8 @@
   - [太阳能模型筛选系统](./gis/太阳能模型筛选系统.md)
   - [遥感技术解决地理问题](./gis/遥感技术解决地理问题.md)
   - [最小二乘法](./gis/最小二乘法.md)
+  - [地理学思想](./gis/人文地理学_第一次作业.md)
+  - [地理学方法论](./gis/人文地理学第二次作业_读书报告.md)
 * languages
   - [Go](./languages/Go.md)
   - [Java](./languages/Java.md)
