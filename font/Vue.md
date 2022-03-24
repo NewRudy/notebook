@@ -47,7 +47,7 @@ v-for	可以绑定数组的数据来渲染一个项目列表
 ```js
 app.component('todo-item', {
   props: ['todo'],
-  template: `<li>{{ todo.text</li>`
+  template: `<li>todo.text</li>`
 })
 ```
 
