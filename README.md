@@ -7,5 +7,7 @@
 
 制作这样一个笔记本的形式是为了方便自己看，也可以当作博客写一些想法，希望自己能坚持吧！
 
+编译命令：`gitbook serve . ./docs`，需要放到 `docs` 文件夹，GitHub 才能自动部署
+
 在线地址：https://ting-xin.github.io/notebook/
 

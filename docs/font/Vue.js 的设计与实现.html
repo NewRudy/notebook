@@ -1,0 +1,1989 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Vue.js 的设计与实现 · notebook|blog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wutian">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="webpack.html" />
+    
+    
+    <link rel="prev" href="Vue.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    bigData
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../bigData/BigData-Notes.html">
+            
+                <a href="../bigData/BigData-Notes.html">
+            
+                    
+                    BigData-Notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../bigData/Flink.html">
+            
+                <a href="../bigData/Flink.html">
+            
+                    
+                    Flink.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../bigData/Google 三大核心技术及其衍生.html">
+            
+                <a href="../bigData/Google 三大核心技术及其衍生.html">
+            
+                    
+                    Google 三大核心技术及其衍生.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../bigData/Hadoop.html">
+            
+                <a href="../bigData/Hadoop.html">
+            
+                    
+                    Hadoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../bigData/MinIO.html">
+            
+                <a href="../bigData/MinIO.html">
+            
+                    
+                    MinIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../bigData/MongoDB.html">
+            
+                <a href="../bigData/MongoDB.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../bigData/Nginx.html">
+            
+                <a href="../bigData/Nginx.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../bigData/Spark.html">
+            
+                <a href="../bigData/Spark.html">
+            
+                    
+                    Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../bigData/大数据.html">
+            
+                <a href="../bigData/大数据.html">
+            
+                    
+                    大数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    course
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../course/Hands-On Data Visualization.html">
+            
+                <a href="../course/Hands-On Data Visualization.html">
+            
+                    
+                    Hands-On Data Visualization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../course/深入理解计算机系统.html">
+            
+                <a href="../course/深入理解计算机系统.html">
+            
+                    
+                    深入理解计算机系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../course/图说设计模式.html">
+            
+                <a href="../course/图说设计模式.html">
+            
+                    
+                    图说设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../dataStructure/leetcode算法教程.html">
+            
+                <a href="../dataStructure/leetcode算法教程.html">
+            
+                    
+                    leetcode算法基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../dataStructure/leetcode算法教程.html">
+            
+                <a href="../dataStructure/leetcode算法教程.html">
+            
+                    
+                    leetcode算法基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <span>
+            
+                    
+                    simple and young
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../dataStructure/simple/文件操作.html">
+            
+                <a href="../dataStructure/simple/文件操作.html">
+            
+                    
+                    文件操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../dataStructure/simple/栈和队列.html">
+            
+                <a href="../dataStructure/simple/栈和队列.html">
+            
+                    
+                    栈和队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../dataStructure/simple/链表.html">
+            
+                <a href="../dataStructure/simple/链表.html">
+            
+                    
+                    链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="../dataStructure/simple/字符串.html">
+            
+                <a href="../dataStructure/simple/字符串.html">
+            
+                    
+                    字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.5" data-path="../dataStructure/simple/排序.html">
+            
+                <a href="../dataStructure/simple/排序.html">
+            
+                    
+                    排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.6" data-path="../dataStructure/simple/树.html">
+            
+                <a href="../dataStructure/simple/树.html">
+            
+                    
+                    树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7" data-path="../dataStructure/simple/图.html">
+            
+                <a href="../dataStructure/simple/图.html">
+            
+                    
+                    图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.8" data-path="../dataStructure/simple/递归.html">
+            
+                <a href="../dataStructure/simple/递归.html">
+            
+                    
+                    递归
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" >
+            
+                <span>
+            
+                    
+                    try again
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../dataStructure/leetcode算法教程.html">
+            
+                <a href="../dataStructure/leetcode算法教程.html">
+            
+                    
+                    leetcode 算法教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    font
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="深入理解 ES6.html">
+            
+                <a href="深入理解 ES6.html">
+            
+                    
+                    深入理解 ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="React.html">
+            
+                <a href="React.html">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="Vue.html">
+            
+                <a href="Vue.html">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.4" data-path="Vue.js 的设计与实现.html">
+            
+                <a href="Vue.js 的设计与实现.html">
+            
+                    
+                    Vue.js 的设计与实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="webpack.html">
+            
+                <a href="webpack.html">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="WebSocket.html">
+            
+                <a href="WebSocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="被删的前端游乐园.html">
+            
+                <a href="被删的前端游乐园.html">
+            
+                    
+                    被删的前端游乐园
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="浏览器.html">
+            
+                <a href="浏览器.html">
+            
+                    
+                    浏览器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="图解HTTP.html">
+            
+                <a href="图解HTTP.html">
+            
+                    
+                    图解HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    gis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <span>
+            
+                    
+                    mapshaper
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../gis/GDAL.html">
+            
+                <a href="../gis/GDAL.html">
+            
+                    
+                    GDAL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../gis/Geomorphology-Based Hydrological Model.html">
+            
+                <a href="../gis/Geomorphology-Based Hydrological Model.html">
+            
+                    
+                    Geomorphology-Based Hydrological Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../gis/GeoserverModel.md">
+            
+                <span>
+            
+                    
+                    Geoserver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../gis/GIS标准.html">
+            
+                <a href="../gis/GIS标准.html">
+            
+                    
+                    GIS标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../gis/GIS算法基础.html">
+            
+                <a href="../gis/GIS算法基础.html">
+            
+                    
+                    GIS算法基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../gis/Google Earth Engine.html">
+            
+                <a href="../gis/Google Earth Engine.html">
+            
+                    
+                    Google Earth Engine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../gis/Landsat影像格式.html">
+            
+                <a href="../gis/Landsat影像格式.html">
+            
+                    
+                    Landsat影像格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../gis/NetCDF.html">
+            
+                <a href="../gis/NetCDF.html">
+            
+                    
+                    NetCDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../gis/OSMnx.html">
+            
+                <a href="../gis/OSMnx.html">
+            
+                    
+                    OSMnx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../gis/城市规划中人性、人文和人本的关系.html">
+            
+                <a href="../gis/城市规划中人性、人文和人本的关系.html">
+            
+                    
+                    城市规划中人性、人文和人本的关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../gis/地理大数据探索.html">
+            
+                <a href="../gis/地理大数据探索.html">
+            
+                    
+                    地理大数据探索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../gis/地理大数据可视化.md">
+            
+                <span>
+            
+                    
+                    地理大数据可视化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../gis/地理信息安全技术与进展心得体会.html">
+            
+                <a href="../gis/地理信息安全技术与进展心得体会.html">
+            
+                    
+                    地理信息安全技术与进展心得体会
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="../gis/面向地理共享与集成的数据适配方法研究.html">
+            
+                <a href="../gis/面向地理共享与集成的数据适配方法研究.html">
+            
+                    
+                    面向地理共享与集成的数据适配方法研究
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="../gis/太阳辐射模型的回顾.html">
+            
+                <a href="../gis/太阳辐射模型的回顾.html">
+            
+                    
+                    太阳辐射模型的回顾
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.17" data-path="../gis/太阳能模型筛选系统.html">
+            
+                <a href="../gis/太阳能模型筛选系统.html">
+            
+                    
+                    太阳能模型筛选系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.18" data-path="../gis/遥感技术解决地理问题.html">
+            
+                <a href="../gis/遥感技术解决地理问题.html">
+            
+                    
+                    遥感技术解决地理问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.19" data-path="../gis/最小二乘法.html">
+            
+                <a href="../gis/最小二乘法.html">
+            
+                    
+                    最小二乘法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.20" data-path="../gis/人文地理学_第一次作业.html">
+            
+                <a href="../gis/人文地理学_第一次作业.html">
+            
+                    
+                    地理学思想
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.21" data-path="../gis/人文地理学第二次作业_读书报告.html">
+            
+                <a href="../gis/人文地理学第二次作业_读书报告.html">
+            
+                    
+                    地理学方法论
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    languages
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../languages/Go.html">
+            
+                <a href="../languages/Go.html">
+            
+                    
+                    Go
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../languages/Java.html">
+            
+                <a href="../languages/Java.html">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../languages/JavaScript.html">
+            
+                <a href="../languages/JavaScript.html">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../languages/Node.html">
+            
+                <a href="../languages/Node.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../languages/Python.html">
+            
+                <a href="../languages/Python.html">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../languages/TypeScript.html">
+            
+                <a href="../languages/TypeScript.html">
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    skills
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../skills/Docker.html">
+            
+                <a href="../skills/Docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../skills/Git.html">
+            
+                <a href="../skills/Git.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../skills/Linux.html">
+            
+                <a href="../skills/Linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../skills/画图.html">
+            
+                <a href="../skills/画图.html">
+            
+                    
+                    画图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    temp
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../temp/TestForS.html">
+            
+                <a href="../temp/TestForS.html">
+            
+                    
+                    TestForS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../temp/文件系统的设计原理.html">
+            
+                <a href="../temp/文件系统的设计原理.html">
+            
+                    
+                    文件系统的设计原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    interview
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../interview/前端_面试.html">
+            
+                <a href="../interview/前端_面试.html">
+            
+                    
+                    前端_面试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../interview/前端_笔试.html">
+            
+                <a href="../interview/前端_笔试.html">
+            
+                    
+                    前端_笔试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../interview/个人面经.html">
+            
+                <a href="../interview/个人面经.html">
+            
+                    
+                    个人面经
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Vue.js 的设计与实现</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="vuejs-&#x7684;&#x8BBE;&#x8BA1;&#x4E0E;&#x5B9E;&#x73B0;">Vue.js &#x7684;&#x8BBE;&#x8BA1;&#x4E0E;&#x5B9E;&#x73B0;</h1>
+<h2 id="1-&#x6846;&#x67B6;&#x8BBE;&#x8BA1;&#x6982;&#x89C8;">1. &#x6846;&#x67B6;&#x8BBE;&#x8BA1;&#x6982;&#x89C8;</h2>
+<h2 id="11-&#x6743;&#x8861;&#x7684;&#x827A;&#x672F;">1.1 &#x6743;&#x8861;&#x7684;&#x827A;&#x672F;</h2>
+<ul>
+<li>&#x58F0;&#x660E;&#x5F0F;&#x4EE3;&#x7801;&#x7684;&#x6027;&#x80FD;&#x4E0D;&#x4F18;&#x4E8E;&#x547D;&#x4EE4;&#x5F0F;&#x4EE3;&#x7801;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x56E0;&#x4E3A;&#x58F0;&#x660E;&#x5F0F;&#x4EE3;&#x7801;&#x4F1A;&#x6BD4;&#x547D;&#x4EE4;&#x5F0F;&#x4EE3;&#x7801;&#x591A;&#x51FA;&#x627E;&#x51FA;&#x5DEE;&#x5F02;&#x7684;&#x6027;&#x80FD;&#x6D88;&#x8017;&#xFF0C;&#x6846;&#x67B6;&#x672C;&#x8EAB;&#x5C31;&#x662F;&#x5C01;&#x88C5;&#x4E86;&#x547D;&#x4EE4;&#x5F0F;&#x4EE3;&#x7801;&#x624D;&#x5B9E;&#x73B0;&#x4E86;&#x9762;&#x5411;&#x7528;&#x6237;&#x7684;&#x58F0;&#x660E;&#x5F0F;&#x3002;&#x90A3;&#x4E3A;&#x4EC0;&#x4E48; Vue.js &#x8FD8;&#x8981;&#x9009;&#x62E9;&#x58F0;&#x660E;&#x5F0F;&#x7684;&#x8BBE;&#x8BA1;&#x65B9;&#x6848;&#x5462;&#xFF1F;&#x56E0;&#x4E3A;&#x58F0;&#x660E;&#x5F0F;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x7EF4;&#x62A4;&#x6027;&#x66F4;&#x5F3A;&#xFF0C;&#x547D;&#x4EE4;&#x5F0F;&#x4EE3;&#x7801;&#x9700;&#x8981;&#x7EF4;&#x62A4;&#x76EE;&#x6807;&#x7684;&#x6574;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF0C;&#x5305;&#x62EC;&#x624B;&#x52A8;&#x5B8C;&#x6210; DOM &#x5143;&#x7D20;&#x7684;&#x521B;&#x5EFA;&#x3001;&#x66F4;&#x65B0;&#x548C;&#x5220;&#x9664;&#x7B49;&#x5DE5;&#x4F5C;&#x3002;&#x800C;&#x58F0;&#x660E;&#x5F0F;&#x4EE3;&#x7801;&#x5C55;&#x793A;&#x7684;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x8981;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x770B;&#x4E0A;&#x53BB;&#x66F4;&#x76F4;&#x89C2;&#xFF0C;&#x5E76;&#x4E14;&#x505A;&#x7684;&#x8FC7;&#x7A0B;&#x8BA9; Vue.js &#x5C01;&#x88C5;&#x597D;&#x4E86;&#x3002;Vue.js &#x505A;&#x7684;&#x5C31;&#x662F;&#x5728;&#x4FDD;&#x6301;&#x53EF;&#x7EF4;&#x62A4;&#x6027;&#x7684;&#x540C;&#x65F6;&#x8BA9;&#x6027;&#x80FD;&#x635F;&#x5931;&#x6700;&#x5C0F;&#x5316;</li>
+<li>&#x865A;&#x62DF; DOM &#x80FD;&#x591F;&#x8BA9;&#x6211;&#x4EEC;&#x5728;&#x5199;&#x58F0;&#x660E;&#x5F0F;&#x4EE3;&#x7801;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4FDD;&#x8BC1;&#x6211;&#x4EEC;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x4E0B;&#x9650;&#x3002;&#x865A;&#x62DF; DOM &#x521B;&#x5EFA;&#x9875;&#x9762;&#x7684;&#x8FC7;&#x7A0B;&#x5206;&#x4E3A;&#x4E24;&#x6B65;&#xFF1A;&#x7B2C;&#x4E00;&#x6B65;&#x662F;&#x521B;&#x5EFA; JavaScript &#x5BF9;&#x8C61;&#xFF0C;&#x5BF9;&#x771F;&#x5B9E; DOM &#x7684;&#x63CF;&#x8FF0;&#xFF1B;&#x7B2C;&#x4E8C;&#x6B65;&#x662F;&#x9012;&#x5F52;&#x7684;&#x904D;&#x5386;&#x865A;&#x62DF; DOM &#x5E76;&#x521B;&#x5EFA;&#x771F;&#x5B9E;&#x7684; DOM&#x3002;</li>
+<li>innerHTML &#x66F4;&#x65B0;&#x9875;&#x9762;&#x662F;&#x91CD;&#x65B0;&#x6784;&#x5EFA; HTML &#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x518D;&#x91CD;&#x65B0;&#x8BBE;&#x7F6E; DOM &#x5143;&#x7D20;&#x7684; innerHTML &#x5C5E;&#x6027;&#xFF08;&#x9500;&#x6BC1;&#x6240;&#x6709;&#x65E7;&#x7684; DOM &#x5143;&#x7D20;&#xFF0C;&#x518D;&#x5168;&#x91CF;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; DOM &#x5143;&#x7D20;&#xFF09;&#xFF0C;&#x6027;&#x80FD;&#x56E0;&#x7D20;&#x4E0E;&#x6A21;&#x677F;&#x7684;&#x5927;&#x5C0F;&#x6709;&#x5173;&#x3002;&#x4F46;&#x662F;&#x865A;&#x62DF; DOM &#x5728; JavaScript &#x5C42;&#x9762;&#x7684;&#x8FD0;&#x7B97;&#x8981;&#x6BD4;&#x521B;&#x5EFA;&#x9875;&#x9762;&#x65F6;&#x591A;&#x51FA;&#x4E00;&#x4E2A; Diff &#x7B97;&#x6CD5;&#xFF0C;&#x4F46;&#x662F;&#x53EA;&#x66F4;&#x65B0;&#x5FC5;&#x8981;&#x7684; DOM&#xFF0C;&#x6027;&#x80FD;&#x56E0;&#x7D20;&#x4E0E;&#x6570;&#x636E;&#x53D8;&#x5316;&#x91CF;&#x6709;&#x5173;&#x3002; innerHTML &lt; &#x865A;&#x62DF; DOM &lt; &#x539F;&#x751F; JavaScript</li>
+<li>Render&#xFF08;&#x8FD0;&#x884C;&#x65F6;&#xFF09; -&gt; Compiler&#x3001;Render&#xFF08;&#x7F16;&#x8BD1; + &#x8FD0;&#x884C;&#x65F6;&#xFF09; -&gt; Compiler&#xFF08;&#x7F16;&#x8BD1;&#x65F6;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x7EAF;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x5206;&#x6790;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4E5F;&#x5C31;&#x4E0D;&#x53EF;&#x4EE5;&#x505A;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x4F18;&#x5316;&#xFF1B;&#x5982;&#x679C;&#x662F;&#x7EAF;&#x7F16;&#x8BD1;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x6027;&#x80FD;&#x4F1A;&#x66F4;&#x597D;&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x635F;&#x574F;&#x7075;&#x6D3B;&#x6027;&#xFF0C;&#x5373;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x7684;&#x5185;&#x5BB9;&#x5FC5;&#x987B;&#x7F16;&#x8BD1;&#x540E;&#x624D;&#x80FD;&#x4F7F;&#x7528;&#xFF1B;Vue.js &#x4ECD;&#x7136;&#x4FDD;&#x6301;&#x4E86;&#x8FD0;&#x884C;&#x65F6; + &#x7F16;&#x8BD1;&#x65F6;&#x7684;&#x67B6;&#x6784;&#xFF0C;&#x5728;&#x4FDD;&#x6301;&#x7075;&#x6D3B;&#x6027;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x4F18;&#x5316;</li>
+</ul>
+<h2 id="12-&#x6846;&#x67B6;&#x8BBE;&#x8BA1;&#x7684;&#x6838;&#x5FC3;&#x8981;&#x7D20;">1.2 &#x6846;&#x67B6;&#x8BBE;&#x8BA1;&#x7684;&#x6838;&#x5FC3;&#x8981;&#x7D20;</h2>
+<ol>
+<li>&#x63D0;&#x5347;&#x7528;&#x6237;&#x5F00;&#x53D1;&#x4F53;&#x9A8C;&#xFF1A;&#x63D0;&#x4F9B;&#x53CB;&#x597D;&#x7684;&#x8B66;&#x544A;&#x4FE1;&#x606F;</li>
+<li>&#x63A7;&#x5236;&#x6846;&#x67B6;&#x4EE3;&#x7801;&#x4F53;&#x79EF;&#xFF1A;&#x8B66;&#x544A;&#x4FE1;&#x606F;&#x518D;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E2D;&#x4E0D;&#x63D0;&#x4F9B;</li>
+<li>&#x826F;&#x597D;&#x7684; Tree-Shaking&#xFF1A;&#x6D88;&#x9664;&#x90A3;&#x4E9B;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;</li>
+<li>&#x6846;&#x67B6;&#x5E94;&#x8BE5;&#x8F93;&#x51FA;&#x600E;&#x6837;&#x7684;&#x4EA7;&#x7269;</li>
+<li>&#x7279;&#x6027;&#x5F00;&#x5173;</li>
+<li>&#x9519;&#x8BEF;&#x5904;&#x7406;&#xFF1A;&#x7EDF;&#x4E00;&#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x63A5;&#x53E3;&#xFF0C;callWithErrorHandling</li>
+<li>&#x826F;&#x597D;&#x7684; TypeScript &#x7C7B;&#x578B;&#x652F;&#x6301;</li>
+</ol>
+<h2 id="13-vuejs-3-&#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;">1.3 Vue.js 3 &#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;</h2>
+<h3 id="131-&#x58F0;&#x660E;&#x5F0F;&#x5730;&#x63CF;&#x8FF0;-ui">1.3.1. &#x58F0;&#x660E;&#x5F0F;&#x5730;&#x63CF;&#x8FF0; UI</h3>
+<p>&#x524D;&#x7AEF;&#x9875;&#x9762;&#x8BBE;&#x8BA1;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</p>
+<ul>
+<li>DOM &#x5143;&#x7D20;&#xFF1A;&#x4F8B;&#x5982;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4EC0;&#x4E48;&#x6807;&#x7B7E;</li>
+<li>&#x5C5E;&#x6027;&#xFF1A;&#x6807;&#x7B7E;&#x4E0A;&#x9762;&#x7684;&#x5C5E;&#x6027;</li>
+<li>&#x4E8B;&#x4EF6;&#xFF1A;click&#x7B49;</li>
+<li>&#x5143;&#x7D20;&#x7684;&#x5C42;&#x7EA7;&#x7ED3;&#x6784;</li>
+</ul>
+<p>Vue.js 3 &#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x6709;&#xFF1A;</p>
+<ul>
+<li>&#x4F7F;&#x7528;&#x4E8E; HTML &#x6807;&#x7B7E;&#x4E00;&#x81F4;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x63CF;&#x8FF0; DOM &#x5143;&#x7D20;</li>
+<li>&#x4F7F;&#x7528;&#x4E0E; HTML&#x6807;&#x7B7E;&#x4E00;&#x81F4;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x63CF;&#x8FF0;&#x5C5E;&#x6027;</li>
+<li>&#x4F7F;&#x7528;&#xFF1A;&#x6216; v-bind &#x6765;&#x63CF;&#x8FF0;&#x52A8;&#x6001;&#x7ED1;&#x5B9A;&#x7684;&#x5C5E;&#x6027;</li>
+<li>&#x4F7F;&#x7528; @ &#x6216; v-on &#x6765;&#x63CF;&#x8FF0;&#x4E8B;&#x4EF6;</li>
+<li>&#x4F7F;&#x7528;&#x4E0E; HTML &#x6807;&#x7B7E;&#x4E00;&#x81F4;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x63CF;&#x8FF0;&#x5C42;&#x7EA7;&#x7ED3;&#x6784;</li>
+</ul>
+<p>&#x9664;&#x4E86;&#x8FD9;&#x79CD;&#x6A21;&#x677F;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x63CF;&#x8FF0; UI &#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; JavaScript &#x5BF9;&#x8C61;&#x6765;&#x63CF;&#x8FF0;&#xFF0C;&#x8FD9;&#x6837;&#x4F1A;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span>  title = {
+  tag: <span class="hljs-string">&apos;h1&apos;</span>,
+  props: { onClick: handler},
+  children: [{tag: <span class="hljs-string">&apos;span&apos;</span>}]
+}
+</code></pre>
+<p>&#x800C;&#x4F7F;&#x7528; JavaScript &#x5BF9;&#x8C61;&#x6765;&#x63CF;&#x8FF0; UI &#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5C31;&#x662F;&#x6240;&#x8C13;&#x7684;&#x865A;&#x62DF; DOM&#x3002;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x8981;&#x6E32;&#x67D3;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x901A;&#x8FC7;&#x6E32;&#x67D3;&#x51FD;&#x6570;&#x6765;&#x63CF;&#x8FF0;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4EE3;&#x7801;&#x4E2D;&#x7684; render &#x51FD;&#x6570;&#xFF0C;Vue.js &#x4F1A;&#x6839;&#x636E;&#x7EC4;&#x4EF6;&#x7684; render &#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x62FF;&#x5230;&#x865A;&#x62DF; DOM&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x628A;&#x7EC4;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x6E32;&#x67D3;&#x51FA;&#x6765;</p>
+<h3 id="132-&#x521D;&#x8BC6;&#x6E32;&#x67D3;&#x5668;">1.3.2. &#x521D;&#x8BC6;&#x6E32;&#x67D3;&#x5668;</h3>
+<p>&#x6E32;&#x67D3;&#x5668; renderer &#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x628A;&#x865A;&#x62DF; DOM &#x6E32;&#x67D3;&#x6210;&#x771F;&#x5B9E; DOM&#xFF0C;&#x5B83;&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x662F;&#x9012;&#x5F52;&#x7684;&#x904D;&#x5386;&#x865A;&#x62DF; DOM &#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x8C03;&#x7528;&#x539F;&#x751F; DOM API &#x6765;&#x5B8C;&#x6210;&#x771F;&#x5B9E;&#x7684; DOM &#x7684;&#x521B;&#x5EFA;&#xFF0C;&#x603B;&#x4F53;&#x6765;&#x8BF4;&#x5B9E;&#x73B0;&#x601D;&#x8DEF;&#x5206;&#x4E3A;&#x4E09;&#x6B65;&#xFF1A;</p>
+<ol>
+<li>&#x521B;&#x5EFA;&#x5143;&#x7D20;&#xFF1A;&#x628A; vnode.tag &#x4F5C;&#x4E3A;&#x6807;&#x7B7E;&#x540D;&#x5B57;&#x6765;&#x521B;&#x5EFA; DOM &#x5143;&#x7D20;</li>
+<li>&#x4E3A;&#x5143;&#x7D20;&#x6DFB;&#x52A0;&#x5C5E;&#x6027;&#x548C;&#x4E8B;&#x4EF6;&#xFF1A;&#x904D;&#x5386; vnode.props &#x5BF9;&#x8C61;&#xFF0C;&#x5982;&#x679C; key &#x4EE5; on &#x5B57;&#x7B26;&#x5F00;&#x5934;&#xFF0C;&#x6309;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#xFF0C;&#x5426;&#x5219;&#x6309;&#x5C5E;&#x6027;&#x5904;&#x7406;</li>
+<li>&#x5904;&#x7406; children&#xFF1A;&#x5982;&#x679C; children &#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5C31;&#x9012;&#x5F52;&#x5730;&#x8C03;&#x7528; renderer &#x7EE7;&#x7EED;&#x6E32;&#x67D3;&#xFF1B;&#x5982;&#x679C; children &#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5219;&#x4F7F;&#x7528; createTextNode &#x51FD;&#x6570;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x8282;&#x70B9;</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params">vnode, container</span>) </span>{
+  <span class="hljs-keyword">const</span> el = <span class="hljs-built_in">document</span>.createElement(vnode.tag)
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> vnode.props) {
+    <span class="hljs-keyword">if</span>(<span class="hljs-regexp">/^on/</span>.test(key)) {
+      el.addEventListener(key.substr(<span class="hljs-number">2</span>).toLowerCase(), vnode.props[key])
+    }
+  }
+  <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> vnode.children === <span class="hljs-string">&apos;string&apos;</span>) {
+    el.appendChild(<span class="hljs-built_in">document</span>.createTextNode(vnode.children))
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-built_in">Array</span>.isArray(vnode.children)) {
+    vnode.children.foreach(child =&gt; render(child, el))
+  }
+  constainer.appendChild(el)
+}
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x53EA;&#x662F;&#x505A;&#x4E86;&#x6700;&#x7B80;&#x5355;&#x7684;&#x521B;&#x5EFA;&#x8282;&#x70B9;&#xFF0C;&#x6E32;&#x67D3;&#x5668;&#x7684;&#x7CBE;&#x9AD3;&#x9636;&#x6BB5;&#x5728;&#x4E8E;&#x66F4;&#x65B0;&#x8282;&#x70B9;&#x7684;&#x9636;&#x6BB5;&#xFF0C;&#x5B83;&#x9700;&#x8981;&#x7CBE;&#x786E;&#x7684;&#x627E;&#x5230; vnode &#x5BF9;&#x8C61;&#x7684;&#x53D8;&#x66F4;&#x70B9;&#x5E76;&#x4E14;&#x503C;&#x66F4;&#x65B0;&#x53D8;&#x66F4;&#x7684;&#x5185;&#x5BB9;</p>
+<h3 id="133-&#x7EC4;&#x4EF6;&#x7684;&#x672C;&#x8D28;">1.3.3. &#x7EC4;&#x4EF6;&#x7684;&#x672C;&#x8D28;</h3>
+<p>&#x7EC4;&#x4EF6;&#x5C31;&#x662F;&#x4E00;&#x7EC4; DOM &#x5143;&#x7D20;&#x7684;&#x5C01;&#x88C5;&#xFF0C;&#x8FD9;&#x7EC4; DOM &#x5143;&#x7D20;&#x5C31;&#x662F;&#x7EC4;&#x4EF6;&#x8981;&#x6E32;&#x67D3;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x6765;&#x4EE3;&#x8868;&#x7EC4;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> MyComponent = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    tag: <span class="hljs-string">&apos;div&apos;</span>,
+    props: {
+      onClick: () =&gt; alert(<span class="hljs-string">&apos;hello&apos;</span>)
+    },
+    children: <span class="hljs-string">&apos;click me&apos;</span>
+  }
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x5B9A;&#x4E49;&#x865A;&#x62DF; DOM &#x6765;&#x63CF;&#x8FF0;&#x7EC4;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BA9;&#x865A;&#x62DF; DOM &#x5BF9;&#x8C61;&#x4E2D;&#x7684; tag &#x5C5E;&#x6027;&#x6765;&#x5B58;&#x50A8;&#x7EC4;&#x4EF6;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> vnode = {
+  tag: MyComponent
+}
+</code></pre>
+<p>&#x73B0;&#x5728; tag &#x5C5E;&#x6027;&#x4E0D;&#x662F;&#x6807;&#x7B7E;&#x540D;&#x79F0;&#xFF0C;&#x800C;&#x662F;&#x7EC4;&#x4EF6;&#x51FD;&#x6570;&#xFF0C;&#x4E3A;&#x4E86;&#x80FD;&#x591F;&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6E32;&#x67D3;&#x5668;&#x7684;&#x652F;&#x6301;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderer</span>(<span class="hljs-params">vnode, container</span>) </span>{
+  <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> vnode.tag === <span class="hljs-string">&apos;string&apos;</span>) {
+    mountElement(vnode, container)    <span class="hljs-comment">// &#x548C;&#x524D;&#x9762;&#x7684; renderer &#x51FD;&#x6570;&#x7684;&#x5185;&#x5BB9;&#x4E00;&#x81F4;</span>
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> vnode.tag === <span class="hljs-string">&apos;function&apos;</span>) {
+    mountComponent(vnode, container)
+  }
+}
+</code></pre>
+<p>mountComponent &#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mountComponent</span>(<span class="hljs-params">vnode, container</span>) </span>{
+  <span class="hljs-comment">// &#x8C03;&#x7528;&#x7EC4;&#x4EF6;&#x51FD;&#x6570;&#xFF0C;&#x83B7;&#x53D6;&#x8981;&#x6E32;&#x67D3;&#x7684;&#x865A;&#x62DF; DOM</span>
+  <span class="hljs-keyword">const</span> substree = vnode.tag()
+  render(substree, container)
+}
+</code></pre>
+<p>&#x7EC4;&#x4EF6;&#x4E00;&#x5B9A;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5417;&#xFF0C;&#x5F53;&#x7136;&#x4E0D;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x7528;&#x4E00;&#x4E2A; JavaScript &#x5BF9;&#x8C61;&#x6765;&#x8868;&#x8FBE;&#x7EC4;&#x4EF6;&#xFF0C;Vue.js &#x4E2D;&#x6709;&#x72B6;&#x6001;&#x7EC4;&#x4EF6;&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x7ED3;&#x6784;&#x6765;&#x8868;&#x8FBE;</p>
+<h3 id="134-&#x6A21;&#x677F;&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;">1.3.4 &#x6A21;&#x677F;&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;</h3>
+<p>&#x6A21;&#x677F;&#x7684;&#x6838;&#x5FC3;&#x5C31;&#x662F;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5C06;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x4E3A;&#x6E32;&#x67D3;&#x51FD;&#x6570;</p>
+<p>&#x6A21;&#x677F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-vue">&lt;div @click=&apos;handler&apos;&gt;
+  click me
+&lt;/div&gt;
+</code></pre>
+<p>&#x5BF9;&#x4E8E;&#x7F16;&#x8BD1;&#x5668;&#x6765;&#x8BF4;&#xFF0C;&#x6A21;&#x677F;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4ED6;&#x4F1A;&#x5206;&#x6790;&#x8BE5;&#x5B57;&#x7B26;&#x4E32;&#x5E76;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x4E0E;&#x4E4B;&#x76F8;&#x540C;&#x7684;&#x6E32;&#x67D3;&#x51FD;&#x6570; &#xFF1A;</p>
+<pre><code class="lang-js">render() {
+  <span class="hljs-keyword">return</span> h(<span class="hljs-string">&apos;div&apos;</span>, { onClick: handler}, <span class="hljs-string">&apos;click me&apos;</span>)
+}
+</code></pre>
+<p>&#x5E76;&#x6DFB;&#x52A0;&#x5230; <code>&lt;script&gt;</code> &#x6807;&#x7B7E;&#x5757;&#x7684;&#x7EC4;&#x4EF6;&#x5BF9;&#x8C61;&#x4E0A;&#xFF0C;&#x6DFB;&#x52A0;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  data() {<span class="hljs-comment">/* ... */</span> },
+  methods: {
+    handler() =&gt; {<span class="hljs-comment">/* ... */</span> }
+  },
+  render() {
+  <span class="hljs-keyword">return</span> h(<span class="hljs-string">&apos;div&apos;</span>, {onClick: handler}, <span class="hljs-string">&apos;click me&apos;</span>)
+}
+}
+</code></pre>
+<p>&#x65E0;&#x8BBA;&#x662F;&#x6A21;&#x677F;&#x8FD8;&#x662F;&#x76F4;&#x63A5;&#x624B;&#x5199;&#x6E32;&#x67D3;&#x51FD;&#x6570;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x6765;&#x8BF4;&#xFF0C;&#x4ED6;&#x8981;&#x6E32;&#x67D3;&#x7684;&#x5185;&#x5BB9;&#x6700;&#x7EC8;&#x90FD;&#x662F;&#x901A;&#x8FC7;&#x6E32;&#x67D3;&#x51FD;&#x6570;&#x4EA7;&#x751F;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x6E32;&#x67D3;&#x5668;&#x518D;&#x628A;&#x6E32;&#x67D3;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x865A;&#x62DF; DOM &#x6E32;&#x67D3;&#x4E3A;&#x771F;&#x5B9E;&#x7684;DOM&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x6A21;&#x677F;&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#xFF0C;&#x4E5F;&#x662F; Vue.js &#x6E32;&#x67D3;&#x9875;&#x9762;&#x7684;&#x6D41;&#x7A0B;</p>
+<h3 id="135--vuejs-&#x662F;&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x7EC4;&#x6210;&#x7684;&#x6709;&#x673A;&#x6574;&#x4F53;">1.3.5.  Vue.js &#x662F;&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x7EC4;&#x6210;&#x7684;&#x6709;&#x673A;&#x6574;&#x4F53;</h3>
+<p>&#x7EC4;&#x4EF6;&#x7684;&#x5B9E;&#x73B0;&#x4F9D;&#x8D56;&#x4E8E;&#x6E32;&#x67D3;&#x5668;&#xFF0C;&#x6A21;&#x677F;&#x7684;&#x7F16;&#x8BD1;&#x4F9D;&#x8D56;&#x4E8E;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x5E76;&#x4E14;&#x7F16;&#x8BD1;&#x540E;&#x751F;&#x6210;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x6839;&#x636E;&#x6E32;&#x67D3;&#x5668;&#x548C;&#x865A;&#x62DF; DOM &#x7684;&#x8BBE;&#x8BA1;&#x51B3;&#x5B9A;&#x7684;&#xFF0C;&#x56E0;&#x6B64; Vue.js &#x7684;&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x4E4B;&#x95F4;&#x662F;&#x4E92;&#x76F8;&#x5173;&#x8054;&#x7684;&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x6A21;&#x677F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&apos;foo&apos;</span> <span class="hljs-attr">:class</span>=<span class="hljs-string">&apos;cls&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x628A;&#x5B83;&#x7F16;&#x8BD1;&#x6210;&#x4E00;&#x4E2A;&#x6E32;&#x67D3;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-js">function render() {
+  return {
+    tag: &apos;div&apos;,
+    props: {
+      id: &apos;foo&apos;,
+      class: &apos;cls&apos;
+    },
+  }
+}
+</code></pre>
+<p>&#x4F46;&#x662F;&#x8FD9;&#x4E2A; cls &#x53D8;&#x91CF;&#x53EF;&#x80FD;&#x968F;&#x65F6;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x6E32;&#x67D3;&#x5668;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x4E00;&#x76F4;&#x5BFB;&#x627E;&#x5E76;&#x4E14;&#x53EA;&#x66F4;&#x65B0;&#x53D8;&#x5316;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4E0E;&#x5176;&#x8981;&#x82B1;&#x6027;&#x80FD;&#x5BFB;&#x627E;&#x5230; cls &#x662F;&#x53D8;&#x91CF;&#xFF0C;&#x8FD8;&#x4E0D;&#x5982;&#x7F16;&#x8BD1;&#x5668;&#x521A;&#x5F00;&#x59CB;&#x5C31;&#x628A;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x63D0;&#x53D6;&#x51FA;&#x6765;&#xFF0C;&#x76F4;&#x63A5;&#x4EA4;&#x7ED9;&#x6E32;&#x67D3;&#x5668;&#x3002;Vue.js &#x7684;&#x6A21;&#x677F;&#x662F;&#x6709;&#x7279;&#x70B9;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x4E00;&#x773C;&#x5C31;&#x770B;&#x51FA; &#xFF1A; &#x548C; @ &#x662F;&#x52A8;&#x6001;&#x53D8;&#x5316;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x4EE5;&#x8BC6;&#x522B;&#x54EA;&#x4E9B;&#x662F;&#x9759;&#x6001;&#x7684;&#xFF0C;&#x54EA;&#x4E9B;&#x662F;&#x52A8;&#x6001;&#x7684;&#xFF0C;&#x5728;&#x751F;&#x6210;&#x4EE3;&#x7801;&#x7684;&#x65F6;&#x5019;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x9644;&#x5E26;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code class="lang-js">function render() {
+  return {
+    tag: &apos;div&apos;,
+    props: {
+      id: &apos;foo&apos;,
+      class: &apos;cls&apos;
+    },
+    patchFlags: 1 // &#x5047;&#x8BBE; 1 &#x4EE3;&#x8868; cls &#x662F;&#x52A8;&#x6001;&#x7684;
+  }
+}
+</code></pre>
+<p>&#x53EF;&#x77E5;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x548C;&#x6E32;&#x67D3;&#x5668;&#x662F;&#x5B58;&#x5728;&#x4EA4;&#x6D41;&#x7684;&#xFF0C;&#x76F8;&#x4E92;&#x914D;&#x5408;&#x4EE5;&#x63D0;&#x5347;&#x6027;&#x80FD;&#xFF0C;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x4EA4;&#x6D41;&#x7684;&#x5A92;&#x4ECB;&#x5C31;&#x662F;&#x865A;&#x62DF; DOM&#x3002;&#x865A;&#x62DF; DOM &#x6BD4;&#x6A21;&#x677F;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#xFF0C;&#x4F46;&#x662F;&#x6A21;&#x677F;&#x6BD4;&#x865A;&#x62DF; DOM &#x66F4;&#x52A0;&#x76F4;&#x89C2;&#xFF0C;&#x5176;&#x5B9E;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x4FE1;&#x606F;</p>
+<h2 id="2&#x54CD;&#x5E94;&#x7CFB;&#x7EDF;">2.&#x54CD;&#x5E94;&#x7CFB;&#x7EDF;</h2>
+<h2 id="21-&#x54CD;&#x5E94;&#x7CFB;&#x7EDF;&#x7684;&#x4F5C;&#x7528;&#x4E0E;&#x5B9E;&#x73B0;">2.1. &#x54CD;&#x5E94;&#x7CFB;&#x7EDF;&#x7684;&#x4F5C;&#x7528;&#x4E0E;&#x5B9E;&#x73B0;</h2>
+<h3 id="211--&#x54CD;&#x5E94;&#x5F0F;&#x6570;&#x636E;&#x4E0E;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;">2.1.1.  &#x54CD;&#x5E94;&#x5F0F;&#x6570;&#x636E;&#x4E0E;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;</h3>
+<p>&#x8FD9;&#x91CC;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x6307;&#x7C7B;&#x4F3C;&#x66F4;&#x6539; HTML &#x5143;&#x7D20;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x6570;&#x636E;&#x66F4;&#x6539;&#x4E4B;&#x540E;&#xFF0C;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x5E76;&#x4FEE;&#x6539;HTML&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x6570;&#x636E;&#x4E0D;&#x5C31;&#x662F;&#x54CD;&#x5E94;&#x5F0F;&#x6570;&#x636E;&#x4E86;&#x561B;&#xFF0C;vue 2&#x5728; ES5 &#x65F6;&#x5019;&#x662F;&#x901A;&#x8FC7; Object.defineProperty &#x51FD;&#x6570;&#x5B9E;&#x73B0;&#xFF0C;&#x5728;&#x73B0;&#x5728;&#x662F;&#x901A;&#x8FC7; Proxy &#x4EE3;&#x7406;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x5B9E;&#x73B0;&#x5927;&#x6982;&#x601D;&#x8DEF;&#x662F;&#xFF1A;</p>
+<ul>
+<li>&#x5F53;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570; effect &#x6267;&#x884C;&#x65F6;&#xFF0C;&#x89E6;&#x53D1;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x6BB5;&#x7684;&#x8BFB;&#x53D6;&#x64CD;&#x4F5C;</li>
+<li>&#x5F53;&#x4FEE;&#x6539;&#x5B57;&#x6BB5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x89E6;&#x53D1;&#x5B57;&#x6BB5;&#x7684;&#x8BBE;&#x7F6E;&#x64CD;&#x4F5C;&#xFF0C;&#x4ECE;&#x800C;&#x89E6;&#x53D1;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x7684;&#x6267;&#x884C;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> bucket = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>()     <span class="hljs-comment">// &#x5B58;&#x50A8;&#x526F;&#x4F5C;&#x7528;&#x7684;&#x6876;</span>
+<span class="hljs-keyword">const</span> data = {text: <span class="hljs-string">&apos;hello world&apos;</span>}    <span class="hljs-comment">// &#x539F;&#x59CB;&#x6570;&#x636E;</span>
+<span class="hljs-keyword">const</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(data, {
+  get(target, key) {        <span class="hljs-comment">// &#x62E6;&#x622A;&#x8BFB;&#x53D6;&#x64CD;&#x4F5C;</span>
+      bucket.add(effect)    <span class="hljs-comment">// &#x5C06;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x6DFB;&#x52A0;&#x5230;&#x6876;&#x4E2D;</span>
+    <span class="hljs-keyword">return</span> target[key]
+  },
+  set(target, key, value) {        <span class="hljs-comment">// &#x62E6;&#x622A;&#x8BBE;&#x7F6E;&#x64CD;&#x4F5C;</span>
+      targt[key] = value
+    bucket.forEach(fn =&gt; fn())    <span class="hljs-comment">// &#x628A;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x53D6;&#x51FA;&#x5E76;&#x6267;&#x884C;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+  }
+})
+</code></pre>
+<p>&#x8BBE;&#x7F6E;&#x62E6;&#x622A;&#x51FD;&#x6570;&#x4E4B;&#x540E;&#xFF0C;&#x6BCF;&#x6B21;&#x8BBE;&#x7F6E;&#x64CD;&#x4F5C;&#x90FD;&#x4F1A;&#x5148;&#x5C06;&#x539F;&#x59CB;&#x6570;&#x636E;&#x6539;&#x53D8;&#xFF0C;&#x7136;&#x540E;&#x53D6;&#x51FA;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x5E76;&#x6267;&#x884C;&#xFF1B;&#x6BCF;&#x6B21;&#x8BFB;&#x53D6;&#x64CD;&#x4F5C;&#x90FD;&#x4F1A;&#x5148;&#x5C06;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x6DFB;&#x52A0;&#x5230;&#x6876;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x8FD4;&#x56DE;&#x503C;&#x3002;&#x4F46;&#x662F;&#x76EE;&#x524D;&#x7684;&#x5B9E;&#x73B0;&#x8FD8;&#x5B58;&#x5728;&#x5F88;&#x591A;&#x7F3A;&#x9677;&#xFF1A;&#x4F8B;&#x5982;&#x53EA;&#x662F;&#x901A;&#x8FC7;&#x540D;&#x5B57;&#xFF08;effect&#xFF09;&#x6765;&#x83B7;&#x53D6;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x79CD;&#x786C;&#x7F16;&#x7801;&#xFF0C;&#x5982;&#x679C;&#x51FD;&#x6570;&#x540D;&#x53D8;&#x4E86;&#x6216;&#x8005;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x533F;&#x540D;&#x51FD;&#x6570;&#x5C31;&#x4E0D;&#x884C;&#x4E86;</p>
+<h3 id="212&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x5B8C;&#x5584;&#x7684;&#x54CD;&#x5E94;&#x7CFB;&#x7EDF;">2.1.2.&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x5B8C;&#x5584;&#x7684;&#x54CD;&#x5E94;&#x7CFB;&#x7EDF;</h3>
+<p>&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x5B58;&#x50A8;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x4E0A;&#x6587;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570; effect &#x6539;&#x4E3A;&#x7528;&#x4E8E;&#x6CE8;&#x518C;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x7684;&#x51FD;&#x6570;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> activeEffect;  <span class="hljs-comment">// &#x7528;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x5B58;&#x50A8;&#x88AB;&#x6CE8;&#x518C;&#x7684;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">effect</span>(<span class="hljs-params">fn</span>) </span>{         <span class="hljs-comment">// effect &#x7528;&#x4E8E;&#x6CE8;&#x518C;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;</span>
+    activeEffect = fn        <span class="hljs-comment">// &#x5F53;&#x8C03;&#x7528; effect &#x6CE8;&#x518C;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x5C06;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x6CE8;&#x518C;&#x7ED9; activeEffect</span>
+  fn()
+}
+<span class="hljs-keyword">const</span> bucket = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>()
+<span class="hljs-keyword">const</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(data, {
+  get(target, key) {
+    <span class="hljs-keyword">if</span>(activeEffect) {
+      backet.add(activeEffect)
+    }
+    <span class="hljs-keyword">return</span> target[key]
+  },
+  set(target, key, value) {
+    target[key] = value
+    bucket.foreach(fn =&gt; fn())
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+  }
+})
+</code></pre>
+<p>&#x5728;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x4E0E;&#x88AB;&#x64CD;&#x4F5C;&#x7684;&#x76EE;&#x6807;&#x5B57;&#x6BB5;&#x4E4B;&#x95F4;&#x5EFA;&#x7ACB;&#x660E;&#x786E;&#x7684;&#x8054;&#x7CFB;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> bucket = <span class="hljs-keyword">new</span> <span class="hljs-built_in">WeakMap</span>()
+<span class="hljs-keyword">const</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(data, {
+  get(target, key) {
+    <span class="hljs-keyword">if</span>(!activeEffect) <span class="hljs-keyword">return</span>
+    <span class="hljs-keyword">let</span> depsMap = bucket.get(target)    <span class="hljs-comment">// &#x4ECE;&#x6876;&#x4E2D;&#x53D6;&#x51FA; depsMap&#xFF0C;&#x5B83;&#x4E5F;&#x662F;&#x4E00;&#x4E2A; Map &#x7C7B;&#x578B;</span>
+    <span class="hljs-keyword">if</span>(!depsMap){        <span class="hljs-comment">// &#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A; Map &#x5E76;&#x4E0E;&#x4E4B;&#x8054;&#x7CFB;</span>
+        bucket.set(target, (depsMap = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>()))
+    }
+    <span class="hljs-keyword">let</span> deps = depsMap.get(key)        <span class="hljs-comment">// &#x518D;&#x6839;&#x636E; key &#x4ECE; depsMap &#x4E2D;&#x53D6;&#x51FA; deps&#xFF0C;&#x4ED6;&#x662F;&#x4E00;&#x4E2A; Set &#x7C7B;&#x578B;&#xFF0C;&#x5B58;&#x50A8;&#x6240;&#x6709;&#x4E0E; key &#x76F8;&#x5173;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;</span>
+    <span class="hljs-keyword">if</span>(!deps) {
+      deps.Map.set(key, (dep = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>()))
+    }
+    deps.add(activeEffect)    <span class="hljs-comment">// &#x6700;&#x540E;&#x5C06;&#x5F53;&#x524D;&#x6FC0;&#x6D3B;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x6DFB;&#x52A0;&#x5230;&#x6876;&#x91CC;</span>
+  },
+  set(target, key, value) {
+    target[key] = value
+    <span class="hljs-keyword">const</span> depsMap = bucket.get(target)    <span class="hljs-comment">// &#x6839;&#x636E; target &#x4ECE;&#x6876;&#x4E2D;&#x53D6;&#x5F97; depsMap</span>
+    <span class="hljs-keyword">if</span>(!depsMap) <span class="hljs-keyword">return</span>
+    <span class="hljs-keyword">const</span> effects = depsMap.get(key)    <span class="hljs-comment">// &#x6839;&#x636E; key &#x53D6;&#x5F97;&#x6240;&#x6709;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570; effects</span>
+    effects &amp;&amp; effects.forEach(fn =&gt; fn())
+  }
+})
+</code></pre>
+<p>&#x4ECE;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x6784;&#x5EFA;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;WeakMap&#x3001;Map &#x548C; Set&#xFF0C;WeakMap &#x7531; target --&gt; Map &#x6784;&#x6210;&#xFF0C;Map &#x7531; key --&gt; value &#x6784;&#x6210;</p>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528; WeakMap&#xFF1A;&#x56E0;&#x4E3A; WeakMap &#x5BF9; key &#x662F;&#x5F31;&#x5F15;&#x7528;&#xFF0C;&#x4E0D;&#x5F71;&#x54CD;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x7684;&#x5DE5;&#x4F5C;&#x3002;&#x5982;&#x679C; key &#x88AB;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x56DE;&#x6536;&#xFF0C;&#x90A3;&#x4E48;&#x5BF9;&#x5E94;&#x7684;&#x952E;&#x548C;&#x503C;&#x5C31;&#x8BBF;&#x95EE;&#x4E0D;&#x5230;&#x4E86;&#xFF0C;&#x6240;&#x4EE5; WeakMap &#x7ECF;&#x5E38;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x90A3;&#x4E9B;&#x53EA;&#x6709;&#x5F53; key &#x6240;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x5B58;&#x5728;&#x65F6;&#xFF08;&#x6CA1;&#x6709;&#x88AB;&#x56DE;&#x6536;&#xFF09;&#x624D;&#x6709;&#x4EF7;&#x503C;&#x7684;&#x4FE1;&#x606F;&#x3002;WeakMap &#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;&#x5185;&#x5B58;&#x6EA2;&#x51FA;</p>
+<p>&#x5BF9;&#x4EE5;&#x4E0A;&#x7684;&#x4EE3;&#x7801;&#x505A;&#x4E00;&#x4E9B;&#x5C01;&#x88C5;&#x5904;&#x7406;&#x3002;&#x5728;&#x524D;&#x9762; get &#x7684;&#x903B;&#x8F91;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x662F;&#x628A;&#x6240;&#x6709;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x6536;&#x96C6;&#x5230;&#x6876;&#x91CC;&#x7684;&#x8FD9;&#x90E8;&#x5206;&#x903B;&#x8F91;&#xFF0C;&#x4F46;&#x66F4;&#x597D;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x5C06;&#x8FD9;&#x90E8;&#x5206;&#x903B;&#x8F91;&#x5C01;&#x88C5;&#x5230;&#x4E00;&#x4E2A; track &#x51FD;&#x6570;&#x91CC;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(data, {
+  get(target, key) {
+    track(target, key)
+    <span class="hljs-keyword">return</span> target[key]
+  },
+  set(target, key, value) {
+    target[key] = value
+    trigger(target, key)
+  }
+})
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">track</span>(<span class="hljs-params">target, key</span>) </span>{
+  <span class="hljs-keyword">if</span>(!activeEffect) <span class="hljs-keyword">return</span>
+  <span class="hljs-keyword">let</span> depsMap = bucket.get(target)
+  <span class="hljs-keyword">if</span>(!depsMap) {
+    bucket.set(target, (depsMap = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>()))
+  }
+  <span class="hljs-keyword">let</span> deps = depsMap.get(key)
+  <span class="hljs-keyword">if</span>(!deps) {
+    depsMap.set(key, (deps = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>()))
+  }
+  deps.add(activeEffect)
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">trigger</span>(<span class="hljs-params">target, key</span>) </span>{
+  <span class="hljs-keyword">const</span> depsMap = bucket.get(target)
+  <span class="hljs-keyword">if</span>(!depsMap) <span class="hljs-keyword">return</span>
+  <span class="hljs-keyword">const</span> effects = depsMap.get(key)
+  effects &amp;&amp; effects.foreach(fn =&gt; fn())
+}
+</code></pre>
+<h3 id="213-&#x5206;&#x652F;&#x5207;&#x6362;&#x4E0E;-cleanup">2.1.3. &#x5206;&#x652F;&#x5207;&#x6362;&#x4E0E; cleanup</h3>
+<p><code>obj.ok ? obj.text : &apos;not&apos;</code>&#x5206;&#x652F;&#x5207;&#x6362;&#x53EF;&#x80FD;&#x4F1A;&#x4EA7;&#x751F;&#x9057;&#x7559;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#xFF0C;text &#x53EA;&#x662F;&#x6709;&#x4E9B;&#x65F6;&#x5019;&#x4F1A;&#x6267;&#x884C;&#xFF0C;&#x4F46;&#x662F;&#x4E5F;&#x4F1A;&#x5B58;&#x50A8;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x5BFC;&#x81F4;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x66F4;&#x65B0;&#x3002;&#x89E3;&#x51B3;&#x601D;&#x8DEF;&#xFF1A;&#x6BCF;&#x6B21;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5148;&#x628A;&#x5B83;&#x4ECE;&#x6240;&#x6709;&#x4E0E;&#x4E4B;&#x5173;&#x8054;&#x7684;&#x96C6;&#x5408;&#x4E2D;&#x5220;&#x9664;&#xFF0C;&#x5F53;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x4F1A;&#x91CD;&#x65B0;&#x5EFA;&#x7ACB;&#x8054;&#x7CFB;&#xFF0C;&#x4F46;&#x5728;&#x65B0;&#x7684;&#x8054;&#x7CFB;&#x4E2D;&#x4E0D;&#x4F1A;&#x5305;&#x542B;&#x9057;&#x7559;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;</p>
+<p>&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x5728; effect &#x5185;&#x90E8;&#x5B9A;&#x4E49;&#x4E86; effectFn &#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;&#x4E86; effectFn.deps &#x5C5E;&#x6027;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x6240;&#x6709;&#x5305;&#x542B;&#x5F53;&#x524D;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x7684;&#x4F9D;&#x8D56;&#x96C6;&#x5408;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> activeEffect
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">effect</span>(<span class="hljs-params">fn</span>) </span>{
+  <span class="hljs-keyword">const</span> effectFn = () =&gt; {
+    activeEffect = effectFn        <span class="hljs-comment">// &#x5F53; effectFn &#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5C06;&#x5176;&#x8BBE;&#x7F6E;&#x4E3A;&#x5F53;&#x524D;&#x6FC0;&#x6D3B;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;</span>
+    fn()
+  }
+  effectFn.deps = []        <span class="hljs-comment">// &#x7528;&#x6765;&#x5B58;&#x50A8;&#x6240;&#x6709;&#x4E0E;&#x4E4B;&#x76F8;&#x5173;&#x7684;&#x4F9D;&#x8D56;&#x96C6;&#x5408;</span>
+  effectFn()     <span class="hljs-comment">// &#x6267;&#x884C;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570; </span>
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">track</span>(<span class="hljs-params">target, key</span>) </span>{    <span class="hljs-comment">// &#x6536;&#x96C6;&#x4F9D;&#x8D56;&#x96C6;&#x5408;&#x6539;&#x8FDB;</span>
+  <span class="hljs-keyword">if</span>(!activeEffect) <span class="hljs-keyword">return</span>
+  <span class="hljs-keyword">let</span> depsMap = bucket.get(target)
+  <span class="hljs-keyword">if</span>(!depsMap) {
+    bucket.set(target, (depsMap = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>()))
+  }
+  <span class="hljs-keyword">let</span> deps = depsMap.get(key)
+  <span class="hljs-keyword">if</span>(!deps) {
+    depsMap.set(key, (deps = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>()))
+  }
+  deps.add(activeEffect)
+  activeEffect.deps.push(deps)         <span class="hljs-comment">// &#x5C06;&#x4F9D;&#x8D56;&#x96C6;&#x5408;&#x6DFB;&#x52A0;&#x5230; activeEffect.deps &#x6570;&#x7EC4;&#x4E2D;</span>
+}
+<span class="hljs-keyword">let</span> activeEffec
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">effect</span>(<span class="hljs-params">fn</span>) </span>{        <span class="hljs-comment">// &#x6CE8;&#x518C;&#x51FD;&#x6570;&#x6539;&#x8FDB;&#xFF0C;&#x6839;&#x636E; effectFn.deps &#x83B7;&#x53D6;&#x6240;&#x6709;&#x76F8;&#x5173;&#x8054;&#x7684;&#x4F9D;&#x8D56;&#x96C6;&#x5408;&#xFF0C;&#x8FDB;&#x800C;&#x5C06;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x4ECE;&#x4F9D;&#x8D56;&#x96C6;&#x5408;&#x4E2D;&#x79FB;&#x9664;</span>
+    <span class="hljs-keyword">const</span> effectFn = () =&gt; {
+    cleanUp(effectFn)        <span class="hljs-comment">// &#x8C03;&#x7528;cleanUp &#x5B8C;&#x6210;&#x6E05;&#x695A;&#x5DE5;&#x4F5C;</span>
+    activeEffect = effectFn
+    fn()
+  }
+  effectFn.deps = []
+  effectFn()
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cleanUp</span>(<span class="hljs-params">effectFn</span>) </span>{
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i <span class="hljs-keyword">of</span> effectFn.deps) {
+    i.delete(effectFn)     <span class="hljs-comment">// &#x5C06; effectFn &#x4ECE;&#x4F9D;&#x8D56;&#x96C6;&#x5408;&#x4E2D;&#x5220;&#x9664;</span>
+  }
+  effectFn.deps.length = <span class="hljs-number">0</span>    <span class="hljs-comment">// &#x91CD;&#x7F6E; deps &#x6570;&#x7EC4;</span>
+}
+</code></pre>
+<p>&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x89E3;&#x51B3;&#x4F9D;&#x8D56;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x7684;&#x95EE;&#x9898;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x5728; trigger &#x51FD;&#x6570;&#x7684; Set &#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x8C03;&#x7528;&#x6267;&#x884C;&#x51FD;&#x6570;&#xFF0C;&#x4F1A;&#x628A;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x4ECE; Set &#x5254;&#x9664;&#xFF0C;&#x4F46;&#x662F;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x80FD;&#x53C8;&#x628A;&#x5B83;&#x52A0;&#x5165; Set &#x4E2D;&#x4E86;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x65E0;&#x9650;&#x5FAA;&#x73AF;&#x3002;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x6784;&#x9020;&#x53E6;&#x5916;&#x4E00;&#x4E2A; Set &#x96C6;&#x5408;&#x904D;&#x5386;&#x5B83;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">trigger</span>(<span class="hljs-params">target, key, value</span>) </span>{
+  <span class="hljs-keyword">const</span> depsMap = bucket.get(target)
+  <span class="hljs-keyword">if</span>(!depsMap) <span class="hljs-keyword">return</span>
+  <span class="hljs-keyword">const</span> effects = depsMap.get(key)
+  <span class="hljs-keyword">const</span> effectsToRun = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>(effects)    <span class="hljs-comment">// &#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x6765;&#x8FD0;&#x884C;&#xFF0C;&#x907F;&#x514D;&#x65E0;&#x9650;&#x5FAA;&#x73AF;</span>
+  effects.forEach(effectFn =&gt; effectFn())
+}
+</code></pre>
+<h3 id="214-&#x5D4C;&#x5957;&#x7684;-effect-&#x4E0E;-effect-&#x6808;">2.1.4. &#x5D4C;&#x5957;&#x7684; effect &#x4E0E; effect &#x6808;</h3>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x6CA1;&#x6709;&#x8FD9;&#x4E48;&#x7B80;&#x5355;&#xFF0C;&#x5F88;&#x53EF;&#x80FD;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x91CC;&#x9762;&#x4E5F;&#x5D4C;&#x5957;&#x4E86;&#x4E00;&#x4E2A;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x6E32;&#x67D3;&#x7236;&#x7EC4;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x6E32;&#x67D3;&#x5B50;&#x7EC4;&#x4EF6;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x5F53;&#x6211;&#x4EEC;&#x6267;&#x884C;&#x7236;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x8FC7;&#x591A;&#x7684;&#x7275;&#x626F;&#x591A;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x6539;&#x53D8;&#x3002;&#x56E0;&#x4E3A;&#x5F53;&#x6211;&#x4EEC;&#x7528;&#x53D8;&#x91CF; activeEffect &#x6765;&#x5B58;&#x50A8;&#x901A;&#x8FC7; effect &#x51FD;&#x6570;&#x6CE8;&#x518C;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x5B83;&#x53EA;&#x80FD;&#x5B58;&#x50A8;&#x4E00;&#x4E2A;&#xFF0C;&#x5185;&#x5C42;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x4F1A;&#x8986;&#x76D6;&#x7236;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x6062;&#x590D;&#x539F;&#x6765;&#x7684;&#x503C;&#xFF0C;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x5E94;&#x8BE5;&#x5728;&#x5168;&#x5C40;&#x53D8;&#x91CF; activeEffect &#x7684;&#x57FA;&#x7840;&#x4E0A;&#x52A0;&#x4E00;&#x4E2A;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x6808; effectStack&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> activeEffect        <span class="hljs-comment">// &#x7528;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x5B58;&#x50A8;&#x5F53;&#x524D;&#x6FC0;&#x6D3B;&#x7684; effect &#x51FD;&#x6570;</span>
+<span class="hljs-keyword">const</span> effectStack = []
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">effect</span>(<span class="hljs-params">fn</span>) </span>{
+  <span class="hljs-keyword">const</span> effectFn = () =&gt; {
+    cleanUp(effectFn)
+    activeEffect = effectFn
+    effectStack.push(effectFn)        <span class="hljs-comment">// &#x5728;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x5176;&#x5C06;&#x4ED6;&#x538B;&#x5165;&#x6808;&#x4E2D;</span>
+    fn()
+    effectStack.pop()    <span class="hljs-comment">// &#x5F53;&#x524D;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;&#x5C06;&#x5F53;&#x524D;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x5F39;&#x51FA;&#x6808;&#xFF0C;&#x5E76;&#x628A; activeEffect &#x51FD;&#x6570;&#x8FD8;&#x539F;</span>
+    activeEffect = effectStack[effectStack.length - <span class="hljs-number">1</span>]
+  }
+  effectFn.deps = []
+  effectFn()
+}
+</code></pre>
+<h3 id="215-&#x8C03;&#x5EA6;&#x6267;&#x884C;">2.1.5. &#x8C03;&#x5EA6;&#x6267;&#x884C;</h3>
+<p><code>obj.foo = obj.foo + 1</code> &#x8FD9;&#x79CD;&#x8BED;&#x53E5;&#x4F1A;&#x5148;&#x8BFB;&#x53D6; obj.foo &#x7684;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x89E6;&#x53D1; track &#x64CD;&#x4F5C;&#xFF0C;&#x7136;&#x540E;&#x8BBE;&#x7F6E; obj.foo &#x7684;&#x503C;&#xFF0C;&#x89E6;&#x53D1; trigger &#x64CD;&#x4F5C;&#x3002;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x8BE5;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x8FD8;&#x5728;&#x6267;&#x884C;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x8981;&#x5F00;&#x59CB;&#x4E0B;&#x4E00;&#x6B21;&#x6267;&#x884C;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4F1A;&#x5BFC;&#x81F4;&#x65E0;&#x9650;&#x9012;&#x5F52;&#x8C03;&#x7528;&#x81EA;&#x5DF1;&#xFF0C;&#x4EA7;&#x751F;&#x6808;&#x6EA2;&#x51FA;&#x3002;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;&#x5728; trigger &#x5C06;&#x8981;&#x53D1;&#x751F;&#x65F6;&#x5019;&#x6DFB;&#x52A0;&#x6761;&#x4EF6;&#xFF0C;&#x5982;&#x679C; trigger &#x89E6;&#x53D1;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x6B63;&#x5728;&#x6267;&#x884C;&#x4E2D;&#xFF0C;&#x5219;&#x4E0D;&#x89E6;&#x53D1;&#x6267;&#x884C;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">trigger</span>(<span class="hljs-params">target, key</span>) </span>{
+  <span class="hljs-keyword">const</span> depsMap = bucket.get(target)
+  <span class="hljs-keyword">if</span>(!depsMap) <span class="hljs-keyword">return</span>
+  <span class="hljs-keyword">const</span> effects = depsMap.get(key)
+  <span class="hljs-keyword">const</span> effectsToRun = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>()
+  effects &amp;&amp; effects.forEach(fn =&gt; {
+    <span class="hljs-keyword">if</span>(fn != activeEffect) {    <span class="hljs-comment">// &#x5982;&#x679C; trigger &#x89E6;&#x53D1;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x4E0E;&#x5F53;&#x524D;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#x76F8;&#x540C;&#xFF0C;&#x5219;&#x4E0D;&#x89E6;&#x53D1;&#x6267;&#x884C;</span>
+      effectsToRun.add(fn)
+    }
+  })
+  effectsToRun.forEach(fn =&gt; fn())
+}
+</code></pre>
+<p>&#x53EF;&#x8C03;&#x5EA6;&#x6027;&#x662F;&#x54CD;&#x5E94;&#x7CFB;&#x7EDF;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x6240;&#x8C13;&#x53EF;&#x8C03;&#x5EA6;&#x6027;&#x5C31;&#x662F;&#x6307;&#x5F53; trigger &#x52A8;&#x4F5C;&#x89E6;&#x53D1;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x6709;&#x80FD;&#x529B;&#x51B3;&#x5B9A;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x6267;&#x884C;&#x7684;&#x65F6;&#x673A;&#xFF0C;&#x6B21;&#x6570;&#x4EE5;&#x53CA;&#x65B9;&#x5F0F;&#x3002;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x4E3A; effect &#x51FD;&#x6570;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x9009;&#x9879;&#x53C2;&#x6570; options&#xFF0C;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x6307;&#x5B9A;&#x8C03;&#x5EA6;&#x5668;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">effect</span>(<span class="hljs-params">fn, options = {}</span>) </span>{
+  <span class="hljs-keyword">const</span> effectFn = () =&gt; {
+    cleanUp(effectFn)
+    activeEffect = effectFn
+    effectStack.push(effectFn)
+    fn()
+    effectStack.pop()
+    activeEffect = effectStack[effectStack.length - <span class="hljs-number">1</span>]
+  }
+  effectFn.options = options    <span class="hljs-comment">// &#x5C06; options &#x6302;&#x8F7D;&#x5230; effectFn &#x4E0A;</span>
+  effectFn.deps = []
+  effectFn()
+}
+</code></pre>
+<p>&#x6709;&#x4E86;&#x8C03;&#x5EA6;&#x51FD;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x5728; trigger &#x51FD;&#x6570;&#x4E2D;&#x89E6;&#x53D1;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x91CD;&#x65B0;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x7528;&#x6237;&#x4F20;&#x9012;&#x7684;&#x8C03;&#x5EA6;&#x5668;&#x51FD;&#x6570;&#xFF0C;&#x4ECE;&#x800C;&#x628A;&#x63A7;&#x5236;&#x6743;&#x4EA4;&#x7ED9;&#x7528;&#x6237;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">trigger</span>(<span class="hljs-params">target, key</span>) </span>{
+  <span class="hljs-keyword">const</span> depsMap = bucket.get(target)
+  <span class="hljs-keyword">if</span>(!depsMap) <span class="hljs-keyword">return</span> 
+  <span class="hljs-keyword">const</span> effects = depsMap.get(key)
+  <span class="hljs-keyword">const</span> effectsToRun = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>()
+  effects &amp;&amp; effects.forEach(effectFn =&gt; {
+    <span class="hljs-keyword">if</span>(effectFn != activeEffect) {
+      effectsToRun.add(effectFn)
+    }
+  })
+  effectsToRun.forEach(effectFn =&gt; {
+    <span class="hljs-keyword">if</span>(effectFn.options.scheduler) {        <span class="hljs-comment">// &#x5982;&#x679C;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x8C03;&#x5EA6;&#x5668;&#xFF0C;&#x5219;&#x8C03;&#x7528;&#x8BE5;&#x8C03;&#x5EA6;&#x5668;&#xFF0C;&#x5E76;&#x5C06;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;</span>
+        effectFn.options.scheduler(effectFn)
+    } <span class="hljs-keyword">else</span> {
+      effectFn()        <span class="hljs-comment">// &#x5426;&#x5219;&#x76F4;&#x63A5;&#x6267;&#x884C;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;</span>
+    }
+  })
+}
+</code></pre>
+<p>&#x5982;&#x4E0A;&#x6240;&#x793A;&#xFF0C;&#x5728; trigger &#x51FD;&#x6570;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x4F1A;&#x5224;&#x65AD;&#x8FD9;&#x4E2A;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x662F;&#x5426;&#x5B58;&#x5728;&#x8C03;&#x5EA6;&#x5668;&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x8C03;&#x5EA6;&#x5668;&#xFF0C;&#x5219;&#x628A;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;&#x8C03;&#x5EA6;&#x5668;&#x51FD;&#x6570;&#x6267;&#x884C;&#xFF0C;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x8C03;&#x5EA6;&#x5668;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x5B9E;&#x73B0;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> jobQueue = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>()    <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x961F;&#x5217;</span>
+<span class="hljs-keyword">const</span> p = <span class="hljs-built_in">Promise</span>.resolve()        <span class="hljs-comment">// &#x4F7F;&#x7528; Promise.resolve() &#x521B;&#x5EFA;&#x4E00;&#x4E2A; Promise &#x961F;&#x5217;&#xFF0C;&#x7528;&#x5B83;&#x5C06;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x6DFB;&#x52A0;&#x5230;&#x5FAE;&#x4EFB;&#x52A1;&#x961F;&#x5217;</span>
+<span class="hljs-keyword">let</span> isFlushing = <span class="hljs-literal">false</span>    <span class="hljs-comment">// &#x4E00;&#x4E2A;&#x6807;&#x5FD7;&#x8868;&#x793A;&#x662F;&#x5426;&#x5728;&#x5237;&#x65B0;&#x961F;&#x5217;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fulshJob</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">if</span>(isFlushing) <span class="hljs-keyword">return</span>    <span class="hljs-comment">// &#x4EFB;&#x52A1;&#x961F;&#x5217;&#x6B63;&#x5728;&#x5237;&#x65B0;&#xFF0C;&#x4EC0;&#x4E48;&#x90FD;&#x4E0D;&#x505A;</span>
+  isFlushing = <span class="hljs-literal">true</span>    <span class="hljs-comment">// &#x4EE3;&#x8868;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x6B63;&#x5728;&#x5237;&#x65B0;</span>
+  p.then(() =&gt; {        <span class="hljs-comment">// &#x5728;&#x5FAE;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E2D;&#x5237;&#x65B0; jobQueue &#x961F;&#x5217;</span>
+      jobQueue.forEach(job =&gt; job())
+  }).finally(() =&gt; {    <span class="hljs-comment">// &#x7ED3;&#x675F;&#x540E;&#x91CD;&#x7F6E; isFlushing</span>
+      isFlushing = <span class="hljs-literal">false</span>
+  })
+}
+effect(() =&gt; {
+  <span class="hljs-built_in">console</span>.log(obj.foo)
+}, {
+  scheduler(fn) {
+    jobQueue.add(fn)    <span class="hljs-comment">// &#x6BCF;&#x6B21;&#x8C03;&#x5EA6;&#x65F6;&#xFF0C;&#x5C06;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x6DFB;&#x52A0;&#x5230; jobQueue &#x4E2D;</span>
+    flushJob()
+  }
+})
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4F7F;&#x7528;&#x4E86; Set&#xFF0C;&#x5177;&#x5907;&#x4E86;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x7684;&#x81EA;&#x52A8;&#x53BB;&#x91CD;&#x7684;&#x80FD;&#x529B;&#x3002;&#x8C03;&#x5EA6;&#x5668;&#x6BCF;&#x6B21;&#x5728;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x5C06;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x6DFB;&#x52A0;&#x5230; jobQueue &#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x518D;&#x8C03;&#x7528; flushJob &#x51FD;&#x6570;&#x5237;&#x65B0;&#x961F;&#x5217;&#xFF0C;&#x56E0;&#x4E3A;&#x6709; isFlushing &#x6807;&#x5FD7;&#x7684;&#x5B58;&#x5728;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E0E; Vue.js &#x4E2D;&#x8FDE;&#x7EED;&#x591A;&#x6B21;&#x4FEE;&#x6539;&#x54CD;&#x5E94;&#x5F0F;&#x6570;&#x636E;&#x4F46;&#x53EA;&#x4F1A;&#x89E6;&#x53D1;&#x66F4;&#x65B0;&#x4E00;&#x6B21;</p>
+<h3 id="216-&#x8BA1;&#x7B97;&#x5C5E;&#x6027;-computed-&#x4E0E;-lazy">2.1.6. &#x8BA1;&#x7B97;&#x5C5E;&#x6027; computed &#x4E0E; lazy</h3>
+<p>&#x524D;&#x6587;&#x5DF2;&#x7ECF;&#x4E86;&#x89E3;&#x5230;&#x5229;&#x7528; effect &#x51FD;&#x6570;&#x6CE8;&#x518C;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x540C;&#x65F6;&#x5B83;&#x5141;&#x8BB8;&#x6267;&#x884C;&#x4E00;&#x4E9B;&#x9009;&#x9879;&#x53C2;&#x6570; options&#xFF0C;&#x4F8B;&#x5982;&#x6307;&#x5B9A; schedule &#x8C03;&#x5EA6;&#x5668;&#x6765;&#x63A7;&#x5236;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x7684;&#x6267;&#x884C;&#x65F6;&#x673A;&#x548C;&#x65B9;&#x5F0F;&#xFF1B;&#x5229;&#x7528; track &#x51FD;&#x6570;&#x7528;&#x6765;&#x8FFD;&#x8E2A;&#x548C;&#x6536;&#x96C6;&#x4F9D;&#x8D56;&#xFF1B;&#x5229;&#x7528; trigger &#x51FD;&#x6570;&#x6765;&#x89E6;&#x53D1;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x548C;&#x6267;&#x884C;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#x7EFC;&#x5408;&#x8FD9;&#x4E9B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0; Vue.js &#x4E2D;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x5E76;&#x4E14;&#x6781;&#x5177;&#x7279;&#x8272;&#x7684;&#x80FD;&#x529B;&#xFF1A;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;</p>
+<p>&#x6BD4;&#x5982; lazy &#x7684;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">effect</span>(<span class="hljs-params">fn, options = {}</span>) </span>{
+  <span class="hljs-keyword">const</span> effectFn = () =&gt; {
+    cleanup(effectFn)
+    activeEffect = effectFn
+    effectStack.push(effectFn)
+    fn()
+    effectStack.pop()
+    activeEffect = effectStack[effectStack.length - <span class="hljs-number">1</span>]
+  }
+  effectFn.options = options
+  effectFn.deps = []
+  <span class="hljs-keyword">if</span>(!options.lazy) {        <span class="hljs-comment">//&#x53EA;&#x6709;&#x975E; lazy &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x624D;&#x6267;&#x884C;</span>
+      effectFn()        <span class="hljs-comment">// &#x6267;&#x884C;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;</span>
+  }
+  <span class="hljs-keyword">return</span> effectFn    <span class="hljs-comment">// &#x5C06;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x8FD4;&#x56DE;&#x503C;&#x8FD4;&#x56DE;</span>
+}
+<span class="hljs-keyword">const</span> effectFn = effect(() =&gt; {
+  <span class="hljs-built_in">console</span>.log(obj.foo)
+},{
+  lazy: <span class="hljs-literal">true</span>        <span class="hljs-comment">// &#x6307;&#x5B9A; lazy &#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5C31;&#x4E0D;&#x4F1A;&#x7ACB;&#x5373;&#x6267;&#x884C;</span>
+})
+effectFn()    <span class="hljs-comment">// &#x624B;&#x52A8;&#x6267;&#x884C;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;</span>
+</code></pre>
+<p>&#x4F46;&#x662F;&#x4EC5;&#x4EC5;&#x80FD;&#x591F;&#x624B;&#x52A8;&#x6267;&#x884C;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x7684;&#x610F;&#x4E49;&#x5E76;&#x4E0D;&#x5927;&#xFF0C;&#x5982;&#x679C;&#x53EF;&#x4EE5;&#x628A;&#x4F20;&#x9012;&#x7ED9; effect &#x7684;&#x51FD;&#x6570;&#x6362;&#x505A;&#x4E00;&#x4E2A; getter&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A; getter &#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x4EFB;&#x4F55;&#x503C;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">effect</span>(<span class="hljs-params">fn, options = {}</span>) </span>{
+  <span class="hljs-keyword">const</span> effectFn = () =&gt; {
+    cleanUp(effectFn)
+    activeEffect = effectFn
+    effectStack.push(effectFn)
+    <span class="hljs-keyword">const</span> res = fn()    <span class="hljs-comment">// &#x5C06; fn &#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x5B58;&#x50A8;&#x5230; res &#x4E2D;</span>
+    effectStack.pop()
+    activeEffect = effectStack[effectStack.length - <span class="hljs-number">1</span>]
+    <span class="hljs-keyword">return</span> res
+  }
+  effectFn.options = options
+  effectFn.deps = []
+  <span class="hljs-keyword">if</span>(!options.lazy) {
+    effectFn()
+  }
+  <span class="hljs-keyword">return</span> effectFn
+}
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x65B0;&#x589E;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x4F20;&#x9012;&#x7ED9; effect &#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570; fn &#x662F;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x628A;&#x5B83;&#x5C01;&#x88C5;&#x4E86;&#x4E00;&#x5C42;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x5B58;&#x5728; lazy &#x5219;&#x8FD4;&#x56DE; effectFn&#xFF0C;&#x5E76;&#x4E14; effectFn &#x51FD;&#x6570;&#x4E2D;&#x53EF;&#x4EE5;&#x62FF;&#x5230;fn &#x7684;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;</p>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x61D2;&#x6267;&#x884C;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x4E86;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x62FF;&#x5230;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x4E86;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x4E86;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">computed</span>(<span class="hljs-params">getter</span>) </span>{
+  <span class="hljs-keyword">const</span> effectFn = effect(getter, {        <span class="hljs-comment">// &#x628A; getter &#x4F5C;&#x4E3A;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; lazy &#x7684; effect</span>
+    lazy: <span class="hljs-literal">true</span>
+  })
+  <span class="hljs-keyword">const</span> obj = {
+    get value() {        <span class="hljs-comment">// &#x5F53;&#x8BFB;&#x53D6; value &#x65F6;&#x624D;&#x6267;&#x884C; effectFn</span>
+      <span class="hljs-keyword">return</span> effectFn()
+    }
+  }
+  <span class="hljs-keyword">return</span> obj
+}
+</code></pre>
+<p>&#x73B0;&#x5728;&#x5B9E;&#x73B0;&#x7684;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x53EA;&#x662F;&#x8FD8;&#x662F;&#x61D2;&#x8BA1;&#x7B97;&#xFF0C;&#x8FD8;&#x6CA1;&#x6709;&#x505A;&#x5230;&#x5BF9;&#x7ED3;&#x679C;&#x503C;&#x7684;&#x7F13;&#x5B58;&#xFF0C;&#x591A;&#x6B21;&#x8BBF;&#x95EE;&#x4F1A;&#x5BFC;&#x81F4; effectFn &#x7684;&#x591A;&#x6B21;&#x8BA1;&#x7B97;&#xFF0C;&#x6240;&#x4EE5;&#x6DFB;&#x52A0;&#x5BF9;&#x503C;&#x7684;&#x7F13;&#x5B58;&#x529F;&#x80FD;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">computed</span>(<span class="hljs-params">getter</span>) </span>{
+  <span class="hljs-keyword">let</span> value        <span class="hljs-comment">// &#x7528;&#x6765;&#x7F13;&#x5B58;&#x4E0A;&#x4E00;&#x6B21;&#x8BA1;&#x7B97;&#x7684;&#x503C;</span>
+  <span class="hljs-keyword">let</span> dirty = <span class="hljs-literal">true</span>         <span class="hljs-comment">// &#x7528;&#x6765;&#x6807;&#x8BC6;&#x662F;&#x5426;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x503C;</span>
+  <span class="hljs-keyword">const</span> effectFn = effect(getter, {
+    lazy: <span class="hljs-literal">true</span>
+  })
+  <span class="hljs-keyword">const</span> obj = {
+    get value() {
+      <span class="hljs-keyword">if</span>(dirty) {
+        value = effectFn()
+        dirty = <span class="hljs-literal">false</span>
+      }
+      <span class="hljs-keyword">return</span> value
+    }
+  }
+  <span class="hljs-keyword">return</span> obj
+}
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x5C31;&#x505A;&#x5230;&#x4E86;&#x7F13;&#x5B58;&#xFF0C;&#x4F46;&#x662F;&#x5F53;&#x503C;&#x7684;&#x786E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x4E00;&#x6B21;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x9700;&#x8981;&#x628A; dirty &#x6807;&#x5FD7;&#x6539;&#x4E3A; false&#xFF0C;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x662F;&#x8C03;&#x5EA6;&#x5668; schedule</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">computed</span>(<span class="hljs-params">getter</span>) </span>{
+  <span class="hljs-keyword">let</span> value
+  <span class="hljs-keyword">let</span> dirty = <span class="hljs-literal">true</span>
+  <span class="hljs-keyword">const</span> effectFn = effect(geter, {
+    lazy: <span class="hljs-literal">true</span>,
+    schedule() {    <span class="hljs-comment">// &#x6DFB;&#x52A0;&#x8C03;&#x5EA6;&#x5668;&#xFF0C;&#x5728;&#x8C03;&#x5EA6;&#x5668;&#x4E2D;&#x5C06; dirty &#x91CD;&#x7F6E;&#x4E3A; true</span>
+      dirty = <span class="hljs-literal">true</span>
+    }
+  })
+  <span class="hljs-keyword">const</span> obj = {
+    get value() {
+      <span class="hljs-keyword">if</span>(dirty) {
+        vlaue = effectFn
+        dirty = <span class="hljs-literal">false</span>
+      }
+      <span class="hljs-keyword">return</span> value
+    }
+  }
+  <span class="hljs-keyword">return</span> obj
+}
+</code></pre>
+<p>scheduler &#x8C03;&#x5EA6;&#x5668;&#x51FD;&#x6570;&#x4F1A;&#x5728; getter &#x51FD;&#x6570;&#x4E2D;&#x6240;&#x4F9D;&#x8D56;&#x7684;&#x54CD;&#x5E94;&#x5F0F;&#x6570;&#x636E;&#x53D8;&#x5316;&#x65F6;&#x91CD;&#x65B0;&#x6267;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x5C06; dirty &#x91CD;&#x7F6E;&#x4E3A; true&#xFF0C;&#x5F53;&#x4E0B;&#x4E00;&#x6B21;&#x8BBF;&#x95EE;&#x503C;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x4E86;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x8FD9;&#x91CC;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x7F3A;&#x9677;&#xFF0C;&#x56E0;&#x4E3A;&#x73B0;&#x5728;&#x7684;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x662F;&#x4E2A;&#x61D2;&#x6267;&#x884C;&#xFF0C;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x91CD;&#x65B0;&#x6267;&#x884C;&#x62FF;&#x5230;&#x7F13;&#x5B58;&#xFF0C;&#x4E0D;&#x80FD;&#x5728;&#x76F8;&#x5173;&#x8054;&#x7684;&#x6570;&#x636E;&#x66F4;&#x6539;&#x4E4B;&#x540E;&#xFF0C;&#x7F13;&#x5B58;&#x5C31;&#x8DDF;&#x7740;&#x6539;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x6539;&#x8FDB;&#x3002;&#x6539;&#x8FDB;&#x65B9;&#x6CD5;&#x662F;&#x5F53;&#x8BFB;&#x53D6;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x7684;&#x65F6;&#xFF0C;&#x624B;&#x52A8;&#x8C03;&#x7528; track &#x51FD;&#x6570;&#x8FDB;&#x884C;&#x8FFD;&#x8E2A;&#xFF1B;&#x5F53;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x4F9D;&#x8D56;&#x7684;&#x54CD;&#x5E94;&#x5F0F;&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x624B;&#x52A8;&#x8C03;&#x7528; trigger &#x51FD;&#x6570;&#x89E6;&#x53D1;&#x54CD;&#x5E94;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">computed</span>(<span class="hljs-params">getter</span>) </span>{
+  <span class="hljs-keyword">let</span> value
+  <span class="hljs-keyword">let</span> drity = <span class="hljs-literal">true</span>
+  <span class="hljs-keyword">const</span> effectFn = effect(getter, {
+    lazy: <span class="hljs-literal">true</span>,
+    scheduler() {
+      <span class="hljs-keyword">if</span>(!dirty) {
+        dirty = <span class="hljs-literal">true</span>
+        trigger(obj, <span class="hljs-string">&apos;vlaue&apos;</span>)        <span class="hljs-comment">// &#x5F53;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x4F9D;&#x8D56;&#x7684;&#x54CD;&#x5E94;&#x5F0F;&#x6570;&#x636E;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x624B;&#x52A8;&#x8C03;&#x7528; trigger &#x51FD;&#x6570;&#x89E6;&#x53D1;&#x54CD;&#x5E94;</span>
+      }
+    }
+  })
+  <span class="hljs-keyword">const</span> obj = {
+    get value() {
+      <span class="hljs-keyword">if</span>(dirty) {
+        value = effectFn()
+        dirty = <span class="hljs-literal">false</span>
+      }
+      track(obj, <span class="hljs-string">&apos;value&apos;</span>)        <span class="hljs-comment">// &#x5F53;&#x8BFB;&#x53D6; value &#x65F6;&#xFF0C;&#x624B;&#x52A8;&#x8C03;&#x7528; track &#x51FD;&#x6570;&#x8FDB;&#x884C;&#x8FFD;&#x8E2A;</span>
+      <span class="hljs-keyword">return</span> value
+    }
+  }
+  <span class="hljs-keyword">return</span> obj
+}
+</code></pre>
+<h3 id="216-watch-&#x7684;&#x5B9E;&#x73B0;&#x539F;&#x7406;">2.1.6. watch &#x7684;&#x5B9E;&#x73B0;&#x539F;&#x7406;</h3>
+<p>watch &#x7684;&#x672C;&#x8D28;&#x5C31;&#x662F;&#x89C2;&#x6D4B;&#x4E00;&#x4E2A;&#x54CD;&#x5E94;&#x5F0F;&#x6570;&#x636E;&#xFF0C;&#x5F53;&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#x901A;&#x77E5;&#x5E76;&#x6267;&#x884C;&#x54CD;&#x5E94;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;&#x5B9E;&#x9645;&#x4E0A; watch &#x7684;&#x5B9E;&#x73B0;&#x672C;&#x8D28;&#x4E0A;&#x5C31;&#x662F;&#x5229;&#x7528;&#x4E86; effect &#x4EE5;&#x53CA; options.scheduler &#x9009;&#x9879;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">watch</span>(<span class="hljs-params">source, cd</span>)</span>{        <span class="hljs-comment">// watch &#x51FD;&#x6570;&#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;source &#x662F;&#x54CD;&#x5E94;&#x5F0F;&#x6570;&#x636E;&#xFF0C;cb &#x662F;&#x56DE;&#x8C03;&#x51FD;&#x6570;</span>
+    effect(
+      () =&gt; source.foo,        <span class="hljs-comment">// &#x89E6;&#x53D1;&#x8BFB;&#x53D6;&#x64CD;&#x4F5C;&#xFF0C;&#x4ECE;&#x800C;&#x5EFA;&#x7ACB;&#x8054;&#x7CFB;</span>
+    {
+      scheduler() {
+        cb()         <span class="hljs-comment">// &#x5F53;&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;, &#x8C03;&#x7528;&#x56DE;&#x8C03;&#x51FD;&#x6570;</span>
+      }
+    }
+  )
+}
+</code></pre>
+<p>&#x73B0;&#x5728;&#x80FD;&#x89C2;&#x6D4B; source.foo &#x7684;&#x53D8;&#x5316;&#x4E86;&#xFF0C;&#x4E3A;&#x4E86;&#x8BA9; watch &#x51FD;&#x6570;&#x66F4;&#x5177;&#x6709;&#x901A;&#x7528;&#x6027;&#xFF0C;&#x9700;&#x8981;&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x64CD;&#x4F5C;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">watch</span>(<span class="hljs-params">source, cb</span>) </span>{
+  effect(
+      () =&gt; traverse(source),        <span class="hljs-comment">// &#x8C03;&#x7528; traverse &#x9012;&#x5F52;&#x5730;&#x8BFB;&#x53D6;</span>
+    {
+      scheduler() {
+        cb()
+      }
+    }
+  )
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">traverse</span>(<span class="hljs-params">value, seen = new Set(</span>)) </span>{
+  <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> value != <span class="hljs-string">&apos;object&apos;</span> || value == <span class="hljs-string">&apos;null&apos;</span> || seen.has(value)) <span class="hljs-keyword">return</span>        <span class="hljs-comment">// &#x5982;&#x679C;&#x8BFB;&#x53D6;&#x7684;&#x503C;&#x662F;&#x539F;&#x59CB;&#x503C;&#x3001;&#x7A7A;&#x3001;&#x6216;&#x5219;&#x88AB;&#x8BFB;&#x53D6;&#x8FC7;&#x4E86;&#xFF0C;&#x5219;&#x4EC0;&#x4E48;&#x90FD;&#x4E0D;&#x505A;</span>
+  seen.add(value)        <span class="hljs-comment">// &#x5C06;&#x6570;&#x636E;&#x6DFB;&#x52A0;&#x5230; seen &#x4E2D;&#xFF0C;&#x4EE3;&#x8868;&#x904D;&#x5386;&#x5730;&#x8BFB;&#x53D6;&#x8FC7;&#x4E86;&#xFF0C;&#x907F;&#x514D;&#x5FAA;&#x73AF;&#x5F15;&#x7528;&#x5F15;&#x8D77;&#x7684;&#x6B7B;&#x5FAA;&#x73AF;</span>
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">const</span> k <span class="hljs-keyword">in</span> value) {        <span class="hljs-comment">// &#x5047;&#x8BBE; value &#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;</span>
+      traverse(value[k], seen)
+  }
+  <span class="hljs-keyword">return</span> value
+}
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x5C31;&#x80FD;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E0A;&#x7684;&#x4EFB;&#x610F;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x4ECE;&#x800C;&#x5F53;&#x4EFB;&#x610F;&#x5C5E;&#x6027;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#x90FD;&#x80FD;&#x591F;&#x89E6;&#x53D1;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x6267;&#x884C;&#xFF0C;&#x4F46;&#x662F;&#x73B0;&#x5728;&#x7684;&#x5B9E;&#x73B0;&#x8FD8;&#x62FF;&#x4E0D;&#x5230;&#x65E7;&#x503C;&#x548C;&#x65B0;&#x503C;&#xFF0C;&#x8FD9;&#x9700;&#x8981;&#x5145;&#x5206;&#x5229;&#x7528; effect &#x51FD;&#x6570;&#x7684; lazy &#x9009;&#x9879;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">watch</span>(<span class="hljs-params">source, cb</span>) </span>{
+  <span class="hljs-keyword">let</span> getter
+  <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> source === <span class="hljs-string">&apos;function&apos;</span>) {
+    getter = source
+  } <span class="hljs-keyword">else</span> {
+    getter = () =&gt; traverse(source)
+  }
+  <span class="hljs-keyword">let</span> oldValue, newValue        <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x65E7;&#x503C;&#x548C;&#x65B0;&#x503C;</span>
+  <span class="hljs-keyword">const</span> effectFn = effect(
+      () =&gt; getter(),
+    {
+      lazy: <span class="hljs-literal">true</span>,
+      scheduler() {
+        newValue = effectFn()
+        cb(newValue, oldValue)
+        oldValue = newValue        <span class="hljs-comment">// &#x66F4;&#x65B0;&#x65E7;&#x503C;&#xFF0C;&#x4E0D;&#x7136;&#x4E0B;&#x4E00;&#x6B21;&#x4F1A;&#x5F97;&#x5230;&#x9519;&#x8BEF;&#x5F97;&#x65E7;&#x503C;</span>
+      }
+    }
+  )
+  oldValue = effectFn()        <span class="hljs-comment">// &#x624B;&#x52A8;&#x8C03;&#x7528;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x62FF;&#x5230;&#x7684;&#x503C;&#x5C31;&#x662F;&#x65E7;&#x503C;</span>
+}
+</code></pre>
+<p>watch &#x7684;&#x672C;&#x8D28;&#x5176;&#x5B9E;&#x662F;&#x5BF9; effect &#x7684;&#x4E8C;&#x6B21;&#x5C01;&#x88C5;&#xFF0C;&#x4F46;&#x662F; watch &#x6709;&#x4E24;&#x4E2A;&#x7279;&#x6027;&#xFF1A;&#x4E00;&#x4E2A;&#x662F;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x662F;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x6267;&#x884C;&#x7684;&#x65F6;&#x673A;</p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E00;&#x4E2A; watch &#x7684;&#x56DE;&#x8C03;&#x53EA;&#x4F1A;&#x5728;&#x54CD;&#x5E94;&#x5F0F;&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#x5019;&#x624D;&#x6267;&#x884C;&#xFF0C;&#x5728; Vue.js &#x4E2D;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x9009;&#x9879;&#x53C2;&#x6570; immediate &#x6765;&#x6307;&#x5B9A;&#x56DE;&#x8C03;&#x662F;&#x5426;&#x9700;&#x8981;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x548C;&#x540E;&#x7EED;&#x6267;&#x884C;&#x672C;&#x8D28;&#x4E0A;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5DEE;&#x522B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A; scheduler &#x8C03;&#x5EA6;&#x51FD;&#x6570;&#x5C01;&#x88C5;&#x4E3A;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x5206;&#x522B;&#x5728;&#x521D;&#x59CB;&#x5316;&#x548C;&#x53D8;&#x66F4;&#x7684;&#x65F6;&#x5019;&#x8C03;&#x7528;&#x5B83;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">watch</span>(<span class="hljs-params">source, cb, options = {}</span>) </span>{
+  <span class="hljs-keyword">let</span> getter
+  <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> source === <span class="hljs-string">&apos;function&apos;</span>) {
+    getter = source
+  } <span class="hljs-keyword">else</span> {
+    getter = () =&gt; traverse(source)
+  }
+  <span class="hljs-keyword">let</span> oldValue, newValue
+  <span class="hljs-keyword">const</span> job = () =&gt; {
+    newValue = effectFn()
+    cb(newValue, oldValue)
+    oldValue = newValue
+  }
+  <span class="hljs-keyword">const</span> effectFn = effect(
+      () =&gt; getter(),        <span class="hljs-comment">// &#x6267;&#x884C; getter</span>
+    {
+      lazy: <span class="hljs-literal">true</span>,
+      scheduler: () =&gt; {
+        <span class="hljs-keyword">if</span>(options.flush === <span class="hljs-string">&apos;post&apos;</span>){        <span class="hljs-comment">// &#x5728;&#x8C03;&#x5EA6;&#x51FD;&#x6570;&#x4E2D;&#x5224;&#x65AD; flush &#x662F;&#x5426;&#x4E3A; &#x2018;post&#x2019;&#xFF0C; &#x5982;&#x679C;&#x662F;&#x5C31;&#x653E;&#x5230;&#x5FAE;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E2D;&#x6267;&#x884C;</span>
+            <span class="hljs-keyword">const</span> p = <span class="hljs-built_in">Promise</span>.resolve()
+          p.then(job)
+        } <span class="hljs-keyword">else</span> {
+          job()
+        }
+      }
+    }
+  )
+  <span class="hljs-keyword">if</span>(options.immediate) {        <span class="hljs-comment">// &#x5B9E;&#x73B0;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x529F;&#x80FD;</span>
+    job()
+  } <span class="hljs-keyword">else</span> {
+    oldvalue = effectFn()
+  }
+}
+</code></pre>
+<h3 id="217-&#x8FC7;&#x671F;&#x7684;&#x526F;&#x4F5C;&#x7528;">2.1.7. &#x8FC7;&#x671F;&#x7684;&#x526F;&#x4F5C;&#x7528;</h3>
+<p>&#x7ADE;&#x6001;&#x95EE;&#x9898;&#x901A;&#x5E38;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x6216;&#x591A;&#x7EBF;&#x7A0B;&#x7F16;&#x7A0B;&#x4E2D;&#x88AB;&#x63D0;&#x53CA;&#xFF0C;&#x524D;&#x7AEF;&#x5F88;&#x5C11;&#x63D0;&#x53CA;&#xFF0C;&#x4F46;&#x5728;&#x65E5;&#x5E38;&#x5DE5;&#x4F5C;&#x4E2D;&#x53EF;&#x80FD;&#x65E9;&#x5C31;&#x9047;&#x5230;&#x8FC7;&#x76F8;&#x4F3C;&#x7684;&#x573A;&#x666F;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> finalData
+watch(obj, <span class="hljs-keyword">async</span>() =&gt; {
+  <span class="hljs-keyword">const</span> res = fetch(<span class="hljs-string">&apos;/test&apos;</span>)
+  finalData = res
+})
+</code></pre>
+<p>&#x770B;&#x7740;&#x6CA1;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x8FDE;&#x7EED;&#x4FEE;&#x6539; obj &#x7684;&#x503C;&#xFF0C;&#x4F1A;&#x53D1;&#x9001;&#x4E24;&#x4E2A;&#x8BF7;&#x6C42;&#xFF0C;&#x6700;&#x7EC8;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x54EA;&#x4E2A;&#x503C;&#x662F;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x5E94;&#x5148;&#x628A;&#x7B2C;&#x4E00;&#x6B21;&#x7684;&#x8BBE;&#x7F6E;&#x4E3A;&#x8FC7;&#x671F;&#xFF0C;&#x907F;&#x514D;&#x7ADE;&#x6001;&#x95EE;&#x9898;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x8FC7;&#x671F;&#x7684;&#x4F5C;&#x7528;&#x901A;&#x8FC7;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5728;&#x5F53;&#x524D;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x8FC7;&#x671F;&#x65F6;&#x5019;&#x6267;&#x884C;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Vue.html" class="navigation navigation-prev " aria-label="Previous page: Vue">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="webpack.html" class="navigation navigation-next " aria-label="Next page: webpack">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Vue.js 的设计与实现","level":"1.5.4","depth":2,"next":{"title":"webpack","level":"1.5.5","depth":2,"path":"font/webpack.md","ref":"./font/webpack.md","articles":[]},"previous":{"title":"Vue","level":"1.5.3","depth":2,"path":"font/Vue.md","ref":"./font/Vue.md","articles":[]},"dir":"ltr"},"config":{"plugins":["pageview-count","intopic-toc","expandable-chapters","advanced-emoji","-lunr","-search","search-plus","-sharing","splitter","hide-element","insert-logo","code","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"livereload":{},"splitter":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"pageview-count":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"max-height: 120px; min-height: 120px","url":"https://ting-xin.github.io/notebook/image/wutian2.png"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"wutian","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notebook|blog","language":"zh-hans","gitbook":"*","description":"很菜的一个博客，或则说是笔记本，为了自己方便弄的"},"file":{"path":"font/Vue.js 的设计与实现.md","mtime":"2022-03-22T07:08:13.384Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-24T03:17:35.149Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
