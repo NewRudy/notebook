@@ -65,6 +65,7 @@
   - [Java](./languages/Java.md)
   - [JavaScript](./languages/JavaScript.md)
   - [Node](./languages/Node.md)
+  - [深入浅出 Node.js](./languages/深入浅出 Node.js.md)
   - [Python](./languages/Python.md)
   - [TypeScript](./languages/TypeScript.md)
 * skills
