@@ -39,10 +39,10 @@
   - [浏览器](./font/浏览器.md)
   - [图解HTTP](./font/图解HTTP.md)
 * gis
-  - [mapshaper]()(./gis/mapshaper.md)
+  - [mapshaper](./gis/mapshaper.md)
   - [GDAL](./gis/GDAL.md)
   - [Geomorphology-Based Hydrological Model](./gis/Geomorphology-Based Hydrological Model.md)
-  - [Geoserver](./gis/GeoserverModel.md)
+  - [Geoserver](./gis/Geoserver.md)
   - [GIS标准](./gis/GIS标准.md)
   - [GIS算法基础](./gis/GIS算法基础.md)
   - [Google Earth Engine](./gis/Google Earth Engine.md)
