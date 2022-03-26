@@ -1,7 +1,7 @@
 {
 	"title": "notebook|blog",
 	"author": "wutian",
-	"description" : "很菜的一个博客，或则说是笔记本，为了自己方便弄的",
+	"description" : "吴天的个人博客，或则说是笔记本，很菜很菜，在进步ing",
 	"language" : "zh-hans",
     "plugins": [
     	"pageview-count",
@@ -15,7 +15,8 @@
         "splitter",
         "hide-element",
         "insert-logo",
-        "code"
+        "code",
+        "back-to-top-button"
     ],
     "pluginsConfig": {
         "hide-element": {
