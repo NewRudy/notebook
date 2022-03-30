@@ -1,10 +1,8 @@
 # Docker
 
-[gitbook](https://yeasy.gitbo
+## 官网
 
-[ok.io/docker_practice/)
-
-[toc]
+[gitbook](https://yeasy.gitbook.io/docker_practice/)
 
 ## 前言
 
@@ -53,3 +51,14 @@ Docker 包括三个基本概念：镜像（Image）、容器（Container）、�
 
 Docker分为 stable test 和 nightly 三个更新频道
 
+
+
+
+
+## Docker-Primer
+
+大佬对 Docker 的总结  [Docker-Primer](https://note.run-linux.com/2017/10/20/Docker-Primer/)
+
+Docker 可以理解为是一种新兴的超轻量级虚拟化技术，传统虚拟化技术需要模拟计算机的一整套硬件出来，而且还要有自己的一套操作系统，而 Docker 只需要与主机共享同一个内核，并充分利用 Linux 上内核的“环境隔离方案”来实现轻量级的虚拟化，它在一些特定场景下与传统虚拟化的技术相比，效率大幅提高，而资源开销却大幅降低。Docker 的迁移也十分方便，基本上只要把整个目录搬过去即可
+
+四个基本结构：容器（container）、镜像（Image）、仓库（Repository）、注册点（Registery），利用无盘系统的类比法，慢慢的居然懂了，作者牛逼
