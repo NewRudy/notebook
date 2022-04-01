@@ -261,6 +261,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.10" data-path="../bigData/云原生.html">
+            
+                <a href="../bigData/云原生.html">
+            
+                    
+                    云原生
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -804,7 +817,33 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.13" data-path="../gis/地理大数据可视化.md">
+        <li class="chapter " data-level="1.6.13" data-path="../gis/地理模型的理解.html">
+            
+                <a href="../gis/地理模型的理解.html">
+            
+                    
+                    地理模型的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../gis/云原生 GIS.html">
+            
+                <a href="../gis/云原生 GIS.html">
+            
+                    
+                    云原生 GIS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="../gis/地理大数据可视化.md">
             
                 <span>
             
@@ -817,7 +856,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.14" data-path="../gis/地理信息安全技术与进展心得体会.html">
+        <li class="chapter " data-level="1.6.16" data-path="../gis/地理信息安全技术与进展心得体会.html">
             
                 <a href="../gis/地理信息安全技术与进展心得体会.html">
             
@@ -830,7 +869,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.15" data-path="../gis/面向地理共享与集成的数据适配方法研究.html">
+        <li class="chapter " data-level="1.6.17" data-path="../gis/面向地理共享与集成的数据适配方法研究.html">
             
                 <a href="../gis/面向地理共享与集成的数据适配方法研究.html">
             
@@ -843,7 +882,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.16" data-path="../gis/太阳辐射模型的回顾.html">
+        <li class="chapter " data-level="1.6.18" data-path="../gis/太阳辐射模型的回顾.html">
             
                 <a href="../gis/太阳辐射模型的回顾.html">
             
@@ -856,7 +895,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.17" data-path="../gis/太阳能模型筛选系统.html">
+        <li class="chapter " data-level="1.6.19" data-path="../gis/太阳能模型筛选系统.html">
             
                 <a href="../gis/太阳能模型筛选系统.html">
             
@@ -869,7 +908,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.18" data-path="../gis/遥感技术解决地理问题.html">
+        <li class="chapter " data-level="1.6.20" data-path="../gis/遥感技术解决地理问题.html">
             
                 <a href="../gis/遥感技术解决地理问题.html">
             
@@ -882,7 +921,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.19" data-path="../gis/最小二乘法.html">
+        <li class="chapter " data-level="1.6.21" data-path="../gis/最小二乘法.html">
             
                 <a href="../gis/最小二乘法.html">
             
@@ -895,7 +934,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.20" data-path="../gis/人文地理学_第一次作业.html">
+        <li class="chapter " data-level="1.6.22" data-path="../gis/人文地理学_第一次作业.html">
             
                 <a href="../gis/人文地理学_第一次作业.html">
             
@@ -908,7 +947,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.21" data-path="../gis/人文地理学第二次作业_读书报告.html">
+        <li class="chapter " data-level="1.6.23" data-path="../gis/人文地理学第二次作业_读书报告.html">
             
                 <a href="../gis/人文地理学第二次作业_读书报告.html">
             
@@ -2017,10 +2056,210 @@
 }
 </code></pre>
 <h3 id="13-&#x6ED1;&#x52A8;&#x7A97;&#x53E3;">1.3 &#x6ED1;&#x52A8;&#x7A97;&#x53E3;</h3>
+<p><a href="https://lucifer.ren/blog/2020/03/16/slide-window/" target="_blank">&#x4E00;&#x6587;&#x5E26;&#x4F60;AC&#x5341;&#x9053;&#x9898;</a></p>
+<p>&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x662F;&#x4E00;&#x79CD;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x7684;&#x601D;&#x8DEF;&#x548C;&#x65B9;&#x6CD5;&#xFF0C;&#x901A;&#x5E38;&#x7528;&#x6765;&#x89E3;&#x51B3;&#x4E00;&#x4E9B;&#x8FDE;&#x7EED;&#x7684;&#x95EE;&#x9898;</p>
 <ul>
 <li>&#x65E0;&#x91CD;&#x590D;&#x5B57;&#x7B26;&#x7684;&#x6700;&#x957F;&#x5B50;&#x4E32;</li>
 </ul>
-<h3 id=""> </h3>
+<pre><code class="lang-js"><span class="hljs-comment">/**
+ * @param {string} s
+ * @return {number}
+ */</span>
+<span class="hljs-keyword">var</span> lengthOfLongestSubstring = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s</span>) </span>{
+    <span class="hljs-keyword">let</span> str = s.split(<span class="hljs-string">&apos;&apos;</span>)
+    <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>, max = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">while</span>(j &lt; str.length) {
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> k = <span class="hljs-number">0</span>; k &lt; j - i; ++k) {        <span class="hljs-comment">// &#x68C0;&#x67E5;&#x662F;&#x5426;&#x6709;&#x91CD;&#x590D;&#x5B57;&#x7B26;</span>
+            <span class="hljs-keyword">if</span>(str[i + k] === str[j]) {
+                i = i + k + <span class="hljs-number">1</span>
+                <span class="hljs-keyword">break</span>
+            }
+        }
+        j++
+        max = j - i &gt; max ? j - i: max 
+    }
+    <span class="hljs-keyword">return</span> max
+};
+</code></pre>
+<p>&#x5B98;&#x65B9;&#x9898;&#x89E3;&#xFF08;&#x611F;&#x89C9;&#x53CD;&#x800C;&#x4E0D;&#x597D;&#x7406;&#x89E3;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> lengthOfLongestSubstring = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s</span>) </span>{
+    <span class="hljs-comment">// &#x54C8;&#x5E0C;&#x96C6;&#x5408;&#xFF0C;&#x8BB0;&#x5F55;&#x6BCF;&#x4E2A;&#x5B57;&#x7B26;&#x662F;&#x5426;&#x51FA;&#x73B0;&#x8FC7;</span>
+    <span class="hljs-keyword">const</span> occ = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>();
+    <span class="hljs-keyword">const</span> n = s.length;
+    <span class="hljs-comment">// &#x53F3;&#x6307;&#x9488;&#xFF0C;&#x521D;&#x59CB;&#x503C;&#x4E3A; -1&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x6211;&#x4EEC;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5DE6;&#x8FB9;&#x754C;&#x7684;&#x5DE6;&#x4FA7;&#xFF0C;&#x8FD8;&#x6CA1;&#x6709;&#x5F00;&#x59CB;&#x79FB;&#x52A8;</span>
+    <span class="hljs-keyword">let</span> rk = <span class="hljs-number">-1</span>, ans = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) {
+        <span class="hljs-keyword">if</span> (i != <span class="hljs-number">0</span>) {
+            <span class="hljs-comment">// &#x5DE6;&#x6307;&#x9488;&#x5411;&#x53F3;&#x79FB;&#x52A8;&#x4E00;&#x683C;&#xFF0C;&#x79FB;&#x9664;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;</span>
+            occ.delete(s.charAt(i - <span class="hljs-number">1</span>));
+        }
+        <span class="hljs-keyword">while</span> (rk + <span class="hljs-number">1</span> &lt; n &amp;&amp; !occ.has(s.charAt(rk + <span class="hljs-number">1</span>))) {
+            <span class="hljs-comment">// &#x4E0D;&#x65AD;&#x5730;&#x79FB;&#x52A8;&#x53F3;&#x6307;&#x9488;</span>
+            occ.add(s.charAt(rk + <span class="hljs-number">1</span>));
+            ++rk;
+        }
+        <span class="hljs-comment">// &#x7B2C; i &#x5230; rk &#x4E2A;&#x5B57;&#x7B26;&#x662F;&#x4E00;&#x4E2A;&#x6781;&#x957F;&#x7684;&#x65E0;&#x91CD;&#x590D;&#x5B57;&#x7B26;&#x5B50;&#x4E32;</span>
+        ans = <span class="hljs-built_in">Math</span>.max(ans, rk - i + <span class="hljs-number">1</span>);
+    }
+    <span class="hljs-keyword">return</span> ans;
+};
+</code></pre>
+<ul>
+<li>&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6392;&#x5217;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-comment">/**
+ * @param {string} s1
+ * @param {string} s2
+ * @return {boolean}
+ */</span>
+
+<span class="hljs-keyword">var</span> cloneMap = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">map</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>([...map])
+}
+
+<span class="hljs-keyword">var</span> checkInclusion = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s1, s2</span>) </span>{
+    <span class="hljs-keyword">if</span>(s1.length &gt; s2.length) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+    <span class="hljs-keyword">let</span> map = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>()
+    <span class="hljs-keyword">let</span> str1 = s1.split(<span class="hljs-string">&apos;&apos;</span>)
+    str1.forEach( i =&gt; {        <span class="hljs-comment">// &#x521D;&#x59CB;&#x7684;&#x6392;&#x5217;&#x7684; map</span>
+        <span class="hljs-keyword">if</span>(map.has(i)) map.set(i, map.get(i) + <span class="hljs-number">1</span>)
+        <span class="hljs-keyword">else</span> map.set(i, <span class="hljs-number">1</span>)
+    })
+    <span class="hljs-keyword">let</span> str2 = s2.split(<span class="hljs-string">&apos;&apos;</span>)
+    <span class="hljs-keyword">let</span> temp = cloneMap(map)
+    <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>, flag = <span class="hljs-literal">false</span>
+    <span class="hljs-keyword">while</span>(j &lt; str2.length) {
+        <span class="hljs-keyword">if</span>(temp.has(str2[j])) {
+            flag = <span class="hljs-literal">true</span>
+            <span class="hljs-keyword">if</span>(j - i + <span class="hljs-number">1</span> &gt;= str1.length) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+            <span class="hljs-keyword">if</span>(temp.get(str2[j]) === <span class="hljs-number">1</span>) {
+                temp.delete(str2[j])
+            } <span class="hljs-keyword">else</span> {
+                temp.set(str2[j], temp.get(str2[j]) - <span class="hljs-number">1</span>)
+            }
+            j++
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">if</span>(flag) {
+                temp = cloneMap(map)
+                flag = <span class="hljs-literal">false</span>
+            }
+            i++        <span class="hljs-comment">// &#x611F;&#x89C9;&#x81EA;&#x5DF1;&#x8FD9;&#x91CC;&#x7684;&#x903B;&#x8F91;&#x6709;&#x95EE;&#x9898;</span>
+            j = i
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+};
+</code></pre>
+<p>&#x4ED6;&#x4EBA;<a href="https://leetcode-cn.com/problems/permutation-in-string/solution/hua-dong-chuang-kou-fa-zhu-shi-ji-duo-si-14ip/" target="_blank">&#x9898;&#x89E3;</a>&#xFF08;&#x770B;&#x4E86;&#x4E4B;&#x540E;&#x89C9;&#x5F97;&#x81EA;&#x5DF1;&#x5199;&#x7684;&#x662F;&#x4E00;&#x5768;:shit:&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">/**
+ * @param {string} s1
+ * @param {string} s2
+ * @return {boolean}
+ */</span>
+<span class="hljs-keyword">var</span> checkInclusion = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s1, s2</span>) </span>{
+    <span class="hljs-comment">// &#x81EA;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x4E8E;&#x6BD4;&#x8F83;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4E0E;&#x76EE;&#x6807;&#x6570;&#x636E;&#x662F;&#x5426;&#x76F8;&#x540C;</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">equal</span>(<span class="hljs-params">a,b</span>)</span>{
+        <span class="hljs-comment">// equal&#x65B9;&#x6CD5;&#x7684;&#x6BD4;&#x8F83;&#x601D;&#x8DEF;&#xFF1A;a&#x548C;b &#x90FD;&#x662F;&#x4E24;&#x4E2A;&#x957F;&#x5EA6;&#x4E3A;26 &#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x5F53;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x90FD;&#x5BF9;&#x5E94;&#x7740;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x7684;&#x6570;&#x91CF;</span>
+        <span class="hljs-comment">// &#x4F8B;&#x5982;a[0] &#x5C31;&#x4EE3;&#x8868;&#x7740;a &#x5B57;&#x7B26;&#x4E32;&#x5F53;&#x4E2D;&#x5B57;&#x7B26;&apos;a&apos; &#x7684;&#x6570;&#x91CF;&#xFF0C;a[1]&#x5C31;&#x4EE3;&#x8868;&#x7740;&#x5B57;&#x7B26;&#x4E32;&#x5F53;&#x4E2D;&#x5B57;&#x7B26;&apos;b&apos;&#x7684;&#x6570;&#x91CF;</span>
+        <span class="hljs-comment">// &#x56E0;&#x6B64;&#xFF0C;&#x53EA;&#x6709;&#x5728;a,b &#x4E24;&#x4E2A;&#x6570;&#x7EC4;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x503C;&#x90FD;&#x76F8;&#x7B49;&#x624D;&#x80FD;&#x8BF4;&#x660E;a,b &#x4EE3;&#x8868;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5185;&#x7684;&#x5404;&#x4E2A;&#x5B57;&#x7B26;&#x7684;&#x6570;&#x91CF;&#x76F8;&#x7B49;&#xFF0C;&#x4E5F;&#x53EA;&#x6709;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;equal &#x51FD;&#x6570;&#x4F1A;&#x8FD4;&#x56DE;true &#xFF0C;&#x5426;&#x5219;&#x90FD;&#x4F1A;&#x8FD4;&#x56DE;false</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i =<span class="hljs-number">0</span>;i&lt;a.length;i++){
+            <span class="hljs-keyword">if</span>(a[i]!==b[i])<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    }
+
+
+    <span class="hljs-keyword">let</span> arrP=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-number">26</span>).fill(<span class="hljs-number">0</span>),arr=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-number">26</span>).fill(<span class="hljs-number">0</span>),len1 = s1.length,len2=s2.length
+    <span class="hljs-comment">// &#x5C06;&#x76EE;&#x6807;&#x6570;&#x636E;&#x653E;&#x5165;&#x6570;&#x7EC4;&#xFF0C;&#x4E4B;&#x540E;&#x4F7F;&#x7528;&#x8BE5;&#x6570;&#x7EC4;&#x4E0E;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x8FDB;&#x884C;&#x5BF9;&#x6BD4;</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i =<span class="hljs-number">0</span>;i&lt;len1;i++) arrP[s1.charCodeAt(i)-<span class="hljs-string">&apos;a&apos;</span>.charCodeAt()]++
+
+    <span class="hljs-comment">// &#x904D;&#x5386;&#x6574;&#x4E2A;&#x957F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x9010;&#x4E00;&#x8BBF;&#x95EE;&#x5224;&#x65AD;</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i =<span class="hljs-number">0</span>;i&lt;len2;i++){
+        <span class="hljs-comment">// &#x521B;&#x5EFA;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x6570;&#x7EC4;&#xFF0C;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;&#x5E94;&#x4E0E;&#x76EE;&#x6807;&#x6570;&#x7EC4;&#x76F8;&#x540C;</span>
+        arr[s2.charCodeAt(i)-<span class="hljs-string">&apos;a&apos;</span>.charCodeAt()]++
+        <span class="hljs-comment">// &#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x521B;&#x5EFA;&#x5B8C;&#x6210;&#x4E4B;&#x524D;&#x4E0D;&#x8FDB;&#x884C;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;&#xFF0C;&#x957F;&#x5EA6;&#x4E0D;&#x540C;&#x4E0D;&#x53EF;&#x80FD;&#x4E0E;&#x76EE;&#x6807;&#x6570;&#x7EC4;&#x76F8;&#x7B26;</span>
+        <span class="hljs-keyword">if</span>(i&gt;=len1<span class="hljs-number">-1</span>) {
+            <span class="hljs-comment">// &#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x521B;&#x5EFA;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#x5373;&#x523B;&#x5F00;&#x59CB;&#x4E0E;&#x76EE;&#x6807;&#x7A97;&#x53E3;&#x8FDB;&#x884C;&#x6BD4;&#x5BF9;&#xFF0C;&#x6BD4;&#x5BF9;&#x4E00;&#x81F4;&#x5373;&#x8FD4;&#x56DE;true</span>
+            <span class="hljs-keyword">if</span>(equal(arr,arrP)) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+            <span class="hljs-keyword">else</span>{
+            <span class="hljs-comment">// &#x6BD4;&#x5BF9;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x5219;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x5411;&#x53F3;&#x6ED1;&#x52A8;&#xFF0C;&#x6700;&#x5DE6;&#x8FB9;&#x5B57;&#x7B26;&#x9000;&#x51FA;&#x7A97;&#x53E3;&#xFF0C;&#x8FDB;&#x5165;&#x4E0B;&#x4E00;&#x6B21;&#x5FAA;&#x574F;&#xFF0C;&#x5728;&#x4E0B;&#x4E00;&#x6B21;&#x5FAA;&#x73AF;&#x4E2D;&#x53C8;&#x4F1A;&#x5C06;&#x7A97;&#x53E3;&#x5916;&#x53F3;&#x8FB9;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x653E;&#x5165;&#x7A97;&#x53E3;</span>
+            arr[s2.charCodeAt(i-len1+<span class="hljs-number">1</span>)-<span class="hljs-string">&apos;a&apos;</span>.charCodeAt()]--
+            }
+        }
+    }
+    <span class="hljs-comment">// &#x6BD4;&#x5BF9;&#x5B8C;&#x6210;&#x90FD;&#x6CA1;&#x6709;&#x53D1;&#x73B0;&#x5339;&#x914D;&#x6570;&#x636E;&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x65E0;&#x5339;&#x914D;&#x6570;&#x636E;&#xFF0C;&#x8FD4;&#x56DE;false</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+    &lt;!-- &#x5144;&#x5F1F;&#x76DF;&#x5E2E;&#x5FD9;&#x70B9;&#x4E2A;&#x8D5E;&#x5427; --&gt;
+};
+</code></pre>
+<h3 id="14-&#x5E7F;&#x5EA6;&#x6709;&#x9650;&#x641C;&#x7D22;&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;">1.4 &#x5E7F;&#x5EA6;&#x6709;&#x9650;&#x641C;&#x7D22;/&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;</h3>
+<ol>
+<li>&#x56FE;&#x50CF;&#x6E32;&#x67D3;</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> floodFill = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">image, sr, sc, newColor</span>) </span>{
+    dfs(image, sr, sc, newColor, image[sr][sc])
+    <span class="hljs-keyword">return</span> image
+};
+
+<span class="hljs-keyword">const</span> dfs = (image, sr, sc, newColor, oldColor) =&gt; {
+    <span class="hljs-keyword">if</span>(sr &lt; <span class="hljs-number">0</span> || sr &gt;= image.length || sc &lt; <span class="hljs-number">0</span> || sc &gt;= image[<span class="hljs-number">0</span>].length) <span class="hljs-keyword">return</span>  <span class="hljs-comment">// &#x8D8A;&#x754C;</span>
+    <span class="hljs-keyword">if</span>(image[sr][sc] == newColor || image[sr][sc] != oldColor) <span class="hljs-keyword">return</span>    <span class="hljs-comment">// &#x5DF2;&#x7ECF;&#x88AB;&#x4E0A;&#x8272;&#x4E86;&#x6216;&#x8005;&#x4E0D;&#x662F;&#x8001;&#x7684;&#x989C;&#x8272;</span>
+    image[sr][sc] = newColor
+    dfs(image, sr, sc + <span class="hljs-number">1</span>, newColor, oldColor)
+    dfs(image, sr, sc - <span class="hljs-number">1</span>, newColor, oldColor)
+    dfs(image, sr + <span class="hljs-number">1</span>, sc, newColor, oldColor)
+    dfs(image, sr - <span class="hljs-number">1</span>, sc, newColor, oldColor)
+}
+</code></pre>
+<p>&#x4ED6;&#x4EBA;&#x9898;&#x89E3;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> floodFill = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">image, sr, sc, newColor</span>) </span>{
+    dfs(image, sr, sc, newColor, image[sr][sc])
+    <span class="hljs-keyword">return</span> image
+};
+
+<span class="hljs-keyword">const</span> dfs = (image, sr, sc, newColor, originColor) =&gt; {
+    <span class="hljs-comment">// &#x8D8A;&#x754C;</span>
+    <span class="hljs-keyword">if</span> (sr &lt; <span class="hljs-number">0</span> || sr &gt;= image.length || sc &lt; <span class="hljs-number">0</span> || sc &gt;= image[<span class="hljs-number">0</span>].length) <span class="hljs-keyword">return</span>
+    <span class="hljs-comment">// &#x4E0D;&#x6EE1;&#x8DB3;&#x4E0A;&#x8272;&#x8981;&#x6C42;, &#x6216;&#x5DF2;&#x7ECF;&#x4E0A;&#x8272;&#x8FC7;</span>
+    <span class="hljs-keyword">if</span> (image[sr][sc] != originColor || image[sr][sc] == newColor) <span class="hljs-keyword">return</span>;
+    <span class="hljs-comment">// &#x4E0A;&#x8272;</span>
+    image[sr][sc] = newColor
+
+    dfs(image, sr - <span class="hljs-number">1</span>, sc, newColor, originColor)
+    dfs(image, sr, sc + <span class="hljs-number">1</span>, newColor, originColor)
+    dfs(image, sr + <span class="hljs-number">1</span>, sc, newColor, originColor)
+    dfs(image, sr, sc - <span class="hljs-number">1</span>, newColor, originColor)
+}
+</code></pre>
+<ol>
+<li>&#x5C9B;&#x5C7F;&#x7684;&#x6700;&#x5927;&#x9762;&#x79EF;</li>
+</ol>
+<p>&#x4ED6;&#x4EBA;<a href="https://leetcode-cn.com/problems/max-area-of-island/solution/by-yusael-rp6d/" target="_blank">&#x9898;&#x89E3;</a>&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> maxAreaOfIsland = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">grid</span>) </span>{
+    <span class="hljs-keyword">let</span> max = <span class="hljs-number">-1</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; grid.length; i++)
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>; j &lt; grid[<span class="hljs-number">0</span>].length; j++)
+            max = <span class="hljs-built_in">Math</span>.max(max, dfs(grid, i, j))
+    <span class="hljs-keyword">return</span> max
+};
+
+<span class="hljs-keyword">const</span> dfs = (grid, cr, cc) =&gt; {
+    <span class="hljs-comment">// &#x8D8A;&#x754C;</span>
+    <span class="hljs-keyword">if</span> (cr &lt; <span class="hljs-number">0</span> || cr &gt;= grid.length || cc &lt; <span class="hljs-number">0</span> || cc &gt;= grid[<span class="hljs-number">0</span>].length) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+    <span class="hljs-comment">// &#x5DF2;&#x8BBF;&#x95EE;&#x8FC7;, &#x6216;&#x8005;&#x4E0D;&#x662F;&#x5C9B;&#x5C7F;</span>
+    <span class="hljs-keyword">if</span> (grid[cr][cc] === <span class="hljs-number">-1</span> || grid[cr][cc] === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+
+    <span class="hljs-comment">// &#x6807;&#x8BB0;&#x5DF2;&#x7ECF;&#x8BBF;&#x95EE;</span>
+    grid[cr][cc] = <span class="hljs-number">-1</span>
+
+    <span class="hljs-keyword">let</span> area = <span class="hljs-number">1</span>
+    area += dfs(grid, cr - <span class="hljs-number">1</span>, cc) <span class="hljs-comment">// &#x4E0A;</span>
+    area += dfs(grid, cr, cc + <span class="hljs-number">1</span>) <span class="hljs-comment">// &#x53F3;</span>
+    area += dfs(grid, cr + <span class="hljs-number">1</span>, cc) <span class="hljs-comment">// &#x4E0B;</span>
+    area += dfs(grid, cr, cc - <span class="hljs-number">1</span>) <span class="hljs-comment">// &#x5DE6;</span>
+    <span class="hljs-keyword">return</span> area
+}
+</code></pre>
 
                                 
                                 </section>
@@ -2056,7 +2295,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"leetcode 算法教程","level":"1.4.2.1","depth":3,"next":{"title":"font","level":"1.5","depth":1,"ref":"","articles":[{"title":"深入理解 ES6","level":"1.5.1","depth":2,"path":"font/深入理解 ES6.md","ref":"./font/深入理解 ES6.md","articles":[]},{"title":"React","level":"1.5.2","depth":2,"path":"font/React.md","ref":"./font/React.md","articles":[]},{"title":"Vue","level":"1.5.3","depth":2,"path":"font/Vue.md","ref":"./font/Vue.md","articles":[]},{"title":"Vue.js 的设计与实现","level":"1.5.4","depth":2,"path":"font/Vue.js 的设计与实现.md","ref":"./font/Vue.js 的设计与实现.md","articles":[]},{"title":"webpack","level":"1.5.5","depth":2,"path":"font/webpack.md","ref":"./font/webpack.md","articles":[]},{"title":"WebSocket","level":"1.5.6","depth":2,"path":"font/WebSocket.md","ref":"./font/WebSocket.md","articles":[]},{"title":"被删的前端游乐园","level":"1.5.7","depth":2,"path":"font/被删的前端游乐园.md","ref":"./font/被删的前端游乐园.md","articles":[]},{"title":"浏览器","level":"1.5.8","depth":2,"path":"font/浏览器.md","ref":"./font/浏览器.md","articles":[]},{"title":"图解HTTP","level":"1.5.9","depth":2,"path":"font/图解HTTP.md","ref":"./font/图解HTTP.md","articles":[]}]},"previous":{"title":"try again","level":"1.4.2","depth":2,"ref":"","articles":[{"title":"leetcode 算法教程","level":"1.4.2.1","depth":3,"path":"dataStructure/leetcode算法教程.md","ref":"./dataStructure/leetcode算法教程.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["pageview-count","intopic-toc","expandable-chapters","advanced-emoji","-lunr","-search","search-plus","-sharing","splitter","hide-element","insert-logo","code","back-to-top-button","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"livereload":{},"splitter":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"max-height: 120px; min-height: 120px","url":"https://ting-xin.github.io/notebook/image/wutian2.png"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"wutian","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notebook|blog","language":"zh-hans","gitbook":"*","description":"吴天的个人博客，或则说是笔记本，很菜很菜，在进步ing"},"file":{"path":"dataStructure/leetcode算法教程.md","mtime":"2022-03-14T07:39:04.713Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-26T07:57:37.607Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"leetcode 算法教程","level":"1.4.2.1","depth":3,"next":{"title":"font","level":"1.5","depth":1,"ref":"","articles":[{"title":"深入理解 ES6","level":"1.5.1","depth":2,"path":"font/深入理解 ES6.md","ref":"./font/深入理解 ES6.md","articles":[]},{"title":"React","level":"1.5.2","depth":2,"path":"font/React.md","ref":"./font/React.md","articles":[]},{"title":"Vue","level":"1.5.3","depth":2,"path":"font/Vue.md","ref":"./font/Vue.md","articles":[]},{"title":"Vue.js 的设计与实现","level":"1.5.4","depth":2,"path":"font/Vue.js 的设计与实现.md","ref":"./font/Vue.js 的设计与实现.md","articles":[]},{"title":"webpack","level":"1.5.5","depth":2,"path":"font/webpack.md","ref":"./font/webpack.md","articles":[]},{"title":"WebSocket","level":"1.5.6","depth":2,"path":"font/WebSocket.md","ref":"./font/WebSocket.md","articles":[]},{"title":"被删的前端游乐园","level":"1.5.7","depth":2,"path":"font/被删的前端游乐园.md","ref":"./font/被删的前端游乐园.md","articles":[]},{"title":"浏览器","level":"1.5.8","depth":2,"path":"font/浏览器.md","ref":"./font/浏览器.md","articles":[]},{"title":"图解HTTP","level":"1.5.9","depth":2,"path":"font/图解HTTP.md","ref":"./font/图解HTTP.md","articles":[]}]},"previous":{"title":"try again","level":"1.4.2","depth":2,"ref":"","articles":[{"title":"leetcode 算法教程","level":"1.4.2.1","depth":3,"path":"dataStructure/leetcode算法教程.md","ref":"./dataStructure/leetcode算法教程.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["pageview-count","intopic-toc","expandable-chapters","advanced-emoji","-lunr","-search","search-plus","-sharing","splitter","hide-element","insert-logo","code","back-to-top-button","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"livereload":{},"splitter":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"max-height: 120px; min-height: 120px","url":"https://ting-xin.github.io/notebook/image/wutian2.png"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"wutian","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notebook|blog","language":"zh-hans","gitbook":"*","description":"吴天的个人博客，或则说是笔记本，很菜很菜，在进步ing"},"file":{"path":"dataStructure/leetcode算法教程.md","mtime":"2022-03-29T07:19:33.672Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-01T08:48:22.283Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

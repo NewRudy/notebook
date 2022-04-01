@@ -11,6 +11,7 @@
   - [Nginx](./bigData/Nginx.md)
   - [Spark](./bigData/Spark.md)
   - [大数据](./bigData/大数据.md)
+  - [云原生](./bigData/云原生.md)
 * course
   - [Hands-On Data Visualization](./course/Hands-On Data Visualization.md)
   - [深入理解计算机系统](./course/深入理解计算机系统.md)
@@ -51,6 +52,8 @@
   - [OSMnx](./gis/OSMnx.md)
   - [城市规划中人性、人文和人本的关系](./gis/城市规划中人性、人文和人本的关系.md)
   - [地理大数据探索](./gis/地理大数据探索.md)
+  - [地理模型的理解](./gis/地理模型的理解.md)
+  - [云原生 GIS](./gis/云原生 GIS.md)
   - [地理大数据可视化](./gis/地理大数据可视化.md)
   - [地理信息安全技术与进展心得体会](./gis/地理信息安全技术与进展心得体会.md)
   - [面向地理共享与集成的数据适配方法研究](./gis/面向地理共享与集成的数据适配方法研究.md)

@@ -799,9 +799,226 @@ var swap = (str, i, j) => {
 
 ### 1.3 滑动窗口
 
+[一文带你AC十道题](https://lucifer.ren/blog/2020/03/16/slide-window/)
+
+滑动窗口是一种解决问题的思路和方法，通常用来解决一些连续的问题
+
 - 无重复字符的最长子串
 
+```js
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+    let str = s.split('')
+    let i = 0, j = 0, max = 0
+    while(j < str.length) {
+        for(let k = 0; k < j - i; ++k) {        // 检查是否有重复字符
+            if(str[i + k] === str[j]) {
+                i = i + k + 1
+                break
+            }
+        }
+        j++
+        max = j - i > max ? j - i: max 
+    }
+    return max
+};
+```
+
+官方题解（感觉反而不好理解）：
+
+```js
+var lengthOfLongestSubstring = function(s) {
+    // 哈希集合，记录每个字符是否出现过
+    const occ = new Set();
+    const n = s.length;
+    // 右指针，初始值为 -1，相当于我们在字符串的左边界的左侧，还没有开始移动
+    let rk = -1, ans = 0;
+    for (let i = 0; i < n; ++i) {
+        if (i != 0) {
+            // 左指针向右移动一格，移除一个字符
+            occ.delete(s.charAt(i - 1));
+        }
+        while (rk + 1 < n && !occ.has(s.charAt(rk + 1))) {
+            // 不断地移动右指针
+            occ.add(s.charAt(rk + 1));
+            ++rk;
+        }
+        // 第 i 到 rk 个字符是一个极长的无重复字符子串
+        ans = Math.max(ans, rk - i + 1);
+    }
+    return ans;
+};
+```
+
+- 字符串的排列
+
+```js
+/**
+ * @param {string} s1
+ * @param {string} s2
+ * @return {boolean}
+ */
+
+var cloneMap = function(map) {
+    return new Map([...map])
+}
+
+var checkInclusion = function(s1, s2) {
+    if(s1.length > s2.length) return false
+    let map = new Map()
+    let str1 = s1.split('')
+    str1.forEach( i => {        // 初始的排列的 map
+        if(map.has(i)) map.set(i, map.get(i) + 1)
+        else map.set(i, 1)
+    })
+    let str2 = s2.split('')
+    let temp = cloneMap(map)
+    let i = 0, j = 0, flag = false
+    while(j < str2.length) {
+        if(temp.has(str2[j])) {
+            flag = true
+            if(j - i + 1 >= str1.length) return true
+            if(temp.get(str2[j]) === 1) {
+                temp.delete(str2[j])
+            } else {
+                temp.set(str2[j], temp.get(str2[j]) - 1)
+            }
+            j++
+        } else {
+            if(flag) {
+                temp = cloneMap(map)
+                flag = false
+            }
+            i++		// 感觉自己这里的逻辑有问题
+            j = i
+        }
+    }
+    return false
+};
+```
+
+他人[题解](https://leetcode-cn.com/problems/permutation-in-string/solution/hua-dong-chuang-kou-fa-zhu-shi-ji-duo-si-14ip/)（看了之后觉得自己写的是一坨:shit:）：
+
+```js
+/**
+ * @param {string} s1
+ * @param {string} s2
+ * @return {boolean}
+ */
+var checkInclusion = function(s1, s2) {
+    // 自定义方法，用于比较滑动窗口中的数据与目标数据是否相同
+    function equal(a,b){
+        // equal方法的比较思路：a和b 都是两个长度为26 的数组，数组当中的每个数据都对应着一个字符的数量
+        // 例如a[0] 就代表着a 字符串当中字符'a' 的数量，a[1]就代表着字符串当中字符'b'的数量
+        // 因此，只有在a,b 两个数组的每一个值都相等才能说明a,b 代表的字符串内的各个字符的数量相等，也只有在这种情况下equal 函数会返回true ，否则都会返回false
+        for(let i =0;i<a.length;i++){
+            if(a[i]!==b[i])return false
+        }
+        return true
+    }
 
 
-### 
+    let arrP=new Array(26).fill(0),arr=new Array(26).fill(0),len1 = s1.length,len2=s2.length
+    // 将目标数据放入数组，之后使用该数组与滑动窗口进行对比
+    for(let i =0;i<len1;i++) arrP[s1.charCodeAt(i)-'a'.charCodeAt()]++
+
+    // 遍历整个长字符串，在字符串内部使用滑动窗口逐一访问判断
+    for(let i =0;i<len2;i++){
+        // 创建滑动窗口数组，滑动窗口数组的长度应与目标数组相同
+        arr[s2.charCodeAt(i)-'a'.charCodeAt()]++
+        // 滑动窗口创建完成之前不进行任何操作，长度不同不可能与目标数组相符
+        if(i>=len1-1) {
+            // 滑动窗口创建完毕之后即刻开始与目标窗口进行比对，比对一致即返回true
+            if(equal(arr,arrP)) return true
+            else{
+            // 比对不一致，则滑动窗口向右滑动，最左边字符退出窗口，进入下一次循坏，在下一次循环中又会将窗口外右边的第一个字符放入窗口
+            arr[s2.charCodeAt(i-len1+1)-'a'.charCodeAt()]--
+            }
+        }
+    }
+    // 比对完成都没有发现匹配数据，则说明无匹配数据，返回false
+    return false
+    <!-- 兄弟盟帮忙点个赞吧 -->
+};
+```
+
+### 1.4 广度有限搜索/深度优先搜索
+
+1. 图像渲染
+
+```js
+var floodFill = function(image, sr, sc, newColor) {
+    dfs(image, sr, sc, newColor, image[sr][sc])
+    return image
+};
+
+const dfs = (image, sr, sc, newColor, oldColor) => {
+    if(sr < 0 || sr >= image.length || sc < 0 || sc >= image[0].length) return  // 越界
+    if(image[sr][sc] == newColor || image[sr][sc] != oldColor) return    // 已经被上色了或者不是老的颜色
+    image[sr][sc] = newColor
+    dfs(image, sr, sc + 1, newColor, oldColor)
+    dfs(image, sr, sc - 1, newColor, oldColor)
+    dfs(image, sr + 1, sc, newColor, oldColor)
+    dfs(image, sr - 1, sc, newColor, oldColor)
+}
+```
+
+他人题解：
+
+```js
+const floodFill = function (image, sr, sc, newColor) {
+    dfs(image, sr, sc, newColor, image[sr][sc])
+    return image
+};
+
+const dfs = (image, sr, sc, newColor, originColor) => {
+    // 越界
+    if (sr < 0 || sr >= image.length || sc < 0 || sc >= image[0].length) return
+    // 不满足上色要求, 或已经上色过
+    if (image[sr][sc] != originColor || image[sr][sc] == newColor) return;
+    // 上色
+    image[sr][sc] = newColor
+
+    dfs(image, sr - 1, sc, newColor, originColor)
+    dfs(image, sr, sc + 1, newColor, originColor)
+    dfs(image, sr + 1, sc, newColor, originColor)
+    dfs(image, sr, sc - 1, newColor, originColor)
+}
+```
+
+2. 岛屿的最大面积
+
+
+
+他人[题解](https://leetcode-cn.com/problems/max-area-of-island/solution/by-yusael-rp6d/)：
+
+```js
+var maxAreaOfIsland = function (grid) {
+    let max = -1
+    for (let i = 0; i < grid.length; i++)
+        for (let j = 0; j < grid[0].length; j++)
+            max = Math.max(max, dfs(grid, i, j))
+    return max
+};
+
+const dfs = (grid, cr, cc) => {
+    // 越界
+    if (cr < 0 || cr >= grid.length || cc < 0 || cc >= grid[0].length) return 0
+    // 已访问过, 或者不是岛屿
+    if (grid[cr][cc] === -1 || grid[cr][cc] === 0) return 0
+
+    // 标记已经访问
+    grid[cr][cc] = -1
+
+    let area = 1
+    area += dfs(grid, cr - 1, cc) // 上
+    area += dfs(grid, cr, cc + 1) // 右
+    area += dfs(grid, cr + 1, cc) // 下
+    area += dfs(grid, cr, cc - 1) // 左
+    return area
+}
+```
 
