@@ -991,8 +991,6 @@ const dfs = (image, sr, sc, newColor, originColor) => {
 
 2. 岛屿的最大面积
 
-
-
 他人[题解](https://leetcode-cn.com/problems/max-area-of-island/solution/by-yusael-rp6d/)：
 
 ```js
@@ -1021,4 +1019,65 @@ const dfs = (grid, cr, cc) => {
     return area
 }
 ```
+
+3. 合并二叉树
+
+```js
+/**
+ * @param {TreeNode} root1
+ * @param {TreeNode} root2
+ * @return {TreeNode}
+ * dfs 解法
+ */
+var mergeTrees = function(root1, root2) {
+    if(!root1 || !root2) return root1 || root2 
+    root1.val += root2.val
+    root1.left = mergeTrees(root1.left, root2.left)
+    root1.right = mergeTrees(root1.right, root2.right)
+    return root1
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root1
+ * @param {TreeNode} root2
+ * @return {TreeNode}
+ * bfs 解法
+ */
+var mergeTrees = function(root1, root2) {
+    if(!root1 || !root2) return root1 || root2 
+    let root = mergeSingle(root1, root2)
+    let queue1 = [root1], queue2 = [root2], queue = [root]
+    while(queue1.length && queue2.length) {
+        let node = queue.shift(), node1 = queue1.shift(), node2 = queue2.shift()
+        node.left = mergeSingle(node1.left, node2.left)
+        node.right = mergeSingle(node1.right, node2.right)
+        if(node1.left && node2.left) {
+            queue1.push(node1.left)
+            queue2.push(node2.left)
+            queue.push(node.left)
+        }
+        if(node1.right && node2.right) {
+            queue1.push(node1.right)
+            queue2.push(node2.right)
+            queue.push(node.right)
+        }
+    }    
+    return root
+};
+
+var mergeSingle = (node1, node2) => {
+    if(!node1 || !node2) return node1 || node2 
+    return new TreeNode(node1.val + node2.val)
+} 
+```
+
+4. 填充每个节点的下一个右侧节点指针
 
