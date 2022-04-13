@@ -991,8 +991,6 @@ const dfs = (image, sr, sc, newColor, originColor) => {
 
 2. 岛屿的最大面积
 
-
-
 他人[题解](https://leetcode-cn.com/problems/max-area-of-island/solution/by-yusael-rp6d/)：
 
 ```js
@@ -1021,4 +1019,140 @@ const dfs = (grid, cr, cc) => {
     return area
 }
 ```
+
+3. 合并二叉树
+
+```js
+/**
+ * @param {TreeNode} root1
+ * @param {TreeNode} root2
+ * @return {TreeNode}
+ * dfs 解法
+ */
+var mergeTrees = function(root1, root2) {
+    if(!root1 || !root2) return root1 || root2 
+    root1.val += root2.val
+    root1.left = mergeTrees(root1.left, root2.left)
+    root1.right = mergeTrees(root1.right, root2.right)
+    return root1
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root1
+ * @param {TreeNode} root2
+ * @return {TreeNode}
+ * bfs 解法
+ */
+var mergeTrees = function(root1, root2) {
+    if(!root1 || !root2) return root1 || root2 
+    let root = mergeSingle(root1, root2)
+    let queue1 = [root1], queue2 = [root2], queue = [root]
+    while(queue1.length && queue2.length) {
+        let node = queue.shift(), node1 = queue1.shift(), node2 = queue2.shift()
+        node.left = mergeSingle(node1.left, node2.left)
+        node.right = mergeSingle(node1.right, node2.right)
+        if(node1.left && node2.left) {
+            queue1.push(node1.left)
+            queue2.push(node2.left)
+            queue.push(node.left)
+        }
+        if(node1.right && node2.right) {
+            queue1.push(node1.right)
+            queue2.push(node2.right)
+            queue.push(node.right)
+        }
+    }    
+    return root
+};
+
+var mergeSingle = (node1, node2) => {
+    if(!node1 || !node2) return node1 || node2 
+    return new TreeNode(node1.val + node2.val)
+} 
+```
+
+4. 填充每个节点的下一个右侧节点指针
+
+```js
+/**
+ * @param {Node} root
+ * @return {Node}
+ * dfs
+ */
+var connect = function(root) {
+    if(!root) return root
+    if(root.left) root.left.next = root.right       // 直系的节点
+    if(root.right && root.next) root.right.next = root.next.left      // 旁边的兄弟节点
+    connect(root.left)
+    connect(root.right)
+    return root
+};
+
+/**
+ * @param {Node} root
+ * @return {Node}
+ * bfs
+ */
+var connect = function(root) {
+    if(!root) return root 
+    const queue = [root, null]
+    while(queue.length) {
+        let first = queue.shift()
+        while(first) {      // 两个指针，一层一层的遍历
+            let second = queue.shift()
+            first.next = second
+            if(first.left) queue.push(first.left)
+            if(first.right) queue.push(first.right)
+            first = second
+        }
+        if(queue.length) queue.push(null)        // 一层遍历完了
+    }
+    return root
+};
+```
+
+5. 01 矩阵
+
+初始化一个二维数组，要么是循环，要么是 Array.fill: `let arr = new Array(3).fill(0).map(_ => new Array(3).fill(0))
+
+```js
+/**
+ * @param {number[][]} mat
+ * @return {number[][]}
+ * 使用动态规划
+ */
+var updateMatrix = function(mat) {
+    let res = new Array(mat.length).fill(Number.MAX_VALUE).map(_ => new Array(mat[0].length).fill(Number.MAX_VALUE))
+    for(let i = 0; i < mat.length; ++i) {
+        for(let j = 0; j < mat[0].length; ++j) {
+            if(!mat[i][j]) res[i][j] = 0
+        }
+    }
+    // 从左上角开始
+    for(let i = 0; i < mat.length; ++i) {
+        for(let j = 0; j < mat[0].length; ++j) {
+            if(i - 1 >= 0) res[i][j] = Math.min(res[i-1][j] + 1, res[i][j])
+            if(j - 1 >= 0) res[i][j] = Math.min(res[i][j-1] + 1, res[i][j])
+        }
+    }
+    // 从右下角开始
+    for(let i = mat.length - 1; i >= 0; --i) {
+        for(let j = mat[0].length - 1; j >= 0; --j) {
+            if(i + 1 < mat.length) res[i][j] = Math.min(res[i+1][j] + 1, res[i][j])
+            if(j + 1 < mat[0].length) res[i][j] = Math.min(res[i][j+1] + 1, res[i][j])
+        }
+    }
+    return res
+};
+```
+
+6. 腐烂的橘子
 

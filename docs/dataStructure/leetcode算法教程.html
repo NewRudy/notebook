@@ -525,7 +525,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../font/深入理解 ES6.html">
+        <li class="chapter " data-level="1.5.1" data-path="../font/JavaScript 高级程序设计.html">
+            
+                <a href="../font/JavaScript 高级程序设计.html">
+            
+                    
+                    JavaScript 高级程序设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../font/深入理解 ES6.html">
             
                 <a href="../font/深入理解 ES6.html">
             
@@ -538,7 +551,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../font/React.html">
+        <li class="chapter " data-level="1.5.3" data-path="../font/React.html">
             
                 <a href="../font/React.html">
             
@@ -551,7 +564,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../font/Vue.html">
+        <li class="chapter " data-level="1.5.4" data-path="../font/Vue.html">
             
                 <a href="../font/Vue.html">
             
@@ -564,7 +577,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../font/Vue.js 的设计与实现.html">
+        <li class="chapter " data-level="1.5.5" data-path="../font/Vue.js 的设计与实现.html">
             
                 <a href="../font/Vue.js 的设计与实现.html">
             
@@ -577,7 +590,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="../font/webpack.html">
+        <li class="chapter " data-level="1.5.6" data-path="../font/webpack.html">
             
                 <a href="../font/webpack.html">
             
@@ -590,7 +603,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.6" data-path="../font/WebSocket.html">
+        <li class="chapter " data-level="1.5.7" data-path="../font/WebSocket.html">
             
                 <a href="../font/WebSocket.html">
             
@@ -603,7 +616,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.7" data-path="../font/被删的前端游乐园.html">
+        <li class="chapter " data-level="1.5.8" data-path="../font/被删的前端游乐园.html">
             
                 <a href="../font/被删的前端游乐园.html">
             
@@ -616,7 +629,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.8" data-path="../font/浏览器.html">
+        <li class="chapter " data-level="1.5.9" data-path="../font/浏览器.html">
             
                 <a href="../font/浏览器.html">
             
@@ -629,7 +642,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.9" data-path="../font/图解HTTP.html">
+        <li class="chapter " data-level="1.5.10" data-path="../font/图解HTTP.html">
             
                 <a href="../font/图解HTTP.html">
             
@@ -2260,6 +2273,139 @@
     <span class="hljs-keyword">return</span> area
 }
 </code></pre>
+<ol>
+<li>&#x5408;&#x5E76;&#x4E8C;&#x53C9;&#x6811;</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-comment">/**
+ * @param {TreeNode} root1
+ * @param {TreeNode} root2
+ * @return {TreeNode}
+ * dfs &#x89E3;&#x6CD5;
+ */</span>
+<span class="hljs-keyword">var</span> mergeTrees = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root1, root2</span>) </span>{
+    <span class="hljs-keyword">if</span>(!root1 || !root2) <span class="hljs-keyword">return</span> root1 || root2 
+    root1.val += root2.val
+    root1.left = mergeTrees(root1.left, root2.left)
+    root1.right = mergeTrees(root1.right, root2.right)
+    <span class="hljs-keyword">return</span> root1
+};
+
+<span class="hljs-comment">/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */</span>
+<span class="hljs-comment">/**
+ * @param {TreeNode} root1
+ * @param {TreeNode} root2
+ * @return {TreeNode}
+ * bfs &#x89E3;&#x6CD5;
+ */</span>
+<span class="hljs-keyword">var</span> mergeTrees = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root1, root2</span>) </span>{
+    <span class="hljs-keyword">if</span>(!root1 || !root2) <span class="hljs-keyword">return</span> root1 || root2 
+    <span class="hljs-keyword">let</span> root = mergeSingle(root1, root2)
+    <span class="hljs-keyword">let</span> queue1 = [root1], queue2 = [root2], queue = [root]
+    <span class="hljs-keyword">while</span>(queue1.length &amp;&amp; queue2.length) {
+        <span class="hljs-keyword">let</span> node = queue.shift(), node1 = queue1.shift(), node2 = queue2.shift()
+        node.left = mergeSingle(node1.left, node2.left)
+        node.right = mergeSingle(node1.right, node2.right)
+        <span class="hljs-keyword">if</span>(node1.left &amp;&amp; node2.left) {
+            queue1.push(node1.left)
+            queue2.push(node2.left)
+            queue.push(node.left)
+        }
+        <span class="hljs-keyword">if</span>(node1.right &amp;&amp; node2.right) {
+            queue1.push(node1.right)
+            queue2.push(node2.right)
+            queue.push(node.right)
+        }
+    }    
+    <span class="hljs-keyword">return</span> root
+};
+
+<span class="hljs-keyword">var</span> mergeSingle = (node1, node2) =&gt; {
+    <span class="hljs-keyword">if</span>(!node1 || !node2) <span class="hljs-keyword">return</span> node1 || node2 
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> TreeNode(node1.val + node2.val)
+}
+</code></pre>
+<ol>
+<li>&#x586B;&#x5145;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x53F3;&#x4FA7;&#x8282;&#x70B9;&#x6307;&#x9488;</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-comment">/**
+ * @param {Node} root
+ * @return {Node}
+ * dfs
+ */</span>
+<span class="hljs-keyword">var</span> connect = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root</span>) </span>{
+    <span class="hljs-keyword">if</span>(!root) <span class="hljs-keyword">return</span> root
+    <span class="hljs-keyword">if</span>(root.left) root.left.next = root.right       <span class="hljs-comment">// &#x76F4;&#x7CFB;&#x7684;&#x8282;&#x70B9;</span>
+    <span class="hljs-keyword">if</span>(root.right &amp;&amp; root.next) root.right.next = root.next.left      <span class="hljs-comment">// &#x65C1;&#x8FB9;&#x7684;&#x5144;&#x5F1F;&#x8282;&#x70B9;</span>
+    connect(root.left)
+    connect(root.right)
+    <span class="hljs-keyword">return</span> root
+};
+
+<span class="hljs-comment">/**
+ * @param {Node} root
+ * @return {Node}
+ * bfs
+ */</span>
+<span class="hljs-keyword">var</span> connect = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root</span>) </span>{
+    <span class="hljs-keyword">if</span>(!root) <span class="hljs-keyword">return</span> root 
+    <span class="hljs-keyword">const</span> queue = [root, <span class="hljs-literal">null</span>]
+    <span class="hljs-keyword">while</span>(queue.length) {
+        <span class="hljs-keyword">let</span> first = queue.shift()
+        <span class="hljs-keyword">while</span>(first) {      <span class="hljs-comment">// &#x4E24;&#x4E2A;&#x6307;&#x9488;&#xFF0C;&#x4E00;&#x5C42;&#x4E00;&#x5C42;&#x7684;&#x904D;&#x5386;</span>
+            <span class="hljs-keyword">let</span> second = queue.shift()
+            first.next = second
+            <span class="hljs-keyword">if</span>(first.left) queue.push(first.left)
+            <span class="hljs-keyword">if</span>(first.right) queue.push(first.right)
+            first = second
+        }
+        <span class="hljs-keyword">if</span>(queue.length) queue.push(<span class="hljs-literal">null</span>)        <span class="hljs-comment">// &#x4E00;&#x5C42;&#x904D;&#x5386;&#x5B8C;&#x4E86;</span>
+    }
+    <span class="hljs-keyword">return</span> root
+};
+</code></pre>
+<ol>
+<li>01 &#x77E9;&#x9635;</li>
+</ol>
+<p>&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#xFF0C;&#x8981;&#x4E48;&#x662F;&#x5FAA;&#x73AF;&#xFF0C;&#x8981;&#x4E48;&#x662F; Array.fill: `let arr = new Array(3).fill(0).map(_ =&gt; new Array(3).fill(0))</p>
+<pre><code class="lang-js"><span class="hljs-comment">/**
+ * @param {number[][]} mat
+ * @return {number[][]}
+ * &#x4F7F;&#x7528;&#x52A8;&#x6001;&#x89C4;&#x5212;
+ */</span>
+<span class="hljs-keyword">var</span> updateMatrix = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">mat</span>) </span>{
+    <span class="hljs-keyword">let</span> res = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(mat.length).fill(<span class="hljs-built_in">Number</span>.MAX_VALUE).map(_ =&gt; <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(mat[<span class="hljs-number">0</span>].length).fill(<span class="hljs-built_in">Number</span>.MAX_VALUE))
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; mat.length; ++i) {
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>; j &lt; mat[<span class="hljs-number">0</span>].length; ++j) {
+            <span class="hljs-keyword">if</span>(!mat[i][j]) res[i][j] = <span class="hljs-number">0</span>
+        }
+    }
+    <span class="hljs-comment">// &#x4ECE;&#x5DE6;&#x4E0A;&#x89D2;&#x5F00;&#x59CB;</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; mat.length; ++i) {
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>; j &lt; mat[<span class="hljs-number">0</span>].length; ++j) {
+            <span class="hljs-keyword">if</span>(i - <span class="hljs-number">1</span> &gt;= <span class="hljs-number">0</span>) res[i][j] = <span class="hljs-built_in">Math</span>.min(res[i<span class="hljs-number">-1</span>][j] + <span class="hljs-number">1</span>, res[i][j])
+            <span class="hljs-keyword">if</span>(j - <span class="hljs-number">1</span> &gt;= <span class="hljs-number">0</span>) res[i][j] = <span class="hljs-built_in">Math</span>.min(res[i][j<span class="hljs-number">-1</span>] + <span class="hljs-number">1</span>, res[i][j])
+        }
+    }
+    <span class="hljs-comment">// &#x4ECE;&#x53F3;&#x4E0B;&#x89D2;&#x5F00;&#x59CB;</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = mat.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; --i) {
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> j = mat[<span class="hljs-number">0</span>].length - <span class="hljs-number">1</span>; j &gt;= <span class="hljs-number">0</span>; --j) {
+            <span class="hljs-keyword">if</span>(i + <span class="hljs-number">1</span> &lt; mat.length) res[i][j] = <span class="hljs-built_in">Math</span>.min(res[i+<span class="hljs-number">1</span>][j] + <span class="hljs-number">1</span>, res[i][j])
+            <span class="hljs-keyword">if</span>(j + <span class="hljs-number">1</span> &lt; mat[<span class="hljs-number">0</span>].length) res[i][j] = <span class="hljs-built_in">Math</span>.min(res[i][j+<span class="hljs-number">1</span>] + <span class="hljs-number">1</span>, res[i][j])
+        }
+    }
+    <span class="hljs-keyword">return</span> res
+};
+</code></pre>
+<ol>
+<li>&#x8150;&#x70C2;&#x7684;&#x6A58;&#x5B50;</li>
+</ol>
 
                                 
                                 </section>
@@ -2295,7 +2441,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"leetcode 算法教程","level":"1.4.2.1","depth":3,"next":{"title":"font","level":"1.5","depth":1,"ref":"","articles":[{"title":"深入理解 ES6","level":"1.5.1","depth":2,"path":"font/深入理解 ES6.md","ref":"./font/深入理解 ES6.md","articles":[]},{"title":"React","level":"1.5.2","depth":2,"path":"font/React.md","ref":"./font/React.md","articles":[]},{"title":"Vue","level":"1.5.3","depth":2,"path":"font/Vue.md","ref":"./font/Vue.md","articles":[]},{"title":"Vue.js 的设计与实现","level":"1.5.4","depth":2,"path":"font/Vue.js 的设计与实现.md","ref":"./font/Vue.js 的设计与实现.md","articles":[]},{"title":"webpack","level":"1.5.5","depth":2,"path":"font/webpack.md","ref":"./font/webpack.md","articles":[]},{"title":"WebSocket","level":"1.5.6","depth":2,"path":"font/WebSocket.md","ref":"./font/WebSocket.md","articles":[]},{"title":"被删的前端游乐园","level":"1.5.7","depth":2,"path":"font/被删的前端游乐园.md","ref":"./font/被删的前端游乐园.md","articles":[]},{"title":"浏览器","level":"1.5.8","depth":2,"path":"font/浏览器.md","ref":"./font/浏览器.md","articles":[]},{"title":"图解HTTP","level":"1.5.9","depth":2,"path":"font/图解HTTP.md","ref":"./font/图解HTTP.md","articles":[]}]},"previous":{"title":"try again","level":"1.4.2","depth":2,"ref":"","articles":[{"title":"leetcode 算法教程","level":"1.4.2.1","depth":3,"path":"dataStructure/leetcode算法教程.md","ref":"./dataStructure/leetcode算法教程.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["pageview-count","intopic-toc","expandable-chapters","advanced-emoji","-lunr","-search","search-plus","-sharing","splitter","hide-element","insert-logo","code","back-to-top-button","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"livereload":{},"splitter":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"max-height: 120px; min-height: 120px","url":"https://ting-xin.github.io/notebook/image/wutian2.png"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"wutian","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notebook|blog","language":"zh-hans","gitbook":"*","description":"吴天的个人博客，或则说是笔记本，很菜很菜，在进步ing"},"file":{"path":"dataStructure/leetcode算法教程.md","mtime":"2022-03-29T07:19:33.672Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-01T08:48:22.283Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"leetcode 算法教程","level":"1.4.2.1","depth":3,"next":{"title":"font","level":"1.5","depth":1,"ref":"","articles":[{"title":"JavaScript 高级程序设计","level":"1.5.1","depth":2,"path":"font/JavaScript 高级程序设计.md","ref":"./font/JavaScript 高级程序设计.md","articles":[]},{"title":"深入理解 ES6","level":"1.5.2","depth":2,"path":"font/深入理解 ES6.md","ref":"./font/深入理解 ES6.md","articles":[]},{"title":"React","level":"1.5.3","depth":2,"path":"font/React.md","ref":"./font/React.md","articles":[]},{"title":"Vue","level":"1.5.4","depth":2,"path":"font/Vue.md","ref":"./font/Vue.md","articles":[]},{"title":"Vue.js 的设计与实现","level":"1.5.5","depth":2,"path":"font/Vue.js 的设计与实现.md","ref":"./font/Vue.js 的设计与实现.md","articles":[]},{"title":"webpack","level":"1.5.6","depth":2,"path":"font/webpack.md","ref":"./font/webpack.md","articles":[]},{"title":"WebSocket","level":"1.5.7","depth":2,"path":"font/WebSocket.md","ref":"./font/WebSocket.md","articles":[]},{"title":"被删的前端游乐园","level":"1.5.8","depth":2,"path":"font/被删的前端游乐园.md","ref":"./font/被删的前端游乐园.md","articles":[]},{"title":"浏览器","level":"1.5.9","depth":2,"path":"font/浏览器.md","ref":"./font/浏览器.md","articles":[]},{"title":"图解HTTP","level":"1.5.10","depth":2,"path":"font/图解HTTP.md","ref":"./font/图解HTTP.md","articles":[]}]},"previous":{"title":"try again","level":"1.4.2","depth":2,"ref":"","articles":[{"title":"leetcode 算法教程","level":"1.4.2.1","depth":3,"path":"dataStructure/leetcode算法教程.md","ref":"./dataStructure/leetcode算法教程.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["pageview-count","intopic-toc","expandable-chapters","advanced-emoji","-lunr","-search","search-plus","-sharing","splitter","hide-element","insert-logo","code","back-to-top-button","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"livereload":{},"splitter":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"max-height: 120px; min-height: 120px","url":"https://ting-xin.github.io/notebook/image/wutian2.png"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"wutian","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notebook|blog","language":"zh-hans","gitbook":"*","description":"吴天的个人博客，或则说是笔记本，很菜很菜，在进步ing"},"file":{"path":"dataStructure/leetcode算法教程.md","mtime":"2022-04-09T03:21:28.686Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-13T09:09:33.276Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
