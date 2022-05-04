@@ -12,7 +12,7 @@ Geo-distributed efficient deployment of containers with Kubernetes
 - 分布式 GIS 技术体系：突破了数据类型和容量的限制，数量级提升了 GIS 软件的性能，让高可用高可信 GIS 应用成为可能
 - 跨平台 GIS 技术体系：使得 GIS 软件可运行于不同类型的 CPU 架构和操作系统（这也能算一个体系？）
 
-![image-20220329162057680](../image/image-20220329162057680.png)
+![image-20220329162057680](../image/image-20220329162057680-16506388899101.png)
 
 <div align='center'>中国 GIS 技术发展的阶段</div>
 
