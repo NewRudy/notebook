@@ -29,6 +29,7 @@
     - [递归](./dataStructure/simple/递归.md)
   - try again
     - [leetcode 算法教程](./dataStructure/leetcode算法教程.md)
+    - [剑指 offer](./dataStructure/剑指offer.md)
 * font
   - [JavaScript 高级程序设计](./font/JavaScript 高级程序设计.md)
   - [深入理解 ES6](./font/深入理解 ES6.md)
