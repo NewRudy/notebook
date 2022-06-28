@@ -31,6 +31,7 @@
     - [leetcode 算法教程](./dataStructure/leetcode算法教程.md)
     - [剑指 offer](./dataStructure/剑指offer.md)
 * font
+  - [开发的简单总结](./font/开发的简单总结.md)
   - [JavaScript 高级程序设计](./font/JavaScript 高级程序设计.md)
   - [深入理解 ES6](./font/深入理解 ES6.md)
   - [React](./font/React.md)
