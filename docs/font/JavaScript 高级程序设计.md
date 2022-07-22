@@ -541,3 +541,8 @@ HTML 5 为标准的 DOM 定义了很多扩展功能。其中包括在 innerHTML 
 DOM1 级主要定义的是 HTML 和 XML 文档的底层结构。DOM 2 和 DOM 3 则在这个结构的基础上引入了更多的交互能力，也支持了更高级的 XML 特性
 
 大概浏览了其它的东西，pass，深入用到 XML 的时候再看吧
+
+
+
+# JavaScript 第 4 版
+

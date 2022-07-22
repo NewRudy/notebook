@@ -1351,6 +1351,8 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x6D4F;&#x89C8;&#x5668;">&#x6D4F;&#x89C8;&#x5668;</h1>
+<h2 id="temp">temp</h2>
+<h3 id="&#x4E00;&#x4E9B;&#x6982;&#x5FF5;">&#x4E00;&#x4E9B;&#x6982;&#x5FF5;</h3>
 <p><img src="../image/image-20210308204739061.png" alt="image-20210308204739061"></p>
 <p>location &#x5BF9;&#x8C61;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x8BFB;&#x53D6;&#x5F53;&#x524D;&#x7684; url&#xFF0C; &#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x5C06;&#x6D4F;&#x89C8;&#x5668;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x65B0;&#x7684; url</p>
 <p>DOM  &#x5C06; HTML &#x8868;&#x793A;&#x4E3A;&#x6807;&#x7B7E;&#x7684;&#x6811;&#x5F62;&#x7ED3;&#x6784;</p>
@@ -1423,7 +1425,7 @@ div.innerHTML = <span class="hljs-string">&apos;&lt;strong&gt;hi&lt;/strong&gt;&
         li += <span class="hljs-string">&apos;&lt;li&gt;&apos;</span> + key + createTreeText(obj[key]) + <span class="hljs-string">&apos;&lt;/li&gt;&apos;</span>;
     }
     <span class="hljs-keyword">if</span>(li) {
-        ul = <span class="hljs-string">&apos;&lt;ul&gt;&apos;</span> + li + <span class="hljs-string">&apos;&lt;/ul&apos;</span>;
+        ul = <span class="hljs-string">&apos;&lt;ul&gt;&apos;</span> + li + <span class="hljs-string">&apos;&lt;/ul&gt;&apos;</span>;
     }
     <span class="hljs-keyword">return</span> ul || <span class="hljs-string">&apos;&apos;</span>;
 }
@@ -1465,7 +1467,7 @@ alert(computedStyle.color)
 </ul>
 <p><img src="../image/image-20210327111427020.png" alt="image-20210327111427020"></p>
 <p>elem.getBoundingClientRect()  &#x8FD4;&#x56DE;&#x6700;&#x5C0F;&#x77E9;&#x5F62;&#x7684;&#x7A97;&#x53E3;&#x5750;&#x6807;&#xFF0C;&#x5C5E;&#x6027;&#xFF1A;x/y &#x77E9;&#x5F62;&#x539F;&#x70B9;&#x76F8;&#x5BF9;&#x4E8E;&#x7A97;&#x53E3;&#x7684; x/y &#x5750;&#x6807;&#xFF0C;width/height</p>
-<h2 id="&#x6D4F;&#x89C8;&#x5668;&#x4E8B;&#x4EF6;">&#x6D4F;&#x89C8;&#x5668;&#x4E8B;&#x4EF6;</h2>
+<h3 id="&#x6D4F;&#x89C8;&#x5668;&#x4E8B;&#x4EF6;">&#x6D4F;&#x89C8;&#x5668;&#x4E8B;&#x4EF6;</h3>
 <p><img src="../image/image-20210327112513831.png" alt="image-20210327112513831"></p>
 <p>&#x4E3A;&#x4E86;&#x5BF9;&#x4E8B;&#x4EF6;&#x505A;&#x51FA;&#x54CD;&#x5E94;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#xFF0C;&#x4E00;&#x4E2A;&#x5728;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#x8FD0;&#x884C;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x662F;&#x5728; action &#x65F6;&#x8FD0;&#x884C; JavaScript &#x4EE3;&#x7801;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x6709;&#x51E0;&#x79CD;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x7684;&#x65B9;&#x6CD5;</p>
 <ul>
@@ -1680,32 +1682,7 @@ alert(elem.value)
 <pre><code class="lang-js">&lt;script defer src=<span class="hljs-string">&apos;,,,&apos;</span> &gt; <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
 </code></pre>
 <p>defer &#x7279;&#x6027;&#x4EC5;&#x9002;&#x7528;&#x4E8E;&#x5916;&#x90E8;&#x811A;&#x672C;</p>
-<h2 id="async"><a href="https://zh.javascript.info/script-async-defer#async" target="_blank">async</a></h2>
-<p><code>async</code> &#x7279;&#x6027;&#x4E0E; <code>defer</code> &#x6709;&#x4E9B;&#x7C7B;&#x4F3C;&#x3002;&#x5B83;&#x4E5F;&#x80FD;&#x591F;&#x8BA9;&#x811A;&#x672C;&#x4E0D;&#x963B;&#x585E;&#x9875;&#x9762;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5728;&#x884C;&#x4E3A;&#x4E0A;&#x4E8C;&#x8005;&#x6709;&#x7740;&#x91CD;&#x8981;&#x7684;&#x533A;&#x522B;&#x3002;</p>
-<p><code>async</code> &#x7279;&#x6027;&#x610F;&#x5473;&#x7740;&#x811A;&#x672C;&#x662F;&#x5B8C;&#x5168;&#x72EC;&#x7ACB;&#x7684;&#xFF1A;</p>
-<ul>
-<li><p>&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x4F1A;&#x56E0; <code>async</code> &#x811A;&#x672C;&#x800C;&#x963B;&#x585E;&#xFF08;&#x4E0E; <code>defer</code> &#x7C7B;&#x4F3C;&#xFF09;&#x3002;</p>
-</li>
-<li><p>&#x5176;&#x4ED6;&#x811A;&#x672C;&#x4E0D;&#x4F1A;&#x7B49;&#x5F85; <code>async</code> &#x811A;&#x672C;&#x52A0;&#x8F7D;&#x5B8C;&#x6210;&#xFF0C;&#x540C;&#x6837;&#xFF0C;<code>async</code> &#x811A;&#x672C;&#x4E5F;&#x4E0D;&#x4F1A;&#x7B49;&#x5F85;&#x5176;&#x4ED6;&#x811A;&#x672C;&#x3002;</p>
-</li>
-<li><pre><code>DOMContentLoaded
-</code></pre></li>
-</ul>
-<p>  &#x548C;&#x5F02;&#x6B65;&#x811A;&#x672C;&#x4E0D;&#x4F1A;&#x5F7C;&#x6B64;&#x7B49;&#x5F85;&#xFF1A;</p>
-<ul>
-<li><code>DOMContentLoaded</code> &#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x751F;&#x5728;&#x5F02;&#x6B65;&#x811A;&#x672C;&#x4E4B;&#x524D;&#xFF08;&#x5982;&#x679C;&#x5F02;&#x6B65;&#x811A;&#x672C;&#x5728;&#x9875;&#x9762;&#x5B8C;&#x6210;&#x540E;&#x624D;&#x52A0;&#x8F7D;&#x5B8C;&#x6210;&#xFF09;</li>
-<li><code>DOMContentLoaded</code> &#x4E5F;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x5728;&#x5F02;&#x6B65;&#x811A;&#x672C;&#x4E4B;&#x540E;&#xFF08;&#x5982;&#x679C;&#x5F02;&#x6B65;&#x811A;&#x672C;&#x5F88;&#x77ED;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x4ECE; HTTP &#x7F13;&#x5B58;&#x4E2D;&#x52A0;&#x8F7D;&#x7684;&#xFF09;</li>
-</ul>
-<h2 id="&#x52A8;&#x6001;&#x811A;&#x672C;"><a href="https://zh.javascript.info/script-async-defer#dong-tai-jiao-ben" target="_blank">&#x52A8;&#x6001;&#x811A;&#x672C;</a></h2>
-<p>&#x6B64;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x79CD;&#x5411;&#x9875;&#x9762;&#x6DFB;&#x52A0;&#x811A;&#x672C;&#x7684;&#x91CD;&#x8981;&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
-<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; JavaScript &#x52A8;&#x6001;&#x5730;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x811A;&#x672C;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x9644;&#x52A0;&#xFF08;append&#xFF09;&#x5230;&#x6587;&#x6863;&#xFF08;document&#xFF09;&#x4E2D;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">let</span> script = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;script&apos;</span>)
-script.src = <span class="hljs-string">&apos;,,,&apos;</span>
-<span class="hljs-built_in">document</span>.body.append(script)
-</code></pre>
-<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x52A8;&#x6001;&#x811A;&#x672C;&#x7684;&#x884C;&#x4E3A;&#x662F; &#x5F02;&#x6B65; &#x7684;</p>
-<p>&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;  script.async = false &#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x6539;&#x53D8;&#x8FD9;&#x4E2A;&#x89C4;&#x5219;</p>
-<h2 id="&#x8DE8;&#x6E90;&#x7B56;&#x7565;">&#x8DE8;&#x6E90;&#x7B56;&#x7565;</h2>
+<h3 id="&#x8DE8;&#x6E90;&#x7B56;&#x7565;">&#x8DE8;&#x6E90;&#x7B56;&#x7565;</h3>
 <p>&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x6761;&#x89C4;&#x5219;&#xFF1A; &#x6765;&#x81EA;&#x4E00;&#x4E2A;&#x7F51;&#x7AD9;&#x7684;&#x811A;&#x672C;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x5176;&#x5B83;&#x7F51;&#x7AD9;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x66F4;&#x786E;&#x5207;&#x7684;&#x8BF4;&#xFF0C;&#x4E00;&#x4E2A;&#x6E90;&#xFF08;&#x57DF;/&#x7AEF;&#x53E3;/&#x534F;&#x8BAE;&#x4E09;&#x8005;&#xFF09;&#x65E0;&#x6CD5;&#x83B7;&#x53D6;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x6E90;&#xFF08;origin&#xFF09;&#x7684;&#x5185;&#x5BB9;</p>
 <p>&#x8981;&#x5141;&#x8BB8;&#x8DE8;&#x57DF;&#xFF0C;<script> 标签需要具有 crossorigin 特性，并且远程服务器提供特殊的header</p>
 <p>这里有三个级别的跨源访问：</p>
@@ -1762,6 +1739,8 @@ img.src = &#39;my.jpg&#39;
     // should output 300
     preloadImages(sources, testLoaded);
 </code></pre>
+<h2> </h2>
+<h2>浏览器渲染机制</h2>
 </script></p>
                                 
                                 </section>
@@ -1805,7 +1784,7 @@ img.src = &#39;my.jpg&#39;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"浏览器","level":"1.5.10","depth":2,"next":{"title":"图解HTTP","level":"1.5.11","depth":2,"path":"font/图解HTTP.md","ref":"./font/图解HTTP.md","articles":[]},"previous":{"title":"被删的前端游乐园","level":"1.5.9","depth":2,"path":"font/被删的前端游乐园.md","ref":"./font/被删的前端游乐园.md","articles":[]},"dir":"ltr"},"config":{"plugins":["pageview-count","intopic-toc","expandable-chapters","advanced-emoji","-lunr","-search","search-plus","-sharing","splitter","hide-element","insert-logo","code","back-to-top-button","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"livereload":{},"splitter":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"max-height: 120px; min-height: 120px","url":"https://ting-xin.github.io/notebook/image/wutian2.png"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"wutian","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notebook|blog","language":"zh-hans","gitbook":"*","description":"吴天的个人博客，或则说是笔记本，很菜很菜，在进步ing"},"file":{"path":"font/浏览器.md","mtime":"2022-01-06T07:38:00.787Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-07-05T09:05:24.017Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"浏览器","level":"1.5.10","depth":2,"next":{"title":"图解HTTP","level":"1.5.11","depth":2,"path":"font/图解HTTP.md","ref":"./font/图解HTTP.md","articles":[]},"previous":{"title":"被删的前端游乐园","level":"1.5.9","depth":2,"path":"font/被删的前端游乐园.md","ref":"./font/被删的前端游乐园.md","articles":[]},"dir":"ltr"},"config":{"plugins":["pageview-count","intopic-toc","expandable-chapters","advanced-emoji","-lunr","-search","search-plus","-sharing","splitter","hide-element","insert-logo","code","back-to-top-button","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"livereload":{},"splitter":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"max-height: 120px; min-height: 120px","url":"https://ting-xin.github.io/notebook/image/wutian2.png"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"wutian","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notebook|blog","language":"zh-hans","gitbook":"*","description":"吴天的个人博客，或则说是笔记本，很菜很菜，在进步ing"},"file":{"path":"font/浏览器.md","mtime":"2022-07-14T13:58:28.186Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-07-22T02:06:56.640Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
