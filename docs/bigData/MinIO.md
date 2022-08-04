@@ -100,8 +100,8 @@ const uploadImageFile = async (bulkName = 'test', imageList = []) => {
     port: 9001,
     useSSL: false,
     // 下面填写你的accessKey和secretKey
-    accessKey: 'opengms',
-    secretKey: 'opengms517'
+    accessKey: '·········',
+    secretKey: '········'
   })
 
   // 开始上传图片
@@ -143,8 +143,8 @@ import time
 import sys
 
 minio_conf = {
-    'endpoint': '111.229.14.128:9001',
-    'access_key': 'opengms', 
+    'endpoint': '·····',
+    'access_key': '·····', 
     'secret_key': 'opengms517', 
     'secure': False
 }
